@@ -1,0 +1,76 @@
+# Базовый сценарий ТЭО «МОЯ МЕЧТА» (из 00-summary + введение)
+id: baseline
+name: Базовый ТЭО (кролиководство)
+status: active
+replaces: null
+
+project:
+  investment_bln_rub: 100
+  revenue_bln_rub_year: 71.4
+  payback_years: 8
+  export_bln_rub: 10.2
+  location: Херсонская область
+
+blocks:
+  кролиководство:
+    label: Кролиководство
+    active: true
+    output: "7 000 т мяса/год"
+    capex_bln_rub: 12
+    npv_thousand_rub: 2779519
+    irr_pct: 15.19
+    payback_months: 84
+    equipment: Meneghin Srl
+    slaughter: SINT Technologies (2400 голов/час)
+    feed: Комбикормовый завод F.lli FRAGOLA
+    byproducts: [мех, шкурка, навоз]
+    graph_nodes: [Кролиководство, Кролиководческая ферма, Meneghin Srl]
+
+  птицеводство:
+    label: Птицеводство
+    active: false
+
+  теплицы:
+    label: Теплицы 100 га
+    active: true
+    output: "18 400 т овощей, 376 млн цветов"
+    capex_bln_rub: 34.5
+    npv_thousand_rub: 33861691
+    irr_pct: 28.99
+    payback_months: 49
+
+  животноводство:
+    label: Животноводство КРС/МРС
+    active: true
+    capex_bln_rub: 40
+    npv_thousand_rub: 28915288
+    irr_pct: 23.25
+    payback_months: 61
+
+  рыбоводство:
+    label: Рыбоводство (белуга)
+    active: true
+    capex_bln_rub: 8
+    npv_thousand_rub: 3863808
+    irr_pct: 17.19
+    payback_months: 85
+
+  масложировой:
+    label: Масложировой комбинат
+    active: true
+    capex_bln_rub: 5.5
+    npv_thousand_rub: 26826029
+    irr_pct: 90.24
+    payback_months: 15
+
+shared_infrastructure:
+  - Комбикормовый завод
+  - Убойный цех
+  - Биогазовая установка 20 МВт·ч
+  - Солнечные панели 50 МВт·ч
+  - Масложировой комбинат
+  - Экспортный кластер (СНГ, ОАЭ, Азия)
+
+sources:
+  - docs/graphify-corpus/00-summary.md
+  - docs/graphify-corpus/01-vvedenie-i-resume.md

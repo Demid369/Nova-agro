@@ -84,6 +84,13 @@ def main() -> int:
     ]
     CHUNK_INDEX_PATH.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
 
+    from teo_rag.bm25_index import invalidate_bm25_cache  # noqa: E402
+    from teo_rag.kpi import build_kpi_store, save_kpi  # noqa: E402
+
+    invalidate_bm25_cache()
+    save_kpi(build_kpi_store())
+    print("KPI index updated")
+
     print(f"Done: {len(chunks)} chunks → {CHROMA_DIR}")
     print(f"Manifest: {MANIFEST_PATH}")
     return 0

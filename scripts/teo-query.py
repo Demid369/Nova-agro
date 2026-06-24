@@ -13,9 +13,11 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from teo_rag.context import EvidenceBundle  # noqa: E402
 from teo_rag.graph_client import GraphResult, run_graph_query  # noqa: E402
+from teo_rag.kpi import format_kpi_answer  # noqa: E402
 from teo_rag.memory import find_memory_hit, persist_validated  # noqa: E402
 from teo_rag.retrieval import RetrievedChunk, hierarchical_search  # noqa: E402
 from teo_rag.router import classify_query  # noqa: E402
+from teo_rag.scenarios import compare_scenarios, resolve_scenario_compare  # noqa: E402
 from teo_rag.synthesis import synthesize as run_synthesis  # noqa: E402
 from teo_rag.validator import validate_answer  # noqa: E402
 
@@ -110,6 +112,10 @@ def retrieve(
         graph = run_graph_query(query, budget=budget)
         citations = graph_citations(graph)
         raw_answer = format_graph_answer(query, graph)
+    elif route_mode == "scenario":
+        pair = resolve_scenario_compare(query) or ("baseline", "poultry-variant")
+        raw_answer = compare_scenarios(pair[0], pair[1])
+        citations = [{"type": "scenario", "baseline": pair[0], "variant": pair[1]}]
     elif route_mode == "vector":
         hits = hierarchical_search(query, mode="vector")
         citations = [chunk_citation(h) for h in hits]
@@ -155,6 +161,27 @@ def run_query(
 
     decision = classify_query(query, force_mode=None if mode == "auto" else mode)
     route_mode = decision.mode
+
+    if not synthesize and route_mode in ("auto", "vector"):
+        kpi_hit = format_kpi_answer(query)
+        if kpi_hit:
+            kpi_answer, kpi_citations = kpi_hit
+            payload = {
+                "query": query,
+                "mode": "kpi",
+                "reason": "structured KPI layer (fast path)",
+                "scores": decision.scores,
+                "answer": kpi_answer,
+                "raw_answer": None,
+                "citations": kpi_citations,
+                "synthesis": None,
+                "validation": {"valid": True, "from_kpi": True},
+            }
+            if json_out:
+                print(json.dumps(payload, ensure_ascii=False, indent=2))
+            else:
+                print(kpi_answer)
+            return payload
 
     raw_answer, citations, bundle, graph, _hits = retrieve(query, route_mode, budget)
 
@@ -206,7 +233,7 @@ def main() -> int:
     parser.add_argument("query", help="Вопрос по ТЭО")
     parser.add_argument(
         "--mode",
-        choices=["auto", "graph", "vector", "hybrid", "summary", "memory"],
+        choices=["auto", "graph", "vector", "hybrid", "summary", "memory", "scenario"],
         default="auto",
         help="Маршрут запроса",
     )
