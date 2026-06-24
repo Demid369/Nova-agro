@@ -67,6 +67,20 @@ SUMMARY_PATTERNS = [
     )
 ]
 
+SCENARIO_PATTERNS = [
+    re.compile(p, re.I)
+    for p in (
+        r"сценари",
+        r"what.?if",
+        r"замен\w*",
+        r"сравни\w*",
+        r"вариант",
+        r"вместо",
+        r"baseline",
+        r"poultry",
+    )
+]
+
 
 @dataclass
 class RouteDecision:
@@ -89,7 +103,11 @@ def classify_query(query: str, force_mode: str | None = None) -> RouteDecision:
         "vector": score_patterns(q, VECTOR_PATTERNS),
         "hybrid": score_patterns(q, HYBRID_PATTERNS),
         "summary": score_patterns(q, SUMMARY_PATTERNS),
+        "scenario": score_patterns(q, SCENARIO_PATTERNS),
     }
+
+    if scores["scenario"] >= 1 and scores["graph"] == 0:
+        return RouteDecision(mode="scenario", reason="what-if / scenario keywords", scores=scores)
 
     if scores["summary"] >= 2 or (scores["summary"] >= 1 and max(scores.values()) == scores["summary"]):
         return RouteDecision(mode="summary", reason="summary keywords", scores=scores)
