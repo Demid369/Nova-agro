@@ -93,6 +93,29 @@ graphify extract docs/graphify-corpus --mode deep
 ## Что уже настроено в репозитории
 
 - `.cursor/rules/graphify.mdc` — Cursor всегда учитывает граф
+- `.cursor/rules/teo-rag.mdc` — гибридный RAG (graph + vector)
 - `.claude/skills/graphify/` — skill для Claude Code
 - `CLAUDE.md` / `AGENTS.md` — инструкции для ассистентов
 - `.graphifyignore` — исключает тяжёлый docx и детальную нарезку
+
+## TEO RAG (гибрид Graph + Vector + Memory)
+
+Полнотекстовый поиск по всему корпусу (`docs/teo/` + `docs/graphify-corpus/`) поверх графа Graphify.
+
+```bash
+pip install -r requirements-teo-rag.txt
+python scripts/build-teo-vector-index.py
+python scripts/teo-query.py "NPV теплиц" --mode auto
+python scripts/teo-query.py "как убой связан с желатином?" --mode hybrid
+```
+
+| Режим | Когда |
+|-------|-------|
+| `graph` | связи, path, цепочки |
+| `vector` | факты, NPV, цитаты |
+| `hybrid` | риски + меры, экспорт + продукты |
+| `summary` | обзор проекта (corpus) |
+| `memory` | кэш проверенных ответов |
+
+Документация: `docs/TEO_RAG.md`, архитектура: `docs/TEO_RAG_ARCH.md`
+

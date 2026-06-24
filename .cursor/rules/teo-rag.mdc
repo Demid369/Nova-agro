@@ -1,0 +1,36 @@
+---
+description: TEO RAG — гибридный запрос к ТЭО «МОЯ МЕЧТА» (graph + vector + memory)
+globs:
+  - docs/teo/**
+  - docs/graphify-corpus/**
+  - graphify-out/**
+  - teo-rag-out/**
+  - scripts/teo_rag/**
+  - scripts/teo-query.py
+alwaysApply: false
+---
+
+# TEO RAG
+
+При вопросах по ТЭО «МОЯ МЕЧТА» используй гибрид:
+
+1. **Связи, path, цепочки** → `graphify query/path` или `python scripts/teo-query.py "..." --mode graph`
+2. **Факты, NPV, IRR, цитаты** → `python scripts/teo-query.py "..." --mode vector`
+3. **Смешанные** → `--mode hybrid` (default auto)
+4. **Обзор проекта** → `--mode summary`
+
+## Команды
+
+```bash
+python scripts/teo-query.py "<вопрос>" --mode auto
+python scripts/build-teo-vector-index.py   # после правок корпуса
+```
+
+## Правила ответа
+
+- Цитируй только из retrieved chunks / graph nodes — не выдумывай цифры
+- Указывай `source` (путь к md) и `section` для каждого факта
+- Для связей показывай graph edges с relation type
+- Trade-stat файлы (`*-табл-*`) исключены из vector index
+
+Документация: `docs/TEO_RAG.md`, архитектура: `docs/TEO_RAG_ARCH.md`

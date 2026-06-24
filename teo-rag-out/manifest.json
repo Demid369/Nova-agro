@@ -1,0 +1,9 @@
+{
+  "built_at": "2026-06-24T09:24:58.828577+00:00",
+  "collection": "teo_moya_mechta",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "chunk_count": 745,
+  "summary_count": 469,
+  "detail_count": 276,
+  "excluded_trade_stat": "files matching *-табл-*, в-*-гг-* skipped at chunk stage"
+}

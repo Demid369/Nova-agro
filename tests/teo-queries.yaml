@@ -1,0 +1,52 @@
+# Тестовые запросы для TEO RAG (graph / vector / hybrid)
+
+queries:
+  - id: q01
+    query: "как бесплатный убой связан с желатином и кожей?"
+    expected_mode: graph
+    tags: [graph, chain, zero-cost]
+
+  - id: q02
+    query: "NPV теплиц"
+    expected_mode: vector
+    tags: [npv, finance]
+
+  - id: q03
+    query: "path убой желатин"
+    expected_mode: graph
+    tags: [path, graph]
+
+  - id: q04
+    query: "экспорт халяль икра СНГ"
+    expected_mode: hybrid
+    tags: [export, hybrid]
+
+  - id: q05
+    query: "риски биологические ветеринарные меры снижения"
+    expected_mode: hybrid
+    tags: [risks, hybrid]
+
+  - id: q06
+    query: "обзор структура проекта МОЯ МЕЧТА"
+    expected_mode: summary
+    tags: [summary, overview]
+
+  - id: q07
+    query: "комбикорм подсолнечник соя животноводство"
+    expected_mode: hybrid
+    tags: [feed, vertical]
+
+  - id: q08
+    query: "сколько инвестиций в проект млрд рублей"
+    expected_mode: vector
+    tags: [facts, investment]
+
+  - id: q09
+    query: "биогаз навоз теплицы солнечные"
+    expected_mode: hybrid
+    tags: [energy, hybrid]
+
+  - id: q10
+    query: "IRR окупаемость блоки"
+    expected_mode: vector
+    tags: [irr, finance]

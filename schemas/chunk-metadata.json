@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TEO RAG Chunk Metadata",
+  "type": "object",
+  "required": ["chunk_id", "source", "tier", "block", "project_relevant"],
+  "properties": {
+    "chunk_id": { "type": "string", "description": "Уникальный id: source::section::index" },
+    "source": { "type": "string", "description": "Относительный путь к md-файлу" },
+    "tier": { "enum": ["summary", "detail"], "description": "summary = graphify-corpus, detail = teo" },
+    "block": {
+      "type": "string",
+      "description": "Производственный блок ТЭО",
+      "enum": [
+        "ядро",
+        "кролиководство",
+        "теплицы",
+        "животноводство",
+        "рыбоводство",
+        "масложировой",
+        "энергия",
+        "финансы",
+        "рынок",
+        "риски",
+        "производство",
+        "прочее"
+      ]
+    },
+    "section": { "type": "string", "description": "Заголовок секции внутри файла" },
+    "section_level": { "type": "integer", "minimum": 1, "maximum": 6 },
+    "word_count": { "type": "integer" },
+    "has_tables": { "type": "boolean" },
+    "project_relevant": { "type": "boolean", "description": "false = trade-stat шум, не для RAG" },
+    "char_start": { "type": "integer" },
+    "char_end": { "type": "integer" }
+  }
+}
