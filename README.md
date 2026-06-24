@@ -36,11 +36,23 @@ graphify cursor install
 
 ```bash
 graphify query "какие блоки дают экспортную выручку?"
-graphify path "ООО «МОЯ МЕЧТА»" "Халяльный желатин"
-graphify explain "Нулевая себестоимость мяса"
+graphify query "нулевая себестоимость мяса побочные продукты" --budget 2500
+graphify path "Убойный цех" "Халяльный желатин"
+graphify path "ООО МОЯ МЕЧТА" "Чёрная икра"
+graphify explain "Животноводство КРС/МРС"
 ```
 
 Откройте `graphify-out/graph.html` в браузере для интерактивной карты.
+
+Разбор ключевых цепочек: `graphify-out/QUERY_WALKTHROUGH.md`
+
+## Именование сообществ
+
+```bash
+uv tool run --from graphifyy python scripts/label-teo-communities.py
+```
+
+Русские имена сообществ → `.graphify_labels.json`, обновление `GRAPH_REPORT.md` и `graph.html` (без LLM API).
 
 ## Пересборка полного графа
 
