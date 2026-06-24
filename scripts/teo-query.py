@@ -11,13 +11,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from teo_rag.graph_client import run_graph_query  # noqa: E402
-from teo_rag.memory import find_memory_hit, save_memory  # noqa: E402
-from teo_rag.retrieval import hierarchical_search  # noqa: E402
+from teo_rag.context import EvidenceBundle  # noqa: E402
+from teo_rag.graph_client import GraphResult, run_graph_query  # noqa: E402
+from teo_rag.memory import find_memory_hit, persist_validated  # noqa: E402
+from teo_rag.retrieval import RetrievedChunk, hierarchical_search  # noqa: E402
 from teo_rag.router import classify_query  # noqa: E402
+from teo_rag.synthesis import synthesize as run_synthesis  # noqa: E402
+from teo_rag.validator import validate_answer  # noqa: E402
 
 
-def chunk_citation(hit) -> dict:
+def chunk_citation(hit: RetrievedChunk) -> dict:
     return {
         "type": "chunk",
         "source": hit.source,
@@ -30,7 +33,7 @@ def chunk_citation(hit) -> dict:
     }
 
 
-def graph_citations(result) -> list[dict]:
+def graph_citations(result: GraphResult) -> list[dict]:
     cites = []
     for node in result.nodes[:12]:
         cites.append(
@@ -53,7 +56,7 @@ def graph_citations(result) -> list[dict]:
     return cites
 
 
-def format_vector_answer(query: str, hits) -> str:
+def format_vector_answer(query: str, hits: list[RetrievedChunk]) -> str:
     if not hits:
         return "Релевантные фрагменты не найдены. Запустите: python scripts/build-teo-vector-index.py"
     lines = [f"Запрос: {query}", "", "Релевантные фрагменты (иерархия summary → detail):", ""]
@@ -68,7 +71,7 @@ def format_vector_answer(query: str, hits) -> str:
     return "\n".join(lines)
 
 
-def format_graph_answer(query: str, result) -> str:
+def format_graph_answer(query: str, result: GraphResult) -> str:
     lines = [f"Запрос (graph): {query}"]
     if result.traversal:
         lines.append(f"Traversal: {result.traversal}")
@@ -88,12 +91,52 @@ def format_graph_answer(query: str, result) -> str:
     return "\n".join(lines)
 
 
-def format_hybrid_answer(query: str, graph_result, vector_hits) -> str:
+def format_hybrid_answer(query: str, graph_result: GraphResult, vector_hits: list[RetrievedChunk]) -> str:
     parts = [format_graph_answer(query, graph_result), "", "---", "", format_vector_answer(query, vector_hits)]
     return "\n".join(parts)
 
 
-def run_query(query: str, mode: str = "auto", budget: int = 2500, json_out: bool = False) -> dict:
+def retrieve(
+    query: str,
+    route_mode: str,
+    budget: int,
+) -> tuple[str, list[dict], EvidenceBundle, GraphResult | None, list[RetrievedChunk]]:
+    graph: GraphResult | None = None
+    hits: list[RetrievedChunk] = []
+    citations: list[dict] = []
+    raw_answer = ""
+
+    if route_mode == "graph":
+        graph = run_graph_query(query, budget=budget)
+        citations = graph_citations(graph)
+        raw_answer = format_graph_answer(query, graph)
+    elif route_mode == "vector":
+        hits = hierarchical_search(query, mode="vector")
+        citations = [chunk_citation(h) for h in hits]
+        raw_answer = format_vector_answer(query, hits)
+    elif route_mode == "summary":
+        hits = hierarchical_search(query, mode="summary")
+        citations = [chunk_citation(h) for h in hits]
+        raw_answer = format_vector_answer(query, hits)
+    else:
+        graph = run_graph_query(query, budget=budget)
+        hits = hierarchical_search(query, mode="hybrid")
+        citations = graph_citations(graph) + [chunk_citation(h) for h in hits]
+        raw_answer = format_hybrid_answer(query, graph, hits)
+
+    bundle = EvidenceBundle(query=query, chunks=hits, graph=graph)
+    return raw_answer, citations, bundle, graph, hits
+
+
+def run_query(
+    query: str,
+    mode: str = "auto",
+    budget: int = 2500,
+    json_out: bool = False,
+    *,
+    synthesize: str | None = None,
+    validate: bool = False,
+) -> dict:
     memory = find_memory_hit(query)
     if memory and mode in ("auto", "memory"):
         payload = {
@@ -102,6 +145,7 @@ def run_query(query: str, mode: str = "auto", budget: int = 2500, json_out: bool
             "reason": f"memory hit (score {memory.score:.2f})",
             "answer": memory.answer,
             "citations": memory.citations,
+            "validation": {"valid": True, "from_memory": True},
         }
         if json_out:
             print(json.dumps(payload, ensure_ascii=False, indent=2))
@@ -112,26 +156,21 @@ def run_query(query: str, mode: str = "auto", budget: int = 2500, json_out: bool
     decision = classify_query(query, force_mode=None if mode == "auto" else mode)
     route_mode = decision.mode
 
-    citations: list[dict] = []
-    answer = ""
+    raw_answer, citations, bundle, graph, _hits = retrieve(query, route_mode, budget)
 
-    if route_mode == "graph":
-        graph = run_graph_query(query, budget=budget)
-        citations = graph_citations(graph)
-        answer = format_graph_answer(query, graph)
-    elif route_mode == "vector":
-        hits = hierarchical_search(query, mode="vector")
-        citations = [chunk_citation(h) for h in hits]
-        answer = format_vector_answer(query, hits)
-    elif route_mode == "summary":
-        hits = hierarchical_search(query, mode="summary")
-        citations = [chunk_citation(h) for h in hits]
-        answer = format_vector_answer(query, hits)
-    else:  # hybrid
-        graph = run_graph_query(query, budget=budget)
-        hits = hierarchical_search(query, mode="hybrid")
-        citations = graph_citations(graph) + [chunk_citation(h) for h in hits]
-        answer = format_hybrid_answer(query, graph, hits)
+    answer = raw_answer
+    synthesis_meta: dict | None = None
+    if synthesize:
+        syn = run_synthesis(bundle, method=synthesize)
+        answer = syn.answer
+        synthesis_meta = {"method": syn.method, "model": syn.model}
+
+    validation_result = None
+    if validate or synthesize:
+        validation_result = validate_answer(answer, bundle.corpus_text())
+        if not validation_result.valid and synthesis_meta:
+            synthesis_meta["rejected"] = True
+            synthesis_meta["unsupported_numbers"] = validation_result.unsupported
 
     payload = {
         "query": query,
@@ -139,12 +178,24 @@ def run_query(query: str, mode: str = "auto", budget: int = 2500, json_out: bool
         "reason": decision.reason,
         "scores": decision.scores,
         "answer": answer,
+        "raw_answer": raw_answer if synthesize else None,
         "citations": citations,
+        "synthesis": synthesis_meta,
+        "validation": validation_result.to_dict() if validation_result else None,
     }
+
     if json_out:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
     else:
         print(answer)
+        if validation_result and not validation_result.valid:
+            print(
+                f"\n[validation FAILED] неподтверждённые числа: {', '.join(validation_result.unsupported)}",
+                file=sys.stderr,
+            )
+        elif validation_result and validation_result.valid and validate:
+            print("\n[validation OK]", file=sys.stderr)
+
     return payload
 
 
@@ -159,21 +210,74 @@ def main() -> int:
     )
     parser.add_argument("--budget", type=int, default=2500, help="Budget для graphify query")
     parser.add_argument("--json", action="store_true", help="JSON-вывод")
-    parser.add_argument("--save-memory", action="store_true", help="Сохранить ответ в memory.jsonl")
+    parser.add_argument(
+        "--synthesize",
+        nargs="?",
+        const="extractive",
+        choices=["extractive", "llm"],
+        help="Синтез ответа только из retrieved (extractive по умолчанию, llm — Gemini)",
+    )
+    parser.add_argument(
+        "--validate",
+        action="store_true",
+        help="Проверить числа в ответе против evidence corpus",
+    )
+    parser.add_argument(
+        "--save-memory",
+        action="store_true",
+        help="Сохранить в teo-rag-out/memory.jsonl + graphify save-result (только если validation OK)",
+    )
+    parser.add_argument(
+        "--force-save",
+        action="store_true",
+        help="Сохранить в memory даже при failed validation",
+    )
     args = parser.parse_args()
 
-    payload = run_query(args.query, mode=args.mode, budget=args.budget, json_out=args.json)
+    validate = args.validate or bool(args.synthesize) or args.save_memory
+
+    payload = run_query(
+        args.query,
+        mode=args.mode,
+        budget=args.budget,
+        json_out=args.json,
+        synthesize=args.synthesize,
+        validate=validate,
+    )
 
     if args.save_memory:
-        save_memory(
-            query=args.query,
-            answer=payload.get("answer", ""),
-            mode=payload.get("mode", "auto"),
-            citations=payload.get("citations", []),
-        )
-        if not args.json:
-            print("\n[memory] сохранено в teo-rag-out/memory.jsonl")
+        validation = payload.get("validation") or {}
+        can_save = validation.get("valid", False) or args.force_save
+        if can_save:
+            graph_nodes = [
+                c["label"]
+                for c in payload.get("citations", [])
+                if c.get("type") == "graph_node"
+            ]
+            syn = payload.get("synthesis") or {}
+            saved = persist_validated(
+                query=args.query,
+                answer=payload.get("answer", ""),
+                mode=payload.get("mode", "auto"),
+                citations=payload.get("citations", []),
+                validation=validation if validation else {"valid": args.force_save},
+                synthesis_method=syn.get("method"),
+                graph_nodes=graph_nodes,
+                to_graphify=validation.get("valid", False) or args.force_save,
+                to_teo_memory=True,
+            )
+            if not args.json:
+                flags = [k for k, v in saved.items() if v]
+                print(f"\n[memory] сохранено: {', '.join(flags) or 'none'}")
+        elif not args.json:
+            print(
+                "\n[memory] НЕ сохранено: validation failed. Используйте --force-save для принудительного.",
+                file=sys.stderr,
+            )
+            return 2
 
+    if payload.get("validation") and not payload["validation"].get("valid") and validate:
+        return 2
     return 0
 
 

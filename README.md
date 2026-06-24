@@ -107,6 +107,7 @@ pip install -r requirements-teo-rag.txt
 python scripts/build-teo-vector-index.py
 python scripts/teo-query.py "NPV теплиц" --mode auto
 python scripts/teo-query.py "как убой связан с желатином?" --mode hybrid
+python scripts/teo-query.py "NPV теплиц" --synthesize --save-memory  # validation + memory
 ```
 
 | Режим | Когда |

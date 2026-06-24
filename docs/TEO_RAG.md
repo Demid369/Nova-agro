@@ -30,8 +30,10 @@ python scripts/teo-query.py "NPV теплиц" --mode vector
 python scripts/teo-query.py "path убой желатин" --mode graph
 python scripts/teo-query.py "обзор проекта" --mode summary
 
-# JSON + сохранение в память
-python scripts/teo-query.py "инвестиции 100 млрд" --json --save-memory
+# JSON + сохранение в память (только после validation)
+python scripts/teo-query.py "инвестиции 100 млрд" --synthesize --save-memory
+python scripts/teo-query.py "NPV теплиц" --mode vector --synthesize llm
+python scripts/teo-query.py "..." --validate  # проверка чисел без синтеза
 ```
 
 ## Индексация
@@ -56,6 +58,23 @@ python scripts/build-teo-vector-index.py
 | `hybrid` | риски, экспорт, комбикорм (default) |
 | `summary` | обзор, структура проекта |
 | `memory` | точное совпадение в `memory.jsonl` |
+
+## Валидация и синтез (фаза 4)
+
+```bash
+# Extractive — только предложения из retrieved
+python scripts/teo-query.py "NPV теплиц" --mode vector --synthesize
+
+# LLM (Gemini) — нужен GEMINI_API_KEY, ответ валидируется по corpus
+python scripts/teo-query.py "NPV теплиц" --synthesize llm
+
+# Сохранение в memory + graphify save-result (только validation OK)
+python scripts/teo-query.py "NPV теплиц" --synthesize --save-memory
+```
+
+Валидатор проверяет **значимые числа** (≥3 цифр или с единицами) в ответе против evidence corpus (chunks + graph). Неподтверждённые числа → `validation.valid=false`, exit code 2.
+
+`--save-memory` пишет в `teo-rag-out/memory.jsonl` и вызывает `graphify save-result` с graph nodes из citations.
 
 ## Citations
 
@@ -93,6 +112,8 @@ print(ok, '/', len(data['queries']))
 | `scripts/teo_rag/chunks.py` | нарезка, exclude trade-stat |
 | `scripts/teo_rag/retrieval.py` | Chroma + hierarchical search |
 | `scripts/teo_rag/router.py` | классификация запросов |
-| `scripts/teo-query.py` | единый CLI |
+| `scripts/teo_rag/validator.py` | anti-hallucination для чисел |
+| `scripts/teo_rag/synthesis.py` | extractive / LLM синтез |
+| `scripts/teo_rag/memory.py` | memory.jsonl + graphify save-result |
 | `schemas/chunk-metadata.json` | схема metadata |
 | `teo-rag-out/manifest.json` | статистика индекса |
