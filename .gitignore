@@ -9,7 +9,7 @@ teo-rag-out/kpi-baseline.json
 teo-rag-out/active-scenario.json
 teo-rag-out/benchmark-latest.json
 graphify-out/graph.baseline.json
-graphify-out/scenarios/
+notebooklm-export/
 graphify-out/memory/
 __pycache__/
 *.pyc
