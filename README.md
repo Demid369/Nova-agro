@@ -48,9 +48,22 @@ graphify explain "Нулевая себестоимость мяса"
 uv tool run --from graphifyy python scripts/build-full-teo-graph.py
 ```
 
-Обрабатывает **146 markdown-файлов** (`docs/graphify-corpus/` + `docs/teo/`), строит полный граф со всеми извлечёнными связями.
+Обрабатывает **146 markdown-файлов** (`docs/graphify-corpus/` + `docs/teo/`), строит структурный граф.
 
-Текущий граф: **~4200 узлов**, **~12000 рёбер**, **~300 сообществ**.
+## Семантическая экстракция (умные связи, deep mode)
+
+```bash
+uv tool run --from graphifyy python scripts/build-smart-semantic-graph.py
+```
+
+Сливает:
+- структурный граф (`extraction-full.json`, 146 md-файлов)
+- доменную онтологию ТЭО (бизнес-модель, цепочки, риски)
+- LLM-чанки из `graphify-out/.graphify_chunk_*.json` (если есть)
+
+Для перегенерации LLM-чанков в Cursor: `/graphify docs/graphify-corpus --mode deep`
+
+Текущий граф: **~4600 узлов**, **~12800 рёбер**, **~350 сообществ** (включая `rationale_for`, экспортные кластеры, гиперрёбра замкнутого цикла).
 
 Стартовый мини-граф (29 узлов):
 
@@ -58,9 +71,11 @@ uv tool run --from graphifyy python scripts/build-full-teo-graph.py
 uv tool run --from graphifyy python scripts/build-teo-graph.py
 ```
 
+Опционально — headless LLM-экстракция (нужен `GEMINI_API_KEY`):
+
 ```bash
-export GEMINI_API_KEY=...   # или OPENAI_API_KEY / ANTHROPIC_API_KEY
-graphify extract docs/graphify-corpus
+export GEMINI_API_KEY=...
+graphify extract docs/graphify-corpus --mode deep
 ```
 
 ## Что уже настроено в репозитории
