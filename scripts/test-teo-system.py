@@ -224,6 +224,31 @@ def run_kpi_cli_smoke() -> None:
         ok("kpi cli answer", "33 861 691" in payload.get("answer", ""))
 
 
+def run_scenario_apply_tests() -> None:
+    section("Scenario apply")
+    from teo_rag.scenario_apply import apply_scenario, restore_baseline
+    from teo_rag.scenario_finance import derive_poultry_from_rabbit
+    from teo_rag.config import ACTIVE_SCENARIO_PATH, SCENARIO_GRAPH_DIR
+
+    d = derive_poultry_from_rabbit()
+    ok("poultry derive capex", d.capex_bln_rub == 17.0)
+    ok("poultry derive npv", d.npv_thousand_rub > 4_000_000)
+
+    result = apply_scenario("poultry-variant", rebuild_kpi=True, patch_graph=True)
+    ok("scenario apply", result.get("scenario_id") == "poultry-variant")
+    ok("scenario graph file", (SCENARIO_GRAPH_DIR / "poultry-variant.json").exists())
+    ok("active scenario marker", ACTIVE_SCENARIO_PATH.exists())
+
+    from teo_rag.kpi import format_kpi_answer, load_kpi
+    store = load_kpi()
+    ok("kpi no rabbit after apply", "кролиководство" not in store.blocks)
+    hit = format_kpi_answer("NPV птицеводство", store)
+    ok("kpi poultry after apply", hit is not None)
+
+    restore_baseline()
+    ok("scenario restore", not ACTIVE_SCENARIO_PATH.exists())
+
+
 def run_llm_fallback() -> None:
     section("LLM fallback")
     from teo_rag.synthesis import llm_synthesize
@@ -250,6 +275,7 @@ def main() -> int:
     run_kpi_tests()
     run_bm25_tests()
     run_scenario_tests()
+    run_scenario_apply_tests()
     run_cli_smoke()
     run_kpi_cli_smoke()
     run_memory_roundtrip()

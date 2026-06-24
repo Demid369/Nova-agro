@@ -4,6 +4,11 @@ graphify-out/.graphify_uncached.txt
 teo-rag-out/chroma/
 teo-rag-out/build.log
 teo-rag-out/memory.jsonl
+teo-rag-out/model-cache/
+teo-rag-out/kpi-baseline.json
+teo-rag-out/active-scenario.json
+graphify-out/graph.baseline.json
+graphify-out/scenarios/
 graphify-out/memory/
 __pycache__/
 *.pyc

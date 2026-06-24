@@ -20,6 +20,7 @@ from .config import (
     HYBRID_VECTOR_WEIGHT,
     RERANK_CANDIDATES,
     RERANK_TOP_K,
+    RERANKER_CACHE_DIR,
     RERANKER_MODEL,
     SUMMARY_TOP_K,
 )
@@ -46,7 +47,8 @@ def _embed_model() -> SentenceTransformer:
 
 @lru_cache(maxsize=1)
 def _reranker() -> CrossEncoder:
-    return CrossEncoder(RERANKER_MODEL)
+    RERANKER_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    return CrossEncoder(RERANKER_MODEL, cache_folder=str(RERANKER_CACHE_DIR))
 
 
 def embed_query(query: str) -> list[float]:
