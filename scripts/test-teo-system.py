@@ -238,6 +238,12 @@ def run_memory_seed_tests() -> None:
     ok("seed script exit 0", proc.returncode == 0, proc.stderr[-200:] if proc.returncode else "")
     hit = find_memory_hit("NPV теплиц")
     ok("memory seed NPV теплиц", hit is not None and "33 861 691" in hit.answer)
+    hit2 = find_memory_hit("NPV рыбоводство")
+    ok("memory seed NPV рыбоводство", hit2 is not None and "3 863" in hit2.answer)
+    hit3 = find_memory_hit("экспорт 10,2 млрд")
+    ok("memory seed экспорт", hit3 is not None and "10,2" in hit3.answer)
+    seed_data = yaml.safe_load((ROOT / "tests" / "teo-memory-seed.yaml").read_text(encoding="utf-8"))
+    ok("memory seed yaml entries", len(seed_data.get("entries", [])) >= 15)
 
 
 def run_scenario_apply_tests() -> None:

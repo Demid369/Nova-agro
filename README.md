@@ -115,7 +115,8 @@ python scripts/test-teo-system.py  # полная проверка (118 пров
 python scripts/benchmark-teo-rag.py --json  # роутер + latency → teo-rag-out/benchmark-latest.json
 ```
 
-Дорожная карта: `docs/TEO_ROADMAP.md`
+Дорожная карта: `docs/TEO_ROADMAP.md`  
+Простыми словами: `docs/TEO_ПРОСТЫМИ_СЛОВАМИ.md`
 
 | Режим | Когда |
 |-------|-------|
