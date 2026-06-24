@@ -133,3 +133,145 @@ queries:
     query: "цитата о нулевой себестоимости мяса"
     expected_mode: vector
     tags: [quote, vector]
+
+  # --- baseline expansion (волна 4): кролики, убой, экспорт, блоки ---
+
+  - id: q26
+    query: "сколько тонн крольчатины в год"
+    expected_mode: vector
+    expect_contains: ["кролик", "тонн"]
+    tags: [rabbit, facts]
+
+  - id: q27
+    query: "Meneghin Srl кролиководство"
+    expected_mode: hybrid
+    expect_contains: ["Meneghin"]
+    tags: [rabbit, equipment]
+
+  - id: q28
+    query: "CAPEX кролиководства млрд"
+    expected_mode: vector
+    expect_contains: ["12"]
+    tags: [rabbit, capex]
+
+  - id: q29
+    query: "IRR кролиководство"
+    expected_mode: vector
+    expect_contains: ["15"]
+    tags: [rabbit, irr]
+
+  - id: q30
+    query: "как связаны комбикормовый завод и кролиководство"
+    expected_mode: graph
+    tags: [rabbit, graph, feed]
+
+  - id: q31
+    query: "path комбикорм кролик"
+    expected_mode: hybrid
+    tags: [rabbit, path]
+
+  - id: q32
+    query: "SINT Technologies убой"
+    expected_mode: hybrid
+    expect_contains: ["SINT"]
+    tags: [slaughter, equipment]
+
+  - id: q33
+    query: "халяль сертификат экспорт"
+    expected_mode: hybrid
+    tags: [export, halal]
+
+  - id: q34
+    query: "экспорт кожи желатина ОАЭ"
+    expected_mode: hybrid
+    expect_contains: ["экспорт"]
+    tags: [export, byproducts]
+
+  - id: q35
+    query: "NPV рыбоводство"
+    expected_mode: vector
+    expect_contains: ["3 863"]
+    tags: [fish, npv]
+
+  - id: q36
+    query: "NPV масложировой комбинат"
+    expected_mode: vector
+    expect_contains: ["26 826"]
+    tags: [oil, npv]
+
+  - id: q37
+    query: "IRR масложировой"
+    expected_mode: vector
+    expect_contains: ["90"]
+    tags: [oil, irr]
+
+  - id: q38
+    query: "окупаемость 8 лет"
+    expected_mode: vector
+    expect_contains: ["8"]
+    tags: [facts, payback]
+
+  - id: q39
+    query: "риски юридические регуляторные"
+    expected_mode: hybrid
+    tags: [risks, legal]
+
+  - id: q40
+    query: "риски климатические природные"
+    expected_mode: hybrid
+    tags: [risks, climate]
+
+  - id: q41
+    query: "что за проект МОЯ МЕЧТА"
+    expected_mode: summary
+    expect_contains: ["МОЯ МЕЧТА"]
+    tags: [summary, overview]
+
+  - id: q42
+    query: "сводка производственных блоков"
+    expected_mode: summary
+    expect_contains: ["блок"]
+    tags: [summary, blocks]
+
+  - id: q43
+    query: "как связан биогаз с навозом"
+    expected_mode: graph
+    tags: [energy, graph]
+
+  - id: q44
+    query: "цепочка убой желатин кожа"
+    expected_mode: graph
+    tags: [graph, chain, zero-cost]
+
+  - id: q45
+    query: "explain кролиководство"
+    expected_mode: graph
+    tags: [rabbit, graph]
+
+  - id: q46
+    query: "граф связь теплицы биогаз"
+    expected_mode: graph
+    tags: [graph, energy]
+
+  - id: q47
+    query: "таблица NPV блоков"
+    expected_mode: vector
+    expect_contains: ["NPV"]
+    tags: [finance, table]
+
+  - id: q48
+    query: "сколько белуг в проекте"
+    expected_mode: vector
+    expect_contains: ["70"]
+    tags: [fish, facts]
+
+  - id: q49
+    query: "между убойным цехом и заводом желатина"
+    expected_mode: graph
+    tags: [graph, slaughter]
+
+  - id: q50
+    query: "нулевая себестоимость 5,6 млрд"
+    expected_mode: vector
+    expect_contains: ["5,6"]
+    tags: [zero-cost, facts]
