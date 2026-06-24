@@ -1,0 +1,376 @@
+{
+  "generated_at": "2026-06-24T16:46:23.808920+00:00",
+  "project": "МОЯ МЕЧТА",
+  "block": "кролиководство",
+  "canonical_facts_check": [
+    {
+      "fact": "output_t_per_year",
+      "label": "7 000 т/год",
+      "layers": {
+        "source_teo": true,
+        "corpus": true,
+        "kpi_json": true,
+        "bm25_index": true
+      },
+      "ok": true
+    },
+    {
+      "fact": "capex_bln_rub",
+      "label": "CAPEX 12 млрд",
+      "layers": {
+        "source_teo": true,
+        "corpus": true,
+        "kpi_json": true,
+        "bm25_index": true
+      },
+      "ok": true
+    },
+    {
+      "fact": "npv_thousand_rub",
+      "label": "NPV 2 779 519",
+      "layers": {
+        "source_teo": false,
+        "corpus": true,
+        "kpi_json": true,
+        "bm25_index": true
+      },
+      "ok": true
+    },
+    {
+      "fact": "irr_pct",
+      "label": "IRR 15,19%",
+      "layers": {
+        "source_teo": false,
+        "corpus": false,
+        "kpi_json": false,
+        "bm25_index": false
+      },
+      "ok": false
+    },
+    {
+      "fact": "payback_months",
+      "label": "payback 84 мес",
+      "layers": {
+        "source_teo": true,
+        "corpus": true,
+        "kpi_json": true,
+        "bm25_index": true
+      },
+      "ok": true
+    },
+    {
+      "fact": "equipment",
+      "label": "Meneghin Srl",
+      "layers": {
+        "source_teo": true,
+        "corpus": true,
+        "kpi_json": true,
+        "bm25_index": true
+      },
+      "ok": true
+    },
+    {
+      "fact": "slaughter_heads_per_hour",
+      "label": "SINT 2400 г/ч",
+      "layers": {
+        "source_teo": true,
+        "corpus": true,
+        "kpi_json": false,
+        "bm25_index": true
+      },
+      "ok": true
+    },
+    {
+      "fact": "manure_t_per_year",
+      "label": "навоз 43 800 т",
+      "layers": {
+        "source_teo": true,
+        "corpus": true,
+        "kpi_json": false,
+        "bm25_index": true
+      },
+      "ok": true
+    },
+    {
+      "fact": "genetics",
+      "label": "ANCI",
+      "layers": {
+        "source_teo": true,
+        "corpus": true,
+        "kpi_json": false,
+        "bm25_index": true
+      },
+      "ok": true
+    }
+  ],
+  "facts_ok": 8,
+  "facts_total": 9,
+  "file_coverage": [
+    {
+      "group": "project_corpus",
+      "file": "docs/graphify-corpus/00-summary.md",
+      "exists": true,
+      "rabbit_mentions_source": 5,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "project_corpus",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "exists": true,
+      "rabbit_mentions_source": 159,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "project_corpus",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "exists": true,
+      "rabbit_mentions_source": 47,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "project_corpus",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "exists": true,
+      "rabbit_mentions_source": 87,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_primary",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "exists": true,
+      "rabbit_mentions_source": 42,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_primary",
+      "file": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md",
+      "exists": true,
+      "rabbit_mentions_source": 1,
+      "in_chunk_index": false,
+      "ok": false
+    },
+    {
+      "group": "source_teo_primary",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "exists": true,
+      "rabbit_mentions_source": 41,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_primary",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "exists": true,
+      "rabbit_mentions_source": 39,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_primary",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "exists": true,
+      "rabbit_mentions_source": 81,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_secondary",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "exists": true,
+      "rabbit_mentions_source": 30,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_secondary",
+      "file": "docs/teo/05-4-рынок-и-концепция-маркетинга.md",
+      "exists": true,
+      "rabbit_mentions_source": 20,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_secondary",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "exists": true,
+      "rabbit_mentions_source": 9,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_secondary",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "exists": true,
+      "rabbit_mentions_source": 15,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_secondary",
+      "file": "docs/teo/108-экспорт-товаров-группы-1517-маргарин-пригодные-для-употребле.md",
+      "exists": true,
+      "rabbit_mentions_source": 2,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_secondary",
+      "file": "docs/teo/134-корма-для-выращивания-рыбы-в-узв.md",
+      "exists": true,
+      "rabbit_mentions_source": 3,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "source_teo_secondary",
+      "file": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md",
+      "exists": true,
+      "rabbit_mentions_source": 5,
+      "in_chunk_index": false,
+      "ok": false
+    },
+    {
+      "group": "source_teo_secondary",
+      "file": "docs/teo/07-виды-и-особенности-кожи-крс.md",
+      "exists": true,
+      "rabbit_mentions_source": 4,
+      "in_chunk_index": true,
+      "ok": true
+    },
+    {
+      "group": "structured",
+      "file": "docs/scenarios/baseline.yaml",
+      "exists": true,
+      "rabbit_mentions_source": 7,
+      "in_chunk_index": false,
+      "ok": true
+    },
+    {
+      "group": "system_rebuild_after_replace",
+      "file": "teo-rag-out/kpi.json",
+      "exists": true,
+      "rabbit_mentions_source": 4,
+      "in_chunk_index": false,
+      "ok": true
+    },
+    {
+      "group": "system_rebuild_after_replace",
+      "file": "teo-rag-out/chunk-index.json",
+      "exists": true,
+      "rabbit_mentions_source": 73,
+      "in_chunk_index": false,
+      "ok": true
+    },
+    {
+      "group": "system_rebuild_after_replace",
+      "file": "teo-rag-out/bm25-index.json",
+      "exists": true,
+      "rabbit_mentions_source": 1229,
+      "in_chunk_index": false,
+      "ok": true
+    },
+    {
+      "group": "system_rebuild_after_replace",
+      "file": "graphify-out/graph.json",
+      "exists": true,
+      "rabbit_mentions_source": 31,
+      "in_chunk_index": false,
+      "ok": true
+    },
+    {
+      "group": "system_rebuild_after_replace",
+      "file": "tests/teo-queries.yaml",
+      "exists": true,
+      "rabbit_mentions_source": 12,
+      "in_chunk_index": false,
+      "ok": true
+    },
+    {
+      "group": "system_rebuild_after_replace",
+      "file": "tests/teo-memory-seed.yaml",
+      "exists": true,
+      "rabbit_mentions_source": 9,
+      "in_chunk_index": false,
+      "ok": true
+    },
+    {
+      "group": "system_rebuild_after_replace",
+      "file": "scripts/teo_rag/kpi.py",
+      "exists": true,
+      "rabbit_mentions_source": 4,
+      "in_chunk_index": false,
+      "ok": true
+    },
+    {
+      "group": "system_rebuild_after_replace",
+      "file": "scripts/teo_rag/chunks.py",
+      "exists": true,
+      "rabbit_mentions_source": 2,
+      "in_chunk_index": false,
+      "ok": true
+    }
+  ],
+  "files_ok": 24,
+  "files_total": 26,
+  "chunk_stats": {
+    "rabbit_block_chunks": 19,
+    "total_chunks": 745
+  },
+  "teo_corpus_gaps": [
+    {
+      "teo_file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "teo_mentions": 42,
+      "reflected_in_corpus": true,
+      "note": "124/125/08 должны быть в 03-proizvodstvo или 04-rynok"
+    },
+    {
+      "teo_file": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md",
+      "teo_mentions": 1,
+      "reflected_in_corpus": true,
+      "note": "124/125/08 должны быть в 03-proizvodstvo или 04-rynok"
+    },
+    {
+      "teo_file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "teo_mentions": 41,
+      "reflected_in_corpus": true,
+      "note": "124/125/08 должны быть в 03-proizvodstvo или 04-rynok"
+    },
+    {
+      "teo_file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "teo_mentions": 39,
+      "reflected_in_corpus": true,
+      "note": "124/125/08 должны быть в 03-proizvodstvo или 04-rynok"
+    },
+    {
+      "teo_file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "teo_mentions": 81,
+      "reflected_in_corpus": true,
+      "note": "124/125/08 должны быть в 03-proizvodstvo или 04-rynok"
+    }
+  ],
+  "rag_gaps": [
+    {
+      "id": "teo-125-excluded",
+      "severity": "medium",
+      "detail": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md не попадает в vector index: is_trade_stat_file() фильтрует «табл-N».",
+      "mitigation": "Контент дублируется в docs/graphify-corpus/03-proizvodstvo (Табл. 141)."
+    },
+    {
+      "id": "tonnage-graph-mode",
+      "severity": "low",
+      "detail": "Запрос «сколько тонн крольчатины» без KPI-слова уходит в graph → мировой рынок, а не 7 000 т проекта.",
+      "mitigation": "Использовать KPI fast path: «кролиководство NPV» / «7 000 т кролик»."
+    },
+    {
+      "id": "irr-in-kpi-only",
+      "severity": "low",
+      "detail": "IRR 15,19% для кроликов — в 00-summary и kpi.json; в 01-vvedenie может отсутствовать дословно.",
+      "mitigation": "KPI-слой teo-query покрывает NPV/IRR запросы."
+    }
+  ]
+}
