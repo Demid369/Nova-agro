@@ -24,6 +24,7 @@ alwaysApply: false
 ```bash
 python scripts/teo-query.py "<вопрос>" --mode auto
 python scripts/apply-teo-scenario.py apply poultry-variant  # what-if KPI + graph
+python scripts/seed-teo-memory-baseline.py                 # baseline facts → memory
 python scripts/build-teo-vector-index.py   # после правок корпуса
 ```
 

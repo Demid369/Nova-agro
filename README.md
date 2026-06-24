@@ -1,5 +1,8 @@
 # Graphify — граф знаний ТЭО «МОЯ МЕЧТА»
 
+> **Рабочий проект = baseline** — текущее ТЭО (кролиководство, теплицы, КРС/МРС, рыба, масложир).  
+> **Птица = parked** — черновик **второго ТЭО** в `docs/scenarios/poultry-variant.*`. Не применять к корпусу и графу. См. `docs/scenarios/README.md`.
+
 Этот репозиторий настроен для [Graphify](https://github.com/safishamsi/graphify): документ `docs/1.ТЭО_МОЯ МЕЧТА.docx` преобразован в markdown-корпус и подключён к Cursor.
 
 ## Структура
@@ -108,8 +111,11 @@ python scripts/build-teo-vector-index.py
 python scripts/teo-query.py "NPV теплиц" --mode auto
 python scripts/teo-query.py "как убой связан с желатином?" --mode hybrid
 python scripts/teo-query.py "NPV теплиц" --synthesize --save-memory  # validation + memory
-python scripts/test-teo-system.py  # полная проверка (49 тестов)
+python scripts/test-teo-system.py  # полная проверка (70 тестов)
+python scripts/benchmark-teo-rag.py --json  # роутер + latency → teo-rag-out/benchmark-latest.json
 ```
+
+Дорожная карта: `docs/TEO_ROADMAP.md`
 
 | Режим | Когда |
 |-------|-------|

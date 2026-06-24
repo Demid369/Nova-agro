@@ -28,7 +28,8 @@ def main() -> int:
         else:
             for sid in ids:
                 s = load_scenario(sid)
-                print(f"  {sid:20} [{s.status}] {s.name}")
+                tag = "active" if sid == "baseline" else s.status
+                print(f"  {sid:20} [{tag}] {s.name}")
         return 0
 
     if args.action == "show":

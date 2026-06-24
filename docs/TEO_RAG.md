@@ -96,18 +96,23 @@ python scripts/teo-query.py "NPV теплиц" --synthesize --save-memory
 - `graph_node` — `label`, `source`, `community`
 - `graph_edge` — `source_node`, `relation`, `target_node`
 
-## Сценарии what-if
+## Сценарии (parked: второе ТЭО позже)
+
+**Рабочий проект = `baseline`.** `poultry-variant` — **parked**, не применять. См. `docs/scenarios/README.md`.
 
 ```bash
 python scripts/teo-scenario.py list
-python scripts/teo-scenario.py show poultry-variant
-python scripts/teo-scenario.py compare baseline poultry-variant
-python scripts/teo-query.py "what-if замена кроликов на птицеводство" --mode auto
+python scripts/teo-scenario.py show baseline
+# poultry-variant — только когда будет готово второе ТЭО
 ```
 
-Черновик `poultry-variant` — NPV/CAPEX из эвристики `derive_poultry_from_rabbit` (не полный DCF).
+## Memory seed (baseline)
 
-## Применение сценария (волна 2)
+```bash
+python scripts/seed-teo-memory-baseline.py   # KPI/факты из 00-summary → memory.jsonl
+```
+
+## Применение сценария (инфраструктура, не для текущей работы)
 
 ```bash
 python scripts/apply-teo-scenario.py derive-poultry   # показать расчёт
@@ -122,8 +127,9 @@ Reranker кэшируется в `teo-rag-out/model-cache/reranker/`.
 ## Полная проверка системы
 
 ```bash
-python scripts/test-teo-system.py   # infra + router + graph + vector + KPI + BM25 + scenarios
-python scripts/benchmark-teo-rag.py   # роутер + latency на 25 запросах
+python scripts/test-teo-system.py   # 70 проверок
+python scripts/benchmark-teo-rag.py --json
+python scripts/seed-teo-memory-baseline.py
 ```
 
 ## Тесты

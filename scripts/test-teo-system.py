@@ -224,6 +224,22 @@ def run_kpi_cli_smoke() -> None:
         ok("kpi cli answer", "33 861 691" in payload.get("answer", ""))
 
 
+def run_memory_seed_tests() -> None:
+    section("Memory seed")
+    import subprocess
+
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "seed-teo-memory-baseline.py")],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    ok("seed script exit 0", proc.returncode == 0, proc.stderr[-200:] if proc.returncode else "")
+    hit = find_memory_hit("NPV теплиц")
+    ok("memory seed NPV теплиц", hit is not None and "33 861 691" in hit.answer)
+
+
 def run_scenario_apply_tests() -> None:
     section("Scenario apply")
     from teo_rag.scenario_apply import apply_scenario, restore_baseline
@@ -278,6 +294,7 @@ def main() -> int:
     run_scenario_apply_tests()
     run_cli_smoke()
     run_kpi_cli_smoke()
+    run_memory_seed_tests()
     run_memory_roundtrip()
     run_llm_fallback()
 
