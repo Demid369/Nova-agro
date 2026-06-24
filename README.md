@@ -48,7 +48,7 @@ graphify explain "Нулевая себестоимость мяса"
 uv tool run --from graphifyy python scripts/build-full-teo-graph.py
 ```
 
-Обрабатывает **146 markdown-файлов** (`docs/graphify-corpus/` + `docs/teo/`), строит структурный граф.
+Обрабатывает **146 markdown-файлов** (`docs/graphify-corpus/` + `docs/teo/`), строит структурный граф. Встроенный **фильтр шума** отсекает торговую статистику (`*-табл-*`, экспорт/импорт по странам, метрики).
 
 ## Семантическая экстракция (умные связи, deep mode)
 
@@ -63,7 +63,7 @@ uv tool run --from graphifyy python scripts/build-smart-semantic-graph.py
 
 Для перегенерации LLM-чанков в Cursor: `/graphify docs/graphify-corpus --mode deep`
 
-Текущий граф: **~4600 узлов**, **~12800 рёбер**, **~350 сообществ** (включая `rationale_for`, экспортные кластеры, гиперрёбра замкнутого цикла).
+Текущий граф (после фильтра шума + semantic merge): **~2500 узлов**, **~6300 рёбер**, **~280 сообществ**.
 
 Стартовый мини-граф (29 узлов):
 

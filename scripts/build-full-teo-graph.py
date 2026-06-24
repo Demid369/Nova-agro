@@ -119,12 +119,118 @@ def extract_table_rows(text: str) -> list[list[str]]:
     return rows
 
 
+TRADE_FILE_RE = re.compile(r"табл[_-]\d+", re.I)
+STAT_FILE_RE = re.compile(r"(\d{4}[-–]\d{4}-гг-|в-\d{4}-\d{4}-гг-)", re.I)
+
+NOISE_LABEL_RE = [
+    re.compile(r"^табл\.?\s*\d", re.I),
+    re.compile(r"\|\s*табл\.?\s*\d+", re.I),
+    re.compile(r"стоимость\s*\(долл", re.I),
+    re.compile(r"изменение стоимости", re.I),
+    re.compile(r"^экспорт товаров группы\s*\d+", re.I),
+    re.compile(r"^импорт товаров группы\s*\d+", re.I),
+    re.compile(r"^весь мир$", re.I),
+    re.compile(r"^\d{4}\s*[:：-]", re.I),
+    re.compile(r"^\d[\d\s,.]*\s*(?:млн|тыс\.?)\s*(?:доллар|руб|тн|кг|га)?\.?\s*$", re.I),
+    re.compile(r"^\d+%\s*\(", re.I),
+    re.compile(r"^рис\.?\s*\d", re.I),
+    re.compile(r"\d{4}[-–]\d{4}\s*гг", re.I),
+    re.compile(r"возросл\w*\s+на\s+\d+%", re.I),
+    re.compile(r"сокращен\w*\s+на\s+\d+", re.I),
+    re.compile(r"продажи .{5,60} в мире", re.I),
+    re.compile(r"\d+\s+крупнейших стран", re.I),
+    re.compile(r"крупнейших стран[- ](?:производител|экспортер)", re.I),
+    re.compile(r"^группы\s*\d+", re.I),
+    re.compile(r"^020\d\s*-", re.I),
+]
+
+GENERIC_HEADINGS = {
+    "описание продукта", "виды и сорта", "история", "распространение",
+    "характеристика", "продуктивность", "содержание и уход", "питание",
+    "здоровье и болезни", "разведение", "внешний вид", "достоинства и недостатки",
+    "плодовитость", "состав, пищевая ценность, кбжу и норма потребления",
+    "история происхождения", "показатели продуктивности", "кормление и уход",
+    "описание", "классификация", "пищевая ценность",
+}
+
+TRADE_PARA_RE = re.compile(
+    r"(экспорт товаров группы|импорт товаров группы|"
+    r"стоимостн\w+ выражени\w+|долл\.?\s*usa|долларов\)|"
+    r"составил\w*\s+\d+\s*млн доллар|по сравнению \d{4} годом)",
+    re.I,
+)
+
+PROJECT_MARKET_RE = re.compile(
+    r"(моя мечта|херсон|проект|маркетинг|конкурент|экспортн|импортозамещ|"
+    r"прогноз продаж|сегмент|сбыт|концепция|swot|преимуществ|"
+    r"халяль|белуг|кролик|кьянина|теплич)",
+    re.I,
+)
+
+
+def is_trade_stat_file(path: Path) -> bool:
+    name = path.stem.lower()
+    if TRADE_FILE_RE.search(name):
+        return True
+    if STAT_FILE_RE.search(name):
+        return True
+    if "весь-мир" in name and "табл" in name:
+        return True
+    return False
+
+
+def is_market_corpus_file(path: Path) -> bool:
+    return "rynok" in path.stem.lower() or "analitika" in path.stem.lower()
+
+
+def label_matches_noise(label: str) -> bool:
+    s = label.strip()
+    if not s:
+        return True
+    low = s.lower()
+    if low in GENERIC_HEADINGS:
+        return True
+    if len(s) > 140:
+        return True
+    if sum(c.isdigit() for c in s) > len(s) * 0.35 and len(s) > 20:
+        return True
+    return any(p.search(s) for p in NOISE_LABEL_RE)
+
+
 def is_noise_label(label: str) -> bool:
     s = label.strip()
     if len(s) < 3:
         return True
     if re.fullmatch(r"[\d\s,.:;%\-–—/]+", s):
         return True
+    return label_matches_noise(s)
+
+
+def should_skip_paragraph(para: str, path: Path) -> bool:
+    if is_trade_stat_file(path):
+        return True
+    if TRADE_PARA_RE.search(para) and not PROJECT_MARKET_RE.search(para):
+        return True
+    if is_market_corpus_file(path) and TRADE_PARA_RE.search(para):
+        return True
+    lines = [ln.strip() for ln in para.splitlines() if ln.strip()]
+    if len(lines) == 1 and label_matches_noise(lines[0]):
+        return True
+    return False
+
+
+def is_noise_heading(title: str, path: Path) -> bool:
+    if is_noise_label(title):
+        return True
+    if is_trade_stat_file(path):
+        return True
+    if "|" in title and "табл" in title.lower():
+        return True
+    if is_market_corpus_file(path):
+        if title.lower() in GENERIC_HEADINGS:
+            return True
+        if label_matches_noise(title):
+            return True
     return False
 
 
@@ -187,13 +293,15 @@ def tokenize_entities(text: str) -> list[str]:
     ):
         ents.append(m.group(1).strip()[:80])
     for m in re.finditer(r"(\d[\d\s,.]*\s*(?:млрд|млн|тыс\.?|тн|га|МВт|кг|руб)[^\n.,;]{0,30})", text, re.I):
-        ents.append(m.group(1).strip()[:80])
+        val = m.group(1).strip()[:80]
+        if not label_matches_noise(val):
+            ents.append(val)
     # dedupe preserve order
     seen = set()
     out = []
     for e in ents:
         k = e.lower()
-        if k not in seen and len(k) > 2:
+        if k not in seen and len(k) > 2 and not label_matches_noise(e):
             seen.add(k)
             out.append(e)
     return out[:25]
@@ -205,6 +313,7 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
     text = path.read_text(encoding="utf-8", errors="replace")
     nodes: dict[str, dict] = {}
     edges: list[dict] = []
+    trade_only = is_trade_stat_file(path)
 
     def add_node(label: str, ftype: str = "concept") -> str:
         label = label.strip()
@@ -216,6 +325,8 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
         return nid
 
     doc_nid = add_node(path.stem.replace("-", " "), "document")
+    if trade_only:
+        return list(nodes.values()), edges
     heading_stack: list[tuple[int, str]] = []
     prev_nid = doc_nid
 
@@ -235,6 +346,8 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
             level, title = h
             while heading_stack and heading_stack[-1][0] >= level:
                 heading_stack.pop()
+            if is_noise_heading(title, path):
+                continue
             nid = add_node(title, "concept")
             if heading_stack:
                 e = edge(heading_stack[-1][1], nid, REL_HIER, rel)
@@ -258,6 +371,8 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
     flush_para()
 
     for para in paragraphs:
+        if should_skip_paragraph(para, path):
+            continue
         ents = tokenize_entities(para)
         nids = [add_node(e) for e in ents]
         nids = [n for n in nids if n]
@@ -281,6 +396,8 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
             edges.append(e)
 
     for row in extract_table_rows(text):
+        if is_market_corpus_file(path) or is_trade_stat_file(path):
+            continue
         if len(row) >= 2:
             a, b = add_node(row[0]), add_node(row[1])
             if a and b:
@@ -295,14 +412,17 @@ def cross_link_by_label(all_nodes: list[dict]) -> list[dict]:
     label_map: dict[str, list[str]] = defaultdict(list)
     for n in all_nodes:
         key = re.sub(r"\s+", " ", n["label"].lower().strip())
-        if len(key) > 3:
-            label_map[key].append(n["id"])
+        if len(key) <= 3 or label_matches_noise(n["label"]):
+            continue
+        if sum(c.isdigit() for c in n["label"]) > len(n["label"]) * 0.3:
+            continue
+        label_map[key].append(n["id"])
     extra = []
     for key, ids in label_map.items():
         if len(ids) < 2:
             continue
         base = ids[0]
-        for other in ids[1:6]:
+        for other in ids[1:3]:
             e = edge(base, other, "semantically_similar_to", all_nodes[0]["source_file"], "INFERRED", 0.85)
             if e:
                 extra.append(e)
