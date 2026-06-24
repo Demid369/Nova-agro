@@ -111,7 +111,7 @@ python scripts/build-teo-vector-index.py
 python scripts/teo-query.py "NPV теплиц" --mode auto
 python scripts/teo-query.py "как убой связан с желатином?" --mode hybrid
 python scripts/teo-query.py "NPV теплиц" --synthesize --save-memory  # validation + memory
-python scripts/test-teo-system.py  # полная проверка (70 тестов)
+python scripts/test-teo-system.py  # полная проверка (118 проверок, 50 запросов)
 python scripts/benchmark-teo-rag.py --json  # роутер + latency → teo-rag-out/benchmark-latest.json
 ```
 
