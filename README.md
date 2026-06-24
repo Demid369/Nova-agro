@@ -116,7 +116,8 @@ python scripts/benchmark-teo-rag.py --json  # роутер + latency → teo-rag
 ```
 
 Дорожная карта: `docs/TEO_ROADMAP.md`  
-Простыми словами: `docs/TEO_ПРОСТЫМИ_СЛОВАМИ.md`
+Простыми словами: `docs/TEO_ПРОСТЫМИ_СЛОВАМИ.md`  
+NotebookLM (витрина отчётов): `docs/NOTEBOOKLM.md`
 
 | Режим | Когда |
 |-------|-------|
