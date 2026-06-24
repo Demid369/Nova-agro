@@ -105,7 +105,19 @@ python scripts/teo-scenario.py compare baseline poultry-variant
 python scripts/teo-query.py "what-if замена кроликов на птицеводство" --mode auto
 ```
 
-Черновик `poultry-variant` — оценочные NPV/CAPEX, требует пересчёта финмодели.
+Черновик `poultry-variant` — NPV/CAPEX из эвристики `derive_poultry_from_rabbit` (не полный DCF).
+
+## Применение сценария (волна 2)
+
+```bash
+python scripts/apply-teo-scenario.py derive-poultry   # показать расчёт
+python scripts/apply-teo-scenario.py apply poultry-variant  # KPI + graph derivative
+python scripts/apply-teo-scenario.py status
+python scripts/apply-teo-scenario.py restore          # вернуть baseline KPI
+```
+
+При активном сценарии `graphify query` использует `graphify-out/scenarios/<id>.json`.
+Reranker кэшируется в `teo-rag-out/model-cache/reranker/`.
 
 ## Полная проверка системы
 

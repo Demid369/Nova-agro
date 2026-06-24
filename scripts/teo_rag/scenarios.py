@@ -147,9 +147,8 @@ def compare_scenarios(base_id: str, variant_id: str) -> str:
     lines.extend([
         "",
         "## Действия для включения в RAG",
-        "1. Обновить docs/graphify-corpus/00-summary.md",
-        "2. python scripts/build-teo-kpi-index.py",
-        "3. python scripts/build-teo-vector-index.py",
-        "4. Пересборка графа (build-full + smart-semantic)",
+        "1. python scripts/apply-teo-scenario.py apply <variant>",
+        "2. python scripts/build-teo-vector-index.py  # опционально",
+        "3. python scripts/apply-teo-scenario.py restore  # вернуть baseline",
     ])
     return "\n".join(lines)

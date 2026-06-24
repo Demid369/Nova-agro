@@ -7,7 +7,7 @@ import shutil
 import subprocess
 from dataclasses import dataclass, field
 
-from .config import ROOT
+from .config import ROOT, resolve_graph_path
 
 
 @dataclass
@@ -45,8 +45,12 @@ def _graphify_bin() -> str:
 
 
 def run_graph_query(query: str, budget: int = 2500) -> GraphResult:
+    graph_path = resolve_graph_path()
+    cmd = [_graphify_bin(), "query", query, "--budget", str(budget)]
+    if graph_path.name != "graph.json":
+        cmd.extend(["--graph", str(graph_path)])
     proc = subprocess.run(
-        [_graphify_bin(), "query", query, "--budget", str(budget)],
+        cmd,
         cwd=ROOT,
         capture_output=True,
         text=True,
@@ -57,8 +61,12 @@ def run_graph_query(query: str, budget: int = 2500) -> GraphResult:
 
 
 def run_graph_path(source: str, target: str) -> GraphResult:
+    graph_path = resolve_graph_path()
+    cmd = [_graphify_bin(), "path", source, target]
+    if graph_path.name != "graph.json":
+        cmd.extend(["--graph", str(graph_path)])
     proc = subprocess.run(
-        [_graphify_bin(), "path", source, target],
+        cmd,
         cwd=ROOT,
         capture_output=True,
         text=True,

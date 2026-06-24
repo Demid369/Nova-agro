@@ -2,13 +2,22 @@
 # NPV/CAPEX — оценочные, требуют пересчёта финмодели ТЭО
 id: poultry-variant
 name: Птицеводство вместо кролиководства
-status: draft
+status: derived
 replaces: кролиководство
+
+finance_derivation:
+  method: heuristic_from_baseline_rabbit
+  baseline_block: кролиководство
+  assumptions:
+    margin_factor: 0.85
+    capex_marginal_per_1000t_bln: 1.0
+    irr_uplift_pct: 3.3
+    revenue_per_1000t_bln: 0.52
 
 project:
   investment_bln_rub: 105
   revenue_bln_rub_year: 74.0
-  note: "+5 млрд CAPEX птицы, +2.6 млрд выручки (оценка)"
+  note: "+5 млрд CAPEX птицы, +2.6 млрд выручки (эвристика от кроликов)"
 
 blocks:
   кролиководство:
@@ -19,11 +28,11 @@ blocks:
   птицеводство:
     label: Птицеводство (утка, перепёл, бройлер, индейка)
     active: true
-    output: "~12 000 т мяса птицы/год (оценка)"
+    output: "~12 000 т мяса птицы/год"
     capex_bln_rub: 17
-    npv_thousand_rub: 4200000
-    irr_pct: 18.5
-    payback_months: 72
+    npv_thousand_rub: 4050156
+    irr_pct: 18.49
+    payback_months: 75
     equipment: "TBD — бройлерные/утиные линии (аналог Gozzini/AIA)"
     slaughter: "Линия птицеубоя на площадке (SINT или аналог)"
     feed: "Комбикормовый завод — рецепты для птиц (03-proizvodstvo)"
