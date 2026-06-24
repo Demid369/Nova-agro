@@ -139,7 +139,7 @@ def main() -> int:
         min_community_size=MIN_SIZE,
     )
     (OUT / "GRAPH_REPORT.md").write_text(report, encoding="utf-8")
-    to_html(G, communities, str(OUT / "graph.html"), community_labels=labels)
+    to_html(G, communities, str(OUT / "graph.html"), community_labels=labels, node_limit=5000)
 
     named = sum(1 for v in labels.values() if not v.startswith("Community "))
     print(f"Labeled {named}/{len(labels)} communities (size>={MIN_SIZE})")

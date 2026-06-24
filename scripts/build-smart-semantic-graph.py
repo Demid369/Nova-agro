@@ -22,10 +22,22 @@ SRC_FIN = "docs/graphify-corpus/05-finansy-i-byudzhet.md"
 SRC_RISK = "docs/graphify-corpus/06-vyvody-i-riski.md"
 
 
+_SLUG_RE = re.compile(r"[^a-z0-9а-яё]+", re.I)
+
+
+def slugify(text: str, max_len: int = 60) -> str:
+    s = _SLUG_RE.sub("_", text.lower())[:max_len].strip("_")
+    if not s:
+        s = f"x{abs(hash(text.encode('utf-8'))) % 10_000_000:07d}"
+    return s
+
+
 def norm_id(stem: str, label: str) -> str:
-    base = re.sub(r"[^a-z0-9]+", "_", stem.lower())[:40].strip("_")
-    ent = re.sub(r"[^a-z0-9]+", "_", label.lower())[:80].strip("_")
-    return f"{base}_{ent}" if ent else base
+    base = slugify(stem, 40)
+    ent = slugify(label, 80)
+    if ent == base:
+        return f"{base}_n"
+    return f"{base}_{ent}"
 
 
 def node(nid: str, label: str, source: str, ftype: str = "concept") -> dict:
@@ -490,7 +502,7 @@ def main() -> int:
     )
     (OUT / "GRAPH_REPORT.md").write_text(report, encoding="utf-8")
     to_json(G, communities, str(OUT / "graph.json"), community_labels=labels, force=True)
-    to_html(G, communities, str(OUT / "graph.html"), community_labels=labels)
+    to_html(G, communities, str(OUT / "graph.html"), community_labels=labels, node_limit=5000)
     (OUT / ".graphify_python").write_text(sys.executable, encoding="utf-8")
 
     # stats

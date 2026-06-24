@@ -1,0 +1,6 @@
+/workspace/docs/graphify-corpus/00-summary.md
+/workspace/docs/graphify-corpus/01-vvedenie-i-resume.md
+/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+/workspace/docs/graphify-corpus/04-rynok-i-analitika.md
+/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md
+/workspace/docs/graphify-corpus/06-vyvody-i-riski.md

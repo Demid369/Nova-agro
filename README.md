@@ -60,7 +60,7 @@ uv tool run --from graphifyy python scripts/label-teo-communities.py
 uv tool run --from graphifyy python scripts/build-full-teo-graph.py
 ```
 
-Обрабатывает **146 markdown-файлов** (`docs/graphify-corpus/` + `docs/teo/`), строит структурный граф. Встроенный **фильтр шума** отсекает торговую статистику (`*-табл-*`, экспорт/импорт по странам, метрики).
+Обрабатывает **146 markdown-файлов**. Фильтр шума + **norm_id с кириллицей** + ограничение co-occurrence в `04-rynok` (только секции 4.2/4.3/5.1/6.1 и project-relevant параграфы).
 
 ## Семантическая экстракция (умные связи, deep mode)
 
@@ -75,7 +75,7 @@ uv tool run --from graphifyy python scripts/build-smart-semantic-graph.py
 
 Для перегенерации LLM-чанков в Cursor: `/graphify docs/graphify-corpus --mode deep`
 
-Текущий граф (после фильтра шума + semantic merge): **~2500 узлов**, **~6300 рёбер**, **~280 сообществ**.
+Текущий граф (после fix norm_id + semantic merge): **~8 400** узлов, **~24 700** рёбер, **~595** сообществ. `graph.html` — агрегированный вид по сообществам (>5000 узлов).
 
 Стартовый мини-граф (29 узлов):
 

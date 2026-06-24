@@ -47,10 +47,28 @@ RISK_TYPES = [
 ]
 
 
+_SLUG_RE = re.compile(r"[^a-z0-9а-яё]+", re.I)
+
+MARKET_SECTION_RE = re.compile(
+    r"(4\.2\.|4\.3\.|5\.1\.|6\.1\.|концепция маркетинга|прогноз продаж|"
+    r"классификация сырья|swot|преимуществ|импортозамещ)",
+    re.I,
+)
+
+
+def slugify(text: str, max_len: int = 60) -> str:
+    s = _SLUG_RE.sub("_", text.lower())[:max_len].strip("_")
+    if not s:
+        s = f"x{abs(hash(text.encode('utf-8'))) % 10_000_000:07d}"
+    return s
+
+
 def norm_id(stem: str, label: str) -> str:
-    base = re.sub(r"[^a-z0-9]+", "_", stem.lower())[:40].strip("_")
-    ent = re.sub(r"[^a-z0-9]+", "_", label.lower())[:60].strip("_")
-    return f"{base}_{ent}" if ent else base
+    base = slugify(stem, 40)
+    ent = slugify(label, 80)
+    if ent == base:
+        return f"{base}_n"
+    return f"{base}_{ent}"
 
 
 def node(nid: str, label: str, source: str, ftype: str = "concept") -> dict:
@@ -329,6 +347,7 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
         return list(nodes.values()), edges
     heading_stack: list[tuple[int, str]] = []
     prev_nid = doc_nid
+    in_market_section = not is_market_corpus_file(path)
 
     paragraphs: list[str] = []
     current_para: list[str] = []
@@ -348,6 +367,8 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
                 heading_stack.pop()
             if is_noise_heading(title, path):
                 continue
+            if is_market_corpus_file(path):
+                in_market_section = bool(MARKET_SECTION_RE.search(title))
             nid = add_node(title, "concept")
             if heading_stack:
                 e = edge(heading_stack[-1][1], nid, REL_HIER, rel)
@@ -373,7 +394,11 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
     for para in paragraphs:
         if should_skip_paragraph(para, path):
             continue
+        if is_market_corpus_file(path) and not in_market_section and not PROJECT_MARKET_RE.search(para):
+            continue
         ents = tokenize_entities(para)
+        if is_market_corpus_file(path) and not in_market_section:
+            ents = [e for e in ents if any(pe.lower() in e.lower() for pe in PROJECT_ENTITIES) or PROJECT_MARKET_RE.search(e)]
         nids = [add_node(e) for e in ents]
         nids = [n for n in nids if n]
         if not nids:
@@ -383,6 +408,8 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
             e = edge(anchor, n, REL_CO, rel, "INFERRED", 0.75)
             if e:
                 edges.append(e)
+        if is_market_corpus_file(path) and not in_market_section:
+            continue
         for i in range(len(nids)):
             for j in range(i + 1, min(i + 4, len(nids))):
                 e = edge(nids[i], nids[j], REL_CO, rel, "INFERRED", 0.65)
@@ -514,7 +541,7 @@ def main() -> int:
     )
     (OUT / "GRAPH_REPORT.md").write_text(report, encoding="utf-8")
     to_json(G, communities, str(OUT / "graph.json"), community_labels=labels, force=True)
-    to_html(G, communities, str(OUT / "graph.html"), community_labels=labels)
+    to_html(G, communities, str(OUT / "graph.html"), community_labels=labels, node_limit=5000)
     (OUT / ".graphify_python").write_text(sys.executable, encoding="utf-8")
 
     print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges, {len(communities)} communities")

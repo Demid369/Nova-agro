@@ -1,77 +1,231 @@
 {
   "nodes": [
     {
-      "id": "00_summary",
+      "id": "00_summary_ооо_моя_мечта",
       "label": "ООО «МОЯ МЕЧТА»",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "00_summary_100",
+      "id": "00_summary_херсонская_область",
+      "label": "Херсонская область",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_кролиководство",
+      "label": "Кролиководство",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_тепличный_комплекс_100_га",
       "label": "Тепличный комплекс 100 га",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "01_vvedenie_i_resume",
+      "id": "00_summary_животноводство_крс_мрс",
+      "label": "Животноводство КРС/МРС",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_рыбоводство_белуга",
+      "label": "Рыбоводство белуга",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_масложировой_комбинат",
+      "label": "Масложировой комбинат",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_комбикормовый_завод",
       "label": "Комбикормовый завод",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
       "source_location": null
     },
     {
-      "id": "00_summary_20",
+      "id": "00_summary_биогазовая_установка_20_мвт_ч",
       "label": "Биогазовая установка 20 МВт·ч",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "00_summary_50",
+      "id": "00_summary_солнечные_панели_50_мвт_ч",
       "label": "Солнечные панели 50 МВт·ч",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "00_summary_5_6",
+      "id": "01_vvedenie_i_resume_убойный_цех",
+      "label": "Убойный цех",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_завод_халяльного_желатина",
+      "label": "Завод халяльного желатина",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_кожевенный_завод",
+      "label": "Кожевенный завод",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_завод_кровяной_муки",
+      "label": "Завод кровяной муки",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_завод_переработки_молока",
+      "label": "Завод переработки молока",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_генетический_центр_крс",
+      "label": "Генетический центр КРС",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_генетический_центр_фризон",
+      "label": "Генетический центр Фризон",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_бесплатный_убой_для_производителей",
+      "label": "Бесплатный убой для производителей",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_нулевая_себестоимость_мяса",
+      "label": "Нулевая себестоимость мяса",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_побочные_продукты_убоя_шкуры_кровь_головы_лапы",
+      "label": "Побочные продукты убоя (шкуры, кровь, головы, лапы)",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_прибыль_переработки_5_6_млрд_руб",
       "label": "Прибыль переработки 5,6 млрд руб.",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "00_summary_5_8",
+      "id": "00_summary_затраты_на_мясо_5_8_млрд_руб",
       "label": "Затраты на мясо 5,8 млрд руб.",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "01_vvedenie_i_resume_5_6",
+      "id": "01_vvedenie_i_resume_замкнутый_безотходный_цикл",
+      "label": "Замкнутый безотходный цикл",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_прибыль_переработки_5_6_млрд_руб",
       "label": "Прибыль переработки 5,6 млрд руб.",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
       "source_location": null
     },
     {
-      "id": "01_vvedenie_i_resume_34_000",
+      "id": "01_vvedenie_i_resume_животноводство_крс_мрс",
+      "label": "Животноводство КРС/МРС",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_сертификат_халяль",
+      "label": "Сертификат Халяль",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_посев_подсолнечника_34_000_га",
       "label": "Посев подсолнечника 34 000 га",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
       "source_location": null
     },
     {
-      "id": "01_vvedenie_i_resume_20",
+      "id": "01_vvedenie_i_resume_посев_сои_34_000_га",
+      "label": "Посев сои 34 000 га",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_масложировой_комбинат",
+      "label": "Масложировой комбинат",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_кролиководство",
+      "label": "Кролиководство",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_навоз_и_органические_отходы",
+      "label": "Навоз и органические отходы",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_биогазовая_установка_20_мвт_ч",
       "label": "Биогазовая установка 20 МВт·ч",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
       "source_location": null
     },
     {
-      "id": "01_vvedenie_i_resume_600_000",
+      "id": "01_vvedenie_i_resume_компост_и_органические_удобрения_600_000_т",
       "label": "Компост и органические удобрения 600 000 т",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
@@ -87,6 +241,13 @@
     {
       "id": "00_summary_aia_associazione_italiana_allevatori",
       "label": "AIA Associazione Italiana Allevatori",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_генетический_центр_крс",
+      "label": "Генетический центр КРС",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
@@ -113,21 +274,147 @@
       "source_location": null
     },
     {
-      "id": "00_summary_10_2",
+      "id": "00_summary_комбикормовый_завод",
+      "label": "Комбикормовый завод",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_кьянина",
+      "label": "Кьянина",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_маркиджиана",
+      "label": "Маркиджиана",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_лимузин",
+      "label": "Лимузин",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_фризон",
+      "label": "Фризон",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_меринос",
+      "label": "Меринос",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_суффолк",
+      "label": "Суффолк",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "01_vvedenie_i_resume_дорпер",
+      "label": "Дорпер",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_чёрная_икра",
+      "label": "Чёрная икра",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_чёрная_икра_20_т_год",
+      "label": "Чёрная икра 20 т/год",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_экспорт_10_2_млрд_руб",
       "label": "Экспорт 10,2 млрд руб.",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "00_summary_71_4",
+      "id": "00_summary_снг",
+      "label": "СНГ",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_азия",
+      "label": "Азия",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_арабские_страны",
+      "label": "Арабские страны",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_ближний_восток",
+      "label": "Ближний Восток",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_натуральная_кожа",
+      "label": "Натуральная кожа",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_халяльный_желатин",
+      "label": "Халяльный желатин",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_шерсть_мериноса",
+      "label": "Шерсть мериноса",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_инвестиции_100_млрд_руб",
+      "label": "Инвестиции 100 млрд руб.",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "00_summary_выручка_71_4_млрд_руб_год",
       "label": "Выручка 71,4 млрд руб./год",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "00_summary_npv_2_78",
+      "id": "00_summary_npv_кролиководство_2_78_млрд",
       "label": "NPV кролиководство 2,78 млрд",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
@@ -141,7 +428,7 @@
       "source_location": null
     },
     {
-      "id": "00_summary_npv_33_86",
+      "id": "00_summary_npv_теплицы_33_86_млрд",
       "label": "NPV теплицы 33,86 млрд",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
@@ -155,7 +442,7 @@
       "source_location": null
     },
     {
-      "id": "00_summary_npv_28_92",
+      "id": "00_summary_npv_животноводство_28_92_млрд",
       "label": "NPV животноводство 28,92 млрд",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
@@ -169,7 +456,7 @@
       "source_location": null
     },
     {
-      "id": "00_summary_npv_3_86",
+      "id": "00_summary_npv_рыбоводство_3_86_млрд",
       "label": "NPV рыбоводство 3,86 млрд",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
@@ -183,7 +470,7 @@
       "source_location": null
     },
     {
-      "id": "00_summary_npv_26_83",
+      "id": "00_summary_npv_масложировой_26_83_млрд",
       "label": "NPV масложировой 26,83 млрд",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
@@ -197,64 +484,302 @@
       "source_location": null
     },
     {
-      "id": "00_summary_8",
+      "id": "00_summary_окупаемость_8_лет",
       "label": "Окупаемость 8 лет",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/00-summary.md",
       "source_location": null
     },
     {
-      "id": "06_vyvody_i_riski",
+      "id": "06_vyvody_i_riski_технологические_риски",
       "label": "Технологические риски",
       "file_type": "rationale",
       "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
       "source_location": null
     },
     {
-      "id": "06_vyvody_i_riski_iot",
+      "id": "06_vyvody_i_riski_iot_мониторинг_и_обучение_персонала",
       "label": "IoT-мониторинг и обучение персонала",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
       "source_location": null
     },
     {
-      "id": "04_rynok_i_analitika_12_1",
+      "id": "06_vyvody_i_riski_биологические_и_ветеринарные_риски",
+      "label": "Биологические и ветеринарные риски",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_ветеринарный_контроль_и_страхование_поголовья",
+      "label": "Ветеринарный контроль и страхование поголовья",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_климатические_и_природные_риски",
+      "label": "Климатические и природные риски",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_автономная_энергетика_и_капельное_орошение",
+      "label": "Автономная энергетика и капельное орошение",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_экономические_и_рыночные_риски",
+      "label": "Экономические и рыночные риски",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_долгосрочные_контракты_и_валютная_диверсификация",
+      "label": "Долгосрочные контракты и валютная диверсификация",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_юридические_и_регуляторные_риски",
+      "label": "Юридические и регуляторные риски",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_юридический_мониторинг_и_лицензирование",
+      "label": "Юридический мониторинг и лицензирование",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_финансовые_риски",
+      "label": "Финансовые риски",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_поэтапное_финансирование_и_резервный_фонд",
+      "label": "Поэтапное финансирование и резервный фонд",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_логистические_риски",
+      "label": "Логистические риски",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_собственная_логистика_и_запасы_материалов",
+      "label": "Собственная логистика и запасы материалов",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_социальные_и_кадровые_риски",
+      "label": "Социальные и кадровые риски",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_социальные_проекты_и_программы_обучения",
+      "label": "Социальные проекты и программы обучения",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_экологические_риски",
+      "label": "Экологические риски",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "06_vyvody_i_riski_биогаз_и_зелёные_сертификаты",
+      "label": "Биогаз и зелёные сертификаты",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_дефицит_мяса_в_рф_12_1_млн_т",
       "label": "Дефицит мяса в РФ 12,1 млн т",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
       "source_location": null
     },
     {
-      "id": "04_rynok_i_analitika",
+      "id": "04_rynok_i_analitika_животноводство_крс_мрс",
       "label": "Животноводство КРС/МРС",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
       "source_location": null
     },
     {
-      "id": "04_rynok_i_analitika_80",
+      "id": "04_rynok_i_analitika_импортозамещение_продовольствия",
+      "label": "Импортозамещение продовольствия",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_ооо_моя_мечта",
+      "label": "ООО «МОЯ МЕЧТА»",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_госпрограмма_восстановления_херсонской_области",
+      "label": "Госпрограмма восстановления Херсонской области",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_херсонская_область",
+      "label": "Херсонская область",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_спрос_на_халяльную_продукцию",
+      "label": "Спрос на халяльную продукцию",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_сертификат_халяль",
+      "label": "Сертификат Халяль",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_рост_экспорта_маргарина_рф_80",
       "label": "Рост экспорта маргарина РФ +80%",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
       "source_location": null
     },
     {
-      "id": "04_rynok_i_analitika_10_2",
+      "id": "04_rynok_i_analitika_масложировой_комбинат",
+      "label": "Масложировой комбинат",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_дефицит_переработки_шкур_до_80_потерь",
+      "label": "Дефицит переработки шкур до 80% потерь",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_кожевенный_завод",
+      "label": "Кожевенный завод",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_спрос_на_телятину_и_ягнятину_ближний_восток",
+      "label": "Спрос на телятину и ягнятину Ближний Восток",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_экспорт_10_2_млрд_руб",
       "label": "Экспорт 10,2 млрд руб.",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
       "source_location": null
     },
     {
-      "id": "04_rynok_i_analitika_100",
+      "id": "04_rynok_i_analitika_круглогодичное_тепличное_производство",
+      "label": "Круглогодичное тепличное производство",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null
+    },
+    {
+      "id": "04_rynok_i_analitika_тепличный_комплекс_100_га",
       "label": "Тепличный комплекс 100 га",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
       "source_location": null
     },
     {
-      "id": "03_proizvodstvo_i_tehnologii",
+      "id": "03_proizvodstvo_i_tehnologii_завод_переработки_молока",
       "label": "Завод переработки молока",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "03_proizvodstvo_i_tehnologii_кефир",
+      "label": "Кефир",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "03_proizvodstvo_i_tehnologii_творог",
+      "label": "Творог",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "03_proizvodstvo_i_tehnologii_сыр_твёрдый",
+      "label": "Сыр твёрдый",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "03_proizvodstvo_i_tehnologii_сливочное_масло",
+      "label": "Сливочное масло",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "03_proizvodstvo_i_tehnologii_сметана",
+      "label": "Сметана",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "03_proizvodstvo_i_tehnologii_сыворотка_корм_и_пищевые_добавки",
+      "label": "Сыворотка — корм и пищевые добавки",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "03_proizvodstvo_i_tehnologii_комбикормовый_завод",
+      "label": "Комбикормовый завод",
       "file_type": "concept",
       "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
       "source_location": null
@@ -3973,8 +4498,8 @@
   ],
   "edges": [
     {
-      "source": "00_summary",
-      "target": "00_summary_100",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_херсонская_область",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -3983,18 +4508,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "01_vvedenie_i_resume",
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary",
-      "target": "00_summary_20",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_кролиководство",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4003,8 +4518,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "00_summary_50",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_тепличный_комплекс_100_га",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4013,8 +4528,38 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "01_vvedenie_i_resume",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_животноводство_крс_мрс",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_рыбоводство_белуга",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_масложировой_комбинат",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "01_vvedenie_i_resume_комбикормовый_завод",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4023,8 +4568,28 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "01_vvedenie_i_resume",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_биогазовая_установка_20_мвт_ч",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_солнечные_панели_50_мвт_ч",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "01_vvedenie_i_resume_убойный_цех",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4033,8 +4598,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "01_vvedenie_i_resume",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "01_vvedenie_i_resume_завод_халяльного_желатина",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4043,8 +4608,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "01_vvedenie_i_resume",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "01_vvedenie_i_resume_кожевенный_завод",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4053,8 +4618,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "01_vvedenie_i_resume",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "01_vvedenie_i_resume_завод_кровяной_муки",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4063,8 +4628,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "01_vvedenie_i_resume",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "01_vvedenie_i_resume_завод_переработки_молока",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4073,8 +4638,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "01_vvedenie_i_resume",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "01_vvedenie_i_resume_генетический_центр_крс",
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4083,8 +4648,28 @@
       "weight": 1.0
     },
     {
-      "source": "01_vvedenie_i_resume",
-      "target": "01_vvedenie_i_resume_5_6",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "01_vvedenie_i_resume_генетический_центр_фризон",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_бесплатный_убой_для_производителей",
+      "target": "01_vvedenie_i_resume_побочные_продукты_убоя_шкуры_кровь_головы_лапы",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_побочные_продукты_убоя_шкуры_кровь_головы_лапы",
+      "target": "01_vvedenie_i_resume_прибыль_переработки_5_6_млрд_руб",
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
@@ -4093,8 +4678,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_5_6",
-      "target": "00_summary_5_8",
+      "source": "00_summary_прибыль_переработки_5_6_млрд_руб",
+      "target": "00_summary_затраты_на_мясо_5_8_млрд_руб",
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -4103,8 +4688,8 @@
       "weight": 1.0
     },
     {
-      "source": "01_vvedenie_i_resume_5_6",
-      "target": "01_vvedenie_i_resume",
+      "source": "01_vvedenie_i_resume_прибыль_переработки_5_6_млрд_руб",
+      "target": "01_vvedenie_i_resume_нулевая_себестоимость_мяса",
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
@@ -4113,8 +4698,68 @@
       "weight": 1.0
     },
     {
-      "source": "01_vvedenie_i_resume_34_000",
-      "target": "01_vvedenie_i_resume",
+      "source": "01_vvedenie_i_resume_замкнутый_безотходный_цикл",
+      "target": "01_vvedenie_i_resume_нулевая_себестоимость_мяса",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_убойный_цех",
+      "target": "01_vvedenie_i_resume_завод_халяльного_желатина",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_убойный_цех",
+      "target": "01_vvedenie_i_resume_кожевенный_завод",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_убойный_цех",
+      "target": "01_vvedenie_i_resume_завод_кровяной_муки",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_животноводство_крс_мрс",
+      "target": "01_vvedenie_i_resume_убойный_цех",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_завод_халяльного_желатина",
+      "target": "01_vvedenie_i_resume_сертификат_халяль",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_посев_подсолнечника_34_000_га",
+      "target": "01_vvedenie_i_resume_масложировой_комбинат",
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
@@ -4123,8 +4768,28 @@
       "weight": 1.0
     },
     {
-      "source": "01_vvedenie_i_resume_34_000",
-      "target": "01_vvedenie_i_resume",
+      "source": "01_vvedenie_i_resume_масложировой_комбинат",
+      "target": "01_vvedenie_i_resume_комбикормовый_завод",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_комбикормовый_завод",
+      "target": "01_vvedenie_i_resume_животноводство_крс_мрс",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_комбикормовый_завод",
+      "target": "01_vvedenie_i_resume_кролиководство",
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -4133,8 +4798,28 @@
       "weight": 1.0
     },
     {
-      "source": "01_vvedenie_i_resume",
-      "target": "01_vvedenie_i_resume_20",
+      "source": "01_vvedenie_i_resume_посев_сои_34_000_га",
+      "target": "01_vvedenie_i_resume_комбикормовый_завод",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_животноводство_крс_мрс",
+      "target": "01_vvedenie_i_resume_навоз_и_органические_отходы",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_навоз_и_органические_отходы",
+      "target": "01_vvedenie_i_resume_биогазовая_установка_20_мвт_ч",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4143,8 +4828,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_20",
-      "target": "00_summary_50",
+      "source": "00_summary_биогазовая_установка_20_мвт_ч",
+      "target": "00_summary_солнечные_панели_50_мвт_ч",
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4153,8 +4838,8 @@
       "weight": 1.0
     },
     {
-      "source": "01_vvedenie_i_resume_20",
-      "target": "01_vvedenie_i_resume_600_000",
+      "source": "01_vvedenie_i_resume_биогазовая_установка_20_мвт_ч",
+      "target": "01_vvedenie_i_resume_компост_и_органические_удобрения_600_000_т",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4163,8 +4848,8 @@
       "weight": 1.0
     },
     {
-      "source": "01_vvedenie_i_resume_600_000",
-      "target": "01_vvedenie_i_resume_34_000",
+      "source": "01_vvedenie_i_resume_компост_и_органические_удобрения_600_000_т",
+      "target": "01_vvedenie_i_resume_посев_подсолнечника_34_000_га",
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -4174,7 +4859,7 @@
     },
     {
       "source": "00_summary_meneghin_srl",
-      "target": "00_summary",
+      "target": "00_summary_кролиководство",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4184,7 +4869,7 @@
     },
     {
       "source": "00_summary_aia_associazione_italiana_allevatori",
-      "target": "00_summary",
+      "target": "00_summary_генетический_центр_крс",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4194,7 +4879,7 @@
     },
     {
       "source": "00_summary_sint_technologies",
-      "target": "00_summary_100",
+      "target": "00_summary_тепличный_комплекс_100_га",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4204,7 +4889,7 @@
     },
     {
       "source": "00_summary_hocevar",
-      "target": "00_summary_100",
+      "target": "00_summary_тепличный_комплекс_100_га",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4214,7 +4899,7 @@
     },
     {
       "source": "00_summary_gozzini",
-      "target": "00_summary",
+      "target": "00_summary_комбикормовый_завод",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4223,8 +4908,78 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "00_summary_20",
+      "source": "01_vvedenie_i_resume_кьянина",
+      "target": "01_vvedenie_i_resume_генетический_центр_крс",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_маркиджиана",
+      "target": "01_vvedenie_i_resume_генетический_центр_крс",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_лимузин",
+      "target": "01_vvedenie_i_resume_генетический_центр_крс",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_фризон",
+      "target": "01_vvedenie_i_resume_генетический_центр_фризон",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_меринос",
+      "target": "01_vvedenie_i_resume_животноводство_крс_мрс",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_суффолк",
+      "target": "01_vvedenie_i_resume_животноводство_крс_мрс",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_vvedenie_i_resume_дорпер",
+      "target": "01_vvedenie_i_resume_животноводство_крс_мрс",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_рыбоводство_белуга",
+      "target": "00_summary_чёрная_икра",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4233,88 +4988,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_10_2",
-      "target": "00_summary",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/graphify-corpus/00-summary.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary_10_2",
-      "target": "00_summary",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/graphify-corpus/00-summary.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary_10_2",
-      "target": "00_summary",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/graphify-corpus/00-summary.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary_10_2",
-      "target": "00_summary",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/graphify-corpus/00-summary.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary",
-      "target": "00_summary_10_2",
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "docs/graphify-corpus/00-summary.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary",
-      "target": "00_summary_10_2",
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "docs/graphify-corpus/00-summary.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary",
-      "target": "00_summary_10_2",
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "docs/graphify-corpus/00-summary.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary",
-      "target": "00_summary_10_2",
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "docs/graphify-corpus/00-summary.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "00_summary",
-      "target": "00_summary_100",
+      "source": "00_summary_рыбоводство_белуга",
+      "target": "00_summary_чёрная_икра_20_т_год",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4323,8 +4998,88 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "00_summary_71_4",
+      "source": "00_summary_экспорт_10_2_млрд_руб",
+      "target": "00_summary_снг",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_экспорт_10_2_млрд_руб",
+      "target": "00_summary_азия",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_экспорт_10_2_млрд_руб",
+      "target": "00_summary_арабские_страны",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_экспорт_10_2_млрд_руб",
+      "target": "00_summary_ближний_восток",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_натуральная_кожа",
+      "target": "00_summary_экспорт_10_2_млрд_руб",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_халяльный_желатин",
+      "target": "00_summary_экспорт_10_2_млрд_руб",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_чёрная_икра",
+      "target": "00_summary_экспорт_10_2_млрд_руб",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_шерсть_мериноса",
+      "target": "00_summary_экспорт_10_2_млрд_руб",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_инвестиции_100_млрд_руб",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4333,8 +5088,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_2_78",
-      "target": "00_summary",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "00_summary_выручка_71_4_млрд_руб_год",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_npv_кролиководство_2_78_млрд",
+      "target": "00_summary_кролиководство",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4343,7 +5108,7 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_2_78",
+      "source": "00_summary_npv_кролиководство_2_78_млрд",
       "target": "00_summary_irr_15_19",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
@@ -4353,8 +5118,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_33_86",
-      "target": "00_summary_100",
+      "source": "00_summary_npv_теплицы_33_86_млрд",
+      "target": "00_summary_тепличный_комплекс_100_га",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4363,7 +5128,7 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_33_86",
+      "source": "00_summary_npv_теплицы_33_86_млрд",
       "target": "00_summary_irr_28_99",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
@@ -4373,8 +5138,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_28_92",
-      "target": "00_summary",
+      "source": "00_summary_npv_животноводство_28_92_млрд",
+      "target": "00_summary_животноводство_крс_мрс",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4383,7 +5148,7 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_28_92",
+      "source": "00_summary_npv_животноводство_28_92_млрд",
       "target": "00_summary_irr_23_25",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
@@ -4393,8 +5158,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_3_86",
-      "target": "00_summary",
+      "source": "00_summary_npv_рыбоводство_3_86_млрд",
+      "target": "00_summary_рыбоводство_белуга",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4403,7 +5168,7 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_3_86",
+      "source": "00_summary_npv_рыбоводство_3_86_млрд",
       "target": "00_summary_irr_17_19",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
@@ -4413,8 +5178,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_26_83",
-      "target": "00_summary",
+      "source": "00_summary_npv_масложировой_26_83_млрд",
+      "target": "00_summary_масложировой_комбинат",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4423,7 +5188,7 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_npv_26_83",
+      "source": "00_summary_npv_масложировой_26_83_млрд",
       "target": "00_summary_irr_90_24",
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
@@ -4433,8 +5198,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary_71_4",
-      "target": "00_summary_8",
+      "source": "00_summary_выручка_71_4_млрд_руб_год",
+      "target": "00_summary_окупаемость_8_лет",
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -4443,8 +5208,8 @@
       "weight": 1.0
     },
     {
-      "source": "06_vyvody_i_riski",
-      "target": "06_vyvody_i_riski_iot",
+      "source": "06_vyvody_i_riski_технологические_риски",
+      "target": "06_vyvody_i_riski_iot_мониторинг_и_обучение_персонала",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4453,8 +5218,8 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_технологические_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4463,8 +5228,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "06_vyvody_i_riski_биологические_и_ветеринарные_риски",
+      "target": "06_vyvody_i_riski_ветеринарный_контроль_и_страхование_поголовья",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_биологические_и_ветеринарные_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4473,8 +5248,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "06_vyvody_i_riski_климатические_и_природные_риски",
+      "target": "06_vyvody_i_riski_автономная_энергетика_и_капельное_орошение",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_климатические_и_природные_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4483,8 +5268,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "06_vyvody_i_riski_экономические_и_рыночные_риски",
+      "target": "06_vyvody_i_riski_долгосрочные_контракты_и_валютная_диверсификация",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_экономические_и_рыночные_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4493,8 +5288,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "06_vyvody_i_riski_юридические_и_регуляторные_риски",
+      "target": "06_vyvody_i_riski_юридический_мониторинг_и_лицензирование",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_юридические_и_регуляторные_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4503,8 +5308,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "06_vyvody_i_riski_финансовые_риски",
+      "target": "06_vyvody_i_riski_поэтапное_финансирование_и_резервный_фонд",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_финансовые_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4513,8 +5328,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "06_vyvody_i_riski_логистические_риски",
+      "target": "06_vyvody_i_riski_собственная_логистика_и_запасы_материалов",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_логистические_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4523,8 +5348,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "06_vyvody_i_riski_социальные_и_кадровые_риски",
+      "target": "06_vyvody_i_riski_социальные_проекты_и_программы_обучения",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_социальные_и_кадровые_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4533,8 +5368,18 @@
       "weight": 1.0
     },
     {
-      "source": "00_summary",
-      "target": "06_vyvody_i_riski",
+      "source": "06_vyvody_i_riski_экологические_риски",
+      "target": "06_vyvody_i_riski_биогаз_и_зелёные_сертификаты",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/06-vyvody-i-riski.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_summary_ооо_моя_мечта",
+      "target": "06_vyvody_i_riski_экологические_риски",
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4543,8 +5388,8 @@
       "weight": 1.0
     },
     {
-      "source": "04_rynok_i_analitika_12_1",
-      "target": "04_rynok_i_analitika",
+      "source": "04_rynok_i_analitika_дефицит_мяса_в_рф_12_1_млн_т",
+      "target": "04_rynok_i_analitika_животноводство_крс_мрс",
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -4553,8 +5398,8 @@
       "weight": 1.0
     },
     {
-      "source": "04_rynok_i_analitika_80",
-      "target": "04_rynok_i_analitika",
+      "source": "04_rynok_i_analitika_импортозамещение_продовольствия",
+      "target": "04_rynok_i_analitika_ооо_моя_мечта",
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -4563,8 +5408,8 @@
       "weight": 1.0
     },
     {
-      "source": "04_rynok_i_analitika_80",
-      "target": "04_rynok_i_analitika",
+      "source": "04_rynok_i_analitika_госпрограмма_восстановления_херсонской_области",
+      "target": "04_rynok_i_analitika_херсонская_область",
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -4573,8 +5418,8 @@
       "weight": 1.0
     },
     {
-      "source": "04_rynok_i_analitika",
-      "target": "04_rynok_i_analitika_10_2",
+      "source": "04_rynok_i_analitika_спрос_на_халяльную_продукцию",
+      "target": "04_rynok_i_analitika_сертификат_халяль",
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -4583,12 +5428,112 @@
       "weight": 1.0
     },
     {
-      "source": "04_rynok_i_analitika",
-      "target": "04_rynok_i_analitika_100",
+      "source": "04_rynok_i_analitika_рост_экспорта_маргарина_рф_80",
+      "target": "04_rynok_i_analitika_масложировой_комбинат",
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "04_rynok_i_analitika_дефицит_переработки_шкур_до_80_потерь",
+      "target": "04_rynok_i_analitika_кожевенный_завод",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "04_rynok_i_analitika_спрос_на_телятину_и_ягнятину_ближний_восток",
+      "target": "04_rynok_i_analitika_экспорт_10_2_млрд_руб",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "04_rynok_i_analitika_круглогодичное_тепличное_производство",
+      "target": "04_rynok_i_analitika_тепличный_комплекс_100_га",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "03_proizvodstvo_i_tehnologii_завод_переработки_молока",
+      "target": "03_proizvodstvo_i_tehnologii_кефир",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "03_proizvodstvo_i_tehnologii_завод_переработки_молока",
+      "target": "03_proizvodstvo_i_tehnologii_творог",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "03_proizvodstvo_i_tehnologii_завод_переработки_молока",
+      "target": "03_proizvodstvo_i_tehnologii_сыр_твёрдый",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "03_proizvodstvo_i_tehnologii_завод_переработки_молока",
+      "target": "03_proizvodstvo_i_tehnologii_сливочное_масло",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "03_proizvodstvo_i_tehnologii_завод_переработки_молока",
+      "target": "03_proizvodstvo_i_tehnologii_сметана",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "03_proizvodstvo_i_tehnologii_творог",
+      "target": "03_proizvodstvo_i_tehnologii_сыворотка_корм_и_пищевые_добавки",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "03_proizvodstvo_i_tehnologii_сыворотка_корм_и_пищевые_добавки",
+      "target": "03_proizvodstvo_i_tehnologii_комбикормовый_завод",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
       "source_location": null,
       "weight": 1.0
     },
@@ -10393,11 +11338,11 @@
       "id": "closed_cycle_apk",
       "label": "Замкнутый агропромышленный цикл",
       "nodes": [
-        "01_vvedenie_i_resume_34_000",
-        "01_vvedenie_i_resume",
-        "00_summary",
-        "01_vvedenie_i_resume",
-        "00_summary_20"
+        "01_vvedenie_i_resume_посев_подсолнечника_34_000_га",
+        "01_vvedenie_i_resume_комбикормовый_завод",
+        "00_summary_животноводство_крс_мрс",
+        "01_vvedenie_i_resume_убойный_цех",
+        "00_summary_биогазовая_установка_20_мвт_ч"
       ],
       "relation": "participate_in",
       "confidence": "INFERRED",
@@ -10408,11 +11353,11 @@
       "id": "byproduct_value_chain",
       "label": "Цепочка монетизации побочных продуктов",
       "nodes": [
-        "01_vvedenie_i_resume",
-        "01_vvedenie_i_resume",
-        "01_vvedenie_i_resume",
-        "01_vvedenie_i_resume",
-        "01_vvedenie_i_resume"
+        "01_vvedenie_i_resume_убойный_цех",
+        "01_vvedenie_i_resume_кожевенный_завод",
+        "01_vvedenie_i_resume_завод_халяльного_желатина",
+        "01_vvedenie_i_resume_завод_кровяной_муки",
+        "01_vvedenie_i_resume_нулевая_себестоимость_мяса"
       ],
       "relation": "form",
       "confidence": "EXTRACTED",
@@ -10423,10 +11368,10 @@
       "id": "green_energy_cluster",
       "label": "Кластер зелёной энергии",
       "nodes": [
-        "00_summary_20",
-        "00_summary_50",
-        "01_vvedenie_i_resume",
-        "01_vvedenie_i_resume"
+        "00_summary_биогазовая_установка_20_мвт_ч",
+        "00_summary_солнечные_панели_50_мвт_ч",
+        "01_vvedenie_i_resume_навоз_и_органические_отходы",
+        "01_vvedenie_i_resume_замкнутый_безотходный_цикл"
       ],
       "relation": "participate_in",
       "confidence": "INFERRED",
