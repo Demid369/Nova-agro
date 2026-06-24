@@ -3,3 +3,5 @@ graphify-out/cache/
 graphify-out/.graphify_uncached.txt
 teo-rag-out/chroma/
 teo-rag-out/build.log
+__pycache__/
+*.pyc
