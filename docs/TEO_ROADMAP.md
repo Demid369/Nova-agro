@@ -16,8 +16,9 @@
 | Волна 2 | Scenario apply (инфраструктура), reranker cache | main |
 | Волна 3 | README/roadmap, memory seed, benchmark report | main |
 | Волна 4 | 50 тест-запросов + memory checklist | main |
+| Волна 5 | Memory seed 15 ответов + объяснение | main |
 
-Тесты: `python scripts/test-teo-system.py` → **118 проверок** (50 запросов в benchmark)
+Тесты: `python scripts/test-teo-system.py` → **120+** проверок
 
 ---
 
@@ -42,9 +43,13 @@ python scripts/test-teo-system.py
 
 ---
 
-## Волна 5 — накопление memory (по чек-листу)
+## Волна 5 — память ✅
 
-См. `tests/teo-memory-checklist.md` — `--synthesize --save-memory` для топ-вопросов.
+15 проверенных ответов в `tests/teo-memory-seed.yaml`. Объяснение для команды: `docs/TEO_ПРОСТЫМИ_СЛОВАМИ.md`.
+
+```bash
+python scripts/seed-teo-memory-baseline.py
+```
 
 ---
 
