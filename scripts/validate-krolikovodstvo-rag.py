@@ -23,9 +23,13 @@ from krolikovodstvo_inventory import (  # noqa: E402
     INVENTORY_DIR,
     RABBIT_RE,
     REPORTS_DIR,
+    assert_registry_valid,
+    duplicates_by_teo,
     load_registry,
     read_text,
+    registry_hash,
     resolve_path,
+    write_docx_audit,
 )
 
 REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -43,13 +47,14 @@ def fact_present(text: str, *needles: str) -> bool:
     t_compact = t.replace(" ", "")
     for n in needles:
         nlow = n.lower()
-        if nlow not in t and nlow.replace(" ", "") not in t_compact:
-            return False
-    return True
+        if nlow in t or nlow.replace(" ", "") in t_compact:
+            return True
+    return False
 
 
 def check_canonical_facts(registry: dict) -> list[dict]:
     facts = registry["canonical_facts"]
+    summary_text = read_text("docs/graphify-corpus/00-summary.md")
     checks = [
         ("output_t_per_year", ["7 000", "7000"], "7 000 т/год"),
         ("capex_bln_rub", ["12"], "CAPEX 12 млрд"),
@@ -67,6 +72,7 @@ def check_canonical_facts(registry: dict) -> list[dict]:
         + read_text("docs/graphify-corpus/01-vvedenie-i-resume.md"),
         "corpus": read_text("docs/graphify-corpus/00-summary.md")
         + read_text("docs/graphify-corpus/01-vvedenie-i-resume.md"),
+        "summary": summary_text,
         "kpi_json": read_text("teo-rag-out/kpi.json"),
     }
     bm25 = read_text("teo-rag-out/bm25-index.json")
@@ -76,8 +82,12 @@ def check_canonical_facts(registry: dict) -> list[dict]:
         for layer, text in layers.items():
             row["layers"][layer] = fact_present(text, *needles)
         row["layers"]["bm25_index"] = fact_present(bm25, *needles)
-        # OK если есть в corpus или kpi (RAG рабочий слой)
-        row["ok"] = row["layers"]["corpus"] or row["layers"]["kpi_json"]
+        # IRR и прочие KPI: OK если summary, corpus или kpi_json
+        row["ok"] = (
+            row["layers"]["corpus"]
+            or row["layers"]["kpi_json"]
+            or row["layers"]["summary"]
+        )
         rows.append(row)
     return rows
 
@@ -86,14 +96,18 @@ def file_coverage(registry: dict) -> list[dict]:
     rows: list[dict] = []
     all_files = registry.get("all_source_files", {})
     chunk_text = read_text("teo-rag-out/chunk-index.json")
+    dup_map = duplicates_by_teo(registry)
     for group, files in all_files.items():
         for rel in files:
             path = resolve_path(rel)
+            rel_norm = rel.replace("\\", "/")
             src = read_text(rel) if path.exists() else ""
             src_hits = len(RABBIT_RE.findall(src)) if src else 0
-            in_chunk = rel.replace("\\", "/") in chunk_text if src else False
+            in_chunk = rel_norm in chunk_text if src else False
             is_system = group == "system_rebuild_after_replace" or group == "structured"
-            ok = path.exists() and (is_system or src_hits == 0 or in_chunk)
+            dup = dup_map.get(rel_norm)
+            episodic = dup and dup.get("status") == "episodic"
+            ok = path.exists() and (is_system or src_hits == 0 or in_chunk or episodic)
             rows.append(
                 {
                     "group": group,
@@ -101,6 +115,7 @@ def file_coverage(registry: dict) -> list[dict]:
                     "exists": path.exists(),
                     "rabbit_mentions_source": src_hits,
                     "in_chunk_index": in_chunk,
+                    "episodic_skip": episodic,
                     "ok": ok,
                 }
             )
@@ -132,8 +147,8 @@ def rag_gaps() -> list[dict]:
         {
             "id": "teo-27-episodic",
             "severity": "info",
-            "detail": "teo/27-бельгия — эпизодическое упоминание кролика в таблице HS, не проектный блок.",
-            "mitigation": "Не индексировать или оставить как справочник.",
+            "detail": "teo/27-бельгия — HS-таблица; whitelisted через duplicates_map для T10.",
+            "mitigation": "После rebuild index — in_chunk_index=true; иначе episodic OK в coverage.",
         },
     ]
     return gaps
@@ -158,9 +173,10 @@ def run_rag_queries(registry: dict) -> list[dict]:
     for item in queries:
         q = item["query"]
         expect = item.get("expect", [])
+        mode = item.get("mode", "auto")
         try:
             proc = subprocess.run(
-                [sys.executable, str(teo_query), q, "--mode", "auto"],
+                [sys.executable, str(teo_query), q, "--mode", mode],
                 capture_output=True,
                 text=True,
                 timeout=120,
@@ -204,12 +220,16 @@ def teo_vs_corpus_gaps(registry: dict) -> list[dict]:
 
 def build_report(run_queries: bool = True) -> dict:
     registry = load_registry()
+    assert_registry_valid(registry)
+    audit_path = write_docx_audit(registry)
     facts = check_canonical_facts(registry)
     files = file_coverage(registry)
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "registry_hash": registry_hash(registry),
         "project": registry["meta"]["project"],
         "block": registry["meta"]["block_id"],
+        "docx_audit_path": str(audit_path.relative_to(ROOT)),
         "canonical_facts_check": facts,
         "facts_ok": sum(1 for f in facts if f["ok"]),
         "facts_total": len(facts),
@@ -288,18 +308,42 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--docx", action="store_true", help="Also write rag-validation.docx")
     parser.add_argument("--no-queries", action="store_true", help="Skip live teo-query subprocess")
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Exit 1 if facts/queries/files checks fail or registry invalid",
+    )
     args = parser.parse_args()
 
-    report = build_report(run_queries=not args.no_queries)
+    try:
+        report = build_report(run_queries=not args.no_queries)
+    except Exception as exc:
+        print(f"Validation failed: {exc}", file=sys.stderr)
+        raise SystemExit(1) from exc
+
     JSON_OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote {JSON_OUT}")
     print(
         f"Facts: {report['facts_ok']}/{report['facts_total']} | "
         f"Files: {report['files_ok']}/{report['files_total']}"
     )
+    if "queries_ok" in report:
+        print(f"Queries: {report['queries_ok']}/{report['queries_total']}")
+
+    failed = (
+        report["facts_ok"] < report["facts_total"]
+        or report["files_ok"] < report["files_total"]
+        or (
+            "queries_ok" in report
+            and report["queries_ok"] < report["queries_total"]
+        )
+    )
     if args.docx:
         p = write_docx(report)
         print(f"Wrote {p}")
+
+    if args.strict and failed:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

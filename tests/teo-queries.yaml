@@ -1,277 +1,416 @@
 # TEO RAG — тестовый набор (router + e2e expectations)
 
 queries:
-  - id: q01
-    query: "как бесплатный убой связан с желатином и кожей?"
-    expected_mode: graph
-    tags: [graph, chain, zero-cost]
-
-  - id: q02
-    query: "NPV теплиц"
-    expected_mode: vector
-    expect_contains: ["33 861 691", "28,99"]
-    tags: [npv, finance]
-
-  - id: q03
-    query: "path убой желатин"
-    expected_mode: graph
-    tags: [path, graph]
-
-  - id: q04
-    query: "экспорт халяль икра СНГ"
-    expected_mode: hybrid
-    tags: [export, hybrid]
-
-  - id: q05
-    query: "риски биологические ветеринарные меры снижения"
-    expected_mode: hybrid
-    tags: [risks, hybrid]
-
-  - id: q06
-    query: "обзор структура проекта МОЯ МЕЧТА"
-    expected_mode: summary
-    expect_contains: ["МОЯ МЕЧТА"]
-    tags: [summary, overview]
-
-  - id: q07
-    query: "комбикорм подсолнечник соя животноводство"
-    expected_mode: hybrid
-    tags: [feed, vertical]
-
-  - id: q08
-    query: "сколько инвестиций в проект млрд рублей"
-    expected_mode: vector
-    expect_contains: ["100"]
-    tags: [facts, investment]
-
-  - id: q09
-    query: "биогаз навоз теплицы солнечные"
-    expected_mode: hybrid
-    tags: [energy, hybrid]
-
-  - id: q10
-    query: "IRR окупаемость блоки"
-    expected_mode: vector
-    tags: [irr, finance]
-
-  - id: q11
-    query: "нулевая себестоимость мяса побочные продукты"
-    expected_mode: hybrid
-    tags: [graph, zero-cost]
-
-  - id: q12
-    query: "выручка 71,4 млрд"
-    expected_mode: vector
-    expect_contains: ["выручка", "млрд"]
-    tags: [facts, revenue]
-
-  - id: q13
-    query: "экспорт 10,2 млрд"
-    expected_mode: vector
-    expect_contains: ["10"]
-    tags: [facts, export]
-
-  - id: q14
-    query: "чёрная икра белуга"
-    expected_mode: hybrid
-    tags: [fish, hybrid]
-
-  - id: q15
-    query: "халяльный желатин экспорт"
-    expected_mode: hybrid
-    tags: [export, hybrid]
-
-  - id: q16
-    query: "NPV животноводство"
-    expected_mode: vector
-    expect_contains: ["28"]
-    tags: [npv, finance]
-
-  - id: q17
-    query: "риски финансовые"
-    expected_mode: hybrid
-    tags: [risks]
-
-  - id: q18
-    query: "структура блоков проекта"
-    expected_mode: summary
-    tags: [summary]
-
-  - id: q19
-    query: "масложировой комбинат шрот"
-    expected_mode: hybrid
-    tags: [production]
-
-  - id: q20
-    query: "кролиководство NPV"
-    expected_mode: vector
-    expect_contains: ["2 779"]
-    tags: [npv, rabbit]
-
-  - id: q21
-    query: "связь убойного цеха с кожевенным заводом"
-    expected_mode: graph
-    tags: [graph, chain]
-
-  - id: q22
-    query: "сколько га теплиц"
-    expected_mode: vector
-    tags: [facts, greenhouse]
-
-  - id: q23
-    query: "Херсонская область локация"
-    expected_mode: hybrid
-    expect_contains: ["Херсон"]
-    tags: [location]
-
-  - id: q24
-    query: "рыбоводство осетр икра"
-    expected_mode: hybrid
-    tags: [fish]
-
-  - id: q25
-    query: "цитата о нулевой себестоимости мяса"
-    expected_mode: vector
-    tags: [quote, vector]
-
-  # --- baseline expansion (волна 4): кролики, убой, экспорт, блоки ---
-
-  - id: q26
-    query: "сколько тонн крольчатины в год"
-    expected_mode: vector
-    expect_contains: ["кролик", "тонн"]
-    tags: [rabbit, facts]
-
-  - id: q27
-    query: "Meneghin Srl кролиководство"
-    expected_mode: hybrid
-    expect_contains: ["Meneghin"]
-    tags: [rabbit, equipment]
-
-  - id: q28
-    query: "CAPEX кролиководства млрд"
-    expected_mode: vector
-    expect_contains: ["12"]
-    tags: [rabbit, capex]
-
-  - id: q29
-    query: "IRR кролиководство"
-    expected_mode: vector
-    expect_contains: ["15"]
-    tags: [rabbit, irr]
-
-  - id: q30
-    query: "как связаны комбикормовый завод и кролиководство"
-    expected_mode: graph
-    tags: [rabbit, graph, feed]
-
-  - id: q31
-    query: "path комбикорм кролик"
-    expected_mode: hybrid
-    tags: [rabbit, path]
-
-  - id: q32
-    query: "SINT Technologies убой"
-    expected_mode: hybrid
-    expect_contains: ["SINT"]
-    tags: [slaughter, equipment]
-
-  - id: q33
-    query: "халяль сертификат экспорт"
-    expected_mode: hybrid
-    tags: [export, halal]
-
-  - id: q34
-    query: "экспорт кожи желатина ОАЭ"
-    expected_mode: hybrid
-    expect_contains: ["экспорт"]
-    tags: [export, byproducts]
-
-  - id: q35
-    query: "NPV рыбоводство"
-    expected_mode: vector
-    expect_contains: ["3 863"]
-    tags: [fish, npv]
-
-  - id: q36
-    query: "NPV масложировой комбинат"
-    expected_mode: vector
-    expect_contains: ["26 826"]
-    tags: [oil, npv]
-
-  - id: q37
-    query: "IRR масложировой"
-    expected_mode: vector
-    expect_contains: ["90"]
-    tags: [oil, irr]
-
-  - id: q38
-    query: "окупаемость 8 лет"
-    expected_mode: vector
-    expect_contains: ["8"]
-    tags: [facts, payback]
-
-  - id: q39
-    query: "риски юридические регуляторные"
-    expected_mode: hybrid
-    tags: [risks, legal]
-
-  - id: q40
-    query: "риски климатические природные"
-    expected_mode: hybrid
-    tags: [risks, climate]
-
-  - id: q41
-    query: "что за проект МОЯ МЕЧТА"
-    expected_mode: summary
-    expect_contains: ["МОЯ МЕЧТА"]
-    tags: [summary, overview]
-
-  - id: q42
-    query: "сводка производственных блоков"
-    expected_mode: summary
-    expect_contains: ["блок"]
-    tags: [summary, blocks]
-
-  - id: q43
-    query: "как связан биогаз с навозом"
-    expected_mode: graph
-    tags: [energy, graph]
-
-  - id: q44
-    query: "цепочка убой желатин кожа"
-    expected_mode: graph
-    tags: [graph, chain, zero-cost]
-
-  - id: q45
-    query: "explain кролиководство"
-    expected_mode: graph
-    tags: [rabbit, graph]
-
-  - id: q46
-    query: "граф связь теплицы биогаз"
-    expected_mode: graph
-    tags: [graph, energy]
-
-  - id: q47
-    query: "таблица NPV блоков"
-    expected_mode: vector
-    expect_contains: ["NPV"]
-    tags: [finance, table]
-
-  - id: q48
-    query: "сколько белуг в проекте"
-    expected_mode: vector
-    expect_contains: ["70"]
-    tags: [fish, facts]
-
-  - id: q49
-    query: "между убойным цехом и заводом желатина"
-    expected_mode: graph
-    tags: [graph, slaughter]
-
-  - id: q50
-    query: "нулевая себестоимость 5,6 млрд"
-    expected_mode: vector
-    expect_contains: ["5,6"]
-    tags: [zero-cost, facts]
+- id: q01
+  query: как бесплатный убой связан с желатином и кожей?
+  expected_mode: graph
+  tags:
+  - graph
+  - chain
+  - zero-cost
+- id: q02
+  query: NPV теплиц
+  expected_mode: vector
+  expect_contains:
+  - 33 861 691
+  - 28,99
+  tags:
+  - npv
+  - finance
+- id: q03
+  query: path убой желатин
+  expected_mode: graph
+  tags:
+  - path
+  - graph
+- id: q04
+  query: экспорт халяль икра СНГ
+  expected_mode: hybrid
+  tags:
+  - export
+  - hybrid
+- id: q05
+  query: риски биологические ветеринарные меры снижения
+  expected_mode: hybrid
+  tags:
+  - risks
+  - hybrid
+- id: q06
+  query: обзор структура проекта МОЯ МЕЧТА
+  expected_mode: summary
+  expect_contains:
+  - МОЯ МЕЧТА
+  tags:
+  - summary
+  - overview
+- id: q07
+  query: комбикорм подсолнечник соя животноводство
+  expected_mode: hybrid
+  tags:
+  - feed
+  - vertical
+- id: q08
+  query: сколько инвестиций в проект млрд рублей
+  expected_mode: vector
+  expect_contains:
+  - '100'
+  tags:
+  - facts
+  - investment
+- id: q09
+  query: биогаз навоз теплицы солнечные
+  expected_mode: hybrid
+  tags:
+  - energy
+  - hybrid
+- id: q10
+  query: IRR окупаемость блоки
+  expected_mode: vector
+  tags:
+  - irr
+  - finance
+- id: q11
+  query: нулевая себестоимость мяса побочные продукты
+  expected_mode: hybrid
+  tags:
+  - graph
+  - zero-cost
+- id: q12
+  query: выручка 71,4 млрд
+  expected_mode: vector
+  expect_contains:
+  - выручка
+  - млрд
+  tags:
+  - facts
+  - revenue
+- id: q13
+  query: экспорт 10,2 млрд
+  expected_mode: vector
+  expect_contains:
+  - '10'
+  tags:
+  - facts
+  - export
+- id: q14
+  query: чёрная икра белуга
+  expected_mode: hybrid
+  tags:
+  - fish
+  - hybrid
+- id: q15
+  query: халяльный желатин экспорт
+  expected_mode: hybrid
+  tags:
+  - export
+  - hybrid
+- id: q16
+  query: NPV животноводство
+  expected_mode: vector
+  expect_contains:
+  - '28'
+  tags:
+  - npv
+  - finance
+- id: q17
+  query: риски финансовые
+  expected_mode: hybrid
+  tags:
+  - risks
+- id: q18
+  query: структура блоков проекта
+  expected_mode: summary
+  tags:
+  - summary
+- id: q19
+  query: масложировой комбинат шрот
+  expected_mode: hybrid
+  tags:
+  - production
+- id: q20
+  query: кролиководство NPV
+  expected_mode: vector
+  expect_contains:
+  - 2 779
+  tags:
+  - npv
+  - rabbit
+- id: q21
+  query: связь убойного цеха с кожевенным заводом
+  expected_mode: graph
+  tags:
+  - graph
+  - chain
+- id: q22
+  query: сколько га теплиц
+  expected_mode: vector
+  tags:
+  - facts
+  - greenhouse
+- id: q23
+  query: Херсонская область локация
+  expected_mode: hybrid
+  expect_contains:
+  - Херсон
+  tags:
+  - location
+- id: q24
+  query: рыбоводство осетр икра
+  expected_mode: hybrid
+  tags:
+  - fish
+- id: q25
+  query: цитата о нулевой себестоимости мяса
+  expected_mode: vector
+  tags:
+  - quote
+  - vector
+- id: q26
+  query: сколько тонн крольчатины в год
+  expected_mode: vector
+  expect_contains:
+  - кролик
+  - тонн
+  tags:
+  - rabbit
+  - facts
+- id: q27
+  query: Meneghin Srl кролиководство
+  expected_mode: hybrid
+  expect_contains:
+  - Meneghin
+  tags:
+  - rabbit
+  - equipment
+- id: q28
+  query: CAPEX кролиководства млрд
+  expected_mode: vector
+  expect_contains:
+  - '12'
+  tags:
+  - rabbit
+  - capex
+- id: q29
+  query: IRR кролиководство
+  expected_mode: vector
+  expect_contains:
+  - '15'
+  tags:
+  - rabbit
+  - irr
+- id: q30
+  query: как связаны комбикормовый завод и кролиководство
+  expected_mode: graph
+  tags:
+  - rabbit
+  - graph
+  - feed
+- id: q31
+  query: path комбикорм кролик
+  expected_mode: hybrid
+  tags:
+  - rabbit
+  - path
+- id: q32
+  query: SINT Technologies убой
+  expected_mode: hybrid
+  expect_contains:
+  - SINT
+  tags:
+  - slaughter
+  - equipment
+- id: q33
+  query: халяль сертификат экспорт
+  expected_mode: hybrid
+  tags:
+  - export
+  - halal
+- id: q34
+  query: экспорт кожи желатина ОАЭ
+  expected_mode: hybrid
+  expect_contains:
+  - экспорт
+  tags:
+  - export
+  - byproducts
+- id: q35
+  query: NPV рыбоводство
+  expected_mode: vector
+  expect_contains:
+  - 3 863
+  tags:
+  - fish
+  - npv
+- id: q36
+  query: NPV масложировой комбинат
+  expected_mode: vector
+  expect_contains:
+  - 26 826
+  tags:
+  - oil
+  - npv
+- id: q37
+  query: IRR масложировой
+  expected_mode: vector
+  expect_contains:
+  - '90'
+  tags:
+  - oil
+  - irr
+- id: q38
+  query: окупаемость 8 лет
+  expected_mode: vector
+  expect_contains:
+  - '8'
+  tags:
+  - facts
+  - payback
+- id: q39
+  query: риски юридические регуляторные
+  expected_mode: hybrid
+  tags:
+  - risks
+  - legal
+- id: q40
+  query: риски климатические природные
+  expected_mode: hybrid
+  tags:
+  - risks
+  - climate
+- id: q41
+  query: что за проект МОЯ МЕЧТА
+  expected_mode: summary
+  expect_contains:
+  - МОЯ МЕЧТА
+  tags:
+  - summary
+  - overview
+- id: q42
+  query: сводка производственных блоков
+  expected_mode: summary
+  expect_contains:
+  - блок
+  tags:
+  - summary
+  - blocks
+- id: q43
+  query: как связан биогаз с навозом
+  expected_mode: graph
+  tags:
+  - energy
+  - graph
+- id: q44
+  query: цепочка убой желатин кожа
+  expected_mode: graph
+  tags:
+  - graph
+  - chain
+  - zero-cost
+- id: q45
+  query: explain кролиководство
+  expected_mode: graph
+  tags:
+  - rabbit
+  - graph
+- id: q46
+  query: граф связь теплицы биогаз
+  expected_mode: graph
+  tags:
+  - graph
+  - energy
+- id: q47
+  query: таблица NPV блоков
+  expected_mode: vector
+  expect_contains:
+  - NPV
+  tags:
+  - finance
+  - table
+- id: q48
+  query: сколько белуг в проекте
+  expected_mode: vector
+  expect_contains:
+  - '70'
+  tags:
+  - fish
+  - facts
+- id: q49
+  query: между убойным цехом и заводом желатина
+  expected_mode: graph
+  tags:
+  - graph
+  - slaughter
+- id: q50
+  query: нулевая себестоимость 5,6 млрд
+  expected_mode: vector
+  expect_contains:
+  - 5,6
+  tags:
+  - zero-cost
+  - facts
+- id: inv_q04
+  query: Meneghin Srl
+  expected_mode: hybrid
+  tags:
+  - rabbit
+  - inventory
+  - equipment
+  expect_contains:
+  - Meneghin
+- id: inv_q05
+  query: мировой рынок крольчатины
+  expected_mode: hybrid
+  tags:
+  - rabbit
+  - inventory
+  - market
+  expect_contains:
+  - крол
+  - FAOSTAT
+- id: inv_q06
+  query: FRAGOLA корм кролик
+  expected_mode: hybrid
+  tags:
+  - rabbit
+  - inventory
+  - feed
+  expect_contains:
+  - FRAGOLA
+- id: inv_q07
+  query: Оценка доброкачественности мяса кролика
+  expected_mode: hybrid
+  tags:
+  - rabbit
+  - inventory
+  - processing
+  expect_contains:
+  - доброкачествен
+- id: inv_q08
+  query: BusinesStat цены крольчатины
+  expected_mode: hybrid
+  tags:
+  - rabbit
+  - inventory
+  - market
+  expect_contains:
+  - BusinesStat
+  - крол
+- id: inv_q09
+  query: навоз кроликов 43800
+  expected_mode: hybrid
+  tags:
+  - rabbit
+  - inventory
+  - byproducts
+  expect_contains:
+  - 43 800
+  - навоз
+- id: inv_q10
+  query: генетика ANCI кролики
+  expected_mode: hybrid
+  tags:
+  - rabbit
+  - inventory
+  - genetics
+  expect_contains:
+  - ANCI

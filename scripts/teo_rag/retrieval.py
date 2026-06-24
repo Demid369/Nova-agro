@@ -197,6 +197,21 @@ def hybrid_merge(query: str, vector_hits: list[RetrievedChunk], top_k: int) -> l
     return merged[: max(top_k, RERANK_CANDIDATES)]
 
 
+REFERENCE_ONLY_SCORE_FACTOR = 0.75
+CORPUS_LAYER_BOOST = 1.05
+
+
+def _apply_canonical_layer_scoring(hits: list[RetrievedChunk]) -> list[RetrievedChunk]:
+    for hit in hits:
+        role = hit.metadata.get("canonical_layer_role", "")
+        layer = hit.metadata.get("canonical_layer", "")
+        if role == "reference_only":
+            hit.score *= REFERENCE_ONLY_SCORE_FACTOR
+        elif layer == "corpus":
+            hit.score *= CORPUS_LAYER_BOOST
+    return sorted(hits, key=lambda h: h.score, reverse=True)
+
+
 def rerank(query: str, hits: list[RetrievedChunk], top_k: int = RERANK_TOP_K) -> list[RetrievedChunk]:
     if not hits:
         return []
@@ -239,6 +254,8 @@ def hierarchical_search(
 
     if use_hybrid and deduped:
         deduped = hybrid_merge(query, deduped, summary_k + detail_k)
+
+    deduped = _apply_canonical_layer_scoring(deduped)
 
     if use_rerank and deduped:
         deduped = rerank(query, deduped, top_k=detail_k if mode != "summary" else summary_k + detail_k)

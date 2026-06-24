@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-06-24T17:02:05.748713+00:00",
+  "generated_at": "2026-06-24T20:46:29.548281+00:00",
+  "registry_hash": "36f5a4d3c023",
   "project": "МОЯ МЕЧТА",
   "block": "кролиководство",
+  "docx_audit_path": "docs/inventory/krolikovodstvo/reports/docx-audit.json",
   "canonical_facts_check": [
     {
       "fact": "output_t_per_year",
@@ -9,6 +11,7 @@
       "layers": {
         "source_teo": true,
         "corpus": true,
+        "summary": true,
         "kpi_json": true,
         "bm25_index": true
       },
@@ -20,6 +23,7 @@
       "layers": {
         "source_teo": true,
         "corpus": true,
+        "summary": true,
         "kpi_json": true,
         "bm25_index": true
       },
@@ -31,6 +35,7 @@
       "layers": {
         "source_teo": false,
         "corpus": true,
+        "summary": true,
         "kpi_json": true,
         "bm25_index": true
       },
@@ -41,11 +46,12 @@
       "label": "IRR 15,19%",
       "layers": {
         "source_teo": false,
-        "corpus": false,
-        "kpi_json": false,
-        "bm25_index": false
+        "corpus": true,
+        "summary": true,
+        "kpi_json": true,
+        "bm25_index": true
       },
-      "ok": false
+      "ok": true
     },
     {
       "fact": "payback_months",
@@ -53,6 +59,7 @@
       "layers": {
         "source_teo": true,
         "corpus": true,
+        "summary": true,
         "kpi_json": true,
         "bm25_index": true
       },
@@ -64,6 +71,7 @@
       "layers": {
         "source_teo": true,
         "corpus": true,
+        "summary": true,
         "kpi_json": true,
         "bm25_index": true
       },
@@ -75,6 +83,7 @@
       "layers": {
         "source_teo": true,
         "corpus": true,
+        "summary": false,
         "kpi_json": false,
         "bm25_index": true
       },
@@ -86,6 +95,7 @@
       "layers": {
         "source_teo": true,
         "corpus": true,
+        "summary": false,
         "kpi_json": false,
         "bm25_index": true
       },
@@ -97,13 +107,14 @@
       "layers": {
         "source_teo": true,
         "corpus": true,
+        "summary": false,
         "kpi_json": false,
         "bm25_index": true
       },
       "ok": true
     }
   ],
-  "facts_ok": 8,
+  "facts_ok": 9,
   "facts_total": 9,
   "file_coverage": [
     {
@@ -112,6 +123,7 @@
       "exists": true,
       "rabbit_mentions_source": 5,
       "in_chunk_index": true,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -120,6 +132,7 @@
       "exists": true,
       "rabbit_mentions_source": 159,
       "in_chunk_index": true,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -128,6 +141,7 @@
       "exists": true,
       "rabbit_mentions_source": 47,
       "in_chunk_index": true,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -136,6 +150,7 @@
       "exists": true,
       "rabbit_mentions_source": 87,
       "in_chunk_index": true,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -144,6 +159,7 @@
       "exists": true,
       "rabbit_mentions_source": 42,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -152,6 +168,7 @@
       "exists": true,
       "rabbit_mentions_source": 1,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -160,6 +177,7 @@
       "exists": true,
       "rabbit_mentions_source": 41,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -168,6 +186,7 @@
       "exists": true,
       "rabbit_mentions_source": 39,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -176,6 +195,7 @@
       "exists": true,
       "rabbit_mentions_source": 81,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -184,6 +204,7 @@
       "exists": true,
       "rabbit_mentions_source": 30,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -192,6 +213,7 @@
       "exists": true,
       "rabbit_mentions_source": 20,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -200,6 +222,7 @@
       "exists": true,
       "rabbit_mentions_source": 9,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -208,6 +231,7 @@
       "exists": true,
       "rabbit_mentions_source": 15,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -216,6 +240,7 @@
       "exists": true,
       "rabbit_mentions_source": 2,
       "in_chunk_index": true,
+      "episodic_skip": true,
       "ok": true
     },
     {
@@ -224,6 +249,7 @@
       "exists": true,
       "rabbit_mentions_source": 3,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -231,8 +257,9 @@
       "file": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md",
       "exists": true,
       "rabbit_mentions_source": 5,
-      "in_chunk_index": false,
-      "ok": false
+      "in_chunk_index": true,
+      "episodic_skip": false,
+      "ok": true
     },
     {
       "group": "source_teo_secondary",
@@ -240,6 +267,7 @@
       "exists": true,
       "rabbit_mentions_source": 4,
       "in_chunk_index": true,
+      "episodic_skip": false,
       "ok": true
     },
     {
@@ -248,6 +276,7 @@
       "exists": true,
       "rabbit_mentions_source": 7,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -256,6 +285,7 @@
       "exists": true,
       "rabbit_mentions_source": 4,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -264,14 +294,16 @@
       "exists": true,
       "rabbit_mentions_source": 81,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     },
     {
       "group": "system_rebuild_after_replace",
       "file": "teo-rag-out/bm25-index.json",
       "exists": true,
-      "rabbit_mentions_source": 1240,
+      "rabbit_mentions_source": 1250,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -280,14 +312,16 @@
       "exists": true,
       "rabbit_mentions_source": 31,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     },
     {
       "group": "system_rebuild_after_replace",
       "file": "tests/teo-queries.yaml",
       "exists": true,
-      "rabbit_mentions_source": 12,
+      "rabbit_mentions_source": 21,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -296,6 +330,7 @@
       "exists": true,
       "rabbit_mentions_source": 9,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -304,6 +339,7 @@
       "exists": true,
       "rabbit_mentions_source": 4,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     },
     {
@@ -312,14 +348,15 @@
       "exists": true,
       "rabbit_mentions_source": 7,
       "in_chunk_index": false,
+      "episodic_skip": null,
       "ok": true
     }
   ],
-  "files_ok": 25,
+  "files_ok": 26,
   "files_total": 26,
   "chunk_stats": {
     "rabbit_block_chunks": 21,
-    "total_chunks": 747
+    "total_chunks": 748
   },
   "teo_corpus_gaps": [
     {
@@ -375,8 +412,8 @@
     {
       "id": "teo-27-episodic",
       "severity": "info",
-      "detail": "teo/27-бельгия — эпизодическое упоминание кролика в таблице HS, не проектный блок.",
-      "mitigation": "Не индексировать или оставить как справочник."
+      "detail": "teo/27-бельгия — HS-таблица; whitelisted через duplicates_map для T10.",
+      "mitigation": "После rebuild index — in_chunk_index=true; иначе episodic OK в coverage."
     }
   ],
   "rag_queries": [
@@ -421,9 +458,51 @@
         "FAOSTAT"
       ],
       "ok": true,
-      "answer_preview": "Запрос (graph): мировой рынок крольчатины\nTraversal: BFS depth=2 | Start: ['Мировой рынок крольчатины', 'Мировой рынок крольчатины', 'Мировой рынок крольчатины'] | 44 nodes found\n\nУзлы:\n  • Мировой рынок крольчатины ← docs/teo/08-мировой-рынок-крольчатины.md [Community 25]\n  • Испания экспортировала ← docs/teo/31-топ-20-мировых-экспортеров-томатов-в-2022-году.md [Community 27]\n  • 136,7 млн ​​долларов США ← docs/teo/08-мировой-рынок-крольчатины.md [Community 25]\n  • 32,3 млн долларов США ← docs/"
+      "answer_preview": "Запрос (graph): мировой рынок крольчатины\nTraversal: BFS depth=2 | Start: ['Мировой рынок крольчатины', 'Мировой рынок крольчатины', 'Мировой рынок крольчатины'] | 44 nodes found\n\nУзлы:\n  • Мировой рынок крольчатины ← docs/teo/08-мировой-рынок-крольчатины.md [Community 25]\n  • Испания экспортировала ← docs/teo/31-топ-20-мировых-экспортеров-томатов-в-2022-году.md [Community 27]\n  • 32,3 млн долларов США ← docs/teo/08-мировой-рынок-крольчатины.md [Community 25]\n  • Китай экспортировал ← docs/teo/0"
+    },
+    {
+      "query": "FRAGOLA корм кролик",
+      "expect": [
+        "FRAGOLA"
+      ],
+      "ok": true,
+      "answer_preview": "Запрос (graph): FRAGOLA корм кролик\nTraversal: BFS depth=2 | Start: ['FRAGOLA', 'FRAGOLA', 'Корм'] | 58 nodes found\n\nУзлы:\n  • 01 vvedenie i resume ← docs/graphify-corpus/01-vvedenie-i-resume.md [Community 10]\n  • 2.2. Положение на рынке, существующие деловые связи и деловая репутация. ← docs/teo/00-меморандум-о-конфиденциальности.md [Community 0]\n  • Виды и особенности кожи КРС ← docs/teo/07-виды-и-особенности-кожи-крс.md [Community 33]\n  • Виды и особенности кожи КРС ← docs/graphify-corpus/03-"
+    },
+    {
+      "query": "Оценка доброкачественности мяса кролика",
+      "expect": [
+        "доброкачествен"
+      ],
+      "ok": true,
+      "answer_preview": "Запрос (graph): Оценка доброкачественности мяса кролика\nTraversal: BFS depth=2 | Start: ['Оценка доброкачественности мяса', 'Оценка доброкачественности мяса', 'Оценка производства'] | 43 nodes found\n\nУзлы:\n  • 03 proizvodstvo i tehnologii ← docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md [Community 11]\n  • Производство маргарина в России ← docs/teo/106-узбекистан-импорт-и-экспорт-весь-мир-sunflower-seed-safflowe.md [Community 1]\n  • Технологии изготовления комбикорма ← docs/teo/124-кролики-"
+    },
+    {
+      "query": "BusinesStat цены крольчатины",
+      "expect": [
+        "BusinesStat",
+        "крол"
+      ],
+      "ok": true,
+      "answer_preview": "Запрос (graph): BusinesStat цены крольчатины\nTraversal: BFS depth=2 | Start: ['BusinesStat', 'BusinesStat', 'BusinesStat'] | 38 nodes found\n\nУзлы:\n  • 03 proizvodstvo i tehnologii ← docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md [Community 11]\n  • 01 vvedenie i resume ← docs/graphify-corpus/01-vvedenie-i-resume.md [Community 10]\n  • 109 по прогнозам международной организации по продовольствию при ← docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md [Community 155]"
+    },
+    {
+      "query": "навоз кроликов 43800",
+      "expect": [
+        "43 800",
+        "навоз"
+      ],
+      "ok": true,
+      "answer_preview": "Запрос (graph): навоз кроликов 43800\nTraversal: BFS depth=2 | Start: ['Навоз кроликов будет перерабатываться для', 'Навоз кроликов будет перерабатываться для', 'Навоз как удобрение'] | 49 nodes found\n\nУзлы:\n  • 04 rynok i analitika ← docs/graphify-corpus/04-rynok-i-analitika.md [Community 28]\n  • Корма для выращивания рыбы в УЗВ ← docs/teo/134-корма-для-выращивания-рыбы-в-узв.md [Community 25]\n  • Кролиководство ← docs/graphify-corpus/00-summary.md [Community 105]\n  • Кожа крупного рогатого скот"
+    },
+    {
+      "query": "генетика ANCI кролики",
+      "expect": [
+        "ANCI"
+      ],
+      "ok": true,
+      "answer_preview": "Запрос (graph): генетика ANCI кролики\nTraversal: BFS depth=2 | Start: ['ANCI — Нац. ассоциация кролиководов Италии', 'Кролики: особенности содержания и разведения', 'Кролики этой породы быстро набирают'] | 42 nodes found\n\nУзлы:\n  • 01 vvedenie i resume ← docs/graphify-corpus/01-vvedenie-i-resume.md [Community 10]\n  • 2.3. Потенциал, существующий и прогнозируемый. ← docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md [Community 37]\n  • Технологии изготовления комбикорма ← docs/teo/124-кроли"
     }
   ],
-  "queries_ok": 5,
-  "queries_total": 5
+  "queries_ok": 10,
+  "queries_total": 10
 }

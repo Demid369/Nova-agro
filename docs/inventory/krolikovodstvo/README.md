@@ -17,6 +17,7 @@ docs/inventory/krolikovodstvo/
   reports/
     rag-validation.json    ← сверка RAG vs исходный ТЭО
     rag-validation.docx
+    docx-audit.json        ← построчная матрица покрытия (файл:строка → тема)
 ```
 
 ## Темы (направления)
@@ -35,23 +36,33 @@ docs/inventory/krolikovodstvo/
 | T10 | `T10-export.docx` | экспортные рынки крольчатины (проект) |
 | T11 | `T11-narrative-mission.docx` | миссия, цели, резюме про кроликов |
 | T12 | `T12-world-market-reference.docx` | мировой рынок, FAOSTAT, табл. 23/39 |
+| T13 | `T13-duplicates.docx` | карта дублей teo → corpus (служебный) |
 | — | `00-index-krolikovodstvo.docx` | оглавление + KPI-ссылки |
-| — | `T13-duplicates.docx` | карта дублей teo → corpus (служебный) |
+| — | `00-replace-checklist.docx` | только replace/adapt + rebuild (чеклист замены) |
 | — | `reports/rag-validation.docx` | сверка RAG vs ТЭО |
+| — | `reports/docx-audit.json` | построчная матрица покрытия |
 
 Каждый DOCX содержит **ссылки на исходный ТЭО** в формате `файл:строка` (например `docs/graphify-corpus/01-vvedenie-i-resume.md:712–810`).
 
 ## Команды
 
 ```bash
-# Сгенерировать все DOCX по темам
-python scripts/generate-krolikovodstvo-docx.py
+# Валидация registry + docx-audit.json (без DOCX)
+python3 scripts/generate-krolikovodstvo-docx.py --skip-docx
+
+# Сгенерировать все DOCX по темам (+ replace-checklist)
+python3 scripts/generate-krolikovodstvo-docx.py
 
 # Сверка RAG с исходным docs/teo и corpus
-python scripts/validate-krolikovodstvo-rag.py
+python3 scripts/validate-krolikovodstvo-rag.py --strict
 
-# Обновить DOCX отчёта валидации
-python scripts/validate-krolikovodstvo-rag.py --docx
+# Синхронизация rag_validation_queries → tests/teo-queries.yaml
+python3 scripts/sync-krolikovodstvo-queries.py --write
+python3 scripts/sync-krolikovodstvo-queries.py --check   # CI
+
+# После правок chunks.py / corpus
+python3 scripts/build-teo-vector-index.py
+python3 scripts/test-teo-system.py
 ```
 
 ## Слои данных

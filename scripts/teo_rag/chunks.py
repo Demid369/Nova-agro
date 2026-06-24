@@ -5,7 +5,10 @@ from __future__ import annotations
 import hashlib
 import re
 from dataclasses import dataclass, field
+from functools import lru_cache
 from pathlib import Path
+
+import yaml
 
 from .config import (
     CHUNK_OVERLAP,
@@ -19,6 +22,7 @@ from .config import (
 TRADE_FILE_RE = re.compile(r"табл[_-]\d+", re.I)
 STAT_FILE_RE = re.compile(r"(\d{4}[-–]\d{4}-гг-|в-\d{4}-\d{4}-гг-)", re.I)
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+)$")
+REGISTRY_PATH = ROOT / "docs" / "inventory" / "krolikovodstvo" / "registry.yaml"
 
 BLOCK_RULES: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"кролик", re.I), "кролиководство"),
@@ -52,7 +56,7 @@ class Chunk:
     metadata: dict = field(default_factory=dict)
 
     def to_metadata(self) -> dict:
-        return {
+        meta = {
             "chunk_id": self.chunk_id,
             "source": self.source,
             "tier": self.tier,
@@ -65,6 +69,47 @@ class Chunk:
             "char_start": self.char_start,
             "char_end": self.char_end,
         }
+        meta.update(self.metadata)
+        return meta
+
+
+@lru_cache(maxsize=1)
+def _load_duplicates_map() -> dict[str, dict]:
+    if not REGISTRY_PATH.exists():
+        return {}
+    data = yaml.safe_load(REGISTRY_PATH.read_text(encoding="utf-8"))
+    return {
+        row["teo"].replace("\\", "/"): row
+        for row in data.get("duplicates_map", [])
+        if row.get("teo")
+    }
+
+
+def infer_canonical(path: Path, tier: str) -> dict[str, str | int]:
+    """canonical_layer metadata for corpus vs teo duplicate handling."""
+    rel = rel_source(path)
+    if tier == "summary" or "graphify-corpus" in rel.replace("\\", "/"):
+        return {"canonical_layer": "corpus", "canonical_priority": 10}
+
+    dup = _load_duplicates_map().get(rel.replace("\\", "/"))
+    if dup:
+        status = dup.get("status", "")
+        if status == "episodic":
+            return {
+                "canonical_layer": "teo",
+                "canonical_layer_role": "episodic",
+                "canonical_priority": 0,
+            }
+        if status == "duplicate" and dup.get("corpus"):
+            return {
+                "canonical_layer": "teo",
+                "canonical_layer_role": "reference_only",
+                "canonical_priority": 1,
+                "canonical_corpus": dup.get("corpus", ""),
+            }
+        return {"canonical_layer": "teo", "canonical_priority": 5}
+
+    return {"canonical_layer": "teo", "canonical_priority": 5}
 
 
 def slugify(text: str, max_len: int = 48) -> str:
@@ -77,6 +122,11 @@ def slugify(text: str, max_len: int = 48) -> str:
 
 def is_trade_stat_file(path: Path) -> bool:
     name = path.stem.lower()
+    rel = rel_source(path)
+    dup = _load_duplicates_map().get(rel.replace("\\", "/"))
+    # Проектные teo-файлы из duplicates_map (T06/T10 и т.д.) — не отфильтровывать
+    if dup and dup.get("status") != "episodic":
+        return False
     # Проектные таблицы/рецепты (кролики, комбикорм) — не отфильтровывать
     if re.search(r"кролик|крольчат|комбикорм.*кролик|рецепт.*кролик", name):
         return False
@@ -203,6 +253,7 @@ def chunk_file(path: Path, tier: str) -> list[Chunk]:
             char_start = base_offset + part_start
             char_end = base_offset + part_end
             chunk_id = make_chunk_id(source, section_title, idx, char_start)
+            canonical = infer_canonical(path, tier)
             chunks.append(
                 Chunk(
                     chunk_id=chunk_id,
@@ -217,6 +268,7 @@ def chunk_file(path: Path, tier: str) -> list[Chunk]:
                     project_relevant=True,
                     char_start=char_start,
                     char_end=char_end,
+                    metadata=canonical,
                 )
             )
     return chunks

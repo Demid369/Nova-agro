@@ -1,0 +1,4253 @@
+{
+  "generated_at": "2026-06-24T20:46:26.686183+00:00",
+  "registry_hash": "36f5a4d3c023",
+  "summary": {
+    "total_mention_lines": 416,
+    "covered": 351,
+    "intentional_gaps": 48,
+    "unexpected_gaps": 17,
+    "by_reason": {
+      "uncovered": 17,
+      "duplicate": 42,
+      "episodic": 2,
+      "partial-duplicate": 4
+    }
+  },
+  "lines": [
+    {
+      "ref": "docs/graphify-corpus/00-summary.md:14",
+      "file": "docs/graphify-corpus/00-summary.md",
+      "line": 14,
+      "themes": [
+        "T01",
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/00-summary.md:27",
+      "file": "docs/graphify-corpus/00-summary.md",
+      "line": 27,
+      "themes": [
+        "T01"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/00-summary.md:35",
+      "file": "docs/graphify-corpus/00-summary.md",
+      "line": 35,
+      "themes": [
+        "T01"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/00-summary.md:42",
+      "file": "docs/graphify-corpus/00-summary.md",
+      "line": 42,
+      "themes": [
+        "T04"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:13",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 13,
+      "themes": [
+        "T03",
+        "T08",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:79",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 79,
+      "themes": [
+        "T03",
+        "T08",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:84",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 84,
+      "themes": [
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:106",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 106,
+      "themes": [
+        "T01",
+        "T03",
+        "T08",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:184",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 184,
+      "themes": [
+        "T03",
+        "T04",
+        "T05",
+        "T07",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:357",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 357,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:359",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 359,
+      "themes": [
+        "T04",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:361",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 361,
+      "themes": [
+        "T04",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:363",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 363,
+      "themes": [
+        "T04",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:365",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 365,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:371",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 371,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:372",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 372,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:374",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 374,
+      "themes": [
+        "T03",
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:377",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 377,
+      "themes": [
+        "T03",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:379",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 379,
+      "themes": [
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:381",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 381,
+      "themes": [
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:385",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 385,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:386",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 386,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:393",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 393,
+      "themes": [
+        "T01",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:395",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 395,
+      "themes": [
+        "T01",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:398",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 398,
+      "themes": [
+        "T01",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:404",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 404,
+      "themes": [
+        "T03",
+        "T05",
+        "T07",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:407",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 407,
+      "themes": [
+        "T03",
+        "T05",
+        "T07",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:427",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 427,
+      "themes": [
+        "T03",
+        "T06"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:612",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 612,
+      "themes": [
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:633",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 633,
+      "themes": [
+        "T03",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:714",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 714,
+      "themes": [
+        "T02",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:720",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 720,
+      "themes": [
+        "T02",
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:722",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 722,
+      "themes": [
+        "T02",
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:725",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 725,
+      "themes": [
+        "T02",
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:726",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 726,
+      "themes": [
+        "T02",
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:727",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 727,
+      "themes": [
+        "T02",
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:728",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 728,
+      "themes": [
+        "T02",
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:729",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 729,
+      "themes": [
+        "T02",
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:730",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 730,
+      "themes": [
+        "T02",
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:732",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 732,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:733",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 733,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:737",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 737,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:738",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 738,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:741",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 741,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:745",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 745,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:751",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 751,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:756",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 756,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:768",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 768,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:773",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 773,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:775",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 775,
+      "themes": [
+        "T02",
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:790",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 790,
+      "themes": [
+        "T02",
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:793",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 793,
+      "themes": [
+        "T02",
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:795",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 795,
+      "themes": [
+        "T02",
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:797",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 797,
+      "themes": [
+        "T02",
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:798",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 798,
+      "themes": [
+        "T02",
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:802",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 802,
+      "themes": [
+        "T02",
+        "T03",
+        "T06",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:806",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 806,
+      "themes": [
+        "T02",
+        "T03",
+        "T05",
+        "T06"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:808",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 808,
+      "themes": [
+        "T02",
+        "T05",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:810",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 810,
+      "themes": [
+        "T02",
+        "T05",
+        "T07",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:812",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 812,
+      "themes": [
+        "T02",
+        "T07",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:874",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 874,
+      "themes": [
+        "T02",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:886",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 886,
+      "themes": [
+        "T02",
+        "T08",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:936",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 936,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:938",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 938,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:956",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 956,
+      "themes": [
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1004",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1004,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1042",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1042,
+      "themes": [
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1044",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1044,
+      "themes": [
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1047",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1047,
+      "themes": [
+        "T03",
+        "T04",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1048",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1048,
+      "themes": [
+        "T03",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1621",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1621,
+      "themes": [
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1623",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1623,
+      "themes": [
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1625",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1625,
+      "themes": [
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1627",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1627,
+      "themes": [
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1629",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1629,
+      "themes": [
+        "T08",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1631",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1631,
+      "themes": [
+        "T08",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1632",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1632,
+      "themes": [
+        "T08",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1634",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1634,
+      "themes": [
+        "T08",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1636",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1636,
+      "themes": [
+        "T03",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1640",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1640,
+      "themes": [
+        "T03",
+        "T06",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1642",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1642,
+      "themes": [
+        "T06",
+        "T08",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1645",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1645,
+      "themes": [
+        "T04",
+        "T08",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1646",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1646,
+      "themes": [
+        "T04",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1647",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1647,
+      "themes": [
+        "T04",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1648",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1648,
+      "themes": [
+        "T03",
+        "T04",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1650",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1650,
+      "themes": [
+        "T03",
+        "T04",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1651",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1651,
+      "themes": [
+        "T03",
+        "T04",
+        "T08"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1652",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1652,
+      "themes": [
+        "T03",
+        "T08",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1653",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1653,
+      "themes": [
+        "T03",
+        "T08",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1654",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1654,
+      "themes": [
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1655",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1655,
+      "themes": [
+        "T03",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1657",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1657,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1658",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1658,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1660",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1660,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1662",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1662,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1664",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1664,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1666",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1666,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1671",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1671,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1672",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1672,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1676",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1676,
+      "themes": [
+        "T03",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1679",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1679,
+      "themes": [
+        "T03",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1682",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1682,
+      "themes": [
+        "T07",
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1683",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1683,
+      "themes": [
+        "T07",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1684",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1684,
+      "themes": [
+        "T06",
+        "T07",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1686",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1686,
+      "themes": [
+        "T04",
+        "T06",
+        "T07",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1687",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1687,
+      "themes": [
+        "T03",
+        "T04",
+        "T06",
+        "T07",
+        "T09",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1688",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1688,
+      "themes": [
+        "T03",
+        "T04",
+        "T06",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1689",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1689,
+      "themes": [
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1690",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1690,
+      "themes": [
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1691",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1691,
+      "themes": [
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1692",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1692,
+      "themes": [
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1694",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1694,
+      "themes": [
+        "T05",
+        "T06",
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1695",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1695,
+      "themes": [
+        "T05",
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1696",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1696,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1699",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1699,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1700",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1700,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/01-vvedenie-i-resume.md:1701",
+      "file": "docs/graphify-corpus/01-vvedenie-i-resume.md",
+      "line": 1701,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:779",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 779,
+      "themes": [
+        "T06"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:787",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 787,
+      "themes": [
+        "T06"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:872",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 872,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:884",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 884,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1411",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1411,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1415",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1415,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1416",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1416,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1417",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1417,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1420",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1420,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1421",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1421,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1422",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1422,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1423",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1423,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1424",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1424,
+      "themes": [
+        "T03"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1426",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1426,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1428",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1428,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1430",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1430,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1434",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1434,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1435",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1435,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1436",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1436,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1437",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1437,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1438",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1438,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1444",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1444,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1445",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1445,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1458",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1458,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1459",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1459,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1460",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1460,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1462",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1462,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1464",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1464,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1466",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1466,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1471",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1471,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1476",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1476,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1478",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1478,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1479",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1479,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1483",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1483,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1487",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1487,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1491",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1491,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1492",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1492,
+      "themes": [
+        "T05"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1497",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1497,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:1519",
+      "file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "line": 1519,
+      "themes": [
+        "T06"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:10",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 10,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:12",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 12,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:14",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 14,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:16",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 16,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:17",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 17,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:236",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 236,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:481",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 481,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:485",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 485,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:487",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 487,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:489",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 489,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:490",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 490,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:492",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 492,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:494",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 494,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:496",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 496,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:497",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 497,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:499",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 499,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:501",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 501,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:503",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 503,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:505",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 505,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:507",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 507,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:509",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 509,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:513",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 513,
+      "themes": [
+        "T10",
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:516",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 516,
+      "themes": [
+        "T10",
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:518",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 518,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:519",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 519,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:521",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 521,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:523",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 523,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:525",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 525,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1201",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1201,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1225",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1225,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1807",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1807,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1808",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1808,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1819",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1819,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1821",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1821,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1823",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1823,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1825",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1825,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1826",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1826,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1827",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1827,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1828",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1828,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1831",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1831,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1832",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1832,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1833",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1833,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1834",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1834,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1836",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1836,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:1838",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 1838,
+      "themes": [
+        "T07",
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:2982",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 2982,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:2983",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 2983,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:2984",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 2984,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:3763",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 3763,
+      "themes": [
+        "T10"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:3772",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 3772,
+      "themes": [
+        "T10"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:3774",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 3774,
+      "themes": [
+        "T10"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/graphify-corpus/04-rynok-i-analitika.md:3886",
+      "file": "docs/graphify-corpus/04-rynok-i-analitika.md",
+      "line": 3886,
+      "themes": [],
+      "covered": false,
+      "reason": "uncovered"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:1",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 1,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:5",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 5,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:6",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 6,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:7",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 7,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:10",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 10,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:11",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 11,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:12",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 12,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:13",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 13,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:14",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 14,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:16",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 16,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:18",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 18,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:20",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 20,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:24",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 24,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:25",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 25,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:26",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 26,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:27",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 27,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:28",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 28,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:34",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 34,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:35",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 35,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:48",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 48,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:49",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 49,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:50",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 50,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:52",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 52,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:54",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 54,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:56",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 56,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:61",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 61,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:66",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 66,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:68",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 68,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:69",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 69,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:73",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 73,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:77",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 77,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:81",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 81,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:82",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 82,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/124-кролики-особенности-содержания-и-разведения.md:87",
+      "file": "docs/teo/124-кролики-особенности-содержания-и-разведения.md",
+      "line": 87,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md:1",
+      "file": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md",
+      "line": 1,
+      "themes": [
+        "T06"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:1",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 1,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:5",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 5,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:7",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 7,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:9",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 9,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:10",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 10,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:12",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 12,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:14",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 14,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:16",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 16,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:17",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 17,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:19",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 19,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:21",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 21,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:23",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 23,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:25",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 25,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:27",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 27,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:29",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 29,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:33",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 33,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:36",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 36,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:38",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 38,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:39",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 39,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:41",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 41,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:43",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 43,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/08-мировой-рынок-крольчатины.md:45",
+      "file": "docs/teo/08-мировой-рынок-крольчатины.md",
+      "line": 45,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:4",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 4,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:10",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 10,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:12",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 12,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:15",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 15,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:16",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 16,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:17",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 17,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:18",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 18,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:19",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 19,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:20",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 20,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:22",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 22,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:23",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 23,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:27",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 27,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:28",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 28,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:31",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 31,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:35",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 35,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:41",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 41,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:46",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 46,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:58",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 58,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:63",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 63,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:65",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 65,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:80",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 80,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:83",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 83,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:85",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 85,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:87",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 87,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:88",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 88,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:92",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 92,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:96",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 96,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:98",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 98,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:100",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 100,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:102",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 102,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:164",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 164,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md:176",
+      "file": "docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md",
+      "line": 176,
+      "themes": [
+        "T02"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:1",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 1,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:3",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 3,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:5",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 5,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:7",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 7,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:9",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 9,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:11",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 11,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:12",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 12,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:14",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 14,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:16",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 16,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:20",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 20,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:22",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 22,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:25",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 25,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:26",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 26,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:27",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 27,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:28",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 28,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:30",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 30,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:31",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 31,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:32",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 32,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:33",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 33,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:34",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 34,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:35",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 35,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:37",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 37,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:38",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 38,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:40",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 40,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:42",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 42,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:44",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 44,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:46",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 46,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:51",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 51,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:52",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 52,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:56",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 56,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:59",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 59,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:62",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 62,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:63",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 63,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:64",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 64,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:66",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 66,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:67",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 67,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:68",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 68,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:69",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 69,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:70",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 70,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:71",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 71,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:72",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 72,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:74",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 74,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:75",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 75,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:76",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 76,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:79",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 79,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:80",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 80,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md:81",
+      "file": "docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md",
+      "line": 81,
+      "themes": [
+        "T12"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:11",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 11,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:77",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 77,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:82",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 82,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:104",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 104,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:182",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 182,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:355",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 355,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:357",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 357,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:359",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 359,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:361",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 361,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:363",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 363,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:369",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 369,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:370",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 370,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:372",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 372,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:375",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 375,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:377",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 377,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:379",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 379,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:383",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 383,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:384",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 384,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:391",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 391,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:393",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 393,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:396",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 396,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:402",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 402,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:405",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 405,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:425",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 425,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:610",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 610,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/00-меморандум-о-конфиденциальности.md:631",
+      "file": "docs/teo/00-меморандум-о-конфиденциальности.md",
+      "line": 631,
+      "themes": [
+        "T11"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/05-4-рынок-и-концепция-маркетинга.md:8",
+      "file": "docs/teo/05-4-рынок-и-концепция-маркетинга.md",
+      "line": 8,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/05-4-рынок-и-концепция-маркетинга.md:10",
+      "file": "docs/teo/05-4-рынок-и-концепция-маркетинга.md",
+      "line": 10,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/05-4-рынок-и-концепция-маркетинга.md:12",
+      "file": "docs/teo/05-4-рынок-и-концепция-маркетинга.md",
+      "line": 12,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/05-4-рынок-и-концепция-маркетинга.md:14",
+      "file": "docs/teo/05-4-рынок-и-концепция-маркетинга.md",
+      "line": 14,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/05-4-рынок-и-концепция-маркетинга.md:15",
+      "file": "docs/teo/05-4-рынок-и-концепция-маркетинга.md",
+      "line": 15,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/05-4-рынок-и-концепция-маркетинга.md:234",
+      "file": "docs/teo/05-4-рынок-и-концепция-маркетинга.md",
+      "line": 234,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md:32",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "line": 32,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md:34",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "line": 34,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md:52",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "line": 52,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md:100",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "line": 100,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md:138",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "line": 138,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md:140",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "line": 140,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md:143",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "line": 143,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md:144",
+      "file": "docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md",
+      "line": 144,
+      "themes": [],
+      "covered": false,
+      "reason": "duplicate"
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:71",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 71,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:72",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 72,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:83",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 83,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:85",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 85,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:87",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 87,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:89",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 89,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:90",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 90,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:91",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 91,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:92",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 92,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:95",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 95,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:96",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 96,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:97",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 97,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:98",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 98,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:100",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 100,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md:102",
+      "file": "docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md",
+      "line": 102,
+      "themes": [
+        "T09"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/108-экспорт-товаров-группы-1517-маргарин-пригодные-для-употребле.md:64",
+      "file": "docs/teo/108-экспорт-товаров-группы-1517-маргарин-пригодные-для-употребле.md",
+      "line": 64,
+      "themes": [],
+      "covered": false,
+      "reason": "episodic"
+    },
+    {
+      "ref": "docs/teo/108-экспорт-товаров-группы-1517-маргарин-пригодные-для-употребле.md:88",
+      "file": "docs/teo/108-экспорт-товаров-группы-1517-маргарин-пригодные-для-употребле.md",
+      "line": 88,
+      "themes": [],
+      "covered": false,
+      "reason": "episodic"
+    },
+    {
+      "ref": "docs/teo/134-корма-для-выращивания-рыбы-в-узв.md:43",
+      "file": "docs/teo/134-корма-для-выращивания-рыбы-в-узв.md",
+      "line": 43,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/134-корма-для-выращивания-рыбы-в-узв.md:44",
+      "file": "docs/teo/134-корма-для-выращивания-рыбы-в-узв.md",
+      "line": 44,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/134-корма-для-выращивания-рыбы-в-узв.md:45",
+      "file": "docs/teo/134-корма-для-выращивания-рыбы-в-узв.md",
+      "line": 45,
+      "themes": [
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md:61",
+      "file": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md",
+      "line": 61,
+      "themes": [
+        "T10"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md:70",
+      "file": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md",
+      "line": 70,
+      "themes": [
+        "T10"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md:72",
+      "file": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md",
+      "line": 72,
+      "themes": [
+        "T10"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/teo/07-виды-и-особенности-кожи-крс.md:537",
+      "file": "docs/teo/07-виды-и-особенности-кожи-крс.md",
+      "line": 537,
+      "themes": [],
+      "covered": false,
+      "reason": "partial-duplicate"
+    },
+    {
+      "ref": "docs/teo/07-виды-и-особенности-кожи-крс.md:545",
+      "file": "docs/teo/07-виды-и-особенности-кожи-крс.md",
+      "line": 545,
+      "themes": [],
+      "covered": false,
+      "reason": "partial-duplicate"
+    },
+    {
+      "ref": "docs/teo/07-виды-и-особенности-кожи-крс.md:630",
+      "file": "docs/teo/07-виды-и-особенности-кожи-крс.md",
+      "line": 630,
+      "themes": [],
+      "covered": false,
+      "reason": "partial-duplicate"
+    },
+    {
+      "ref": "docs/teo/07-виды-и-особенности-кожи-крс.md:642",
+      "file": "docs/teo/07-виды-и-особенности-кожи-крс.md",
+      "line": 642,
+      "themes": [],
+      "covered": false,
+      "reason": "partial-duplicate"
+    },
+    {
+      "ref": "docs/scenarios/baseline.yaml:3",
+      "file": "docs/scenarios/baseline.yaml",
+      "line": 3,
+      "themes": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/scenarios/baseline.yaml:15",
+      "file": "docs/scenarios/baseline.yaml",
+      "line": 15,
+      "themes": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/scenarios/baseline.yaml:16",
+      "file": "docs/scenarios/baseline.yaml",
+      "line": 16,
+      "themes": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/scenarios/baseline.yaml:23",
+      "file": "docs/scenarios/baseline.yaml",
+      "line": 23,
+      "themes": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    },
+    {
+      "ref": "docs/scenarios/baseline.yaml:27",
+      "file": "docs/scenarios/baseline.yaml",
+      "line": 27,
+      "themes": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "covered": true,
+      "reason": null
+    }
+  ]
+}

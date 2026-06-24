@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -15,11 +17,25 @@ INVENTORY_DIR = ROOT / "docs" / "inventory" / "krolikovodstvo"
 REGISTRY_PATH = INVENTORY_DIR / "registry.yaml"
 DOCX_DIR = INVENTORY_DIR / "docx"
 REPORTS_DIR = INVENTORY_DIR / "reports"
+AUDIT_JSON_PATH = REPORTS_DIR / "docx-audit.json"
+BASELINE_PATH = ROOT / "docs" / "scenarios" / "baseline.yaml"
 
 RABBIT_RE = re.compile(
     r"кролик|крольчат|кроликовод|Meneghin|ANCI|крольчих",
     re.I,
 )
+HS_TABLE_RE = re.compile(r"табл[_-]\d+|весь-мир|экспорт-товаров-группы", re.I)
+
+AUDIT_FILE_GROUPS = (
+    "project_corpus",
+    "source_teo_primary",
+    "source_teo_secondary",
+    "structured",
+)
+
+
+class RegistryValidationError(Exception):
+    """registry.yaml failed schema/consistency checks."""
 
 
 @dataclass
@@ -388,3 +404,216 @@ def canonical_fact_refs(registry: dict[str, Any]) -> list[dict[str, str]]:
             }
         )
     return rows
+
+
+def flatten_all_source_files(registry: dict[str, Any]) -> set[str]:
+    out: set[str] = set()
+    for files in registry.get("all_source_files", {}).values():
+        out.update(files)
+    return out
+
+
+def collect_theme_source_files(registry: dict[str, Any]) -> set[str]:
+    files: set[str] = set()
+    for theme in registry.get("themes", {}).values():
+        for src in theme.get("sources", []):
+            rel = src.get("file")
+            if rel:
+                files.add(rel.replace("\\", "/"))
+    return files
+
+
+def duplicates_by_teo(registry: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    return {
+        row["teo"].replace("\\", "/"): row
+        for row in registry.get("duplicates_map", [])
+        if row.get("teo")
+    }
+
+
+def registry_hash(registry: dict[str, Any]) -> str:
+    payload = yaml.dump(registry, allow_unicode=True, sort_keys=True)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:12]
+
+
+def validate_registry(registry: dict[str, Any] | None = None) -> list[str]:
+    """Return list of validation errors (empty = OK)."""
+    registry = registry or load_registry()
+    errors: list[str] = []
+
+    all_files = flatten_all_source_files(registry)
+    theme_files = collect_theme_source_files(registry)
+    dup_map = duplicates_by_teo(registry)
+
+    for row in registry.get("duplicates_map", []):
+        teo = row.get("teo", "").replace("\\", "/")
+        if teo and teo not in all_files:
+            errors.append(f"duplicates_map teo not in all_source_files: {teo}")
+        in_docx = bool(row.get("in_docx"))
+        in_themes = teo in theme_files
+        if not in_docx and in_themes:
+            errors.append(f"duplicates_map in_docx=false but teo in themes.sources: {teo}")
+        if in_docx and not in_themes and row.get("status") != "episodic":
+            errors.append(f"duplicates_map in_docx=true but teo missing from themes.sources: {teo}")
+
+    for tid, theme in registry.get("themes", {}).items():
+        if not theme.get("action_on_replace"):
+            errors.append(f"theme {tid} missing action_on_replace")
+        if not theme.get("docx"):
+            errors.append(f"theme {tid} missing docx filename")
+
+    if not BASELINE_PATH.exists():
+        errors.append(f"baseline missing: {BASELINE_PATH}")
+    else:
+        baseline = yaml.safe_load(BASELINE_PATH.read_text(encoding="utf-8"))
+        block = baseline.get("blocks", {}).get("кролиководство", {})
+        facts = registry.get("canonical_facts", {})
+        checks: list[tuple[str, bool, str]] = [
+            (
+                "output_t_per_year",
+                str(facts.get("output_t_per_year", "")) in block.get("output", "").replace(" ", ""),
+                f"registry={facts.get('output_t_per_year')} baseline output={block.get('output')}",
+            ),
+            (
+                "capex_bln_rub",
+                facts.get("capex_bln_rub") == block.get("capex_bln_rub"),
+                f"registry={facts.get('capex_bln_rub')} baseline={block.get('capex_bln_rub')}",
+            ),
+            (
+                "npv_thousand_rub",
+                facts.get("npv_thousand_rub") == block.get("npv_thousand_rub"),
+                f"registry={facts.get('npv_thousand_rub')} baseline={block.get('npv_thousand_rub')}",
+            ),
+            (
+                "irr_pct",
+                float(facts.get("irr_pct", 0)) == float(block.get("irr_pct", -1)),
+                f"registry={facts.get('irr_pct')} baseline={block.get('irr_pct')}",
+            ),
+            (
+                "payback_months",
+                facts.get("payback_months") == block.get("payback_months"),
+                f"registry={facts.get('payback_months')} baseline={block.get('payback_months')}",
+            ),
+        ]
+        for key, ok, detail in checks:
+            if not ok:
+                errors.append(f"canonical_facts.{key} != baseline.yaml blocks.кролиководство ({detail})")
+
+    return errors
+
+
+def assert_registry_valid(registry: dict[str, Any] | None = None) -> None:
+    errors = validate_registry(registry)
+    if errors:
+        raise RegistryValidationError("\n".join(errors))
+
+
+def gather_all_theme_fragments(registry: dict[str, Any]) -> dict[str, list[SourceFragment]]:
+    """theme_id -> fragments (T13 excluded — duplicates table only)."""
+    out: dict[str, list[SourceFragment]] = {}
+    for tid, theme in registry.get("themes", {}).items():
+        if tid == "T13":
+            continue
+        frags: list[SourceFragment] = []
+        for src in theme.get("sources", []):
+            frags.extend(extract_source_fragments(src))
+        out[tid] = frags
+    return out
+
+
+def _line_covered(line_no: int, theme_frags: dict[str, list[SourceFragment]], rel: str) -> list[str]:
+    themes: list[str] = []
+    for tid, frags in theme_frags.items():
+        for f in frags:
+            if f.file.replace("\\", "/") != rel:
+                continue
+            if f.line_start <= 0:
+                continue
+            if f.line_start <= line_no <= f.line_end:
+                themes.append(tid)
+                break
+    return themes
+
+
+def _classify_uncovered(
+    rel: str,
+    dup: dict[str, Any] | None,
+) -> str:
+    if dup:
+        status = dup.get("status", "")
+        if status == "episodic":
+            return "episodic"
+        if status == "duplicate" and not dup.get("in_docx"):
+            return "duplicate"
+        if status == "partial" and not dup.get("in_docx"):
+            return "partial-duplicate"
+    name = Path(rel).name
+    if HS_TABLE_RE.search(name):
+        return "HS-table"
+    if dup and dup.get("status") == "partial":
+        return "partial"
+    return "uncovered"
+
+
+def build_docx_audit(registry: dict[str, Any] | None = None) -> dict[str, Any]:
+    registry = registry or load_registry()
+    theme_frags = gather_all_theme_fragments(registry)
+    dup_map = duplicates_by_teo(registry)
+
+    lines_out: list[dict[str, Any]] = []
+    by_reason: dict[str, int] = {}
+    covered_count = 0
+
+    all_files = registry.get("all_source_files", {})
+    for group in AUDIT_FILE_GROUPS:
+        for rel in all_files.get(group, []):
+            rel = rel.replace("\\", "/")
+            text = read_text(rel)
+            if not text:
+                continue
+            dup = dup_map.get(rel)
+            for i, line in enumerate(text.splitlines(), start=1):
+                if not RABBIT_RE.search(line):
+                    continue
+                ref = f"{rel}:{i}"
+                themes = _line_covered(i, theme_frags, rel)
+                if themes:
+                    covered = True
+                    reason = None
+                    covered_count += 1
+                else:
+                    covered = False
+                    reason = _classify_uncovered(rel, dup)
+                    by_reason[reason] = by_reason.get(reason, 0) + 1
+                lines_out.append(
+                    {
+                        "ref": ref,
+                        "file": rel,
+                        "line": i,
+                        "themes": themes,
+                        "covered": covered,
+                        "reason": reason,
+                    }
+                )
+
+    total = len(lines_out)
+    intentional = sum(by_reason.get(r, 0) for r in ("duplicate", "episodic", "partial-duplicate", "HS-table", "partial"))
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "registry_hash": registry_hash(registry),
+        "summary": {
+            "total_mention_lines": total,
+            "covered": covered_count,
+            "intentional_gaps": intentional,
+            "unexpected_gaps": by_reason.get("uncovered", 0),
+            "by_reason": by_reason,
+        },
+        "lines": lines_out,
+    }
+
+
+def write_docx_audit(registry: dict[str, Any] | None = None) -> Path:
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    audit = build_docx_audit(registry)
+    AUDIT_JSON_PATH.write_text(json.dumps(audit, ensure_ascii=False, indent=2), encoding="utf-8")
+    return AUDIT_JSON_PATH

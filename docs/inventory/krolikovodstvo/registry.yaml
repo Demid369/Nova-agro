@@ -246,6 +246,14 @@ themes:
       - file: docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md
         role: source_teo
 
+  T13:
+    id: T13
+    name: Карта дублей teo → corpus
+    docx: T13-duplicates.docx
+    description: Служебный документ — дубли teo/corpus перед заменой блока
+    action_on_replace: keep_reference
+    sources: []
+
 # Карта дублей teo → corpus (для T13-duplicates.docx)
 duplicates_map:
   - teo: docs/teo/124-кролики-особенности-содержания-и-разведения.md
@@ -355,13 +363,64 @@ all_source_files:
     - scripts/teo_rag/chunks.py
 
 rag_validation_queries:
-  - query: "NPV кролиководство"
+  - id: inv_q01
+    query: "NPV кролиководство"
     expect: ["2779519", "2 779"]
-  - query: "CAPEX кролиководства"
+    expected_mode: vector
+    tags: [rabbit, inventory, npv]
+    sync_teo_queries: false
+  - id: inv_q02
+    query: "CAPEX кролиководства"
     expect: ["12"]
-  - query: "сколько тонн крольчатины"
+    expected_mode: hybrid
+    tags: [rabbit, inventory, capex]
+    sync_teo_queries: false
+  - id: inv_q03
+    query: "сколько тонн крольчатины"
     expect: ["7000", "7 000"]
-  - query: "Meneghin Srl"
+    expected_mode: vector
+    tags: [rabbit, inventory, facts]
+    sync_teo_queries: false
+  - id: inv_q04
+    query: "Meneghin Srl"
     expect: ["Meneghin"]
-  - query: "мировой рынок крольчатины"
+    expected_mode: hybrid
+    tags: [rabbit, inventory, equipment]
+    sync_teo_queries: true
+  - id: inv_q05
+    query: "мировой рынок крольчатины"
     expect: ["крол", "FAOSTAT"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, market]
+    sync_teo_queries: true
+  - id: inv_q06
+    query: "FRAGOLA корм кролик"
+    expect: ["FRAGOLA"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, feed]
+    sync_teo_queries: true
+  - id: inv_q07
+    query: "Оценка доброкачественности мяса кролика"
+    expect: ["доброкачествен"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, processing]
+    sync_teo_queries: true
+  - id: inv_q08
+    query: "BusinesStat цены крольчатины"
+    expect: ["BusinesStat", "крол"]
+    mode: hybrid
+    expected_mode: hybrid
+    tags: [rabbit, inventory, market]
+    sync_teo_queries: true
+  - id: inv_q09
+    query: "навоз кроликов 43800"
+    expect: ["43 800", "навоз"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, byproducts]
+    sync_teo_queries: true
+  - id: inv_q10
+    query: "генетика ANCI кролики"
+    expect: ["ANCI"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, genetics]
+    sync_teo_queries: true
