@@ -42,13 +42,21 @@ graphify explain "Нулевая себестоимость мяса"
 
 Откройте `graphify-out/graph.html` в браузере для интерактивной карты.
 
-## Пересборка стартового графа (без LLM)
+## Пересборка полного графа
 
 ```bash
-python3 scripts/build-teo-graph.py
+uv tool run --from graphifyy python scripts/build-full-teo-graph.py
 ```
 
-Полная семантическая экстракция (~167k слов) требует `/graphify` в Cursor или API-ключ:
+Обрабатывает **146 markdown-файлов** (`docs/graphify-corpus/` + `docs/teo/`), строит полный граф со всеми извлечёнными связями.
+
+Текущий граф: **~4200 узлов**, **~12000 рёбер**, **~300 сообществ**.
+
+Стартовый мини-граф (29 узлов):
+
+```bash
+uv tool run --from graphifyy python scripts/build-teo-graph.py
+```
 
 ```bash
 export GEMINI_API_KEY=...   # или OPENAI_API_KEY / ANTHROPIC_API_KEY
