@@ -9,7 +9,7 @@
 | `docs/1.ТЭО_МОЯ МЕЧТА.docx` | Исходный ТЭО (66 МБ, **не индексируется** Graphify — лимит 50 МБ) |
 | `docs/teo/` | Нарезка docx по заголовкам (140 файлов) |
 | `docs/graphify-corpus/` | **Корпус для Graphify** — 6 сводных markdown-файлов |
-| `graphify-out/` | Граф: `graph.json`, `GRAPH_REPORT.md`, `graph.html` |
+| `graphify-out/` | Граф: `graph.json`, `GRAPH_REPORT.md`, `graph.html`, `QUERY_WALKTHROUGH.md` |
 
 ## Быстрый старт в Cursor
 
