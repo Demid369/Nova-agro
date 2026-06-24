@@ -35,8 +35,9 @@ docs/inventory/krolikovodstvo/
 | T10 | `T10-export.docx` | экспортные рынки крольчатины (проект) |
 | T11 | `T11-narrative-mission.docx` | миссия, цели, резюме про кроликов |
 | T12 | `T12-world-market-reference.docx` | мировой рынок, FAOSTAT, табл. 23/39 |
-| — | `00-index-krolikovodstvo.docx` | оглавление + сводная таблица файлов |
-| — | `reports/rag-validation.docx` | проверка: исходный ТЭО vs RAG |
+| — | `00-index-krolikovodstvo.docx` | оглавление + KPI-ссылки |
+| — | `T13-duplicates.docx` | карта дублей teo → corpus (служебный) |
+| — | `reports/rag-validation.docx` | сверка RAG vs ТЭО |
 
 Каждый DOCX содержит **ссылки на исходный ТЭО** в формате `файл:строка` (например `docs/graphify-corpus/01-vvedenie-i-resume.md:712–810`).
 

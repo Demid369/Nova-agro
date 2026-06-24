@@ -99,6 +99,50 @@ def build_theme_docx(theme_id: str, theme: dict) -> Path:
     return out
 
 
+def build_duplicates_docx(registry: dict) -> Path:
+    DOCX_DIR.mkdir(parents=True, exist_ok=True)
+    out = DOCX_DIR / "T13-duplicates.docx"
+    doc = Document()
+    title = doc.add_heading("T13. Карта дублей teo → corpus", 0)
+    title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    add_meta(doc, "Служебный документ перед заменой блока на птицу")
+
+    doc.add_heading("Правило", level=1)
+    doc.add_paragraph(
+        "В DOCX-темах canonical = graphify-corpus. Файлы teo/124 и teo/02 — дубли, "
+        "намеренно не включены в тематические DOCX (остаются в RAG и all_source_files)."
+    )
+
+    rows = registry.get("duplicates_map", [])
+    table = doc.add_table(rows=1, cols=5)
+    table.style = "Table Grid"
+    headers = ["teo файл", "corpus файл", "статус", "в DOCX", "примечание"]
+    for i, h in enumerate(headers):
+        table.rows[0].cells[i].text = h
+    for row in rows:
+        cells = table.add_row().cells
+        cells[0].text = row.get("teo", "")
+        cells[1].text = (row.get("corpus") or "—") + (
+            f" ({row.get('corpus_anchor', '')})" if row.get("corpus_anchor") else ""
+        )
+        cells[2].text = row.get("status", "")
+        cells[3].text = "да" if row.get("in_docx") else "нет"
+        cells[4].text = row.get("note", "")
+
+    doc.add_paragraph()
+    doc.add_heading("Легенда статусов", level=1)
+    for line in [
+        "duplicate — полный или почти полный дубль corpus",
+        "partial — пересечение по части разделов",
+        "unique — только в teo, нет аналога в corpus",
+        "episodic — эпизодическое упоминание, не проектный блок",
+    ]:
+        doc.add_paragraph(line, style="List Bullet")
+
+    doc.save(out)
+    return out
+
+
 def build_index_docx(registry: dict) -> Path:
     DOCX_DIR.mkdir(parents=True, exist_ok=True)
     out = DOCX_DIR / "00-index-krolikovodstvo.docx"
@@ -124,6 +168,7 @@ def build_index_docx(registry: dict) -> Path:
     for tid in sorted(k for k in registry.get("themes", {}) if k.startswith("T")):
         th = registry["themes"][tid]
         doc.add_paragraph(f"{tid} — {th['name']}: {th['docx']}", style="List Bullet")
+    doc.add_paragraph("T13 — Карта дублей teo→corpus: T13-duplicates.docx", style="List Bullet")
 
     doc.add_heading("Все файлы-источники (замена)", level=1)
     all_files = registry.get("all_source_files", {})
@@ -138,7 +183,7 @@ def build_index_docx(registry: dict) -> Path:
 
 def main() -> None:
     registry = load_registry()
-    paths: list[Path] = [build_index_docx(registry)]
+    paths: list[Path] = [build_index_docx(registry), build_duplicates_docx(registry)]
     for tid in sorted(k for k in registry.get("themes", {}) if k.startswith("T")):
         paths.append(build_theme_docx(tid, registry["themes"][tid]))
     print(f"Generated {len(paths)} DOCX in docs/inventory/krolikovodstvo/docx")

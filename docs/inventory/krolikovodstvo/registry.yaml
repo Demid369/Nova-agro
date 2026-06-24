@@ -122,7 +122,9 @@ themes:
           - Схема разделки
           - технологического оборудования для переработки
           - Выход мяса с кролика
+          - Оценка доброкачественности мяса
         role: project
+        note: «Выход мяса» — пустой заголовок; текст под «Оценка доброкачественности»
       - file: docs/scenarios/baseline.yaml
         path: blocks.кролиководство.slaughter
         role: structured
@@ -243,6 +245,80 @@ themes:
         role: source_teo
       - file: docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md
         role: source_teo
+
+# Карта дублей teo → corpus (для T13-duplicates.docx)
+duplicates_map:
+  - teo: docs/teo/124-кролики-особенности-содержания-и-разведения.md
+    corpus: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    corpus_anchor: "1411–1517"
+    status: duplicate
+    in_docx: false
+    note: canonical = corpus; не включать teo/124 в DOCX
+  - teo: docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md
+    corpus: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    corpus_anchor: "1519+"
+    status: duplicate
+    in_docx: true
+    note: в T06 через corpus + teo/125 как source_teo
+  - teo: docs/teo/08-мировой-рынок-крольчатины.md
+    corpus: docs/graphify-corpus/04-rynok-i-analitika.md
+    corpus_anchor: "481+"
+    status: duplicate
+    in_docx: true
+    note: T12 — оба источника
+  - teo: docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md
+    corpus: docs/graphify-corpus/04-rynok-i-analitika.md
+    corpus_anchor: "1819–1834"
+    status: duplicate
+    in_docx: true
+    note: T09 — цены крольчатины
+  - teo: docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md
+    corpus: docs/graphify-corpus/01-vvedenie-i-resume.md
+    corpus_anchor: "711+"
+    status: partial
+    in_docx: true
+    note: T02 — I-фаза, частичное пересечение
+  - teo: docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md
+    corpus: docs/graphify-corpus/01-vvedenie-i-resume.md
+    corpus_anchor: "1621"
+    status: partial
+    in_docx: true
+    note: T12 — FAO-абзац + полный teo/109
+  - teo: docs/teo/00-меморандум-о-конфиденциальности.md
+    corpus: docs/graphify-corpus/01-vvedenie-i-resume.md
+    status: duplicate
+    in_docx: true
+    note: T11 — narrative
+  - teo: docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md
+    corpus: docs/graphify-corpus/01-vvedenie-i-resume.md
+    status: duplicate
+    in_docx: false
+    note: дубль narrative — только corpus в DOCX
+  - teo: docs/teo/134-корма-для-выращивания-рыбы-в-узв.md
+    corpus: null
+    status: unique
+    in_docx: true
+    note: T07 — экология кроликов (3 строки), не дубль
+  - teo: docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md
+    corpus: docs/graphify-corpus/04-rynok-i-analitika.md
+    status: partial
+    in_docx: true
+    note: T10 — HS-импортёры кролика
+  - teo: docs/teo/07-виды-и-особенности-кожи-крс.md
+    corpus: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    status: partial
+    in_docx: false
+    note: 4 строки про корм кроликов — дубль T06
+  - teo: docs/teo/108-экспорт-товаров-группы-1517-маргарин-пригодные-для-употребле.md
+    corpus: null
+    status: episodic
+    in_docx: false
+    note: не проектный блок кроликов — не добавлять
+  - teo: docs/teo/05-4-рынок-и-концепция-маркетинга.md
+    corpus: docs/graphify-corpus/04-rynok-i-analitika.md
+    status: partial
+    in_docx: true
+    note: T09
 
 # Все файлы с упоминанием кроликов (полный список для замены/архива)
 all_source_files:
