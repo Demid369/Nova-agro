@@ -76,14 +76,12 @@ themes:
     action_on_replace: replace
     sources:
       - file: docs/graphify-corpus/01-vvedenie-i-resume.md
-        keywords: [ANCI, итальянск, F1, пород, крольчих, опорос]
+        keywords: [ANCI, итальянск, F1, пород, крольчих, опорос, "Самка кролика", "4–6 раз"]
         role: project
       - file: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
-        sections: ["Кролики: особенности содержания"]
+        sections: ["Кролики: особенности содержания", "Размножение", "Кормление"]
         role: project
-      - file: docs/teo/124-кролики-особенности-содержания-и-разведения.md
-        role: source_teo
-        note: дубль зоотехнии — сверять с corpus
+        note: дубль teo/124 — сверять построчно
 
   T04:
     id: T04
@@ -141,6 +139,7 @@ themes:
         role: project
       - file: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
         sections: ["Табл. 141", "комбикорм.*кролик"]
+        keywords: [полнорационные корма.*кролик, витамин.*кролик]
         role: project
       - file: docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md
         role: source_teo
@@ -164,6 +163,12 @@ themes:
       - file: docs/scenarios/baseline.yaml
         path: blocks.кролиководство.byproducts
         role: structured
+      - file: docs/teo/134-корма-для-выращивания-рыбы-в-узв.md
+        role: source_teo
+        note: экология — отходы кроликов, навоз
+      - file: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+        keywords: [кроличий навоз, навоз кроликов]
+        role: project
 
   T08:
     id: T08
@@ -184,11 +189,14 @@ themes:
     action_on_replace: replace
     sources:
       - file: docs/graphify-corpus/04-rynok-i-analitika.md
-        keywords: [SWOT, оптовые цены, популярность, кролиководческ]
+        keywords: [SWOT, оптовые цены, популярность, кролиководческ, BusinesStat, Филе кролика, "1 070"]
         role: project
       - file: docs/graphify-corpus/01-vvedenie-i-resume.md
-        keywords: [спрос на мясо кролика, диетич, детск]
+        keywords: [спрос на мясо кролика, диетич, детск, BusinesStat, "8,7%", шкурок кролик, "мех кролика"]
         role: project
+      - file: docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md
+        role: source_teo
+        note: дубль цен из 04-rynok — сверять
       - file: docs/teo/05-4-рынок-и-концепция-маркетинга.md
         role: source_teo
 
@@ -202,6 +210,9 @@ themes:
       - file: docs/graphify-corpus/04-rynok-i-analitika.md
         keywords: [экспорт.*крол, импортер.*крол, перспективные рынки]
         role: project
+      - file: docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md
+        role: source_teo
+        note: HS-статистика — импортёры крольчатины
 
   T11:
     id: T11
@@ -226,6 +237,7 @@ themes:
     sources:
       - file: docs/graphify-corpus/04-rynok-i-analitika.md
         sections: ["Мировой рынок крольчатины", "Табл. 23", "Табл. 39", FAOSTAT]
+        keywords: [кулинар, фенката, диетическ]
         role: project_market
       - file: docs/teo/08-мировой-рынок-крольчатины.md
         role: source_teo

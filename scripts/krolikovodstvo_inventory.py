@@ -134,9 +134,13 @@ def extract_fragments_by_sections(text: str, rel: str, patterns: list[str]) -> l
         if not any(c.search(label) for c in compiled):
             continue
         block = f"{heading}\n\n{body}".strip() if heading else body
-        end_line = start_line + max(body.count("\n"), 0)
+        end_line = start_line
         if body:
-            end_line = start_line + len(body.splitlines()) - 1
+            end_line = start_line + len(body.splitlines())
+            if heading:
+                end_line += 0  # body lines only after heading line
+        else:
+            end_line = start_line
         end_line = min(max(end_line, start_line), len(lines))
         frags.append(
             SourceFragment(
@@ -193,6 +197,38 @@ def extract_fragments_by_keywords(
     return frags
 
 
+def _extract_graph_rabbit_fragments(text: str, rel: str, note: str | None) -> list[SourceFragment]:
+    """Pull rabbit-related nodes/edges from graph.json — not the whole file."""
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        return [SourceFragment(file=rel, line_start=0, line_end=0, text="[graph.json parse error]", note=note)]
+    nodes = data.get("nodes", [])
+    edges = data.get("edges", [])
+    hits: list[str] = []
+    for n in nodes:
+        label = n.get("label", "")
+        if RABBIT_RE.search(label):
+            src = n.get("source", "")
+            hits.append(f"• {label} ← {src}")
+    for e in edges:
+        blob = f"{e.get('source','')} {e.get('relation','')} {e.get('target','')}"
+        if RABBIT_RE.search(blob):
+            hits.append(f"  {e.get('source')} --{e.get('relation')}--> {e.get('target')}")
+    body = "\n".join(hits[:80]) if hits else "[нет узлов кролиководства в graph.json]"
+    if len(hits) > 80:
+        body += f"\n\n… ещё {len(hits) - 80} связей"
+    return [
+        SourceFragment(
+            file=rel,
+            line_start=1,
+            line_end=min(len(hits), 80),
+            text=body,
+            note=(note or "") + " только узлы/рёбра кроликов",
+        )
+    ]
+
+
 def extract_source_fragments(source: dict[str, Any]) -> list[SourceFragment]:
     rel = source.get("file", "")
     if not rel:
@@ -227,20 +263,16 @@ def extract_source_fragments(source: dict[str, Any]) -> list[SourceFragment]:
         ]
 
     sections = source.get("sections")
-    if sections:
-        frags = extract_fragments_by_sections(text, rel, sections)
-        if frags:
-            for f in frags:
-                f.note = note
-            return frags
-
     keywords = source.get("keywords")
+    merged: list[SourceFragment] = []
+    if sections:
+        merged.extend(extract_fragments_by_sections(text, rel, sections))
     if keywords:
-        frags = extract_fragments_by_keywords(text, rel, keywords, context_lines=3)
-        if frags:
-            for f in frags:
-                f.note = note
-            return frags
+        merged.extend(extract_fragments_by_keywords(text, rel, keywords, context_lines=3))
+    if merged:
+        for f in merged:
+            f.note = note
+        return merged
 
     if rel.endswith((".yaml", ".yml")):
         data = yaml.safe_load(text)
@@ -257,6 +289,8 @@ def extract_source_fragments(source: dict[str, Any]) -> list[SourceFragment]:
         return [SourceFragment(file=rel, line_start=1, line_end=n_lines, text=body, note=note)]
 
     if rel.endswith(".json"):
+        if "graph.json" in rel.replace("\\", "/"):
+            return _extract_graph_rabbit_fragments(text, rel, note)
         data = json.loads(text)
         sub = source.get("path", "")
         body = text.strip()
