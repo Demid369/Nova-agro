@@ -160,6 +160,10 @@ NOISE_LABEL_RE = [
     re.compile(r"крупнейших стран[- ](?:производител|экспортер)", re.I),
     re.compile(r"^группы\s*\d+", re.I),
     re.compile(r"^020\d\s*-", re.I),
+    re.compile(r"^связан\w*\s+это", re.I),
+    re.compile(r"^эксперты\s+утверждают", re.I),
+    re.compile(r"^россии\s", re.I),
+    re.compile(r"^потенциал\s", re.I),
 ]
 
 GENERIC_HEADINGS = {
@@ -215,7 +219,25 @@ def label_matches_noise(label: str) -> bool:
     return any(p.search(s) for p in NOISE_LABEL_RE)
 
 
+def is_project_entity(label: str) -> bool:
+    low = label.lower()
+    if any(pe.lower() in low for pe in PROJECT_ENTITIES):
+        return True
+    return bool(PROJECT_MARKET_RE.search(label))
+
+
+def is_sentence_fragment(label: str) -> bool:
+    low = label.lower().strip()
+    fragments = (
+        "связано это", "эксперты утверждают", "россии очень", "россии растет",
+        "потенциал рынка", "также влияет", "по сравнению", "в связи с",
+    )
+    return any(low.startswith(f) for f in fragments)
+
+
 def is_noise_label(label: str) -> bool:
+    if is_sentence_fragment(label):
+        return True
     s = label.strip()
     if len(s) < 3:
         return True
@@ -299,6 +321,8 @@ def tokenize_entities(text: str) -> list[str]:
     # Capitalized Russian multi-word (2-5 words)
     for m in re.finditer(r"\b([А-ЯЁ][а-яё]+(?:\s+[А-ЯЁа-яё][а-яё]+){0,4})\b", text):
         phrase = m.group(1).strip()
+        if is_sentence_fragment(phrase):
+            continue
         words = phrase.lower().split()
         if len(words) >= 2 and not any(w in STOP for w in words[:1]):
             if len(phrase) >= 6:
@@ -410,9 +434,23 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
                 edges.append(e)
         if is_market_corpus_file(path) and not in_market_section:
             continue
-        for i in range(len(nids)):
-            for j in range(i + 1, min(i + 4, len(nids))):
-                e = edge(nids[i], nids[j], REL_CO, rel, "INFERRED", 0.65)
+        # co-occurrence: в 04-rynok только между project-relevant сущностями
+        co_nids = nids
+        if is_market_corpus_file(path):
+            co_pairs = [
+                (nids[i], nids[j])
+                for i in range(len(nids))
+                for j in range(i + 1, min(i + 3, len(nids)))
+                if is_project_entity(ents[i]) and is_project_entity(ents[j])
+            ]
+            for a, b in co_pairs:
+                e = edge(a, b, REL_CO, rel, "INFERRED", 0.65)
+                if e:
+                    edges.append(e)
+            continue
+        for i in range(len(co_nids)):
+            for j in range(i + 1, min(i + 4, len(co_nids))):
+                e = edge(co_nids[i], co_nids[j], REL_CO, rel, "INFERRED", 0.65)
                 if e:
                     edges.append(e)
 

@@ -84,6 +84,13 @@ python scripts/teo-query.py "NPV теплиц" --synthesize --save-memory
 - `graph_node` — `label`, `source`, `community`
 - `graph_edge` — `source_node`, `relation`, `target_node`
 
+## Полная проверка системы
+
+```bash
+python scripts/test-teo-system.py   # 49 проверок: infra + router + graph + vector + validation + CLI
+python scripts/benchmark-teo-rag.py   # роутер + latency на 25 запросах
+```
+
 ## Тесты
 
 ```bash

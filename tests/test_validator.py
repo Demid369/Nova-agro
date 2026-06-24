@@ -48,6 +48,21 @@ def test_validate_rejects_hallucinated():
     assert len(result.unsupported) >= 1
 
 
+def test_validate_claims_supported():
+    answer = "Проект в Херсонской области, инвестиции 100 млрд"
+    corpus = "Херсонская область инвестиции 100 млрд руб."
+    result = validate_answer(answer, corpus, check_claims=True)
+    assert result.valid is True
+
+
 def test_validate_empty_corpus_non_strict():
     result = validate_answer("100 млрд", "", strict=False)
     assert result.valid is True
+
+
+def test_validate_claims_reject():
+    answer = "Проект расположен на Марсе и финансируется из параллельной вселенной"
+    corpus = "Херсонская область инвестиции 100 млрд"
+    result = validate_answer(answer, corpus, check_claims=True)
+    assert result.valid is False
+    assert result.unsupported_claims

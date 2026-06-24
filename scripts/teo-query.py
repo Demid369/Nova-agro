@@ -167,7 +167,7 @@ def run_query(
 
     validation_result = None
     if validate or synthesize:
-        validation_result = validate_answer(answer, bundle.corpus_text())
+        validation_result = validate_answer(answer, bundle.corpus_text(), check_claims=True)
         if not validation_result.valid and synthesis_meta:
             synthesis_meta["rejected"] = True
             synthesis_meta["unsupported_numbers"] = validation_result.unsupported
@@ -189,10 +189,12 @@ def run_query(
     else:
         print(answer)
         if validation_result and not validation_result.valid:
-            print(
-                f"\n[validation FAILED] неподтверждённые числа: {', '.join(validation_result.unsupported)}",
-                file=sys.stderr,
-            )
+            parts = []
+            if validation_result.unsupported:
+                parts.append(f"числа: {', '.join(validation_result.unsupported)}")
+            if validation_result.unsupported_claims:
+                parts.append(f"claims: {len(validation_result.unsupported_claims)}")
+            print(f"\n[validation FAILED] {'; '.join(parts)}", file=sys.stderr)
         elif validation_result and validation_result.valid and validate:
             print("\n[validation OK]", file=sys.stderr)
 

@@ -1,4 +1,4 @@
-# Тестовые запросы для TEO RAG (graph / vector / hybrid)
+# TEO RAG — тестовый набор (router + e2e expectations)
 
 queries:
   - id: q01
@@ -9,6 +9,7 @@ queries:
   - id: q02
     query: "NPV теплиц"
     expected_mode: vector
+    expect_contains: ["33 861 691", "28,99"]
     tags: [npv, finance]
 
   - id: q03
@@ -29,6 +30,7 @@ queries:
   - id: q06
     query: "обзор структура проекта МОЯ МЕЧТА"
     expected_mode: summary
+    expect_contains: ["МОЯ МЕЧТА"]
     tags: [summary, overview]
 
   - id: q07
@@ -39,6 +41,7 @@ queries:
   - id: q08
     query: "сколько инвестиций в проект млрд рублей"
     expected_mode: vector
+    expect_contains: ["100"]
     tags: [facts, investment]
 
   - id: q09
@@ -50,3 +53,83 @@ queries:
     query: "IRR окупаемость блоки"
     expected_mode: vector
     tags: [irr, finance]
+
+  - id: q11
+    query: "нулевая себестоимость мяса побочные продукты"
+    expected_mode: hybrid
+    tags: [graph, zero-cost]
+
+  - id: q12
+    query: "выручка 71,4 млрд"
+    expected_mode: vector
+    expect_contains: ["выручка", "млрд"]
+    tags: [facts, revenue]
+
+  - id: q13
+    query: "экспорт 10,2 млрд"
+    expected_mode: vector
+    expect_contains: ["10"]
+    tags: [facts, export]
+
+  - id: q14
+    query: "чёрная икра белуга"
+    expected_mode: hybrid
+    tags: [fish, hybrid]
+
+  - id: q15
+    query: "халяльный желатин экспорт"
+    expected_mode: hybrid
+    tags: [export, hybrid]
+
+  - id: q16
+    query: "NPV животноводство"
+    expected_mode: vector
+    expect_contains: ["28"]
+    tags: [npv, finance]
+
+  - id: q17
+    query: "риски финансовые"
+    expected_mode: hybrid
+    tags: [risks]
+
+  - id: q18
+    query: "структура блоков проекта"
+    expected_mode: summary
+    tags: [summary]
+
+  - id: q19
+    query: "масложировой комбинат шрот"
+    expected_mode: hybrid
+    tags: [production]
+
+  - id: q20
+    query: "кролиководство NPV"
+    expected_mode: vector
+    expect_contains: ["2 779"]
+    tags: [npv, rabbit]
+
+  - id: q21
+    query: "связь убойного цеха с кожевенным заводом"
+    expected_mode: graph
+    tags: [graph, chain]
+
+  - id: q22
+    query: "сколько га теплиц"
+    expected_mode: vector
+    tags: [facts, greenhouse]
+
+  - id: q23
+    query: "Херсонская область локация"
+    expected_mode: hybrid
+    expect_contains: ["Херсон"]
+    tags: [location]
+
+  - id: q24
+    query: "рыбоводство осетр икра"
+    expected_mode: hybrid
+    tags: [fish]
+
+  - id: q25
+    query: "цитата о нулевой себестоимости мяса"
+    expected_mode: vector
+    tags: [quote, vector]
