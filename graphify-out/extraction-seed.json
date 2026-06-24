@@ -1,0 +1,532 @@
+{
+  "nodes": [
+    {
+      "id": "summary_moya_mechta",
+      "label": "ООО «МОЯ МЕЧТА»",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "summary_kherson",
+      "label": "Херсонская область",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "summary_invest_100b",
+      "label": "Инвестиции 100 млрд руб.",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "summary_revenue_71b",
+      "label": "Выручка 71,4 млрд руб./год",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "summary_jobs_5000",
+      "label": "5000 рабочих мест",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "summary_land_135k",
+      "label": "Земельный фонд 135 000 га",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "summary_zero_meat_cost",
+      "label": "Нулевая себестоимость мяса",
+      "file_type": "rationale",
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_rabbit",
+      "label": "Кролиководство 7 000 т/год",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_greenhouse",
+      "label": "Тепличный комплекс 100 га",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_livestock",
+      "label": "Животноводство КРС/МРС",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_fish",
+      "label": "Рыбоводство белуга",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_oil",
+      "label": "Масложировой комбинат",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_biogas",
+      "label": "Биогазовая установка 20 МВт·ч",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_solar",
+      "label": "Солнечные панели 50 МВт·ч",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_leather",
+      "label": "Переработка кожи 600 000 м²",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_gelatin",
+      "label": "Халяльный желатин 6 000 т",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_caviar",
+      "label": "Чёрная икра 20 т/год",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "prod_feed",
+      "label": "Комбикормовый завод",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "tech_meneghin",
+      "label": "Meneghin Srl",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "tech_sint",
+      "label": "SINT Technologies",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "tech_hocevar",
+      "label": "HOCEVAR",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "tech_aia",
+      "label": "AIA Associazione Italiana Allevatori",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    },
+    {
+      "id": "fin_npv_rabbit",
+      "label": "NPV кролиководство 2,78 млрд",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null
+    },
+    {
+      "id": "fin_npv_greenhouse",
+      "label": "NPV теплицы 33,86 млрд",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null
+    },
+    {
+      "id": "fin_npv_livestock",
+      "label": "NPV животноводство 28,92 млрд",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null
+    },
+    {
+      "id": "fin_npv_fish",
+      "label": "NPV рыбоводство 3,86 млрд",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null
+    },
+    {
+      "id": "fin_npv_oil",
+      "label": "NPV масложировой 26,83 млрд",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null
+    },
+    {
+      "id": "market_export",
+      "label": "Экспорт 10,2 млрд руб.",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null
+    },
+    {
+      "id": "market_halal",
+      "label": "Сертификат Халяль",
+      "file_type": "concept",
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "summary_moya_mechta",
+      "target": "summary_kherson",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "summary_invest_100b",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "summary_revenue_71b",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "summary_jobs_5000",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "summary_land_135k",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_zero_meat_cost",
+      "target": "prod_leather",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_zero_meat_cost",
+      "target": "prod_gelatin",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "prod_rabbit",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "prod_greenhouse",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "prod_livestock",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "prod_fish",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_moya_mechta",
+      "target": "prod_oil",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_rabbit",
+      "target": "tech_meneghin",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_livestock",
+      "target": "tech_sint",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_gelatin",
+      "target": "tech_hocevar",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_livestock",
+      "target": "tech_aia",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_livestock",
+      "target": "prod_biogas",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_livestock",
+      "target": "prod_leather",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_livestock",
+      "target": "prod_gelatin",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_livestock",
+      "target": "prod_feed",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_fish",
+      "target": "prod_caviar",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_oil",
+      "target": "prod_feed",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_biogas",
+      "target": "prod_solar",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_invest_100b",
+      "target": "fin_npv_rabbit",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_invest_100b",
+      "target": "fin_npv_greenhouse",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_invest_100b",
+      "target": "fin_npv_livestock",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_invest_100b",
+      "target": "fin_npv_fish",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_invest_100b",
+      "target": "fin_npv_oil",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "summary_revenue_71b",
+      "target": "market_export",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_gelatin",
+      "target": "market_halal",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_caviar",
+      "target": "market_export",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "prod_leather",
+      "target": "market_export",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/workspace/docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

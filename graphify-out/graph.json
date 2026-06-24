@@ -1,0 +1,621 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "\u041e\u041e\u041e \u00ab\u041c\u041e\u042f \u041c\u0415\u0427\u0422\u0410\u00bb",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "id": "summary_moya_mechta",
+      "community": 1,
+      "community_name": "Community 1",
+      "norm_label": "\u043e\u043e\u043e \u00ab\u043c\u043e\u044f \u043c\u0435\u0447\u0442\u0430\u00bb"
+    },
+    {
+      "label": "\u0425\u0435\u0440\u0441\u043e\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "id": "summary_kherson",
+      "community": 1,
+      "community_name": "Community 1",
+      "norm_label": "\u0445\u0435\u0440\u0441\u043e\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    },
+    {
+      "label": "\u0418\u043d\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u0438 100 \u043c\u043b\u0440\u0434 \u0440\u0443\u0431.",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "id": "summary_invest_100b",
+      "community": 2,
+      "community_name": "Community 2",
+      "norm_label": "\u0438\u043d\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u0438 100 \u043c\u043b\u0440\u0434 \u0440\u0443\u0431."
+    },
+    {
+      "label": "\u0412\u044b\u0440\u0443\u0447\u043a\u0430 71,4 \u043c\u043b\u0440\u0434 \u0440\u0443\u0431./\u0433\u043e\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "id": "summary_revenue_71b",
+      "community": 4,
+      "community_name": "Community 4",
+      "norm_label": "\u0432\u044b\u0440\u0443\u0447\u043a\u0430 71,4 \u043c\u043b\u0440\u0434 \u0440\u0443\u0431./\u0433\u043e\u0434"
+    },
+    {
+      "label": "5000 \u0440\u0430\u0431\u043e\u0447\u0438\u0445 \u043c\u0435\u0441\u0442",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "id": "summary_jobs_5000",
+      "community": 1,
+      "community_name": "Community 1",
+      "norm_label": "5000 \u0440\u0430\u0431\u043e\u0447\u0438\u0445 \u043c\u0435\u0441\u0442"
+    },
+    {
+      "label": "\u0417\u0435\u043c\u0435\u043b\u044c\u043d\u044b\u0439 \u0444\u043e\u043d\u0434 135 000 \u0433\u0430",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "id": "summary_land_135k",
+      "community": 1,
+      "community_name": "Community 1",
+      "norm_label": "\u0437\u0435\u043c\u0435\u043b\u044c\u043d\u044b\u0438 \u0444\u043e\u043d\u0434 135 000 \u0433\u0430"
+    },
+    {
+      "label": "\u041d\u0443\u043b\u0435\u0432\u0430\u044f \u0441\u0435\u0431\u0435\u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u043c\u044f\u0441\u0430",
+      "file_type": "rationale",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "id": "summary_zero_meat_cost",
+      "community": 3,
+      "community_name": "Community 3",
+      "norm_label": "\u043d\u0443\u043b\u0435\u0432\u0430\u044f \u0441\u0435\u0431\u0435\u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u043c\u044f\u0441\u0430"
+    },
+    {
+      "label": "\u041a\u0440\u043e\u043b\u0438\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e 7 000 \u0442/\u0433\u043e\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_rabbit",
+      "community": 1,
+      "community_name": "Community 1",
+      "norm_label": "\u043a\u0440\u043e\u043b\u0438\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e 7 000 \u0442/\u0433\u043e\u0434"
+    },
+    {
+      "label": "\u0422\u0435\u043f\u043b\u0438\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0441 100 \u0433\u0430",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_greenhouse",
+      "community": 1,
+      "community_name": "Community 1",
+      "norm_label": "\u0442\u0435\u043f\u043b\u0438\u0447\u043d\u044b\u0438 \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0441 100 \u0433\u0430"
+    },
+    {
+      "label": "\u0416\u0438\u0432\u043e\u0442\u043d\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u041a\u0420\u0421/\u041c\u0420\u0421",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_livestock",
+      "community": 0,
+      "community_name": "Community 0",
+      "norm_label": "\u0436\u0438\u0432\u043e\u0442\u043d\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u043a\u0440\u0441/\u043c\u0440\u0441"
+    },
+    {
+      "label": "\u0420\u044b\u0431\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u0431\u0435\u043b\u0443\u0433\u0430",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_fish",
+      "community": 4,
+      "community_name": "Community 4",
+      "norm_label": "\u0440\u044b\u0431\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u0431\u0435\u043b\u0443\u0433\u0430"
+    },
+    {
+      "label": "\u041c\u0430\u0441\u043b\u043e\u0436\u0438\u0440\u043e\u0432\u043e\u0439 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0442",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_oil",
+      "community": 0,
+      "community_name": "Community 0",
+      "norm_label": "\u043c\u0430\u0441\u043b\u043e\u0436\u0438\u0440\u043e\u0432\u043e\u0438 \u043a\u043e\u043c\u0431\u0438\u043d\u0430\u0442"
+    },
+    {
+      "label": "\u0411\u0438\u043e\u0433\u0430\u0437\u043e\u0432\u0430\u044f \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 20 \u041c\u0412\u0442\u00b7\u0447",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_biogas",
+      "community": 0,
+      "community_name": "Community 0",
+      "norm_label": "\u0431\u0438\u043e\u0433\u0430\u0437\u043e\u0432\u0430\u044f \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 20 \u043c\u0432\u0442\u00b7\u0447"
+    },
+    {
+      "label": "\u0421\u043e\u043b\u043d\u0435\u0447\u043d\u044b\u0435 \u043f\u0430\u043d\u0435\u043b\u0438 50 \u041c\u0412\u0442\u00b7\u0447",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_solar",
+      "community": 0,
+      "community_name": "Community 0",
+      "norm_label": "\u0441\u043e\u043b\u043d\u0435\u0447\u043d\u044b\u0435 \u043f\u0430\u043d\u0435\u043b\u0438 50 \u043c\u0432\u0442\u00b7\u0447"
+    },
+    {
+      "label": "\u041f\u0435\u0440\u0435\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u043a\u043e\u0436\u0438 600 000 \u043c\u00b2",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_leather",
+      "community": 3,
+      "community_name": "Community 3",
+      "norm_label": "\u043f\u0435\u0440\u0435\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u043a\u043e\u0436\u0438 600 000 \u043c2"
+    },
+    {
+      "label": "\u0425\u0430\u043b\u044f\u043b\u044c\u043d\u044b\u0439 \u0436\u0435\u043b\u0430\u0442\u0438\u043d 6 000 \u0442",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_gelatin",
+      "community": 3,
+      "community_name": "Community 3",
+      "norm_label": "\u0445\u0430\u043b\u044f\u043b\u044c\u043d\u044b\u0438 \u0436\u0435\u043b\u0430\u0442\u0438\u043d 6 000 \u0442"
+    },
+    {
+      "label": "\u0427\u0451\u0440\u043d\u0430\u044f \u0438\u043a\u0440\u0430 20 \u0442/\u0433\u043e\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_caviar",
+      "community": 4,
+      "community_name": "Community 4",
+      "norm_label": "\u0447\u0435\u0440\u043d\u0430\u044f \u0438\u043a\u0440\u0430 20 \u0442/\u0433\u043e\u0434"
+    },
+    {
+      "label": "\u041a\u043e\u043c\u0431\u0438\u043a\u043e\u0440\u043c\u043e\u0432\u044b\u0439 \u0437\u0430\u0432\u043e\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "prod_feed",
+      "community": 0,
+      "community_name": "Community 0",
+      "norm_label": "\u043a\u043e\u043c\u0431\u0438\u043a\u043e\u0440\u043c\u043e\u0432\u044b\u0438 \u0437\u0430\u0432\u043e\u0434"
+    },
+    {
+      "label": "Meneghin Srl",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "tech_meneghin",
+      "community": 1,
+      "community_name": "Community 1",
+      "norm_label": "meneghin srl"
+    },
+    {
+      "label": "SINT Technologies",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "tech_sint",
+      "community": 0,
+      "community_name": "Community 0",
+      "norm_label": "sint technologies"
+    },
+    {
+      "label": "HOCEVAR",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "tech_hocevar",
+      "community": 3,
+      "community_name": "Community 3",
+      "norm_label": "hocevar"
+    },
+    {
+      "label": "AIA Associazione Italiana Allevatori",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "tech_aia",
+      "community": 0,
+      "community_name": "Community 0",
+      "norm_label": "aia associazione italiana allevatori"
+    },
+    {
+      "label": "NPV \u043a\u0440\u043e\u043b\u0438\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e 2,78 \u043c\u043b\u0440\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "id": "fin_npv_rabbit",
+      "community": 2,
+      "community_name": "Community 2",
+      "norm_label": "npv \u043a\u0440\u043e\u043b\u0438\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e 2,78 \u043c\u043b\u0440\u0434"
+    },
+    {
+      "label": "NPV \u0442\u0435\u043f\u043b\u0438\u0446\u044b 33,86 \u043c\u043b\u0440\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "id": "fin_npv_greenhouse",
+      "community": 2,
+      "community_name": "Community 2",
+      "norm_label": "npv \u0442\u0435\u043f\u043b\u0438\u0446\u044b 33,86 \u043c\u043b\u0440\u0434"
+    },
+    {
+      "label": "NPV \u0436\u0438\u0432\u043e\u0442\u043d\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e 28,92 \u043c\u043b\u0440\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "id": "fin_npv_livestock",
+      "community": 2,
+      "community_name": "Community 2",
+      "norm_label": "npv \u0436\u0438\u0432\u043e\u0442\u043d\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e 28,92 \u043c\u043b\u0440\u0434"
+    },
+    {
+      "label": "NPV \u0440\u044b\u0431\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e 3,86 \u043c\u043b\u0440\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "id": "fin_npv_fish",
+      "community": 2,
+      "community_name": "Community 2",
+      "norm_label": "npv \u0440\u044b\u0431\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e 3,86 \u043c\u043b\u0440\u0434"
+    },
+    {
+      "label": "NPV \u043c\u0430\u0441\u043b\u043e\u0436\u0438\u0440\u043e\u0432\u043e\u0439 26,83 \u043c\u043b\u0440\u0434",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "id": "fin_npv_oil",
+      "community": 2,
+      "community_name": "Community 2",
+      "norm_label": "npv \u043c\u0430\u0441\u043b\u043e\u0436\u0438\u0440\u043e\u0432\u043e\u0438 26,83 \u043c\u043b\u0440\u0434"
+    },
+    {
+      "label": "\u042d\u043a\u0441\u043f\u043e\u0440\u0442 10,2 \u043c\u043b\u0440\u0434 \u0440\u0443\u0431.",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "id": "market_export",
+      "community": 4,
+      "community_name": "Community 4",
+      "norm_label": "\u044d\u043a\u0441\u043f\u043e\u0440\u0442 10,2 \u043c\u043b\u0440\u0434 \u0440\u0443\u0431."
+    },
+    {
+      "label": "\u0421\u0435\u0440\u0442\u0438\u0444\u0438\u043a\u0430\u0442 \u0425\u0430\u043b\u044f\u043b\u044c",
+      "file_type": "concept",
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "id": "market_halal",
+      "community": 3,
+      "community_name": "Community 3",
+      "norm_label": "\u0441\u0435\u0440\u0442\u0438\u0444\u0438\u043a\u0430\u0442 \u0445\u0430\u043b\u044f\u043b\u044c"
+    }
+  ],
+  "links": [
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "prod_fish"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "prod_greenhouse"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "prod_livestock"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "prod_oil"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "prod_rabbit"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "summary_invest_100b"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "summary_jobs_5000"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "summary_kherson"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "summary_land_135k"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_moya_mechta",
+      "target": "summary_revenue_71b"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_invest_100b",
+      "target": "fin_npv_fish"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_invest_100b",
+      "target": "fin_npv_greenhouse"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_invest_100b",
+      "target": "fin_npv_livestock"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_invest_100b",
+      "target": "fin_npv_oil"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/05-finansy-i-byudzhet.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_invest_100b",
+      "target": "fin_npv_rabbit"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_revenue_71b",
+      "target": "market_export"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_zero_meat_cost",
+      "target": "prod_gelatin"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/00-summary.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "summary_zero_meat_cost",
+      "target": "prod_leather"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_rabbit",
+      "target": "tech_meneghin"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_livestock",
+      "target": "prod_biogas"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_livestock",
+      "target": "prod_feed"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_livestock",
+      "target": "prod_gelatin"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_livestock",
+      "target": "prod_leather"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_livestock",
+      "target": "tech_aia"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_livestock",
+      "target": "tech_sint"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_fish",
+      "target": "prod_caviar"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_oil",
+      "target": "prod_feed"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_biogas",
+      "target": "prod_solar"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_leather",
+      "target": "market_export"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_gelatin",
+      "target": "market_halal"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_gelatin",
+      "target": "tech_hocevar"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "prod_caviar",
+      "target": "market_export"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "698b0ca81d34ac986d8937d92e115c7f2ea6dd4a"
+}

@@ -1,0 +1,9 @@
+# Исходный docx превышает лимит Graphify (50 МБ) — используем markdown-корпус
+docs/1.ТЭО_МОЯ МЕЧТА.docx
+
+# Детальная нарезка (140 файлов) — для графа используем graphify-corpus/
+docs/teo/
+
+# Локальные артефакты
+graphify-out/cost.json
+graphify-out/cache/
