@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from teo_rag.context import EvidenceBundle  # noqa: E402
 from teo_rag.graph_client import GraphResult, run_graph_query  # noqa: E402
-from teo_rag.kpi import format_kpi_answer  # noqa: E402
+from teo_rag.kpi import format_kpi_answer, match_block  # noqa: E402
 from teo_rag.memory import find_memory_hit, persist_validated  # noqa: E402
 from teo_rag.retrieval import RetrievedChunk, hierarchical_search  # noqa: E402
 from teo_rag.router import classify_query  # noqa: E402
@@ -162,26 +162,32 @@ def run_query(
     decision = classify_query(query, force_mode=None if mode == "auto" else mode)
     route_mode = decision.mode
 
-    if not synthesize and route_mode in ("auto", "vector"):
-        kpi_hit = format_kpi_answer(query)
-        if kpi_hit:
-            kpi_answer, kpi_citations = kpi_hit
-            payload = {
-                "query": query,
-                "mode": "kpi",
-                "reason": "structured KPI layer (fast path)",
-                "scores": decision.scores,
-                "answer": kpi_answer,
-                "raw_answer": None,
-                "citations": kpi_citations,
-                "synthesis": None,
-                "validation": {"valid": True, "from_kpi": True},
-            }
-            if json_out:
-                print(json.dumps(payload, ensure_ascii=False, indent=2))
-            else:
-                print(kpi_answer)
-            return payload
+    if not synthesize and route_mode in ("auto", "vector", "hybrid"):
+        q_lower = query.lower()
+        block_hit = match_block(query)
+        kpi_on_hybrid = route_mode == "hybrid" and block_hit and any(
+            w in q_lower for w in ("сколько", "тонн", "npv", "irr", "capex", "окупаем")
+        )
+        if route_mode != "hybrid" or kpi_on_hybrid:
+            kpi_hit = format_kpi_answer(query)
+            if kpi_hit:
+                kpi_answer, kpi_citations = kpi_hit
+                payload = {
+                    "query": query,
+                    "mode": "kpi",
+                    "reason": "structured KPI layer (fast path)",
+                    "scores": decision.scores,
+                    "answer": kpi_answer,
+                    "raw_answer": None,
+                    "citations": kpi_citations,
+                    "synthesis": None,
+                    "validation": {"valid": True, "from_kpi": True},
+                }
+                if json_out:
+                    print(json.dumps(payload, ensure_ascii=False, indent=2))
+                else:
+                    print(kpi_answer)
+                return payload
 
     raw_answer, citations, bundle, graph, _hits = retrieve(query, route_mode, budget)
 

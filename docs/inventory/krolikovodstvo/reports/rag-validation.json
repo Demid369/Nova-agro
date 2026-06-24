@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T16:46:23.808920+00:00",
+  "generated_at": "2026-06-24T17:02:05.748713+00:00",
   "project": "МОЯ МЕЧТА",
   "block": "кролиководство",
   "canonical_facts_check": [
@@ -151,8 +151,8 @@
       "file": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md",
       "exists": true,
       "rabbit_mentions_source": 1,
-      "in_chunk_index": false,
-      "ok": false
+      "in_chunk_index": true,
+      "ok": true
     },
     {
       "group": "source_teo_primary",
@@ -262,7 +262,7 @@
       "group": "system_rebuild_after_replace",
       "file": "teo-rag-out/chunk-index.json",
       "exists": true,
-      "rabbit_mentions_source": 73,
+      "rabbit_mentions_source": 81,
       "in_chunk_index": false,
       "ok": true
     },
@@ -270,7 +270,7 @@
       "group": "system_rebuild_after_replace",
       "file": "teo-rag-out/bm25-index.json",
       "exists": true,
-      "rabbit_mentions_source": 1229,
+      "rabbit_mentions_source": 1240,
       "in_chunk_index": false,
       "ok": true
     },
@@ -310,16 +310,16 @@
       "group": "system_rebuild_after_replace",
       "file": "scripts/teo_rag/chunks.py",
       "exists": true,
-      "rabbit_mentions_source": 2,
+      "rabbit_mentions_source": 7,
       "in_chunk_index": false,
       "ok": true
     }
   ],
-  "files_ok": 24,
+  "files_ok": 25,
   "files_total": 26,
   "chunk_stats": {
-    "rabbit_block_chunks": 19,
-    "total_chunks": 745
+    "rabbit_block_chunks": 21,
+    "total_chunks": 747
   },
   "teo_corpus_gaps": [
     {
@@ -356,21 +356,74 @@
   "rag_gaps": [
     {
       "id": "teo-125-excluded",
-      "severity": "medium",
-      "detail": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md не попадает в vector index: is_trade_stat_file() фильтрует «табл-N».",
-      "mitigation": "Контент дублируется в docs/graphify-corpus/03-proizvodstvo (Табл. 141)."
+      "severity": "fixed",
+      "detail": "docs/teo/125-табл-141 раньше отфильтровывался is_trade_stat_file(); исправлено whitelist по «кролик» в имени. После правки: python3 scripts/build-teo-vector-index.py",
+      "mitigation": "Пересобрать индекс (747 chunks)."
     },
     {
       "id": "tonnage-graph-mode",
-      "severity": "low",
-      "detail": "Запрос «сколько тонн крольчатины» без KPI-слова уходит в graph → мировой рынок, а не 7 000 т проекта.",
-      "mitigation": "Использовать KPI fast path: «кролиководство NPV» / «7 000 т кролик»."
+      "severity": "fixed",
+      "detail": "«сколько тонн крольчатины» в hybrid уходил в graph; KPI fast path расширен.",
+      "mitigation": "teo-query --mode auto или hybrid → KPI «7 000 т»."
     },
     {
       "id": "irr-in-kpi-only",
-      "severity": "low",
-      "detail": "IRR 15,19% для кроликов — в 00-summary и kpi.json; в 01-vvedenie может отсутствовать дословно.",
-      "mitigation": "KPI-слой teo-query покрывает NPV/IRR запросы."
+      "severity": "info",
+      "detail": "IRR 15,19% для кроликов — в 00-summary и kpi.json; в 01-vvedenie не дословно.",
+      "mitigation": "KPI-слой teo-query; не ошибка извлечения."
+    },
+    {
+      "id": "teo-27-episodic",
+      "severity": "info",
+      "detail": "teo/27-бельгия — эпизодическое упоминание кролика в таблице HS, не проектный блок.",
+      "mitigation": "Не индексировать или оставить как справочник."
     }
-  ]
+  ],
+  "rag_queries": [
+    {
+      "query": "NPV кролиководство",
+      "expect": [
+        "2779519",
+        "2 779"
+      ],
+      "ok": true,
+      "answer_preview": "KPI (структурированный слой, не LLM):\n\nБлок: Кролиководство\n  NPV: 2 779 519 тыс. руб.\n  IRR: 15.19%\n  Payback: 84 мес.\n  CAPEX: 12 млрд руб.\n"
+    },
+    {
+      "query": "CAPEX кролиководства",
+      "expect": [
+        "12"
+      ],
+      "ok": true,
+      "answer_preview": "KPI (структурированный слой, не LLM):\n\nБлок: Кролиководство\n  NPV: 2 779 519 тыс. руб.\n  IRR: 15.19%\n  Payback: 84 мес.\n  CAPEX: 12.0 млрд руб.\n"
+    },
+    {
+      "query": "сколько тонн крольчатины",
+      "expect": [
+        "7000",
+        "7 000"
+      ],
+      "ok": true,
+      "answer_preview": "Кролиководство: 7 000 т мяса/год (технология Meneghin Srl).\n"
+    },
+    {
+      "query": "Meneghin Srl",
+      "expect": [
+        "Meneghin"
+      ],
+      "ok": true,
+      "answer_preview": "Запрос (graph): Meneghin Srl\nTraversal: BFS depth=2 | Start: ['Meneghin Srl'] | 45 nodes found\n\nУзлы:\n  • ООО «МОЯ МЕЧТА» ← docs/graphify-corpus/00-summary.md [Community 38]\n  • Связи между сущностями ← docs/graphify-corpus/00-summary.md [Community 104]\n  • Кролиководство ← docs/graphify-corpus/00-summary.md [Community 105]\n  • Животноводство ← docs/graphify-corpus/00-summary.md [Community 105]\n  • Кролиководство ← docs/graphify-corpus/01-vvedenie-i-resume.md [Community 10]\n  • Сводка проекта «М"
+    },
+    {
+      "query": "мировой рынок крольчатины",
+      "expect": [
+        "крол",
+        "FAOSTAT"
+      ],
+      "ok": true,
+      "answer_preview": "Запрос (graph): мировой рынок крольчатины\nTraversal: BFS depth=2 | Start: ['Мировой рынок крольчатины', 'Мировой рынок крольчатины', 'Мировой рынок крольчатины'] | 44 nodes found\n\nУзлы:\n  • Мировой рынок крольчатины ← docs/teo/08-мировой-рынок-крольчатины.md [Community 25]\n  • Испания экспортировала ← docs/teo/31-топ-20-мировых-экспортеров-томатов-в-2022-году.md [Community 27]\n  • 136,7 млн ​​долларов США ← docs/teo/08-мировой-рынок-крольчатины.md [Community 25]\n  • 32,3 млн долларов США ← docs/"
+    }
+  ],
+  "queries_ok": 5,
+  "queries_total": 5
 }

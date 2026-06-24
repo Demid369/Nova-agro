@@ -8,12 +8,12 @@ from pathlib import Path
 
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.shared import Pt
+from docx.shared import Pt, RGBColor
 
 from krolikovodstvo_inventory import (
     DOCX_DIR,
-    INVENTORY_DIR,
-    REPORTS_DIR,
+    ThemeChunk,
+    canonical_fact_refs,
     gather_theme_content,
     load_registry,
 )
@@ -35,20 +35,46 @@ def add_meta(doc: Document, subtitle: str) -> None:
     doc.add_paragraph()
 
 
-def write_blocks(doc: Document, chunks: list[tuple[str, str]]) -> None:
-    for header, body in chunks:
-        doc.add_heading(header, level=2)
-        text = body if len(body) <= MAX_BODY_CHARS else body[:MAX_BODY_CHARS] + "\n\n[… обрезано …]"
-        for para in text.split("\n\n"):
-            para = para.strip()
-            if not para:
-                continue
-            if para.startswith("#"):
-                level = len(para) - len(para.lstrip("#"))
-                title = para.lstrip("#").strip()
-                doc.add_heading(title, level=min(level + 1, 4))
-            else:
-                doc.add_paragraph(para)
+def add_ref_paragraph(doc: Document, ref: str) -> None:
+    p = doc.add_paragraph()
+    run = p.add_run(f"↳ {ref}")
+    run.font.name = "Consolas"
+    run.font.size = Pt(9)
+    run.font.color.rgb = RGBColor(0x1A, 0x56, 0x8E)
+
+
+def write_theme_chunks(doc: Document, chunks: list[ThemeChunk]) -> None:
+    for chunk in chunks:
+        doc.add_heading(chunk.header, level=2)
+        if chunk.refs:
+            doc.add_paragraph("Ссылки на исходный ТЭО (файл:строка):")
+            for ref in chunk.refs:
+                add_ref_paragraph(doc, ref)
+
+        for frag in chunk.fragments:
+            if len(chunk.fragments) > 1:
+                doc.add_heading(f"Фрагмент {frag.ref}", level=3)
+            text = frag.text
+            if len(text) > MAX_BODY_CHARS:
+                text = text[:MAX_BODY_CHARS] + "\n\n[… обрезано …]"
+            for para in text.split("\n\n"):
+                para = para.strip()
+                if not para:
+                    continue
+                if para.startswith("#"):
+                    level = len(para) - len(para.lstrip("#"))
+                    title = para.lstrip("#").strip()
+                    doc.add_heading(title, level=min(level + 1, 4))
+                else:
+                    # Prefix first line of each paragraph with line anchor when single-line block
+                    if frag.line_start == frag.line_end and not para.startswith("↳"):
+                        p = doc.add_paragraph()
+                        anchor = p.add_run(f"[L{frag.line_start}] ")
+                        anchor.font.size = Pt(8)
+                        anchor.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+                        p.add_run(para)
+                    else:
+                        doc.add_paragraph(para)
 
 
 def build_theme_docx(theme_id: str, theme: dict) -> Path:
@@ -67,7 +93,7 @@ def build_theme_docx(theme_id: str, theme: dict) -> Path:
         doc.add_paragraph("Нет извлечённых фрагментов — проверьте registry.yaml.")
     else:
         doc.add_heading("Содержание по источникам", level=1)
-        write_blocks(doc, chunks)
+        write_theme_chunks(doc, chunks)
 
     doc.save(out)
     return out
@@ -81,16 +107,17 @@ def build_index_docx(registry: dict) -> Path:
     t.alignment = WD_ALIGN_PARAGRAPH.CENTER
     add_meta(doc, "Все направления для будущей замены в новом ТЭО")
 
-    doc.add_heading("Канонические KPI блока", level=1)
-    facts = registry.get("canonical_facts", {})
-    table = doc.add_table(rows=1, cols=2)
+    doc.add_heading("Канонические KPI — ссылки на строки", level=1)
+    table = doc.add_table(rows=1, cols=3)
     table.style = "Table Grid"
     table.rows[0].cells[0].text = "Параметр"
     table.rows[0].cells[1].text = "Значение"
-    for k, v in facts.items():
-        row = table.add_row().cells
-        row[0].text = str(k)
-        row[1].text = str(v)
+    table.rows[0].cells[2].text = "Источник (файл:строка)"
+    for row in canonical_fact_refs(registry):
+        cells = table.add_row().cells
+        cells[0].text = row["fact"]
+        cells[1].text = row["label"]
+        cells[2].text = row["ref"]
     doc.add_paragraph()
 
     doc.add_heading("DOCX по направлениям", level=1)
@@ -114,7 +141,7 @@ def main() -> None:
     paths: list[Path] = [build_index_docx(registry)]
     for tid in sorted(k for k in registry.get("themes", {}) if k.startswith("T")):
         paths.append(build_theme_docx(tid, registry["themes"][tid]))
-    print(f"Generated {len(paths)} DOCX in {DOCX_DIR.relative_to(INVENTORY_DIR.parent.parent)}")
+    print(f"Generated {len(paths)} DOCX in docs/inventory/krolikovodstvo/docx")
     for p in paths:
         print(f"  {p}")
 

@@ -38,6 +38,8 @@ docs/inventory/krolikovodstvo/
 | — | `00-index-krolikovodstvo.docx` | оглавление + сводная таблица файлов |
 | — | `reports/rag-validation.docx` | проверка: исходный ТЭО vs RAG |
 
+Каждый DOCX содержит **ссылки на исходный ТЭО** в формате `файл:строка` (например `docs/graphify-corpus/01-vvedenie-i-resume.md:712–810`).
+
 ## Команды
 
 ```bash

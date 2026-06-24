@@ -77,6 +77,9 @@ def slugify(text: str, max_len: int = 48) -> str:
 
 def is_trade_stat_file(path: Path) -> bool:
     name = path.stem.lower()
+    # Проектные таблицы/рецепты (кролики, комбикорм) — не отфильтровывать
+    if re.search(r"кролик|крольчат|комбикорм.*кролик|рецепт.*кролик", name):
+        return False
     if TRADE_FILE_RE.search(name):
         return True
     if STAT_FILE_RE.search(name):

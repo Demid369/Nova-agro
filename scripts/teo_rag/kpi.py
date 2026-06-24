@@ -217,23 +217,27 @@ def format_kpi_answer(query: str, store: KPIStore | None = None) -> tuple[str, l
     citations: list[dict] = []
     q = query.lower()
 
-    if any(w in q for w in ("npv", "irr", "payback", "окупаем", "capex")) or match_block(query):
+    if any(w in q for w in ("npv", "irr", "payback", "окупаем", "capex", "сколько", "тонн")) or match_block(
+        query
+    ):
         bid = match_block(query)
         lines = ["KPI (структурированный слой, не LLM):", ""]
         if bid and bid in store.blocks:
             b = store.blocks[bid]
             lines.append(f"Блок: {b.label}")
-            if b.npv_thousand_rub is not None:
+            tonnage_q = any(w in q for w in ("сколько", "тонн", "мощност", "объем", "объём"))
+            finance_q = any(w in q for w in ("npv", "irr", "payback", "окупаем", "capex"))
+            if b.output and (tonnage_q or not finance_q):
+                lines.append(f"  Продукт: {b.output}")
+            if b.npv_thousand_rub is not None and finance_q:
                 npv_fmt = f"{b.npv_thousand_rub:,.0f}".replace(",", " ")
                 lines.append(f"  NPV: {npv_fmt} тыс. руб.")
-            if b.irr_pct is not None:
+            if b.irr_pct is not None and finance_q:
                 lines.append(f"  IRR: {b.irr_pct}%")
-            if b.payback_months is not None:
+            if b.payback_months is not None and finance_q:
                 lines.append(f"  Payback: {b.payback_months} мес.")
-            if b.capex_bln_rub is not None:
+            if b.capex_bln_rub is not None and finance_q:
                 lines.append(f"  CAPEX: {b.capex_bln_rub} млрд руб.")
-            if b.output:
-                lines.append(f"  Продукт: {b.output}")
             citations.append({"type": "kpi", "block": bid, "source": b.source, "section": b.section})
             return "\n".join(lines), citations
 

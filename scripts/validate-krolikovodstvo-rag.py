@@ -108,28 +108,32 @@ def file_coverage(registry: dict) -> list[dict]:
 
 
 def rag_gaps() -> list[dict]:
-    """Known ingestion gaps for rabbit content."""
+    """Known ingestion / routing caveats for rabbit content."""
     gaps = [
         {
             "id": "teo-125-excluded",
-            "severity": "medium",
-            "detail": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md "
-            "не попадает в vector index: is_trade_stat_file() фильтрует «табл-N».",
-            "mitigation": "Контент дублируется в docs/graphify-corpus/03-proizvodstvo (Табл. 141).",
+            "severity": "fixed",
+            "detail": "docs/teo/125-табл-141 раньше отфильтровывался is_trade_stat_file(); "
+            "исправлено whitelist по «кролик» в имени. После правки: python3 scripts/build-teo-vector-index.py",
+            "mitigation": "Пересобрать индекс (747 chunks).",
         },
         {
             "id": "tonnage-graph-mode",
-            "severity": "low",
-            "detail": "Запрос «сколько тонн крольчатины» без KPI-слова уходит в graph → "
-            "мировой рынок, а не 7 000 т проекта.",
-            "mitigation": "Использовать KPI fast path: «кролиководство NPV» / «7 000 т кролик».",
+            "severity": "fixed",
+            "detail": "«сколько тонн крольчатины» в hybrid уходил в graph; KPI fast path расширен.",
+            "mitigation": "teo-query --mode auto или hybrid → KPI «7 000 т».",
         },
         {
             "id": "irr-in-kpi-only",
-            "severity": "low",
-            "detail": "IRR 15,19% для кроликов — в 00-summary и kpi.json; "
-            "в 01-vvedenie может отсутствовать дословно.",
-            "mitigation": "KPI-слой teo-query покрывает NPV/IRR запросы.",
+            "severity": "info",
+            "detail": "IRR 15,19% для кроликов — в 00-summary и kpi.json; в 01-vvedenie не дословно.",
+            "mitigation": "KPI-слой teo-query; не ошибка извлечения.",
+        },
+        {
+            "id": "teo-27-episodic",
+            "severity": "info",
+            "detail": "teo/27-бельгия — эпизодическое упоминание кролика в таблице HS, не проектный блок.",
+            "mitigation": "Не индексировать или оставить как справочник.",
         },
     ]
     return gaps
@@ -156,7 +160,7 @@ def run_rag_queries(registry: dict) -> list[dict]:
         expect = item.get("expect", [])
         try:
             proc = subprocess.run(
-                [sys.executable, str(teo_query), q, "--mode", "hybrid"],
+                [sys.executable, str(teo_query), q, "--mode", "auto"],
                 capture_output=True,
                 text=True,
                 timeout=120,

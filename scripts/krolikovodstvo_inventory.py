@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import json
-import json
 import re
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +22,31 @@ RABBIT_RE = re.compile(
 )
 
 
+@dataclass
+class SourceFragment:
+    file: str
+    line_start: int
+    line_end: int
+    text: str
+    note: str | None = None
+
+    @property
+    def ref(self) -> str:
+        if self.line_start == self.line_end:
+            return f"{self.file}:{self.line_start}"
+        return f"{self.file}:{self.line_start}–{self.line_end}"
+
+
+@dataclass
+class ThemeChunk:
+    header: str
+    fragments: list[SourceFragment] = field(default_factory=list)
+
+    @property
+    def refs(self) -> list[str]:
+        return [f.ref for f in self.fragments]
+
+
 def load_registry() -> dict[str, Any]:
     return yaml.safe_load(REGISTRY_PATH.read_text(encoding="utf-8"))
 
@@ -37,40 +62,101 @@ def read_text(rel: str) -> str:
     return path.read_text(encoding="utf-8", errors="replace")
 
 
-def split_sections(text: str) -> list[tuple[str, str]]:
-    """Split markdown by # headings; returns (heading, body) pairs."""
-    parts = re.split(r"(?m)^(#{1,6}\s+.+)$", text)
-    if not parts:
-        return [("", text)]
-    sections: list[tuple[str, str]] = []
-    if parts[0].strip():
-        sections.append(("", parts[0].strip()))
-    i = 1
-    while i < len(parts) - 1:
-        heading = parts[i].strip()
-        body = parts[i + 1].strip()
-        sections.append((heading, body))
-        i += 2
+def line_count(text: str) -> int:
+    return len(text.splitlines()) or 1
+
+
+def lines_to_range(lines: list[str], indices: set[int]) -> tuple[int, int]:
+    if not indices:
+        return (1, 1)
+    start = min(indices) + 1
+    end = max(indices) + 1
+    return start, end
+
+
+def find_section_line_range(text: str, heading: str, body: str) -> tuple[int, int]:
+    lines = text.splitlines()
+    heading_plain = heading.lstrip("#").strip()
+    start = 1
+    for i, line in enumerate(lines):
+        if heading and heading_plain and heading_plain.lower() in line.lower():
+            start = i + 1
+            break
+    end = start
+    if body:
+        probe = body[:80].strip()
+        for i, line in enumerate(lines):
+            if probe and probe in line:
+                start = i + 1
+                break
+        end = min(start + body.count("\n"), line_count(text))
+    else:
+        end = min(start + 20, line_count(text))
+    return start, max(end, start)
+
+
+def split_sections(text: str) -> list[tuple[str, str, int]]:
+    """Return (heading, body, heading_line_1based)."""
+    lines = text.splitlines()
+    sections: list[tuple[str, str, int]] = []
+    current_heading = ""
+    current_start = 1
+    current_lines: list[str] = []
+
+    for i, line in enumerate(lines):
+        if re.match(r"^#{1,6}\s+", line):
+            if current_lines:
+                body = "\n".join(current_lines).strip()
+                if body or current_heading:
+                    sections.append((current_heading, body, current_start))
+            current_heading = line.strip()
+            current_start = i + 1
+            current_lines = []
+        else:
+            current_lines.append(line)
+
+    body = "\n".join(current_lines).strip()
+    if body or current_heading:
+        sections.append((current_heading, body, current_start))
+    if not sections and text.strip():
+        sections.append(("", text.strip(), 1))
     return sections
 
 
-def extract_by_sections(text: str, patterns: list[str]) -> str:
+def extract_fragments_by_sections(text: str, rel: str, patterns: list[str]) -> list[SourceFragment]:
     if not patterns:
-        return ""
-    compiled = [re.compile(p, re.I) for p in patterns]
-    blocks: list[str] = []
-    for heading, body in split_sections(text):
+        return []
+    compiled = [re.compile(str(p), re.I) for p in patterns]
+    frags: list[SourceFragment] = []
+    lines = text.splitlines()
+    for heading, body, start_line in split_sections(text):
         label = f"{heading}\n{body[:200]}"
-        if any(c.search(label) for c in compiled):
-            block = f"{heading}\n\n{body}".strip() if heading else body
-            if block:
-                blocks.append(block)
-    return "\n\n---\n\n".join(blocks)
+        if not any(c.search(label) for c in compiled):
+            continue
+        block = f"{heading}\n\n{body}".strip() if heading else body
+        end_line = start_line + max(body.count("\n"), 0)
+        if body:
+            end_line = start_line + len(body.splitlines()) - 1
+        end_line = min(max(end_line, start_line), len(lines))
+        frags.append(
+            SourceFragment(
+                file=rel,
+                line_start=start_line,
+                line_end=end_line,
+                text=block,
+            )
+        )
+    return frags
 
 
-def extract_by_keywords(text: str, keywords: list[str], context_lines: int = 2) -> str:
+def extract_fragments_by_keywords(
+    text: str,
+    rel: str,
+    keywords: list[str],
+    context_lines: int = 3,
+) -> list[SourceFragment]:
     if not keywords:
-        return ""
+        return []
     compiled = [re.compile(str(k), re.I) for k in keywords]
     lines = text.splitlines()
     picked: set[int] = set()
@@ -79,51 +165,87 @@ def extract_by_keywords(text: str, keywords: list[str], context_lines: int = 2) 
             for j in range(max(0, i - context_lines), min(len(lines), i + context_lines + 1)):
                 picked.add(j)
     if not picked:
-        return ""
-    out: list[str] = []
-    prev = -2
-    for idx in sorted(picked):
-        if idx > prev + 1 and out:
-            out.append("")
-        out.append(lines[idx])
+        return []
+
+    # Group contiguous line ranges
+    frags: list[SourceFragment] = []
+    sorted_idx = sorted(picked)
+    range_start = sorted_idx[0]
+    prev = sorted_idx[0]
+    ranges: list[tuple[int, int]] = []
+    for idx in sorted_idx[1:]:
+        if idx > prev + 1:
+            ranges.append((range_start, prev))
+            range_start = idx
         prev = idx
-    return "\n".join(out)
+    ranges.append((range_start, prev))
+
+    for a, b in ranges:
+        chunk_lines = lines[a : b + 1]
+        frags.append(
+            SourceFragment(
+                file=rel,
+                line_start=a + 1,
+                line_end=b + 1,
+                text="\n".join(chunk_lines),
+            )
+        )
+    return frags
 
 
-def extract_source_content(source: dict[str, Any]) -> tuple[str, str]:
-    """Return (label, extracted_text) for one registry source entry."""
+def extract_source_fragments(source: dict[str, Any]) -> list[SourceFragment]:
     rel = source.get("file", "")
     if not rel:
-        return ("", "")
+        return []
 
     path = resolve_path(rel)
-    label = rel
+    note = source.get("note")
     if not path.exists():
-        return (label, f"[ФАЙЛ НЕ НАЙДЕН: {rel}]")
+        return [
+            SourceFragment(
+                file=rel,
+                line_start=0,
+                line_end=0,
+                text=f"[ФАЙЛ НЕ НАЙДЕН: {rel}]",
+                note=note,
+            )
+        ]
 
     text = path.read_text(encoding="utf-8", errors="replace")
     role = source.get("role", "")
+    n_lines = line_count(text)
 
-    # Dedicated rabbit teo files — full text
     if role == "source_teo" and RABBIT_RE.search(path.name):
-        return (label, text.strip())
+        return [
+            SourceFragment(
+                file=rel,
+                line_start=1,
+                line_end=n_lines,
+                text=text.strip(),
+                note=note,
+            )
+        ]
 
     sections = source.get("sections")
     if sections:
-        block = extract_by_sections(text, sections)
-        if block:
-            return (label, block)
+        frags = extract_fragments_by_sections(text, rel, sections)
+        if frags:
+            for f in frags:
+                f.note = note
+            return frags
 
     keywords = source.get("keywords")
     if keywords:
-        block = extract_by_keywords(text, keywords, context_lines=3)
-        if block:
-            return (label, block)
+        frags = extract_fragments_by_keywords(text, rel, keywords, context_lines=3)
+        if frags:
+            for f in frags:
+                f.note = note
+            return frags
 
-    # Structured yaml/json
     if rel.endswith((".yaml", ".yml")):
         data = yaml.safe_load(text)
         sub = source.get("path", "")
+        body = text.strip()
         if sub and isinstance(data, dict):
             node: Any = data
             for part in sub.split("."):
@@ -131,12 +253,13 @@ def extract_source_content(source: dict[str, Any]) -> tuple[str, str]:
                     continue
                 if isinstance(node, dict):
                     node = node.get(part, {})
-            return (label, yaml.dump(node, allow_unicode=True, sort_keys=False))
-        return (label, text.strip())
+            body = yaml.dump(node, allow_unicode=True, sort_keys=False)
+        return [SourceFragment(file=rel, line_start=1, line_end=n_lines, text=body, note=note)]
 
     if rel.endswith(".json"):
         data = json.loads(text)
         sub = source.get("path", "")
+        body = text.strip()
         if sub and isinstance(data, dict):
             node = data
             for part in sub.split("."):
@@ -144,28 +267,90 @@ def extract_source_content(source: dict[str, Any]) -> tuple[str, str]:
                     continue
                 if isinstance(node, dict):
                     node = node.get(part, {})
-            return (label, json.dumps(node, ensure_ascii=False, indent=2))
-        return (label, text.strip())
+            body = json.dumps(node, ensure_ascii=False, indent=2)
+        return [SourceFragment(file=rel, line_start=1, line_end=n_lines, text=body, note=note)]
 
-    # Fallback: rabbit-related paragraphs only for large files
     if len(text) > 8000:
-        block = extract_by_keywords(text, [r"кролик", r"кроль", r"Meneghin", r"ANCI"], context_lines=4)
-        return (label, block or "[нет совпадений по ключевым словам]")
+        frags = extract_fragments_by_keywords(
+            text,
+            rel,
+            [r"кролик", r"кроль", r"Meneghin", r"ANCI"],
+            context_lines=4,
+        )
+        if frags:
+            for f in frags:
+                f.note = note
+            return frags
+        return [
+            SourceFragment(
+                file=rel,
+                line_start=0,
+                line_end=0,
+                text="[нет совпадений по ключевым словам]",
+                note=note,
+            )
+        ]
 
     if RABBIT_RE.search(text):
-        return (label, text.strip())
+        return [
+            SourceFragment(
+                file=rel,
+                line_start=1,
+                line_end=n_lines,
+                text=text.strip(),
+                note=note,
+            )
+        ]
 
-    return (label, "[нет релевантного фрагмента]")
+    return []
 
 
-def gather_theme_content(theme: dict[str, Any]) -> list[tuple[str, str]]:
-    chunks: list[tuple[str, str]] = []
+def gather_theme_content(theme: dict[str, Any]) -> list[ThemeChunk]:
+    by_file: dict[str, ThemeChunk] = {}
     for src in theme.get("sources", []):
-        label, body = extract_source_content(src)
-        if body and body not in ("[нет релевантного фрагмента]", ""):
-            note = src.get("note")
-            header = f"Источник: {label}"
-            if note:
-                header += f" ({note})"
-            chunks.append((header, body))
-    return chunks
+        frags = extract_source_fragments(src)
+        if not frags:
+            continue
+        rel = src.get("file", "?")
+        if rel not in by_file:
+            header = f"Источник: {rel}"
+            if src.get("note"):
+                header += f" ({src['note']})"
+            by_file[rel] = ThemeChunk(header=header)
+        by_file[rel].fragments.extend(frags)
+
+    return list(by_file.values())
+
+
+def canonical_fact_refs(registry: dict[str, Any]) -> list[dict[str, str]]:
+    """Map canonical KPI to file:line in corpus (for index DOCX)."""
+    anchors = [
+        ("output_t_per_year", r"7\s*000", "docs/graphify-corpus/00-summary.md"),
+        ("capex_bln_rub", r"\|\s*Кролиководство\s*\|\s*12", "docs/graphify-corpus/00-summary.md"),
+        ("npv_thousand_rub", r"2\s*779\s*519", "docs/graphify-corpus/00-summary.md"),
+        ("irr_pct", r"15,19", "docs/graphify-corpus/00-summary.md"),
+        ("payback_months", r"\|\s*Кролиководство\s*\|[^|]+\|[^|]+\|\s*84", "docs/graphify-corpus/00-summary.md"),
+        ("equipment", r"Meneghin", "docs/graphify-corpus/01-vvedenie-i-resume.md"),
+        ("slaughter_heads_per_hour", r"2400 голов", "docs/graphify-corpus/01-vvedenie-i-resume.md"),
+        ("manure_t_per_year", r"43\s*800", "docs/graphify-corpus/01-vvedenie-i-resume.md"),
+        ("genetics", r"ANCI", "docs/graphify-corpus/01-vvedenie-i-resume.md"),
+    ]
+    rows: list[dict[str, str]] = []
+    facts = registry.get("canonical_facts", {})
+    for key, pattern, rel in anchors:
+        text = read_text(rel)
+        line_no = "—"
+        if text:
+            rx = re.compile(pattern, re.I)
+            for i, line in enumerate(text.splitlines(), start=1):
+                if rx.search(line):
+                    line_no = str(i)
+                    break
+        rows.append(
+            {
+                "fact": key,
+                "label": str(facts.get(key, key)),
+                "ref": f"{rel}:{line_no}" if line_no != "—" else rel,
+            }
+        )
+    return rows
