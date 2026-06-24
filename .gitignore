@@ -7,6 +7,7 @@ teo-rag-out/memory.jsonl
 teo-rag-out/model-cache/
 teo-rag-out/kpi-baseline.json
 teo-rag-out/active-scenario.json
+teo-rag-out/benchmark-latest.json
 graphify-out/graph.baseline.json
 graphify-out/scenarios/
 graphify-out/memory/

@@ -1,0 +1,67 @@
+# Проверенные ответы для seed memory (baseline ТЭО)
+# Источник: docs/graphify-corpus/00-summary.md — не LLM
+
+entries:
+  - query: "NPV теплиц"
+    answer: |
+      KPI (структурированный слой, не LLM):
+
+      Блок: Теплицы 100 га
+        NPV: 33 861 691 тыс. руб.
+        IRR: 28.99%
+        Payback: 49 мес.
+    mode: kpi
+    citations:
+      - type: kpi
+        block: теплицы
+        source: docs/graphify-corpus/00-summary.md
+        section: Финансовые KPI
+
+  - query: "NPV кролиководство"
+    answer: |
+      KPI (структурированный слой, не LLM):
+
+      Блок: Кролиководство
+        NPV: 2 779 519 тыс. руб.
+        IRR: 15.19%
+        Payback: 84 мес.
+        CAPEX: 12 млрд руб.
+    mode: kpi
+    citations:
+      - type: kpi
+        block: кролиководство
+        source: docs/graphify-corpus/00-summary.md
+
+  - query: "сколько инвестиций в проект млрд рублей"
+    answer: |
+      Проект «МОЯ МЕЧТА» (сводка):
+        investment_bln_rub: 100
+        revenue_bln_rub_year: 71.4
+        payback_years: 8
+    mode: kpi
+    citations:
+      - type: kpi
+        block: project
+        source: docs/graphify-corpus/00-summary.md
+
+  - query: "выручка проекта млрд"
+    answer: |
+      Выручка проекта: 71,4 млрд руб./год (00-summary).
+      Экспорт: 10,2 млрд руб.
+    mode: kpi
+    citations:
+      - type: kpi
+        block: project
+        source: docs/graphify-corpus/00-summary.md
+
+  - query: "обзор структура проекта МОЯ МЕЧТА"
+    answer: |
+      ООО «МОЯ МЕЧТА», Херсонская область.
+      Блоки: кролиководство 7 000 т/год, теплицы 100 га, КРС/МРС, рыбоводство (белуга), масложировой комбинат.
+      Инвестиции 100 млрд руб., выручка 71,4 млрд руб./год, окупаемость 8 лет.
+      Ключевая модель: бесплатный убой → побочные продукты покрывают затраты на мясо.
+    mode: summary
+    citations:
+      - type: kpi
+        source: docs/graphify-corpus/00-summary.md
+        section: Производственные блоки

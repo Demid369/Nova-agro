@@ -2,7 +2,7 @@
 # NPV/CAPEX — оценочные, требуют пересчёта финмодели ТЭО
 id: poultry-variant
 name: Птицеводство вместо кролиководства
-status: derived
+status: parked
 replaces: кролиководство
 
 finance_derivation:
