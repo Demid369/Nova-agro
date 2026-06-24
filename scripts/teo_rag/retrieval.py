@@ -51,6 +51,53 @@ def _reranker() -> CrossEncoder:
     return CrossEncoder(RERANKER_MODEL, cache_folder=str(RERANKER_CACHE_DIR))
 
 
+_chroma_client: chromadb.PersistentClient | None = None
+_chroma_collection = None
+
+
+def reset_retrieval_state() -> None:
+    """Release cached models and Chroma client (for tests / long-running processes)."""
+    global _chroma_client, _chroma_collection
+    _embed_model.cache_clear()
+    _reranker.cache_clear()
+    if _chroma_client is not None:
+        try:
+            if hasattr(_chroma_client, "close"):
+                _chroma_client.close()
+        except Exception:
+            pass
+    _chroma_client = None
+    _chroma_collection = None
+
+
+def get_collection(recreate: bool = False):
+    global _chroma_client, _chroma_collection
+    if recreate or _chroma_client is None:
+        if _chroma_client is not None:
+            try:
+                if hasattr(_chroma_client, "close"):
+                    _chroma_client.close()
+            except Exception:
+                pass
+        _chroma_client = chromadb.PersistentClient(
+            path=str(CHROMA_DIR),
+            settings=Settings(anonymized_telemetry=False),
+        )
+        _chroma_collection = None
+    if recreate:
+        try:
+            _chroma_client.delete_collection(COLLECTION_NAME)
+        except Exception:
+            pass
+        _chroma_collection = None
+    if _chroma_collection is None:
+        _chroma_collection = _chroma_client.get_or_create_collection(
+            name=COLLECTION_NAME,
+            metadata={"hnsw:space": "cosine"},
+        )
+    return _chroma_collection
+
+
 def embed_query(query: str) -> list[float]:
     vec = _embed_model().encode([f"query: {query}"], normalize_embeddings=True)
     return vec[0].tolist()
@@ -60,22 +107,6 @@ def embed_passages(texts: list[str]) -> list[list[float]]:
     prefixed = [f"passage: {t}" for t in texts]
     vecs = _embed_model().encode(prefixed, normalize_embeddings=True, show_progress_bar=len(texts) > 50)
     return [v.tolist() for v in vecs]
-
-
-def get_collection(recreate: bool = False):
-    client = chromadb.PersistentClient(
-        path=str(CHROMA_DIR),
-        settings=Settings(anonymized_telemetry=False),
-    )
-    if recreate:
-        try:
-            client.delete_collection(COLLECTION_NAME)
-        except Exception:
-            pass
-    return client.get_or_create_collection(
-        name=COLLECTION_NAME,
-        metadata={"hnsw:space": "cosine"},
-    )
 
 
 def _hits_from_result(result: dict[str, Any]) -> list[RetrievedChunk]:
