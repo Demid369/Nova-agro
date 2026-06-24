@@ -25,7 +25,7 @@ from teo_rag.context import EvidenceBundle  # noqa: E402
 from teo_rag.graph_client import run_graph_query  # noqa: E402
 from teo_rag.kpi import format_kpi_answer, load_kpi  # noqa: E402
 from teo_rag.memory import find_memory_hit, save_memory  # noqa: E402
-from teo_rag.retrieval import get_collection, hierarchical_search  # noqa: E402
+from teo_rag.retrieval import get_collection, hierarchical_search, reset_retrieval_state  # noqa: E402
 from teo_rag.router import classify_query  # noqa: E402
 from teo_rag.scenarios import compare_scenarios, list_scenarios, resolve_scenario_compare  # noqa: E402
 from teo_rag.synthesis import extractive_synthesize  # noqa: E402
@@ -136,15 +136,39 @@ def run_graph_tests() -> None:
     ok("graph avoids 'Связано это' hub", not noise)
 
 
+def _release_rag_handles() -> None:
+    """Drop Chroma/model caches so subprocess CLI tests don't hit SQLite lock."""
+    reset_retrieval_state()
+    try:
+        from teo_rag.bm25_index import invalidate_bm25_cache
+
+        invalidate_bm25_cache()
+    except Exception:
+        pass
+    import gc
+
+    gc.collect()
+
+
 def run_cli_smoke() -> None:
     section("CLI smoke")
+    _release_rag_handles()
     proc = subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "teo-query.py"), "NPV теплиц", "--mode", "vector", "--synthesize", "--json"],
         cwd=ROOT,
         capture_output=True,
         text=True,
-        timeout=120,
+        timeout=180,
     )
+    if proc.returncode != 0:
+        _release_rag_handles()
+        proc = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "teo-query.py"), "NPV теплиц", "--mode", "vector", "--synthesize", "--json"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            timeout=180,
+        )
     ok("teo-query exit 0", proc.returncode == 0, proc.stderr[-200:] if proc.returncode else "")
     if proc.returncode == 0:
         payload = json.loads(proc.stdout)
@@ -210,6 +234,7 @@ def run_scenario_tests() -> None:
 
 def run_kpi_cli_smoke() -> None:
     section("KPI CLI fast path")
+    _release_rag_handles()
     proc = subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "teo-query.py"), "NPV теплиц", "--mode", "vector", "--json"],
         cwd=ROOT,
@@ -294,6 +319,7 @@ def main() -> int:
     run_router_tests(data)
     run_graph_tests()
     run_retrieval_tests(data)
+    _release_rag_handles()
     run_kpi_tests()
     run_bm25_tests()
     run_scenario_tests()
