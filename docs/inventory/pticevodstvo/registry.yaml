@@ -12,14 +12,21 @@ meta:
   generated_docx_dir: docs/inventory/pticevodstvo/docx
 
 canonical_facts:
-  output_t_per_year: null
-  capex_bln_rub: 17
-  npv_thousand_rub: 4050156
-  irr_pct: 18.49
-  payback_months: 75
-  price_rub_per_kg: null
-  export_hs: "0207"
-  note: "Заполнить из T01-finance.md и poultry-teo.yaml после финмодели"
+  capex_bln_rub: 12
+  meat_t_per_year: 18169
+  eggs_chicken_million_per_year: 153.6
+  revenue_mln_rub_per_year: 5034
+  opex_mln_rub_per_year: 3593
+  ebitda_mln_rub_per_year: 1441
+  payback_years: 8.3
+  heads_simultaneous: 2147400
+  poultry_houses: 118
+  staff_fte: 480
+  feed_t_per_year: 66712
+  location: Запорожская область
+  npv_thousand_rub: null
+  irr_pct: null
+  note: "Из finmodel-pticekompleks-12-mlrd.xlsx; NPV/IRR — добавить"
 
 themes:
   T01:

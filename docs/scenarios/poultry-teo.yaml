@@ -1,17 +1,18 @@
-# ТЭО «МОЯ МЕЧТА» — птицеводство (draft, второе ТЭО)
-# НЕ active baseline. Не применять apply до утверждения текста в docs/teo-poultry/
+# ТЭО «МОЯ МЕЧТА» — птицеводство (draft)
+# Данные из finmodel-pticekompleks-12-mlrd.xlsx + docx Нова-Агро, июнь 2026
 id: poultry-teo
-name: ТЭО птицеводство (draft)
+name: ТЭО птицеводство — Нова-Агро (draft)
 status: draft
 replaces: кролиководство
 
 project:
-  investment_bln_rub: 105
-  revenue_bln_rub_year: 74.0
-  payback_years: null
+  investment_bln_rub: 12
+  revenue_bln_rub_year: 5.034
+  payback_years: 8.3
   export_bln_rub: null
-  location: Херсонская область
-  note: "Цифры проекта — заполнить из T01-finance.md; сейчас ориентир от poultry-variant"
+  location: Запорожская область
+  land_ha: "150–400"
+  note: "Отдельный блок 12 млрд ₽; не путать с общим CAPEX холдинга 100 млрд"
 
 blocks:
   кролиководство:
@@ -20,52 +21,65 @@ blocks:
     note: archived when poultry-teo becomes active
 
   птицеводство:
-    label: Птицеводство (утка, перепёл, бройлер, индейка)
+    label: Птицеводство (Нова-Агро — полный цикл)
     active: true
-    output: "~12 000 т мяса птицы/год"
-    capex_bln_rub: 17
-    npv_thousand_rub: 4050156
-    irr_pct: 18.49
-    payback_months: 75
-    price_rub_per_kg: null
-    equipment: "TBD — бройлерные/утиные линии"
-    slaughter: "Линия птицеубоя (SINT или аналог)"
-    feed: "Комбикормовый завод — рецепты для птиц"
+    output: "18 169 т мяса/год + 153,6 млн шт. куриного яйца + 7 млн шт. перепелиного яйца"
+    meat_t_per_year: 18169
+    eggs_chicken_million_per_year: 153.6
+    eggs_quail_million_per_year: 7
+    capex_bln_rub: 12
+    revenue_mln_rub_per_year: 5034
+    opex_mln_rub_per_year: 3593
+    ebitda_mln_rub_per_year: 1441
+    ebitda_margin_pct: 28.6
+    payback_years_simple: 8.3
+    npv_thousand_rub: null
+    irr_pct: null
+    payback_months: 100
+    heads_simultaneous: 2147400
+    poultry_houses: 118
+    staff_fte: 480
+    feed_t_per_year: 66712
+    equipment: "118 птичников/модулей; инкубаторий 500 тыс. яиц/нед.; УПК"
+    slaughter: "Убойно-перерабатывающий комплекс, CAPEX 2 600 млн ₽; халяль-блок"
+    feed: "Комбикормовый завод холдинга, ~28 000 ₽/т, 66,7 тыс. т/год"
     export_hs: "0207 — мясо домашней птицы"
-    byproducts: [перья, помёт, мясоперьевая мука]
-    graph_nodes: [Птицеводство, Комбикормовый завод, Убойный цех]
+    byproducts: [птичий помёт → биогаз, перья, мясоперьевая мука]
+    breeds:
+      broiler: ROSS 308
+      eggs: "Hisex / Lohmann Brown"
+      turkey: "BUT Big 6"
+      duck: "Cherry Valley SM3"
+      goose: Линдовская
+      quail: Фараон
+    graph_nodes: [Птицеводство, Комбикормовый завод, Убойный цех, Инкубаторий]
     risks:
       - Конкуренция с федеральными бройлерными холдингами
       - Слабее связь с моделью нулевой себестоимости vs КРС/кролики
-      - Биобезопасность птицеводческих площадок
+      - Биобезопасность; эпизоотические риски
+      - Локация Запорожская область vs baseline Херсонская — согласовать
 
   теплицы:
     active: true
     note: без изменений vs baseline
 
-  животновodство:
+  животноводство:
     active: true
     note: без изменений vs baseline
 
 content_sources:
   primary_dir: docs/teo-poultry
-  themes_map:
-    T01: T01-finance.md
-    T02: T02-scale-phase.md
-    T03: T03-genetics-tech.md
-    T04: T04-equipment.md
-    T05: T05-slaughter-processing.md
-    T06: T06-feed.md
-    T07: T07-byproducts.md
-    T08: T08-energy.md
-    T09: T09-market-swot.md
-    T10: T10-export.md
-    T11: T11-narrative-mission.md
-    T12: T12-world-market.md
-  incoming_dir: docs/teo-poultry/_incoming
-  appendix_dir: docs/teo-poultry/appendix
+  incoming:
+    - docs/teo-poultry/_incoming/01-tehnologicheskiy-cikl-pticefabriki.docx
+    - docs/teo-poultry/_incoming/02-zatraty-orgstruktura-shtat.docx
+    - docs/teo-poultry/_incoming/03-svodnyy-raschet-kompleksa.docx
+    - docs/teo-poultry/_incoming/finmodel-pticekompleks-12-mlrd.xlsx
+  appendix:
+    - docs/teo-poultry/appendix/01-tehnologicheskiy-cikl.md
+    - docs/teo-poultry/appendix/02-zatraty-orgstruktura-shtat.md
+    - docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
+    - docs/teo-poultry/appendix/finmodel-summary.md
 
 references:
   - docs/scenarios/poultry-variant.md
-  - docs/scenarios/poultry-variant.yaml
   - docs/inventory/krolikovodstvo/registry.yaml
