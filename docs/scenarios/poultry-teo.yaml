@@ -8,7 +8,7 @@ replaces: кролиководство
 project:
   investment_bln_rub: 12
   revenue_bln_rub_year: 5.559
-  payback_years: 8.3
+  payback_years: 5.4
   export_bln_rub: null
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
@@ -35,31 +35,40 @@ blocks:
     capex_bln_rub: 12
     revenue_mln_rub_per_year: 5559
     opex_mln_rub_per_year: 3343
-    opex_note: "Без покупного электро — этalon кроликов; xlsx синхронизирован"
+    opex_note: "Без покупного электро — этalon кроликов; xlsx лист OPEX"
     opex_finmodel_original_mln_rub: 3593
     ebitda_mln_rub_per_year: 2216
     ebitda_margin_pct: 39.9
     ebitda_finmodel_original_mln_rub: 1441
     payback_years_simple: 5.4
-    npv_thousand_rub: 2226000
-    npv_note: "Производный DCF @10% после этalona кроликов; appendix/npv-irr-derived.md"
-    irr_pct: 13.2
-    irr_note: "Те же допущения; в xlsx IRR не задан"
-    payback_months: 100
+    npv_thousand_rub: 2253000
+    npv_note: "DCF @10%, горizont 16 лет (2026–2041); лист NPV-IRR xlsx"
+    irr_pct: 12.8
+    pi: 1.19
+    irr_note: "Лист NPV-IRR xlsx; 10-летний горizont даёт IRR ~6,7%"
+    payback_months: 65
     heads_simultaneous: 2147400
     poultry_houses: 118
-    staff_fte: 480
+    staff_fte: 476
     feed_t_per_year: 66712
     equipment: "118 птичников/модулей; инкубаторий 500 тыс. яиц/нед.; УПК"
     slaughter: "Убойно-перерабатывающий комплекс, CAPEX 2 600 млн ₽; халяль-блок"
-    feed: "Комбикормовый завод холдинга, ~28 000 ₽/т, 66,7 тыс. т/год"
+    feed: "Комбикормовый завод холдинга, ~28 000 ₽/t, 66,7 тыс. т/год"
     export_hs: "0207 — мясо домашней птицы"
     export_plan: null
     byproducts: [перья, мясоперьевая мука, органическое удобрение из помёта]
     fertilizer_t_per_year: 43800
     fertilizer_revenue_mln_rub_per_year: 525.6
-    fertilizer_note: "Помёт птицы → компost 5 т/ч, 43 800 т/год (= кролики; там навоз)"
+    fertilizer_note: "Помёт → compost 5 т/ч, 43 800 т/год (= кролики tab#205)"
     organic_input: помёт птицы
+    financing:
+      source_sheet: "Финансирование"
+      fnb_mln_rub: 600
+      ral_mln_rub: 2340
+      frp_mln_rub: 0
+      banks_mln_rub: 9060
+      template: docs/1.2-слайд Фин модель.xlsx
+      appendix: docs/teo-poultry/appendix/financing-structure.md
     energy:
       canon_file: docs/teo-poultry/energy-budget.yaml
       solar_mwh: 10
@@ -106,6 +115,7 @@ content_sources:
     - docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
     - docs/teo-poultry/appendix/baseline-finmodel-adopted.md
     - docs/teo-poultry/appendix/finmodel-summary.md
+    - docs/teo-poultry/appendix/financing-structure.md
     - docs/teo-poultry/appendix/npv-irr-derived.md
 
 references:

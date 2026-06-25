@@ -59,4 +59,4 @@ revenue_fertilizer:
 superseded_finmodel:
   biogas_gpu_capex_mln_rub: 450
   purchased_electricity_opex_mln_rub: 250
-  note: заменено в xlsx (jun 2026) — solar 1180.8 + compost 36; OPEX электро 0
+  note: заменено в xlsx (jun 2026) — solar 1180.8 + compost 36; OPEX электро 0; NPV-IRR + Финансирование

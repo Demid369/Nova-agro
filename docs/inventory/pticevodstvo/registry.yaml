@@ -1,4 +1,4 @@
-# Реестр птицевodства — draft (второе ТЭО)
+# Реестр птицеводства — draft (второе ТЭО)
 # status: draft — не применять к RAG/graph до утверждения
 
 meta:
@@ -15,10 +15,10 @@ canonical_facts:
   capex_bln_rub: 12
   meat_t_per_year: 18169
   eggs_chicken_million_per_year: 153.6
-  revenue_mln_rub_per_year: 5034
+  revenue_mln_rub_per_year: 5559
   opex_mln_rub_per_year: 3343
   opex_finmodel_original_mln_rub: 3593
-  ebitda_mln_rub_per_year: 1691
+  ebitda_mln_rub_per_year: 2216
   ebitda_finmodel_original_mln_rub: 1441
   fertilizer_t_per_year: 43800
   fertilizer_revenue_mln_rub_per_year: 525.6
@@ -30,10 +30,16 @@ canonical_facts:
   solar_supplier: ASTORIOS HOLDING INC
   energy_canon: docs/teo-poultry/energy-budget.yaml
   purchased_electricity_opex_mln_rub: null
-  payback_years: 8.3
+  payback_years: 5.4
+  npv_mln_rub_at_10pct: 2253
+  irr_pct: 12.8
+  pi: 1.19
+  financing_fnb_mln_rub: 600
+  financing_ral_mln_rub: 2340
+  financing_banks_mln_rub: 9060
   heads_simultaneous: 2147400
   poultry_houses: 118
-  staff_fte: 480
+  staff_fte: 476
   feed_t_per_year: 66712
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
@@ -42,8 +48,8 @@ canonical_facts:
   construction_ha: 20_000
   land_ha: 400
   land_slot_note: "Слот блока; участок не выделен — docs/teo-poultry/land-budget.yaml"
-  irr_pct: 1.7
-  note: "NPV/IRR — производный DCF @10%; OPEX/EBITDA канon 3343/1691 (energy-budget.yaml); NPV не пересчитан"
+  finmodel_xlsx: docs/teo-poultry/_incoming/finmodel-pticekompleks-12-mlrd.xlsx
+  note: "KPI из xlsx (Экономика, NPV-IRR, Финансирование); sync с этalon кроликов jun 2026"
 
 themes:
   T01:
@@ -65,7 +71,7 @@ themes:
     id: T04
     name: Оборудование
     file: docs/teo-poultry/T04-equipment.md
-    action_on_replace: new
+    action_on_replace: adapt
   T05:
     id: T05
     name: Убой и переработка
