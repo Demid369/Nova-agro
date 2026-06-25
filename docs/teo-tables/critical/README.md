@@ -22,3 +22,4 @@
 | 239 | T239-staff-rybovodstvo | [T239-staff-rybovodstvo.md](critical/T239-staff-rybovodstvo.md) | 55 |
 | 240 | T240-staff-maslozhir | [T240-staff-maslozhir.md](critical/T240-staff-maslozhir.md) | 90 |
 | 241 | T241-taxes-payroll | [T241-taxes-payroll.md](critical/T241-taxes-payroll.md) | 34 |
+| P-141 | T141-feed-recipes-poultry | [T141-feed-recipes-poultry.md](critical/T141-feed-recipes-poultry.md) | draft |

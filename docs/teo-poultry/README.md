@@ -39,7 +39,7 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | 2 | **Пакет T01–T12 DOCX** | `generate-krolikovodstvo-docx.py` | только **md** |
 | 3 | **RAG / graph / audit** | corpus, 50 queries, docx-audit | **draft**, не в индексе |
 | 4 | **Вендоры + пропускная способность** | Meneghin, SINT 2400 г/ч | **Facco + SINT poultry 6000 + FRAGOLA/PRIMERANO/ASTORIOS** |
-| 5 | **Рецептуры кормов** (Tab. P-141) | `teo/125-…` (фактически КРС+рыба) | **draft** [`appendix/feed-recipes-table.md`](appendix/feed-recipes-table.md) |
+| 5 | **Рецептуры кормов** (Tab. P-141) | `teo/125-…` (фактически КРС+рыба; **без SKU**) | **draft** [`appendix/feed-recipes-table.md`](appendix/feed-recipes-table.md) + [`T141-feed-recipes-poultry`](../teo-tables/critical/T141-feed-recipes-poultry.md) |
 | 6 | **График CAPEX по годам** | T022 investment schedule | группы CAPEX, без фазировки |
 | 7 | **Экспорт** | Tab#5 baseline на блок 1 | `export-apk-baseline-tab5.md` |
 | 8 | **Земля: кадастр, схема, разрешения** | T003 land budget | `production_site: null` |

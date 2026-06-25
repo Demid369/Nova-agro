@@ -48,6 +48,9 @@ canonical_facts:
   poultry_houses: 118
   staff_fte: 476
   feed_t_per_year: 66712
+  feed_recipes: docs/teo-poultry/appendix/feed-recipes-table.md
+  feed_recipes_critical: docs/teo-tables/critical/T141-feed-recipes-poultry.md
+  feed_sku_count: 15
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
   production_site: null
@@ -100,6 +103,9 @@ themes:
     name: Кормление
     file: docs/teo-poultry/T06-feed.md
     action_on_replace: adapt
+    sources:
+      - docs/teo-poultry/appendix/feed-recipes-table.md
+      - docs/teo-tables/critical/T141-feed-recipes-poultry.md
   T07:
     id: T07
     name: Побочная продукция

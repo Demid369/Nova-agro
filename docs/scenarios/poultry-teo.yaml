@@ -82,6 +82,10 @@ blocks:
     poultry_houses: 118
     staff_fte: 476
     feed_t_per_year: 66712
+    feed_recipes: docs/teo-poultry/appendix/feed-recipes-table.md
+    feed_recipes_critical: docs/teo-tables/critical/T141-feed-recipes-poultry.md
+    feed_sku_count: 15
+    feed_note: "OPEX — групповой tonnage; SKU-разбивка для ККЗ (у кроликов SKU нет)"
     equipment: "Officine Facco & C. S.p.a. (IT) — 118 птичников/модулей; alt. Tekno (IT)"
     slaughter: "SINT Tecnologie S.r.l. (IT) — modular poultry 6000 гол/ч; халяль; CAPEX 2600 млн ₽"
     slaughter_vendor: SINT Tecnologie S.r.l.
@@ -161,6 +165,7 @@ content_sources:
     - docs/teo-poultry/appendix/sensitivity-and-scenarios.md
     - docs/teo-poultry/appendix/export-apk-baseline-tab5.md
     - docs/teo-poultry/appendix/vendors-equipment.md
+    - docs/teo-poultry/appendix/feed-recipes-table.md
     - docs/teo-poultry/appendix/apk-100bln-integration.md
     - docs/teo-poultry/appendix/financing-structure.md
     - docs/teo-poultry/appendix/npv-irr-derived.md
