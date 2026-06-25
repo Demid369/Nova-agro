@@ -168,9 +168,9 @@ def build() -> Path:
 
     add_heading(doc, "5.2. Пересборка артефактов", 2)
     add_para(doc, "python scripts/build-teo-vector-index.py")
-    add_para(doc, "uv tool run --from graphifyy python scripts/build-full-teo-graph.py")
-    add_para(doc, "uv tool run --from graphifyy python scripts/build-smart-semantic-graph.py")
-    add_para(doc, "uv tool run --from graphifyy python scripts/label-teo-communities.py")
+    add_para(doc, "uv tool run --from graphifyy==0.8.49 python scripts/build-full-teo-graph.py")
+    add_para(doc, "uv tool run --from graphifyy==0.8.49 python scripts/build-smart-semantic-graph.py")
+    add_para(doc, "uv tool run --from graphifyy==0.8.49 python scripts/label-teo-communities.py")
 
     add_heading(doc, "5.3. Обновление онтологии графа", 2)
     add_bullet(doc, "Убрать/заменить: Кролиководство, Meneghin Srl (если не остаётся)")

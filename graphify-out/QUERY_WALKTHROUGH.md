@@ -160,7 +160,7 @@ graphify explain "узел"
 Перегенерация имён:
 
 ```bash
-uv tool run --from graphifyy python scripts/label-teo-communities.py
+uv tool run --from graphifyy==0.8.49 python scripts/label-teo-communities.py
 ```
 
 ---

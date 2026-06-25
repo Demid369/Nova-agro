@@ -77,5 +77,5 @@ python scripts/test-teo-system.py
 
 ```bash
 python scripts/build-teo-vector-index.py
-uv tool run --from graphifyy python scripts/build-full-teo-graph.py
+uv tool run --from graphifyy==0.8.49 python scripts/build-full-teo-graph.py
 ```

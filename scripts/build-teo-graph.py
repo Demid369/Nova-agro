@@ -2,7 +2,7 @@
 """Собрать стартовый knowledge graph Graphify для ТЭО «МОЯ МЕЧТА».
 
 Запуск:
-  uv tool run --from graphifyy python scripts/build-teo-graph.py
+  uv tool run --from graphifyy==0.8.49 python scripts/build-teo-graph.py
 """
 
 from __future__ import annotations

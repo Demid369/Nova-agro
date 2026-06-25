@@ -19,7 +19,7 @@
 1. Установите CLI (один раз на машине):
 
 ```bash
-uv tool install "graphifyy[office]"
+uv tool install "graphifyy[office]==0.8.49"
 graphify cursor install
 ```
 
@@ -52,7 +52,7 @@ graphify explain "Животноводство КРС/МРС"
 ## Именование сообществ
 
 ```bash
-uv tool run --from graphifyy python scripts/label-teo-communities.py
+uv tool run --from graphifyy==0.8.49 python scripts/label-teo-communities.py
 ```
 
 Русские имена сообществ → `.graphify_labels.json`, обновление `GRAPH_REPORT.md` и `graph.html` (без LLM API).
@@ -60,7 +60,7 @@ uv tool run --from graphifyy python scripts/label-teo-communities.py
 ## Пересборка полного графа
 
 ```bash
-uv tool run --from graphifyy python scripts/build-full-teo-graph.py
+uv tool run --from graphifyy==0.8.49 python scripts/build-full-teo-graph.py
 ```
 
 Обрабатывает **146 markdown-файлов**. Фильтр шума + **norm_id с кириллицей** + ограничение co-occurrence в `04-rynok` (только секции 4.2/4.3/5.1/6.1 и project-relevant параграфы).
@@ -68,7 +68,7 @@ uv tool run --from graphifyy python scripts/build-full-teo-graph.py
 ## Семантическая экстракция (умные связи, deep mode)
 
 ```bash
-uv tool run --from graphifyy python scripts/build-smart-semantic-graph.py
+uv tool run --from graphifyy==0.8.49 python scripts/build-smart-semantic-graph.py
 ```
 
 Сливает:
@@ -83,7 +83,7 @@ uv tool run --from graphifyy python scripts/build-smart-semantic-graph.py
 Стартовый мини-граф (29 узлов):
 
 ```bash
-uv tool run --from graphifyy python scripts/build-teo-graph.py
+uv tool run --from graphifyy==0.8.49 python scripts/build-teo-graph.py
 ```
 
 Опционально — headless LLM-экстракция (нужен `GEMINI_API_KEY`):
