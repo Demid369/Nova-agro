@@ -7,7 +7,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from .config import CORPUS_SUMMARY, KPI_PATH, ROOT
+from .config import CORPUS_SUMMARY, KPI_PATH, ROOT, TEO_LAND_BUDGET, TEO_TABLES_CRITICAL
 
 BLOCK_ALIASES: dict[str, list[str]] = {
     "кролиководство": ["кролик", "крольчат", "кроликовод"],
@@ -179,6 +179,57 @@ def extract_from_summary(path: Path) -> KPIStore:
     return store
 
 
+NPV_TABLE_MAP: dict[str, tuple[str, str]] = {
+    "T007-npv-krolikovodstvo.md": ("кролиководство", "Кролиководство"),
+    "T008-npv-teplitsy.md": ("теплицы", "Теплицы"),
+    "T009-npv-zhivotnovodstvo.md": ("животноводство", "Животноводство"),
+    "T010-npv-rybovodstvo.md": ("рыбоводство", "Рыбоводство"),
+    "T011-npv-maslozhir.md": ("масложировой", "Масложировой"),
+}
+
+
+def extract_from_npv_table(path: Path, block_id: str, label: str) -> BlockKPI | None:
+    rows = parse_markdown_table(path.read_text(encoding="utf-8"))
+    rel = str(path.relative_to(ROOT))
+    blk = BlockKPI(block_id=block_id, label=label, source=rel, section="NPV из docx")
+    for row in rows:
+        if len(row) < 2:
+            continue
+        key = row[0].lower()
+        val = row[1]
+        if "npv" in key or "чистая привед" in key:
+            blk.npv_thousand_rub = _parse_num(val)
+        elif "irr" in key or "внутренн" in key:
+            blk.irr_pct = _parse_pct(val)
+        elif "окупа" in key or "pb" in key:
+            pm = _parse_num(val)
+            blk.payback_months = int(pm) if pm is not None else None
+    if blk.npv_thousand_rub is None and blk.irr_pct is None:
+        return None
+    return blk
+
+
+def extract_from_land_budget_yaml(path: Path, store: KPIStore) -> None:
+    if not path.exists():
+        return
+    import yaml
+
+    rel = str(path.relative_to(ROOT))
+    data = yaml.safe_load(path.read_text(encoding="utf-8").split("\n", 1)[-1])
+    store.built_from.append(rel)
+    store.project["land_total_apk_ha"] = data.get("total_apk_ha")
+    store.project["land_construction_ha"] = data.get("construction_ha")
+    store.project["land_other_ha"] = data.get("other_ha")
+    store.project["land_arable_ha"] = data.get("arable_ha")
+    for slug, ha in (data.get("blocks_ha") or {}).items():
+        bid = _slug_block(slug)
+        store.blocks.setdefault(
+            bid,
+            BlockKPI(block_id=bid, label=slug.replace("_", " ").title(), source=rel, section="Земельный баланс"),
+        )
+        store.blocks[bid].notes = f"Земля: {ha} га"
+
+
 def build_kpi_store() -> KPIStore:
     store = KPIStore()
     for path in sorted(CORPUS_SUMMARY.glob("*.md")):
@@ -187,6 +238,16 @@ def build_kpi_store() -> KPIStore:
             store.project.update(part.project)
             store.blocks.update(part.blocks)
             store.built_from.extend(part.built_from)
+
+    for fname, (bid, label) in NPV_TABLE_MAP.items():
+        path = TEO_TABLES_CRITICAL / fname
+        if path.exists():
+            blk = extract_from_npv_table(path, bid, label)
+            if blk:
+                store.blocks[bid] = blk
+                store.built_from.append(str(path.relative_to(ROOT)))
+
+    extract_from_land_budget_yaml(TEO_LAND_BUDGET, store)
     return store
 
 

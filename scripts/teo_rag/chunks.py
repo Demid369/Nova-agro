@@ -17,6 +17,8 @@ from .config import (
     MARKET_FILE_HINT,
     MAX_CHUNK_CHARS,
     ROOT,
+    TEO_LAND_BUDGET,
+    TEO_TABLES_CRITICAL,
 )
 
 TRADE_FILE_RE = re.compile(r"табл[_-]\d+", re.I)
@@ -88,8 +90,9 @@ def _load_duplicates_map() -> dict[str, dict]:
 def infer_canonical(path: Path, tier: str) -> dict[str, str | int]:
     """canonical_layer metadata for corpus vs teo duplicate handling."""
     rel = rel_source(path)
-    if tier == "summary" or "graphify-corpus" in rel.replace("\\", "/"):
-        return {"canonical_layer": "corpus", "canonical_priority": 10}
+    if tier in ("summary", "tables") or "graphify-corpus" in rel.replace("\\", "/"):
+        priority = 12 if tier == "tables" else 10
+        return {"canonical_layer": "corpus", "canonical_priority": priority}
 
     dup = _load_duplicates_map().get(rel.replace("\\", "/"))
     if dup:
@@ -154,9 +157,20 @@ def infer_block(path: Path, section: str = "") -> str:
             return "финансы"
         if stem.startswith("06-"):
             return "риски"
+        if stem.startswith("07-"):
+            return "финансы"
         if stem.startswith("03-"):
             return "производство"
         return "ядро"
+    if "teo-tables" in str(path):
+        name = path.stem.lower()
+        if "land-budget" in name or "T003" in name:
+            return "ядро"
+        if "npv" in name or "capex" in name or "revenue" in name or "tax" in name:
+            return "финансы"
+        if "staff" in name:
+            return "финансы"
+        return "производство"
     return "прочее"
 
 
@@ -274,10 +288,40 @@ def chunk_file(path: Path, tier: str) -> list[Chunk]:
     return chunks
 
 
+def chunk_yaml_land_budget(path: Path) -> list[Chunk]:
+    text = path.read_text(encoding="utf-8")
+    source = rel_source(path)
+    chunk_id = make_chunk_id(source, "land-budget", 0, 0)
+    canonical = infer_canonical(path, "tables")
+    return [
+        Chunk(
+            chunk_id=chunk_id,
+            text=text,
+            source=source,
+            tier="tables",
+            block="ядро",
+            section="Земельный баланс",
+            section_level=2,
+            word_count=len(text.split()),
+            has_tables=False,
+            project_relevant=True,
+            char_start=0,
+            char_end=len(text),
+            metadata={**canonical, "source_table": 3},
+        )
+    ]
+
+
 def collect_chunks() -> list[Chunk]:
     all_chunks: list[Chunk] = []
     for path in sorted(CORPUS_SUMMARY.glob("*.md")):
         all_chunks.extend(chunk_file(path, tier="summary"))
+    for path in sorted(TEO_TABLES_CRITICAL.glob("*.md")):
+        if path.name.lower() == "readme.md":
+            continue
+        all_chunks.extend(chunk_file(path, tier="tables"))
+    if TEO_LAND_BUDGET.exists():
+        all_chunks.extend(chunk_yaml_land_budget(TEO_LAND_BUDGET))
     for path in sorted(CORPUS_DETAIL.glob("*.md")):
         all_chunks.extend(chunk_file(path, tier="detail"))
     return all_chunks

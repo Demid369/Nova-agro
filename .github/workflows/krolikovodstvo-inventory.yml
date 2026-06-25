@@ -6,6 +6,7 @@ on:
       - "docs/inventory/**"
       - "docs/graphify-corpus/**"
       - "docs/teo/**"
+      - "docs/teo-tables/**"
       - "docs/scenarios/**"
       - "scripts/krolikovodstvo_inventory.py"
       - "scripts/generate-krolikovodstvo-docx.py"
@@ -40,6 +41,9 @@ jobs:
 
       - name: Sync inventory queries (check)
         run: python3 scripts/sync-krolikovodstvo-queries.py --check
+
+      - name: Validate TEO docx tables
+        run: python3 scripts/validate-teo-docx-tables.py
 
       - name: Validate registry + docx-audit.json
         run: python3 scripts/generate-krolikovodstvo-docx.py --skip-docx

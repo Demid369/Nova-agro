@@ -1,0 +1,18 @@
+# Canonical land budget from TEO docx table #3
+source: docs/1.ТЭО_МОЯ МЕЧТА.docx
+source_table: 3
+total_apk_ha: 100000
+construction_ha: 20000
+blocks_ha:
+  кролиководство: 50
+  тепличный_комплекс: 100
+  животноводство: 300
+  рыбоводство: 30
+  масложировой_комбинат: 30
+  прочие_строительство: 19490
+other_ha: 19490
+arable_ha: 80000
+crops_ha:
+  подсолнечник: 34000
+  соя: 34000
+  прочие: 12000

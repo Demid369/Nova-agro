@@ -7,6 +7,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 CORPUS_SUMMARY = ROOT / "docs" / "graphify-corpus"
 CORPUS_DETAIL = ROOT / "docs" / "teo"
+TEO_TABLES = ROOT / "docs" / "teo-tables"
+TEO_TABLES_CRITICAL = TEO_TABLES / "critical"
+TEO_TABLES_MANIFEST = TEO_TABLES / "manifest.json"
+TEO_LAND_BUDGET = TEO_TABLES / "land-budget.yaml"
 SCENARIOS_DIR = ROOT / "docs" / "scenarios"
 OUT_DIR = ROOT / "teo-rag-out"
 CHROMA_DIR = OUT_DIR / "chroma"
