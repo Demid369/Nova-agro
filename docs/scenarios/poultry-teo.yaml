@@ -9,7 +9,20 @@ project:
   investment_bln_rub: 12
   revenue_bln_rub_year: 5.559
   payback_years: 5.4
-  export_bln_rub: null
+    export_bln_rub: 0
+    export_note: "Канon draft; гипотеза 10% → NPV +2 357 — лист «Экспорт»"
+    sensitivity:
+      source: docs/teo-poultry/appendix/sensitivity-and-scenarios.md
+      script: scripts/calc-poultry-scenarios.py
+      stress_combined_npv_mln: -1884
+      feed_plus_20_npv_mln: -69
+      egg_minus_30_npv_mln: 248
+      optimistic_npv_mln: 3803
+    apk_100bln_scenarios:
+      A_total_mln: 100958.5
+      B_total_mln: 100000
+      C_total_mln: 100000
+      preferred: C
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
   production_site: null
