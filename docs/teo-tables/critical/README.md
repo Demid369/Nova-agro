@@ -22,4 +22,18 @@
 | 239 | T239-staff-rybovodstvo | [T239-staff-rybovodstvo.md](critical/T239-staff-rybovodstvo.md) | 55 |
 | 240 | T240-staff-maslozhir | [T240-staff-maslozhir.md](critical/T240-staff-maslozhir.md) | 90 |
 | 241 | T241-taxes-payroll | [T241-taxes-payroll.md](critical/T241-taxes-payroll.md) | 34 |
-| P-141 | T141-feed-recipes-poultry | [T141-feed-recipes-poultry.md](critical/T141-feed-recipes-poultry.md) | draft |
+
+## Птицеводство (draft, замена кроликов)
+
+| ID | Файл | Статус |
+|----|------|--------|
+| T001-P | [T001-master-summary-pticevodstvo.md](T001-master-summary-pticevodstvo.md) | draft |
+| T003-P | [T003-land-budget-pticevodstvo.md](T003-land-budget-pticevodstvo.md) | draft (кадастр TBD) |
+| T004-P | [T004-revenue-matrix-pticevodstvo.md](T004-revenue-matrix-pticevodstvo.md) | draft |
+| T007-P | [T007-npv-pticevodstvo.md](T007-npv-pticevodstvo.md) | draft |
+| T021-P | [T021-pticevodstvo-capex.md](T021-pticevodstvo-capex.md) | draft |
+| T022-P | [T022-investment-schedule-pticevodstvo.md](T022-investment-schedule-pticevodstvo.md) | draft (фазировка TBD) |
+| T141-P | [T141-feed-recipes-poultry.md](T141-feed-recipes-poultry.md) | draft |
+| T236-P | [T236-staff-pticevodstvo.md](T236-staff-pticevodstvo.md) | draft |
+
+Индекс: [`docs/teo-poultry/appendix/tables-poultry-index.md`](../../teo-poultry/appendix/tables-poultry-index.md)

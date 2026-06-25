@@ -51,6 +51,16 @@ canonical_facts:
   feed_recipes: docs/teo-poultry/appendix/feed-recipes-table.md
   feed_recipes_critical: docs/teo-tables/critical/T141-feed-recipes-poultry.md
   feed_sku_count: 15
+  critical_tables_index: docs/teo-poultry/appendix/tables-poultry-index.md
+  critical_tables:
+    T001-P: docs/teo-tables/critical/T001-master-summary-pticevodstvo.md
+    T003-P: docs/teo-tables/critical/T003-land-budget-pticevodstvo.md
+    T004-P: docs/teo-tables/critical/T004-revenue-matrix-pticevodstvo.md
+    T007-P: docs/teo-tables/critical/T007-npv-pticevodstvo.md
+    T021-P: docs/teo-tables/critical/T021-pticevodstvo-capex.md
+    T022-P: docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md
+    T141-P: docs/teo-tables/critical/T141-feed-recipes-poultry.md
+    T236-P: docs/teo-tables/critical/T236-staff-pticevodstvo.md
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
   production_site: null

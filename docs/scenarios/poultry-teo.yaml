@@ -73,10 +73,10 @@ blocks:
     ebitda_finmodel_original_mln_rub: 1441
     payback_years_simple: 5.4
     npv_thousand_rub: 2253000
-    npv_note: "DCF @10%, горizont 16 лет (2026–2041); лист NPV-IRR xlsx"
+    npv_note: "DCF @10%, горизонт 16 лет (2026–2041); лист NPV-IRR xlsx"
     irr_pct: 12.8
     pi: 1.19
-    irr_note: "Лист NPV-IRR xlsx; 10-летний горizont даёт IRR ~6,7%"
+    irr_note: "Лист NPV-IRR xlsx; 10-летний горизонт даёт IRR ~6,7%"
     payback_months: 65
     heads_simultaneous: 2147400
     poultry_houses: 118
@@ -169,6 +169,18 @@ content_sources:
     - docs/teo-poultry/appendix/apk-100bln-integration.md
     - docs/teo-poultry/appendix/financing-structure.md
     - docs/teo-poultry/appendix/npv-irr-derived.md
+    - docs/teo-poultry/appendix/tables-poultry-index.md
+
+critical_tables:
+  index: docs/teo-poultry/appendix/tables-poultry-index.md
+  T001-P: docs/teo-tables/critical/T001-master-summary-pticevodstvo.md
+  T003-P: docs/teo-tables/critical/T003-land-budget-pticevodstvo.md
+  T004-P: docs/teo-tables/critical/T004-revenue-matrix-pticevodstvo.md
+  T007-P: docs/teo-tables/critical/T007-npv-pticevodstvo.md
+  T021-P: docs/teo-tables/critical/T021-pticevodstvo-capex.md
+  T022-P: docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md
+  T141-P: docs/teo-tables/critical/T141-feed-recipes-poultry.md
+  T236-P: docs/teo-tables/critical/T236-staff-pticevodstvo.md
 
 references:
   - docs/scenarios/poultry-variant.md
