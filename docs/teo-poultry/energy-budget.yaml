@@ -54,7 +54,8 @@ revenue_fertilizer:
   t_per_year: 43_800
   price_rub_per_kg: 12
   revenue_mln_rub_per_year: 525.6
-  source_table: docs/teo-tables/all/T205.md  # аналог для «удобрение из навоза»
+  export: false  # Tab#5: «Удобрение из навоза кролика» — местный рынок; у птицы — то же
+  source_table: docs/teo-tables/critical/T005-export-revenue-matrix.md
 
 superseded_finmodel:
   biogas_gpu_capex_mln_rub: 450
