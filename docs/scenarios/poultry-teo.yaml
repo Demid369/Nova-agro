@@ -9,20 +9,26 @@ project:
   investment_bln_rub: 12
   revenue_bln_rub_year: 5.559
   payback_years: 5.4
-    export_bln_rub: 0
-    export_note: "Канon draft; гипотеза 10% → NPV +2 357 — лист «Экспорт»"
-    sensitivity:
-      source: docs/teo-poultry/appendix/sensitivity-and-scenarios.md
-      script: scripts/calc-poultry-scenarios.py
-      stress_combined_npv_mln: -1884
-      feed_plus_20_npv_mln: -69
-      egg_minus_30_npv_mln: 248
-      optimistic_npv_mln: 3803
-    apk_100bln_scenarios:
-      A_total_mln: 100958.5
-      B_total_mln: 100000
-      C_total_mln: 100000
-      preferred: C
+  export_bln_rub: 0
+  export_note: "Канon draft; гипотеза 10% → NPV +2 357 — лист «Экспорт»"
+  sensitivity:
+    source: docs/teo-poultry/appendix/sensitivity-and-scenarios.md
+    script: scripts/calc-poultry-scenarios.py
+    stress_combined_npv_mln: -1884
+    feed_plus_20_npv_mln: -69
+    egg_minus_30_npv_mln: 248
+    optimistic_npv_mln: 3803
+  apk_100bln:
+    canonical_scenario: C
+    total_mln: 100000
+    trim_from_other_blocks_mln: 958.5
+    blocks_mln:
+      poultry: 12000
+      greenhouses: 34128.3
+      livestock: 27162.6
+      fish: 8903.0
+      oil: 17806.1
+    note: "Птица 12 000; −958,5 пропорционально блокам 2–5 (как ККЗ FRAGOLA у кроликов, но вне ФРП)"
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
   production_site: null
@@ -131,6 +137,7 @@ content_sources:
     - docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
     - docs/teo-poultry/appendix/baseline-finmodel-adopted.md
     - docs/teo-poultry/appendix/finmodel-summary.md
+    - docs/teo-poultry/appendix/sensitivity-and-scenarios.md
     - docs/teo-poultry/appendix/apk-100bln-integration.md
     - docs/teo-poultry/appendix/financing-structure.md
     - docs/teo-poultry/appendix/npv-irr-derived.md

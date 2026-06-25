@@ -51,7 +51,14 @@ canonical_facts:
   export_bln_rub: 0
   export_scenario_10pct_npv_mln: 2357
   sensitivity_json: docs/teo-poultry/appendix/calculated-scenarios.json
-  apk_100_scenario_c_total_mln: 100000
+  apk_100_canonical: scenario_C
+  apk_100_total_mln: 100000
+  apk_100_blocks_mln:
+    poultry: 12000
+    greenhouses: 34128.3
+    livestock: 27162.6
+    fish: 8903.0
+    oil: 17806.1
   note: "KPI из xlsx (Экономика, NPV-IRR, Финансирование); sync с этalon кроликов jun 2026"
 
 themes:
