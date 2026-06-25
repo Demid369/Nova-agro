@@ -52,7 +52,11 @@ blocks:
     feed: "Комбикормовый завод холдинга, ~28 000 ₽/т, 66,7 тыс. т/год"
     export_hs: "0207 — мясо домашней птицы"
     export_plan: null
-    byproducts: [птичий помёт → биогаз, перья, мясоперьевая мука]
+    byproducts: [перья, мясоперьевая мука, органическое удобрение из помёта]
+    fertilizer_t_per_year: 43800
+    fertilizer_note: "Как baseline кроликов — компost/удобрение 43 800 т/год (5 т/ч)"
+    solar_mwh: 10
+    energy_note: "Как baseline кроликов — солнечные панели 10 МВт·ч на крышах птичников; без смены энергоконтура"
     breeds:
       broiler: ROSS 308
       eggs: "Hisex / Lohmann Brown"

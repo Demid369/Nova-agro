@@ -18,6 +18,13 @@ blocks_ha:
   поля_под_помет_комpost: 100             # оценка
   резерв_расширение: 90                   # остаток до 400
 
+byproducts_canon:
+  fertilizer_t_per_year: 43800
+  compost_capacity_t_per_hour: 5.0
+  solar_mwh: 10
+  aligned_with: docs/inventory/krolikovodstvo/registry.yaml
+
 note: >
   CAPEX и 118 птичников рассчитаны на комплекс независимо от выбора 150 или 400 га;
   при слоте 400 га увеличивается доля СЗЗ, полей под органику и резерва, не площадь зданий.
+  Органика 43 800 т/год и солнечные 10 МВт·ч — как у baseline кроликов.
