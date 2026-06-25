@@ -1,0 +1,92 @@
+# Реестр птицевodства — draft (второе ТЭО)
+# status: draft — не применять к RAG/graph до утверждения
+
+meta:
+  project: МОЯ МЕЧТА
+  block_id: птицеводство
+  block_label: Птицеводство
+  status: draft
+  replaces_block: кролиководство
+  baseline_poultry: docs/scenarios/poultry-teo.yaml
+  content_dir: docs/teo-poultry
+  generated_docx_dir: docs/inventory/pticevodstvo/docx
+
+canonical_facts:
+  output_t_per_year: null
+  capex_bln_rub: 17
+  npv_thousand_rub: 4050156
+  irr_pct: 18.49
+  payback_months: 75
+  price_rub_per_kg: null
+  export_hs: "0207"
+  note: "Заполнить из T01-finance.md и poultry-teo.yaml после финмодели"
+
+themes:
+  T01:
+    id: T01
+    name: Финансы блока
+    file: docs/teo-poultry/T01-finance.md
+    action_on_replace: new
+  T02:
+    id: T02
+    name: Масштаб и фаза
+    file: docs/teo-poultry/T02-scale-phase.md
+    action_on_replace: new
+  T03:
+    id: T03
+    name: Генетика и технология
+    file: docs/teo-poultry/T03-genetics-tech.md
+    action_on_replace: new
+  T04:
+    id: T04
+    name: Оборудование
+    file: docs/teo-poultry/T04-equipment.md
+    action_on_replace: new
+  T05:
+    id: T05
+    name: Убой и переработка
+    file: docs/teo-poultry/T05-slaughter-processing.md
+    action_on_replace: adapt
+  T06:
+    id: T06
+    name: Кормление
+    file: docs/teo-poultry/T06-feed.md
+    action_on_replace: adapt
+  T07:
+    id: T07
+    name: Побочная продукция
+    file: docs/teo-poultry/T07-byproducts.md
+    action_on_replace: adapt
+  T08:
+    id: T08
+    name: Энергия
+    file: docs/teo-poultry/T08-energy.md
+    action_on_replace: adapt
+  T09:
+    id: T09
+    name: Рынок и SWOT
+    file: docs/teo-poultry/T09-market-swot.md
+    action_on_replace: new
+  T10:
+    id: T10
+    name: Экспорт
+    file: docs/teo-poultry/T10-export.md
+    action_on_replace: new
+  T11:
+    id: T11
+    name: Narrative
+    file: docs/teo-poultry/T11-narrative-mission.md
+    action_on_replace: new
+  T12:
+    id: T12
+    name: Мировой рынок птицы
+    file: docs/teo-poultry/T12-world-market.md
+    action_on_replace: new
+
+incoming:
+  dir: docs/teo-poultry/_incoming
+  appendix: docs/teo-poultry/appendix
+
+replaces_rabbit_inventory:
+  reference: docs/inventory/krolikovodstvo/registry.yaml
+  checklist: docs/inventory/krolikovodstvo/docx/00-replace-checklist.docx

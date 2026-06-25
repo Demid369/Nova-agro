@@ -1,0 +1,71 @@
+# ТЭО «МОЯ МЕЧТА» — птицеводство (draft, второе ТЭО)
+# НЕ active baseline. Не применять apply до утверждения текста в docs/teo-poultry/
+id: poultry-teo
+name: ТЭО птицеводство (draft)
+status: draft
+replaces: кролиководство
+
+project:
+  investment_bln_rub: 105
+  revenue_bln_rub_year: 74.0
+  payback_years: null
+  export_bln_rub: null
+  location: Херсонская область
+  note: "Цифры проекта — заполнить из T01-finance.md; сейчас ориентир от poultry-variant"
+
+blocks:
+  кролиководство:
+    label: Кролиководство
+    active: false
+    note: archived when poultry-teo becomes active
+
+  птицеводство:
+    label: Птицеводство (утка, перепёл, бройлер, индейка)
+    active: true
+    output: "~12 000 т мяса птицы/год"
+    capex_bln_rub: 17
+    npv_thousand_rub: 4050156
+    irr_pct: 18.49
+    payback_months: 75
+    price_rub_per_kg: null
+    equipment: "TBD — бройлерные/утиные линии"
+    slaughter: "Линия птицеубоя (SINT или аналог)"
+    feed: "Комбикормовый завод — рецепты для птиц"
+    export_hs: "0207 — мясо домашней птицы"
+    byproducts: [перья, помёт, мясоперьевая мука]
+    graph_nodes: [Птицеводство, Комбикормовый завод, Убойный цех]
+    risks:
+      - Конкуренция с федеральными бройлерными холдингами
+      - Слабее связь с моделью нулевой себестоимости vs КРС/кролики
+      - Биобезопасность птицеводческих площадок
+
+  теплицы:
+    active: true
+    note: без изменений vs baseline
+
+  животновodство:
+    active: true
+    note: без изменений vs baseline
+
+content_sources:
+  primary_dir: docs/teo-poultry
+  themes_map:
+    T01: T01-finance.md
+    T02: T02-scale-phase.md
+    T03: T03-genetics-tech.md
+    T04: T04-equipment.md
+    T05: T05-slaughter-processing.md
+    T06: T06-feed.md
+    T07: T07-byproducts.md
+    T08: T08-energy.md
+    T09: T09-market-swot.md
+    T10: T10-export.md
+    T11: T11-narrative-mission.md
+    T12: T12-world-market.md
+  incoming_dir: docs/teo-poultry/_incoming
+  appendix_dir: docs/teo-poultry/appendix
+
+references:
+  - docs/scenarios/poultry-variant.md
+  - docs/scenarios/poultry-variant.yaml
+  - docs/inventory/krolikovodstvo/registry.yaml
