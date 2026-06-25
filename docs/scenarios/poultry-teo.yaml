@@ -16,7 +16,8 @@ project:
   apk_total_ha: 250_000
   construction_ha: 20_000
   land_ha: 400
-  land_ha_planning_note: "Слот блока 400 га в APK 250 000 га; участок под строительство ещё не выделен"
+  land_ha_planning_note: "APK 250 000 га Запорожская обл.; слот 400 га; кадастр/схема/разрешения — позже"
+  apk_100bln_integration: docs/teo-poultry/appendix/apk-100bln-integration.md
   note: "Отдельный блок 12 млрд ₽; APK птицы 250 000 га; не путать с baseline холдинга 100 000 га (Херсон)"
 
 blocks:
@@ -63,6 +64,8 @@ blocks:
     organic_input: помёт птицы
     financing:
       source_sheet: "Финансирование"
+      apk_100_sheet: "APK-100"
+      apk_100_integration: docs/teo-poultry/appendix/apk-100bln-integration.md
       fnb_mln_rub: 600
       ral_mln_rub: 2340
       frp_mln_rub: 0
@@ -115,6 +118,7 @@ content_sources:
     - docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
     - docs/teo-poultry/appendix/baseline-finmodel-adopted.md
     - docs/teo-poultry/appendix/finmodel-summary.md
+    - docs/teo-poultry/appendix/apk-100bln-integration.md
     - docs/teo-poultry/appendix/financing-structure.md
     - docs/teo-poultry/appendix/npv-irr-derived.md
 

@@ -118,6 +118,80 @@ def add_npv_irr_sheet(wb: openpyxl.Workbook) -> None:
         ws.column_dimensions[col].width = 14
 
 
+def add_apk_100_sheet(wb: openpyxl.Workbook) -> None:
+    """Единый слайд: встройка 12 млрд птицы в контур APK 100 млрд (Приложение 3Б)."""
+    if "APK-100" in wb.sheetnames:
+        del wb["APK-100"]
+    ws = wb.create_sheet("APK-100")
+    ws["A1"] = "ВСТРОЙКА 12 млрд ПТИЦЫ В КОНТУР APK 100 млрд (Приложение 3Б)"
+    ws["A1"].font = Font(bold=True, size=12)
+    ws["A2"] = "Baseline: docs/1.2-слайд Фин модель.xlsx · блок птицы: finmodel · apk-100bln-integration.md"
+    ws["A3"] = "Земля птицы: APK 250 000 га, Запорожская обл. · слот 400 га · кадастр позже"
+
+    headers = ["№", "Блок", "Baseline (кролики), млн ₽", "С птицей, млн ₽", "Δ, млн ₽", "Доля в 100,9 млрд"]
+    for i, h in enumerate(headers, 1):
+        ws.cell(5, i, h)
+    style_header(ws, 5, len(headers))
+
+    blocks = [
+        (1, "Птицеводческий комплекс «Нова-Агро» (слот кроликов)", 11041.5, 12000, "=D6-C6"),
+        (2, "Тепличный комплекс", 34500, 34500, 0),
+        (3, "Животноводческая ферма (КРС/МРС)", 27458.5, 27458.5, 0),
+        (4, "Рыбоводство (белуга)", 9000, 9000, 0),
+        (5, "Масложировой комбинат", 18000, 18000, 0),
+    ]
+    for i, (num, name, base, poultry, delta) in enumerate(blocks):
+        r = 6 + i
+        ws.cell(r, 1, num)
+        ws.cell(r, 2, name)
+        ws.cell(r, 3, base)
+        ws.cell(r, 4, poultry)
+        if isinstance(delta, str):
+            ws.cell(r, 5, delta)
+        else:
+            ws.cell(r, 5, delta)
+        ws.cell(r, 6, f"=D{r}/$D$11")
+
+    r_total = 11
+    ws.cell(r_total, 2, "ИТОГО APK")
+    ws.cell(r_total, 3, "=SUM(C6:C10)")
+    ws.cell(r_total, 4, "=SUM(D6:D10)")
+    ws.cell(r_total, 5, "=D11-C11")
+    ws.cell(r_total, 6, 1)
+    for c in range(1, 7):
+        ws.cell(r_total, c).font = HEADER_FONT
+
+    ws.cell(13, 1, "Источники финансирования блока 1 (12 000)").font = HEADER_FONT
+    fin_h = ["Источник", "млн ₽", "Доля блока", "Ссылка"]
+    for i, h in enumerate(fin_h, 1):
+        ws.cell(14, i, h)
+    style_header(ws, 14, len(fin_h))
+    fin_rows = [
+        ("ФНБ", "=Финансирование!D6", "=Финансирование!E6", "лист Финансирование"),
+        ("РАЛ", "=Финансирование!D7", "=Финансирование!E7", ""),
+        ("ФРП", "=Финансирование!D8", "=Финансирование!E8", "ККЗ вне блока"),
+        ("Банки", "=SUM(Финансирование!D9:D15)", "=B18/12000", ""),
+        ("Итого блок 1", "=SUM(B15:B18)", 1, ""),
+    ]
+    for i, row in enumerate(fin_rows):
+        r = 15 + i
+        for j, val in enumerate(row, 1):
+            ws.cell(r, j, val)
+
+    ws.cell(21, 1, "Общая инфра APK (без изменений)")
+    ws.cell(22, 1, "ККЗ 300 тыс. т/год")
+    ws.cell(22, 2, "корм птицы ~22% мощности")
+    ws.cell(23, 1, "Биogaz APK 20 МВт·ч")
+    ws.cell(23, 2, "помёт птицы → установка холдинга")
+    ws.cell(24, 1, "Solar 50 МВт·ч")
+    ws.cell(24, 2, "10 МВт·ч на блоке птицы (CAPEX 12 млрд)")
+
+    ws.column_dimensions["A"].width = 8
+    ws.column_dimensions["B"].width = 42
+    for col in "CDEF":
+        ws.column_dimensions[col].width = 18
+
+
 def add_financing_sheet(wb: openpyxl.Workbook) -> None:
     """Financing structure for 12 000 mln block — template по 1.2-слайд Фин модель.xlsx (кролики)."""
     if "Финансирование" in wb.sheetnames:
@@ -125,7 +199,7 @@ def add_financing_sheet(wb: openpyxl.Workbook) -> None:
     ws = wb.create_sheet("Финансирование")
     ws["A1"] = "СТРУКТУРА ФИНАНСИРОВАНИЯ — ПТИЦЕКОМПЛЕКС 12 000 млн ₽"
     ws["A1"].font = Font(bold=True, size=12)
-    ws["A2"] = "Шаблон: docs/1.2-слайд Фин модель.xlsx (ФНБ / РАЛ / ФРП / банки) · блок птицы отдельно от APK 100 млрд"
+    ws["A2"] = "Шаблон: docs/1.2-слайд Фин модель.xlsx · встройка в 100 млрд: лист «APK-100»"
     ws["A3"] = "Сумма инвестиций"
     ws["B3"] = 12000
     ws["C3"] = "млн ₽"
@@ -177,7 +251,7 @@ def update_summary(wb: openpyxl.Workbook) -> None:
     ws["B22"] = "лист «Финансирование»"
     ws["A23"] = "Энергетика"
     ws["B23"] = "solar 10 МВт·ч + compost 5 т/ч (= кролики); без лок. biogaz+ГПU"
-    ws["A24"] = "Подробности — листы: Продукция, Выручка, Корма, CAPEX, OPEX, Экономика, NPV-IRR, Финансирование, Допущения."
+    ws["A24"] = "Подробности — листы: … CAPEX, OPEX, Экономика, NPV-IRR, Финансирование, APK-100, Допущения."
 
 
 def main() -> None:
@@ -186,6 +260,7 @@ def main() -> None:
     fix_capex_balance(wb)
     add_npv_irr_sheet(wb)
     add_financing_sheet(wb)
+    add_apk_100_sheet(wb)
     update_summary(wb)
     wb.save(XLSX)
 
