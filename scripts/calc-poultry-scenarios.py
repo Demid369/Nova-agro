@@ -208,17 +208,30 @@ def export_cases() -> list[dict]:
         + MEAT_T["quail"] * PRICES["quail"] / 1000
     )
     opx = opex_mln()
+    export_opex_add = 11.0  # логистика, FTE, сертификация (export-plan-friendly-countries.md)
     rows = []
-    for name, export_mln, note in [
-        ("Экспорт 0% (база)", 0, "весь сбыт РФ"),
-        ("Экспорт 10% выручки", round(base * 0.10, 1), "≈556 млн; без премии к цене"),
-        ("Экспорт 15% только мясо", round(meat_rev * 0.15, 1), "≈582 млн мяса"),
-        ("Экспорт 20% мясо + премия 8%", round(meat_rev * 0.20 * 1.08, 1), "гипотеза MENA/СНГ"),
-    ]:
-        # export premium: only extra margin on export slice — simplified +3% on export volume as net rev add
-        premium = export_mln * 0.03 if export_mln else 0
+    scenarios = [
+        ("Экспорт 0% (база finmodel)", 0, 0, "весь сбыт РФ"),
+        (
+            "План 6% мяса, дружественные страны",
+            round(meat_rev * 0.06, 1),
+            0.02,
+            export_opex_add,
+            "235 млн ₽; KZ/UZ/BY/IR/KG/AE/AM/EG/AZ; год 4+",
+        ),
+        ("Экспорт 10% выручки (стресс-тест)", round(base * 0.10, 1), 0.03, 18, "агрессивный; не базовый план"),
+        (
+            "Экспорт 15% только мясо (стресс-тест)",
+            round(meat_rev * 0.15, 1),
+            0.03,
+            22,
+            "верхняя граница при перепроизводстве",
+        ),
+    ]
+    for name, export_mln, premium_rate, opex_add, note in scenarios:
+        premium = export_mln * premium_rate if export_mln else 0
         rev = base + premium
-        eb = rev - opx
+        eb = rev - opx - (opex_add if export_mln else 0)
         npv, irr = npv_irr(eb)
         rows.append(
             {

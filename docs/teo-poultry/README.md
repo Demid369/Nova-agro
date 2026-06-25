@@ -55,7 +55,8 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | Тема | Статус |
 |------|--------|
 | T01 финансы + NPV/IRR + финансирование | **xlsx + md** |
-| T10 экспорт | макроконтекст РФ; **план проекта — нет** |
+| T10 экспорт | **план 6% мяса**, дружественные страны | `appendix/export-plan-friendly-countries.md` |
+| T04/T05 вендоры | **TEXHA + Мелеуз/PKM-79** (draft) | `appendix/vendors-equipment.md` |
 | T12 мировой рынок | FAO 2023 |
 | Энергия (= кролики) | `energy-budget.yaml`, листы CAPEX/OPEX |
 
