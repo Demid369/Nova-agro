@@ -130,6 +130,16 @@ def main() -> int:
     if not args.skip_hash:
         all_errors.extend(check_docx_hash_sync())
 
+    graph_path = ROOT / "graphify-out" / "graph.json"
+    if graph_path.exists():
+        graph = json.loads(graph_path.read_text(encoding="utf-8"))
+        node_ids = {n["id"] for n in graph.get("nodes", [])}
+        for required in ("land_other_19490", "land_apk_100000", "docx_table_t003_land_budget"):
+            if required not in node_ids:
+                all_errors.append(f"graph.json missing node: {required}")
+    else:
+        all_errors.append("graphify-out/graph.json missing (run build-full-teo-graph.py)")
+
     if all_errors:
         print("VALIDATION FAILED:", file=sys.stderr)
         for err in all_errors:

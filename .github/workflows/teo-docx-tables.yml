@@ -8,8 +8,10 @@ on:
       - "docs/graphify-corpus/**"
       - "scripts/extract-teo-docx-tables.py"
       - "scripts/validate-teo-docx-tables.py"
-      - "scripts/teo_rag/**"
-      - ".github/workflows/teo-docx-tables.yml"
+      - "scripts/teo_tables_graph.py"
+      - "scripts/build-full-teo-graph.py"
+      - "graphify-out/graph.json"
+      - "graphify-out/manifest.json"
   push:
     branches: [main]
     paths:

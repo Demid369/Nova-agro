@@ -23,6 +23,7 @@ from .config import (
     RERANKER_CACHE_DIR,
     RERANKER_MODEL,
     SUMMARY_TOP_K,
+    TABLES_TOP_K,
 )
 
 
@@ -232,16 +233,20 @@ def hierarchical_search(
     mode: str = "vector",
     summary_k: int = SUMMARY_TOP_K,
     detail_k: int = DETAIL_TOP_K,
+    tables_k: int = TABLES_TOP_K,
     *,
     use_hybrid: bool = True,
     use_rerank: bool = True,
 ) -> list[RetrievedChunk]:
     if mode == "summary":
         hits = search_tier(query, "summary", summary_k + detail_k)
+        total_k = summary_k + detail_k
     else:
         summary_hits = search_tier(query, "summary", summary_k) if mode in ("vector", "hybrid") else []
         detail_hits = search_tier(query, "detail", detail_k)
-        hits = summary_hits + detail_hits
+        tables_hits = search_tier(query, "tables", tables_k) if mode in ("vector", "hybrid") else []
+        hits = summary_hits + detail_hits + tables_hits
+        total_k = summary_k + detail_k + tables_k
 
     seen: set[str] = set()
     deduped: list[RetrievedChunk] = []
@@ -253,11 +258,11 @@ def hierarchical_search(
         deduped.append(hit)
 
     if use_hybrid and deduped:
-        deduped = hybrid_merge(query, deduped, summary_k + detail_k)
+        deduped = hybrid_merge(query, deduped, total_k)
 
     deduped = _apply_canonical_layer_scoring(deduped)
 
     if use_rerank and deduped:
-        deduped = rerank(query, deduped, top_k=detail_k if mode != "summary" else summary_k + detail_k)
+        deduped = rerank(query, deduped, top_k=total_k)
 
-    return deduped[: summary_k + detail_k]
+    return deduped[:total_k]
