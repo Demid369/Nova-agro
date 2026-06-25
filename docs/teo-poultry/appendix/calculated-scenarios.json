@@ -113,40 +113,58 @@
   ],
   "export": [
     {
-      "scenario": "Экспорт 0% (база finmodel)",
+      "scenario": "Птица: весь сбыт РФ (finmodel)",
       "export_mln_rub": 0,
       "revenue_mln": 5559.2,
       "ebitda_mln": 2216.2,
       "npv_16y_mln": 2253.2,
       "irr_pct": 12.82,
-      "note": "весь сбыт РФ"
+      "note": "мясо, яйцо, удобрение — 0% export"
     },
     {
-      "scenario": "План 6% мяса, дружественные страны",
-      "export_mln_rub": 234.7,
-      "revenue_mln": 5563.9,
-      "ebitda_mln": 2209.9,
-      "npv_16y_mln": 2214.0,
-      "irr_pct": 12.77,
-      "note": "235 млн ₽; KZ/UZ/BY/IR/KG/AE/AM/EG/AZ; год 4+"
+      "scenario": "APK Tab#5: Натуральная кожа (КРС+МРС)",
+      "export_mln_rub": 1478.5,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "consolidated APK; не в NPV finmodel 12 млрд"
     },
     {
-      "scenario": "Экспорт 10% выручки (стресс-тест)",
-      "export_mln_rub": 555.9,
-      "revenue_mln": 5575.8,
-      "ebitda_mln": 2214.9,
-      "npv_16y_mln": 2245.0,
-      "irr_pct": 12.81,
-      "note": "агрессивный; не базовый план"
+      "scenario": "APK Tab#5: Желатин халяльный",
+      "export_mln_rub": 3840.0,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "consolidated APK; не в NPV finmodel 12 млрд"
     },
     {
-      "scenario": "Экспорт 15% только мясо (стресс-тест)",
-      "export_mln_rub": 586.9,
-      "revenue_mln": 5576.8,
-      "ebitda_mln": 2211.8,
-      "npv_16y_mln": 2225.9,
-      "irr_pct": 12.79,
-      "note": "верхняя граница при перепроизводстве"
+      "scenario": "APK Tab#5: Шерсть овец",
+      "export_mln_rub": 90.0,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "consolidated APK; не в NPV finmodel 12 млрд"
+    },
+    {
+      "scenario": "APK Tab#5: Чёрная икра белуги",
+      "export_mln_rub": 4800.0,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "consolidated APK; не в NPV finmodel 12 млрд"
+    },
+    {
+      "scenario": "ИТОГО APK экспорт (блок 1)",
+      "export_mln_rub": 10208.5,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "10 208 млн ≈ 10,2 млрд; export-apk-baseline-tab5.md"
     }
   ],
   "apk_100": [

@@ -9,19 +9,19 @@ project:
   investment_bln_rub: 12
   revenue_bln_rub_year: 5.559
   payback_years: 5.4
-  export_bln_rub: 0
-  export_note: "Finmodel база 0%; операционный план 6% мяса с год 4 — appendix/export-plan-friendly-countries.md"
+  export_bln_rub: 10.2
+  export_note: "Tab#5 baseline: 10 208 млн ₽ APK — кожа, халяльный желатин, икра; оператор блок 1 птица; продукция птицы export 0"
   export_plan:
-    status: draft
-    base_finmodel_pct: 0
-    steady_state:
-      year_from: 4
-      meat_volume_pct: 6
-      meat_t_per_year: 1090
-      revenue_mln_rub: 235
-      countries: [KZ, UZ, BY, IR, KG, AE, AM, EG, AZ]
-      excluded: unfriendly_jurisdictions
-    appendix: docs/teo-poultry/appendix/export-plan-friendly-countries.md
+    source: docs/teo-poultry/appendix/export-apk-baseline-tab5.md
+    tab5: docs/teo-tables/critical/T005-export-revenue-matrix.md
+    apk_export_mln_rub: 10208
+    poultry_products_export_mln_rub: 0
+    geography: [СНГ, Азия, arab_countries]
+    products:
+      - {name: "Натуральная кожа", mln_rub: 1478}
+      - {name: "Желатин халяльный", mln_rub: 3840}
+      - {name: "Шерсть", mln_rub: 90}
+      - {name: "Чёрная икра белуги", mln_rub: 4800}
   sensitivity:
     source: docs/teo-poultry/appendix/sensitivity-and-scenarios.md
     script: scripts/calc-poultry-scenarios.py
@@ -85,10 +85,11 @@ blocks:
     equipment: "118 птичников; TEXHA (RF) / Big Herdsman (CN alt); инкубатор Petersime; см. appendix/vendors-equipment.md"
     slaughter: "УПК Мелеуз/PKM-79 6000 гол/ч; халяль-блок; CAPEX 2600 млн ₽"
     feed: "Комбикормовый завод холдинга, ~28 000 ₽/t, 66,7 тыс. т/год"
-    export_hs: "0207 — мясо домашней птицы"
-    export_plan: docs/teo-poultry/appendix/export-plan-friendly-countries.md
-    export_steady_state_mln_rub: 235
-    export_meat_pct_steady: 6
+    export_hs: null
+    export_note: "HS 0207 не используется — мясо/яйцо только РФ"
+    export_plan: docs/teo-poultry/appendix/export-apk-baseline-tab5.md
+    apk_export_attribution_mln_rub: 10208
+    poultry_products_export_mln_rub: 0
     byproducts: [перья, мясоперьевая мука, органическое удобрение из помёта]
     fertilizer_t_per_year: 43800
     fertilizer_revenue_mln_rub_per_year: 525.6
@@ -151,7 +152,7 @@ content_sources:
     - docs/teo-poultry/appendix/baseline-finmodel-adopted.md
     - docs/teo-poultry/appendix/finmodel-summary.md
     - docs/teo-poultry/appendix/sensitivity-and-scenarios.md
-    - docs/teo-poultry/appendix/export-plan-friendly-countries.md
+    - docs/teo-poultry/appendix/export-apk-baseline-tab5.md
     - docs/teo-poultry/appendix/vendors-equipment.md
     - docs/teo-poultry/appendix/apk-100bln-integration.md
     - docs/teo-poultry/appendix/financing-structure.md

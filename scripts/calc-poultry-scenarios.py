@@ -199,51 +199,53 @@ def sensitivity_cases() -> list[Case]:
 
 
 def export_cases() -> list[dict]:
+    """Экспорт: Tab#5 baseline на блок 1; продукция птицы — 0 (не в finmodel NPV)."""
     base = revenue_mln()
-    meat_rev = (
-        MEAT_T["broiler"] * PRICES["broiler"] / 1000
-        + MEAT_T["turkey"] * PRICES["turkey"] / 1000
-        + MEAT_T["duck"] * PRICES["duck"] / 1000
-        + MEAT_T["goose"] * PRICES["goose"] / 1000
-        + MEAT_T["quail"] * PRICES["quail"] / 1000
-    )
     opx = opex_mln()
-    export_opex_add = 11.0  # логистика, FTE, сертификация (export-plan-friendly-countries.md)
-    rows = []
-    scenarios = [
-        ("Экспорт 0% (база finmodel)", 0, 0, 0, "весь сбыт РФ"),
-        (
-            "План 6% мяса, дружественные страны",
-            round(meat_rev * 0.06, 1),
-            0.02,
-            export_opex_add,
-            "235 млн ₽; KZ/UZ/BY/IR/KG/AE/AM/EG/AZ; год 4+",
-        ),
-        ("Экспорт 10% выручки (стресс-тест)", round(base * 0.10, 1), 0.03, 18, "агрессивный; не базовый план"),
-        (
-            "Экспорт 15% только мясо (стресс-тест)",
-            round(meat_rev * 0.15, 1),
-            0.03,
-            22,
-            "верхняя граница при перепроизводстве",
-        ),
+    eb = base - opx
+    npv, irr = npv_irr(eb)
+    apk_export = [
+        ("Натуральная кожа (КРС+МРС)", 1478.5),
+        ("Желатин халяльный", 3840.0),
+        ("Шерсть овец", 90.0),
+        ("Чёрная икра белуги", 4800.0),
     ]
-    for name, export_mln, premium_rate, opex_add, note in scenarios:
-        premium = export_mln * premium_rate if export_mln else 0
-        rev = base + premium
-        eb = rev - opx - (opex_add if export_mln else 0)
-        npv, irr = npv_irr(eb)
+    rows = [
+        {
+            "scenario": "Птица: весь сбыт РФ (finmodel)",
+            "export_mln_rub": 0,
+            "revenue_mln": round(base, 1),
+            "ebitda_mln": round(eb, 1),
+            "npv_16y_mln": npv,
+            "irr_pct": irr,
+            "note": "мясо, яйцо, удобрение — 0% export",
+        }
+    ]
+    total_apk = 0.0
+    for name, mln in apk_export:
+        total_apk += mln
         rows.append(
             {
-                "scenario": name,
-                "export_mln_rub": export_mln,
-                "revenue_mln": round(rev, 1),
-                "ebitda_mln": round(eb, 1),
-                "npv_16y_mln": npv,
-                "irr_pct": irr,
-                "note": note,
+                "scenario": f"APK Tab#5: {name}",
+                "export_mln_rub": mln,
+                "revenue_mln": None,
+                "ebitda_mln": None,
+                "npv_16y_mln": None,
+                "irr_pct": None,
+                "note": "consolidated APK; не в NPV finmodel 12 млрд",
             }
         )
+    rows.append(
+        {
+            "scenario": "ИТОГО APK экспорт (блок 1)",
+            "export_mln_rub": round(total_apk, 1),
+            "revenue_mln": None,
+            "ebitda_mln": None,
+            "npv_16y_mln": None,
+            "irr_pct": None,
+            "note": "10 208 млн ≈ 10,2 млрд; export-apk-baseline-tab5.md",
+        }
+    )
     return rows
 
 
@@ -315,10 +317,10 @@ def write_xlsx_sheets(cases: list[Case], export_rows: list[dict], apk_rows: list
     if "Экспорт" in wb.sheetnames:
         del wb["Экспорт"]
     ws2 = wb.create_sheet("Экспорт")
-    ws2["A1"] = "СЦЕНАРИИ ЭКСПОРТА (гипотезы)"
+    ws2["A1"] = "ЭКСПОРТ — Tab#5 baseline на блок 1"
     ws2["A1"].font = Font(bold=True, size=12)
-    ws2["A2"] = "Премия к выручке упрощённо: +3% на экспортный объём (логистика/FX не моделируются)"
-    h2 = ["Сценарий", "Экспорт, млн ₽", "Выручка итого", "EBITDA", "NPV @10%", "IRR %", "Примечание"]
+    ws2["A2"] = "Птица: 0% export (finmodel 5 559 РФ). APK 10 208 млн — consolidated, вне NPV 12 млрд"
+    h2 = ["Сценарий", "Экспорт, млн ₽", "Выручка finmodel", "EBITDA", "NPV @10%", "IRR %", "Примечание"]
     for i, h in enumerate(h2, 1):
         ws2.cell(4, i, h)
         ws2.cell(4, i).font = HEADER_FONT
@@ -326,11 +328,15 @@ def write_xlsx_sheets(cases: list[Case], export_rows: list[dict], apk_rows: list
         r = 5 + i
         ws2.cell(r, 1, row["scenario"])
         ws2.cell(r, 2, row["export_mln_rub"])
-        ws2.cell(r, 3, row["revenue_mln"])
-        ws2.cell(r, 4, row["ebitda_mln"])
-        ws2.cell(r, 5, row["npv_16y_mln"])
-        ws2.cell(r, 6, row["irr_pct"] / 100)
-        ws2.cell(r, 6).number_format = "0.0%"
+        if row["revenue_mln"] is not None:
+            ws2.cell(r, 3, row["revenue_mln"])
+        if row["ebitda_mln"] is not None:
+            ws2.cell(r, 4, row["ebitda_mln"])
+        if row["npv_16y_mln"] is not None:
+            ws2.cell(r, 5, row["npv_16y_mln"])
+        if row["irr_pct"] is not None:
+            ws2.cell(r, 6, row["irr_pct"] / 100)
+            ws2.cell(r, 6).number_format = "0.0%"
         ws2.cell(r, 7, row["note"])
 
     # Extend APK-100 with scenario C block if sheet exists

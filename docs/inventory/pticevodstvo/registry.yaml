@@ -48,11 +48,10 @@ canonical_facts:
   construction_ha: 20_000
   land_ha: 400
   land_slot_note: "Слот блока; участок не выделен — docs/teo-poultry/land-budget.yaml"
-  export_steady_state_mln_rub: 235
-  export_meat_pct_steady: 6
+  export_bln_rub: 10.2
+  apk_export_mln_rub: 10208
+  poultry_products_export_mln_rub: 0
   vendors_appendix: docs/teo-poultry/appendix/vendors-equipment.md
-  export_appendix: docs/teo-poultry/appendix/export-plan-friendly-countries.md
-  sensitivity_json: docs/teo-poultry/appendix/calculated-scenarios.json
   apk_100_canonical: scenario_C
   apk_100_total_mln: 100000
   apk_100_blocks_mln:

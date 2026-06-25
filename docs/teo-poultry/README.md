@@ -41,7 +41,7 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | 4 | **Вендоры + пропускная способность** | Meneghin, SINT 2400 г/ч | T04/T05 без firm names, УПК без г/ч |
 | 5 | **Рецептуры кормов** (Tab. 141) | `teo/125-…` | только тоннаж/OPEX |
 | 6 | **График CAPEX по годам** | T022 investment schedule | группы CAPEX, без фазировки |
-| 7 | **Экспорт проекта** | T10: страны, объёмы | macro RF + гипотезы в xlsx |
+| 7 | **Экспорт** | Tab#5 baseline на блок 1 | `export-apk-baseline-tab5.md` |
 | 8 | **Земля: кадастр, схема, разрешения** | T003 land budget | `production_site: null` |
 | 9 | **Выводы + реестр рисков** | `graphify-corpus/06-vyvody-i-riski.md` | риски в yaml, **нет отдельной темы** |
 | 10 | **Меморандум / front matter** | `00-меморандум-о-конфиденциальности.md` | нет |
@@ -55,7 +55,7 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | Тема | Статус |
 |------|--------|
 | T01 финансы + NPV/IRR + финансирование | **xlsx + md** |
-| T10 экспорт | **план 6% мяса**, дружественные страны | `appendix/export-plan-friendly-countries.md` |
+| T10 экспорт | **10,2 млрд Tab#5** на блок 1; **птица 0% export** | `appendix/export-apk-baseline-tab5.md` |
 | T04/T05 вендоры | **TEXHA + Мелеуз/PKM-79** (draft) | `appendix/vendors-equipment.md` |
 | T12 мировой рынок | FAO 2023 |
 | Энергия (= кролики) | `energy-budget.yaml`, листы CAPEX/OPEX |
