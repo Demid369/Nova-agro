@@ -24,9 +24,11 @@ canonical_facts:
   staff_fte: 480
   feed_t_per_year: 66712
   location: Запорожская область
-  npv_thousand_rub: null
-  irr_pct: null
-  note: "Из finmodel-pticekompleks-12-mlrd.xlsx; NPV/IRR — добавить"
+  legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
+  production_site: null
+  npv_thousand_rub: -4289000
+  irr_pct: 1.7
+  note: "Из finmodel; NPV/IRR — производный расчёт @10%, см. appendix/npv-irr-derived.md"
 
 themes:
   T01:
