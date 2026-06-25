@@ -16,16 +16,25 @@ canonical_facts:
   meat_t_per_year: 18169
   eggs_chicken_million_per_year: 153.6
   revenue_mln_rub_per_year: 5034
-  opex_mln_rub_per_year: 3593
-  ebitda_mln_rub_per_year: 1441
+  opex_mln_rub_per_year: 3343
+  opex_finmodel_original_mln_rub: 3593
+  ebitda_mln_rub_per_year: 1691
+  ebitda_finmodel_original_mln_rub: 1441
+  fertilizer_t_per_year: 43800
+  fertilizer_revenue_mln_rub_per_year: 525.6
+  compost_capacity_t_per_hour: 5.0
+  compost_capex_mln_rub: 36
+  organic_input: помёт птицы
+  solar_mwh: 10
+  solar_capex_mln_rub: 1180.8
+  solar_supplier: ASTORIOS HOLDING INC
+  energy_canon: docs/teo-poultry/energy-budget.yaml
+  purchased_electricity_opex_mln_rub: null
   payback_years: 8.3
   heads_simultaneous: 2147400
   poultry_houses: 118
   staff_fte: 480
   feed_t_per_year: 66712
-  fertilizer_t_per_year: 43800
-  compost_capacity_t_per_hour: 5.0
-  solar_mwh: 10
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
   production_site: null
@@ -34,7 +43,7 @@ canonical_facts:
   land_ha: 400
   land_slot_note: "Слот блока; участок не выделен — docs/teo-poultry/land-budget.yaml"
   irr_pct: 1.7
-  note: "Из finmodel; NPV/IRR — производный расчёт @10%, см. appendix/npv-irr-derived.md"
+  note: "NPV/IRR — производный DCF @10%; OPEX/EBITDA канon 3343/1691 (energy-budget.yaml); NPV не пересчитан"
 
 themes:
   T01:

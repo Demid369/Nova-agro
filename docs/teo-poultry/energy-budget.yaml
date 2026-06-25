@@ -1,0 +1,62 @@
+# Canonical energy budget — птицеводство (= этalon кроликов, кроме сырья органики)
+# Baseline: docs/teo-tables/critical/T022-investment-schedule.md, §2.3 docs/graphify-corpus/01-vvedenie-i-resume.md
+
+organic_input: помёт птицы  # единственное отличие: у кроликов — навоз кролика
+
+block_local:
+  solar:
+    capacity_mwh: 10
+    capex_thousand_rub: 1_180_800
+    capex_pct_of_block: 9.84
+    supplier: ASTORIOS HOLDING INC
+    placement: крыши птичников и производственных зданий
+    kit: [фотоэлектрические панели, аккумуляторные батареи]
+    excess_to_grid: продажа излишков (как baseline)
+  biogas_gpu_on_site: null  # нет локального биогаз+ГПУ — как у кроликов
+
+compost:
+  capex_thousand_rub: 36_000
+  capacity_t_per_hour: 5.0
+  output_fertilizer_t_per_year: 43_800
+  organic_source: помёт птицы
+  supplier_baseline: PRIMERANO INNOVATION SRLS
+
+loads_kw_per_hour:
+  main_production:
+    label: "118 птичников/модулей (аналог 81 цеха кроликов)"
+    kw: 1250
+    source: солнечные 10 МВт·ч на крышах
+  slaughter_upk:
+    label: "УПК (аналог линии SINT 2400 гол/ч)"
+    kw: 750
+    source: solar 10 + 20 МВт·ч + биогаз APK
+  compost_line:
+    label: "Комpost помёта (5 т/ч)"
+    kw: 525
+    source: solar 10 + 20 МВт·ч + биогаз APK
+
+natural_gas_m3_per_hour:
+  main_production: 35
+  slaughter_and_compost: 15
+
+operating_mode: "24 ч/сут, 365 дней/год"
+
+holding_apk:
+  biogas_electro_mwh: 20
+  biogas_methane_m3_per_year: 40_000_000
+  solar_blocks_mwh: {кролики: 10, животноводство: 20, рыбовodство: 20, итого: 50}
+  organic_to_biogas: помёт птицы → общая установка APK (как навоз кроликов)
+
+opex:
+  purchased_electricity_mln_rub_per_year: null  # нет строки — как кролиководство
+
+revenue_fertilizer:
+  t_per_year: 43_800
+  price_rub_per_kg: 12
+  revenue_mln_rub_per_year: 525.6
+  source_table: docs/teo-tables/all/T205.md  # аналог для «удобрение из навоза»
+
+superseded_finmodel:
+  biogas_gpu_capex_mln_rub: 450
+  purchased_electricity_opex_mln_rub: 250
+  note: заменено этalonом baseline; пересчёт xlsx — отдельная задача

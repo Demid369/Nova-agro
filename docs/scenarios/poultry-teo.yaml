@@ -34,9 +34,12 @@ blocks:
     eggs_quail_million_per_year: 7
     capex_bln_rub: 12
     revenue_mln_rub_per_year: 5034
-    opex_mln_rub_per_year: 3593
-    ebitda_mln_rub_per_year: 1441
-    ebitda_margin_pct: 28.6
+    opex_mln_rub_per_year: 3343
+    opex_note: "Finmodel 3593 минус 250 покупное электро — снято по этalonу кроликов (energy-budget.yaml)"
+    opex_finmodel_original_mln_rub: 3593
+    ebitda_mln_rub_per_year: 1691
+    ebitda_margin_pct: 33.6
+    ebitda_finmodel_original_mln_rub: 1441
     payback_years_simple: 8.3
     npv_thousand_rub: -4289000
     npv_note: "Производный DCF @10%, горизонт 2026–2035, без долга; см. appendix/npv-irr-derived.md"
@@ -54,9 +57,19 @@ blocks:
     export_plan: null
     byproducts: [перья, мясоперьевая мука, органическое удобрение из помёта]
     fertilizer_t_per_year: 43800
-    fertilizer_note: "Как baseline кроликов — компost/удобрение 43 800 т/год (5 т/ч)"
-    solar_mwh: 10
-    energy_note: "Как baseline кроликов — солнечные панели 10 МВт·ч на крышах птичников; без смены энергоконтура"
+    fertilizer_revenue_mln_rub_per_year: 525.6
+    fertilizer_note: "Помёт птицы → компost 5 т/ч, 43 800 т/год (= кролики; там навоз)"
+    organic_input: помёт птицы
+    energy:
+      canon_file: docs/teo-poultry/energy-budget.yaml
+      solar_mwh: 10
+      solar_capex_mln_rub: 1180.8
+      solar_supplier: ASTORIOS HOLDING INC
+      compost_capex_mln_rub: 36
+      local_biogas_gpu: false
+      purchased_electricity_opex_mln_rub: null
+      loads_kw: {main: 1250, upk: 750, compost: 525}
+      apk_biogas_mwh: 20
     breeds:
       broiler: ROSS 308
       eggs: "Hisex / Lohmann Brown"
