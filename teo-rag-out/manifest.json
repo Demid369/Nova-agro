@@ -1,9 +1,10 @@
 {
-  "built_at": "2026-06-24T20:04:36.096931+00:00",
+  "built_at": "2026-06-25T14:27:15.931524+00:00",
   "collection": "teo_moya_mechta",
   "embedding_model": "intfloat/multilingual-e5-small",
-  "chunk_count": 748,
-  "summary_count": 469,
+  "chunk_count": 772,
+  "summary_count": 474,
   "detail_count": 279,
-  "excluded_trade_stat": "files matching *-табл-*, в-*-гг-* skipped at chunk stage"
+  "excluded_trade_stat": "files matching *-табл-*, в-*-гг-* skipped at chunk stage",
+  "tables_count": 19
 }

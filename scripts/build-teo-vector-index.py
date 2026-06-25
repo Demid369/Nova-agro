@@ -66,6 +66,7 @@ def main() -> int:
         "embedding_model": EMBEDDING_MODEL,
         "chunk_count": len(chunks),
         "summary_count": sum(1 for c in chunks if c.tier == "summary"),
+        "tables_count": sum(1 for c in chunks if c.tier == "tables"),
         "detail_count": sum(1 for c in chunks if c.tier == "detail"),
         "excluded_trade_stat": "files matching *-табл-*, в-*-гг-* skipped at chunk stage",
     }
