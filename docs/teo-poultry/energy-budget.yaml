@@ -27,7 +27,8 @@ loads_kw_per_hour:
     kw: 1250
     source: солнечные 10 МВт·ч на крышах
   slaughter_upk:
-    label: "УПК (аналог линии SINT 2400 гол/ч)"
+    label: "УПК SINT poultry 6000 гол/ч (≠ кролик 2400)"
+    vendor: SINT Tecnologie S.r.l.
     kw: 750
     source: solar 10 + 20 МВт·ч + биогаз APK
   compost_line:

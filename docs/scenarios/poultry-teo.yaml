@@ -82,9 +82,16 @@ blocks:
     poultry_houses: 118
     staff_fte: 476
     feed_t_per_year: 66712
-    equipment: "118 птичников; TEXHA (RF) / Big Herdsman (CN alt); инкубатор Petersime; см. appendix/vendors-equipment.md"
-    slaughter: "УПК Мелеуз/PKM-79 6000 гол/ч; халяль-блок; CAPEX 2600 млн ₽"
-    feed: "Комбикормовый завод холдинга, ~28 000 ₽/t, 66,7 тыс. т/год"
+    equipment: "TEXHA (РФ) — 118 птичников/модулей; alt. Big Herdsman (CN)"
+    slaughter: "SINT Tecnologie S.r.l. (IT) — modular poultry 6000 гол/ч; халяль; CAPEX 2600 млн ₽"
+    slaughter_vendor: SINT Tecnologie S.r.l.
+    slaughter_heads_per_hour: 6000
+    feed: "F.lli FRAGOLA S.p.a. — ККЗ холдинга 262 800 т/год; 66,7 тыс. т/год птице; вне CAPEX блока"
+    feed_vendor: F.lli FRAGOLA S.p.a.
+    compost_supplier: PRIMERANO INNOVATION SRLS
+    genetics_program: "ROSS 308 / Hisex-Lohmann / BUT Big 6 / Cherry Valley / Линдовская / Фараон"
+    genetics_supply: "авторизованные репродукторы РФ + VetIS"
+    genetics_note: "замена ANCI (кролики); AIA не применяется"
     export_hs: null
     export_note: "HS 0207 не используется — мясо/яйцо только РФ"
     export_plan: docs/teo-poultry/appendix/export-apk-baseline-tab5.md

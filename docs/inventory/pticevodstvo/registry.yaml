@@ -28,6 +28,13 @@ canonical_facts:
   solar_mwh: 10
   solar_capex_mln_rub: 1180.8
   solar_supplier: ASTORIOS HOLDING INC
+  compost_supplier: PRIMERANO INNOVATION SRLS
+  equipment_vendor: TEXHA
+  slaughter_vendor: SINT Tecnologie S.r.l.
+  slaughter_heads_per_hour: 6000
+  feed_vendor: F.lli FRAGOLA S.p.a.
+  genetics_program: "ROSS 308 / Hisex-Lohmann / BUT Big 6 / Cherry Valley / Линдовская / Фараон"
+  genetics_supply: "авторизованные репродукторы РФ + VetIS"
   energy_canon: docs/teo-poultry/energy-budget.yaml
   purchased_electricity_opex_mln_rub: null
   payback_years: 5.4
