@@ -26,7 +26,10 @@ canonical_facts:
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
   production_site: null
-  npv_thousand_rub: -4289000
+  apk_total_ha: 250_000
+  construction_ha: 20_000
+  land_ha: 400
+  land_slot_note: "Слот блока; участок не выделен — docs/teo-poultry/land-budget.yaml"
   irr_pct: 1.7
   note: "Из finmodel; NPV/IRR — производный расчёт @10%, см. appendix/npv-irr-derived.md"
 
