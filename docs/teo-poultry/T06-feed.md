@@ -1,6 +1,6 @@
 # T06. Кормление и комбикорм
 
-> Источники: finmodel листы «Корма», «OPEX»; `appendix/vendors-equipment.md`
+> Источники: finmodel листы «Корма», «OPEX»; `appendix/vendors-equipment.md`; **Tab. P-141:** [`appendix/feed-recipes-table.md`](appendix/feed-recipes-table.md)
 
 ## Баланс кормов
 
