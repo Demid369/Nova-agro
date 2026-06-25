@@ -7,7 +7,7 @@ replaces: кролиководство
 
 project:
   investment_bln_rub: 12
-  revenue_bln_rub_year: 5.034
+  revenue_bln_rub_year: 5.559
   payback_years: 8.3
   export_bln_rub: null
   location: Запорожская область
@@ -33,17 +33,17 @@ blocks:
     eggs_chicken_million_per_year: 153.6
     eggs_quail_million_per_year: 7
     capex_bln_rub: 12
-    revenue_mln_rub_per_year: 5034
+    revenue_mln_rub_per_year: 5559
     opex_mln_rub_per_year: 3343
-    opex_note: "Finmodel 3593 минус 250 покупное электро — снято по этalonу кроликов (energy-budget.yaml)"
+    opex_note: "Без покупного электро — этalon кроликов; xlsx синхронизирован"
     opex_finmodel_original_mln_rub: 3593
-    ebitda_mln_rub_per_year: 1691
-    ebitda_margin_pct: 33.6
+    ebitda_mln_rub_per_year: 2216
+    ebitda_margin_pct: 39.9
     ebitda_finmodel_original_mln_rub: 1441
-    payback_years_simple: 8.3
-    npv_thousand_rub: -4289000
-    npv_note: "Производный DCF @10%, горизонт 2026–2035, без долга; см. appendix/npv-irr-derived.md"
-    irr_pct: 1.7
+    payback_years_simple: 5.4
+    npv_thousand_rub: 2226000
+    npv_note: "Производный DCF @10% после этalona кроликов; appendix/npv-irr-derived.md"
+    irr_pct: 13.2
     irr_note: "Те же допущения; в xlsx IRR не задан"
     payback_months: 100
     heads_simultaneous: 2147400
@@ -104,6 +104,7 @@ content_sources:
     - docs/teo-poultry/appendix/01-tehnologicheskiy-cikl.md
     - docs/teo-poultry/appendix/02-zatraty-orgstruktura-shtat.md
     - docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
+    - docs/teo-poultry/appendix/baseline-finmodel-adopted.md
     - docs/teo-poultry/appendix/finmodel-summary.md
     - docs/teo-poultry/appendix/npv-irr-derived.md
 

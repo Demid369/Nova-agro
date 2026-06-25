@@ -2,7 +2,7 @@
 
 Источник: `_incoming/02-zatraty-orgstruktura-shtat.docx`
 
-> **Канon энергии:** см. `energy-budget.yaml` (= кролики; помёт вместо навоза). Finmodel OPEX ниже: строка «Электроэнергия 250 млн ₽» **не канon**.
+> **Канon энергии:** см. `energy-budget.yaml` (= кролики; помёт вместо навоза). **xlsx синхронизирован (jun 2026):** OPEX электро **0**, CAPEX solar+compost вместо biogaz+ГПU.
 
 ПТИЦЕВОДЧЕСКИЙ КОМПЛЕКС «НОВА-АГРО»
 
