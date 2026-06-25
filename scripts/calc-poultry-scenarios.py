@@ -211,7 +211,7 @@ def export_cases() -> list[dict]:
     export_opex_add = 11.0  # логистика, FTE, сертификация (export-plan-friendly-countries.md)
     rows = []
     scenarios = [
-        ("Экспорт 0% (база finmodel)", 0, 0, "весь сбыт РФ"),
+        ("Экспорт 0% (база finmodel)", 0, 0, 0, "весь сбыт РФ"),
         (
             "План 6% мяса, дружественные страны",
             round(meat_rev * 0.06, 1),

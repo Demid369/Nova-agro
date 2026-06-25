@@ -113,7 +113,7 @@
   ],
   "export": [
     {
-      "scenario": "Экспорт 0% (база)",
+      "scenario": "Экспорт 0% (база finmodel)",
       "export_mln_rub": 0,
       "revenue_mln": 5559.2,
       "ebitda_mln": 2216.2,
@@ -122,31 +122,31 @@
       "note": "весь сбыт РФ"
     },
     {
-      "scenario": "Экспорт 10% выручки",
+      "scenario": "План 6% мяса, дружественные страны",
+      "export_mln_rub": 234.7,
+      "revenue_mln": 5563.9,
+      "ebitda_mln": 2209.9,
+      "npv_16y_mln": 2214.0,
+      "irr_pct": 12.77,
+      "note": "235 млн ₽; KZ/UZ/BY/IR/KG/AE/AM/EG/AZ; год 4+"
+    },
+    {
+      "scenario": "Экспорт 10% выручки (стресс-тест)",
       "export_mln_rub": 555.9,
       "revenue_mln": 5575.8,
-      "ebitda_mln": 2232.9,
-      "npv_16y_mln": 2356.8,
-      "irr_pct": 12.94,
-      "note": "≈556 млн; без премии к цене"
+      "ebitda_mln": 2214.9,
+      "npv_16y_mln": 2245.0,
+      "irr_pct": 12.81,
+      "note": "агрессивный; не базовый план"
     },
     {
-      "scenario": "Экспорт 15% только мясо",
+      "scenario": "Экспорт 15% только мясо (стресс-тест)",
       "export_mln_rub": 586.9,
       "revenue_mln": 5576.8,
-      "ebitda_mln": 2233.8,
-      "npv_16y_mln": 2362.6,
-      "irr_pct": 12.95,
-      "note": "≈582 млн мяса"
-    },
-    {
-      "scenario": "Экспорт 20% мясо + премия 8%",
-      "export_mln_rub": 845.1,
-      "revenue_mln": 5584.5,
-      "ebitda_mln": 2241.6,
-      "npv_16y_mln": 2410.8,
-      "irr_pct": 13.01,
-      "note": "гипотеза MENA/СНГ"
+      "ebitda_mln": 2211.8,
+      "npv_16y_mln": 2225.9,
+      "irr_pct": 12.79,
+      "note": "верхняя граница при перепроизводстве"
     }
   ],
   "apk_100": [
