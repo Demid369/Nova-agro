@@ -38,7 +38,7 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | 1 | **Master DOCX + 241 таблица** | `1.ТЭО_МОЯ МЕЧТА.docx` → `teo-tables/` | finmodel xlsx + 3 incoming docx; **нет единого master** |
 | 2 | **Пакет T01–T12 DOCX** | `generate-krolikovodstvo-docx.py` | только **md** |
 | 3 | **RAG / graph / audit** | corpus, 50 queries, docx-audit | **draft**, не в индексе |
-| 4 | **Вендоры + пропускная способность** | Meneghin, SINT 2400 г/ч | **TEXHA + SINT poultry 6000 + FRAGOLA/PRIMERANO/ASTORIOS** |
+| 4 | **Вендоры + пропускная способность** | Meneghin, SINT 2400 г/ч | **Facco + SINT poultry 6000 + FRAGOLA/PRIMERANO/ASTORIOS** |
 | 5 | **Рецептуры кормов** (Tab. 141) | `teo/125-…` | только тоннаж/OPEX |
 | 6 | **График CAPEX по годам** | T022 investment schedule | группы CAPEX, без фазировки |
 | 7 | **Экспорт** | Tab#5 baseline на блок 1 | `export-apk-baseline-tab5.md` |
@@ -56,7 +56,7 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 |------|--------|
 | T01 финансы + NPV/IRR + финансирование | **xlsx + md** |
 | T10 экспорт | **10,2 млрд Tab#5** на блок 1; **птица 0% export** | `appendix/export-apk-baseline-tab5.md` |
-| T04/T05 вендоры | **TEXHA + SINT poultry 6000/ч + baseline infra** | `appendix/vendors-equipment.md` |
+| T04/T05 вендоры | **Facco + SINT poultry 6000/ч + baseline infra** | `appendix/vendors-equipment.md` |
 | T12 мировой рынок | FAO 2023 |
 | Энергия (= кролики) | `energy-budget.yaml`, листы CAPEX/OPEX |
 

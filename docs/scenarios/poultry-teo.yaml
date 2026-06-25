@@ -82,7 +82,7 @@ blocks:
     poultry_houses: 118
     staff_fte: 476
     feed_t_per_year: 66712
-    equipment: "TEXHA (РФ) — 118 птичников/модулей; alt. Big Herdsman (CN)"
+    equipment: "Officine Facco & C. S.p.a. (IT) — 118 птичников/модулей; alt. Tekno (IT)"
     slaughter: "SINT Tecnologie S.r.l. (IT) — modular poultry 6000 гол/ч; халяль; CAPEX 2600 млн ₽"
     slaughter_vendor: SINT Tecnologie S.r.l.
     slaughter_heads_per_hour: 6000

@@ -29,7 +29,7 @@ canonical_facts:
   solar_capex_mln_rub: 1180.8
   solar_supplier: ASTORIOS HOLDING INC
   compost_supplier: PRIMERANO INNOVATION SRLS
-  equipment_vendor: TEXHA
+  equipment_vendor: "Officine Facco & C. S.p.a."
   slaughter_vendor: SINT Tecnologie S.r.l.
   slaughter_heads_per_hour: 6000
   feed_vendor: F.lli FRAGOLA S.p.a.
