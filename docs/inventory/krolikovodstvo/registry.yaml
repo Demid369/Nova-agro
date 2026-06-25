@@ -39,6 +39,9 @@ themes:
       - file: docs/graphify-corpus/00-summary.md
         sections: [Производственные блоки, Фазы и CAPEX, Финансовые KPI]
         role: project
+      - file: docs/1.2-слайд Фин модель.xlsx
+        note: "Приложение 3Б — структура инвестиций 100 млрд ₽ по блокам и источникам (ФНБ, ФРП, банки)"
+        role: finmodel
       - file: docs/scenarios/baseline.yaml
         path: blocks.кролиководство
         role: structured
