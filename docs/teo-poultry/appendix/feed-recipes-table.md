@@ -390,7 +390,7 @@
 
 ## Источники
 
-- `docs/teo/125-табл-141-рецепты-комбикorмов-для-кроликов.md`
+- `docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md`
 - `docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md` §1519, §687
 - Aviagen ROSS 308 Broiler Nutrition Specifications (RU, 2014)
 - Promikz ПК 21–23, 30–32 (водоплавающая)
