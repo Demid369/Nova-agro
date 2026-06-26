@@ -7,8 +7,8 @@ meta:
   output_docx: 00-apk-master-teo-full-draft.docx
   status: draft
   baseline_docx: docs/1.ТЭО_МОЯ МЕЧТА.docx
-  standalone_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
-  patch_rules: docs/inventory/pticevodstvo/corpus-patch-rules.yaml
+  standalone_assembly: docs/inventory/pticevodstvo/pipeline/assembly-standalone.yaml
+  patch_rules: docs/inventory/pticevodstvo/pipeline/corpus-patch-rules.yaml
 
 # Сначала — полный standalone (18 секций), затем corpus-дополнения и приложение
 

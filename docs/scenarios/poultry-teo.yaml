@@ -52,7 +52,7 @@ project:
   review_pass: docs/teo-poultry/appendix/review-pass-notes.md
   section_02_zakazchik: docs/teo-poultry/appendix/zakazchik-proekta.md
   section_03_strategiya: docs/teo-poultry/appendix/strategiya-proekta.md
-  master_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
+  master_assembly: docs/inventory/pticevodstvo/pipeline/assembly-standalone.yaml
   note: "Отдельный блок 12 млрд ₽; APK птицы 250 000 га; не путать с baseline холдинга 100 000 га (Херсон)"
 
   dcf_policy:

@@ -5,7 +5,7 @@ narrative_blocks:
   - name: block1_marketing
     body_start: 485
     body_end: 530
-    source: docs/inventory/pticevodstvo/phase3/block1-marketing.md
+    source: docs/inventory/pticevodstvo/sources/narrative/block1-marketing.md
     preserve_image_paragraphs: true
 
   - name: breeds_genetics
@@ -18,13 +18,13 @@ narrative_blocks:
   - name: product_4111
     body_start: 2139
     body_end: 2146
-    source: docs/inventory/pticevodstvo/phase3/product-poultry.md
+    source: docs/inventory/pticevodstvo/sources/narrative/product-poultry.md
     preserve_image_paragraphs: true
 
   - name: world_market
     body_start: 3567
     body_end: 3604
-    source: docs/inventory/pticevodstvo/phase3/world-market-poultry.md
+    source: docs/inventory/pticevodstvo/sources/narrative/world-market-poultry.md
     preserve_image_paragraphs: true
 
 table_replacements:
@@ -51,7 +51,7 @@ table_replacements:
     max_lookahead: 15
 
 reapply_phase2_narrative:
-  config: docs/inventory/pticevodstvo/poultry-phase2.yaml
+  config: docs/inventory/pticevodstvo/pipeline/phase2-section7.yaml
 
 # Доп. подписи / заголовки (параграфы без drawing)
 caption_replacements:

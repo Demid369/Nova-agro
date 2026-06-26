@@ -1,0 +1,44 @@
+# Единый манифест pipeline: baseline DOCX → ТЭO птица
+# Команда: python3 scripts/build-teo-poultry-from-baseline.py
+
+meta:
+  name: baseline-poultry-docx
+  baseline: docs/1.ТЭО_МOЯ МEЧTA.docx
+  output: docs/inventory/pticevodstvo/docx/1.ТЭO_МOЯ_МEЧTA_ПTIЦA.docx
+  inventory: docs/inventory/pticevodstvo/registry.yaml
+  kpi: docs/scenarios/poultry-teo.yaml
+
+phases:
+  - id: phase1
+    config: docs/inventory/pticevodstvo/pipeline/phase1-tables.yaml
+    script: scripts/build-teo-poultry-from-baseline.py
+    skip_flag: --skip-phase1
+    description: Critical tables + regex block 1
+
+  - id: phase2
+    config: docs/inventory/pticevodstvo/pipeline/phase2-section7.yaml
+    script: scripts/apply-teo-poultry-phase2.py
+    skip_flag: --skip-phase2
+    description: §7 tech cycle + Tab P-141 + captions
+
+  - id: phase3
+    config: docs/inventory/pticevodstvo/pipeline/phase3-market.yaml
+    script: scripts/apply-teo-poultry-phase3.py
+    skip_flag: --skip-phase3
+    description: §4 market, genetics, yield/world tables
+
+  - id: phase4
+    config: docs/inventory/pticevodstvo/pipeline/phase4-export.yaml
+    script: scripts/apply-teo-poultry-phase4.py
+    skip_flag: --skip-phase4
+    description: §4 export + RF rabbit market tail → poultry T10
+
+outputs:
+  primary_docx: docs/inventory/pticevodstvo/docx/1.ТЭO_МOЯ_МEЧTA_ПTIЦA.docx
+  media_map: docs/inventory/pticevodstvo/media/image-map.json
+  reports_dir: docs/inventory/pticevodstvo/reports/
+
+corpus:
+  standalone: docs/inventory/pticevodstvo/pipeline/assembly-standalone.yaml
+  apk_full: docs/inventory/pticevodstvo/pipeline/assembly-apk-full.yaml
+  patch_rules: docs/inventory/pticevodstvo/pipeline/corpus-patch-rules.yaml

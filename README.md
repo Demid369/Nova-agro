@@ -1,7 +1,7 @@
 # Graphify — граф знаний ТЭО «МОЯ МЕЧТА»
 
 > **Рабочий проект = baseline** — текущее ТЭО (кролиководство, теплицы, КРС/МРС, рыба, масложир).  
-> **Птица = parked** — черновик **второго ТЭО** в `docs/scenarios/poultry-variant.*`. Не применять к корпусу и графу. См. `docs/scenarios/README.md`.
+> **Птица = блок I draft** — pipeline в `docs/inventory/pticevodstvo/pipeline/`. Карта: [`docs/teo/INDEX.md`](docs/teo/INDEX.md).
 
 Этот репозиторий настроен для [Graphify](https://github.com/safishamsi/graphify): документ `docs/1.ТЭО_МОЯ МЕЧТА.docx` преобразован в markdown-корпус и подключён к Cursor.
 
@@ -9,7 +9,8 @@
 
 | Путь | Назначение |
 |------|------------|
-| `docs/1.ТЭО_МОЯ МЕЧТА.docx` | Исходный ТЭО (66 МБ, **не индексируется** Graphify — лимит 50 МБ) |
+| `docs/teo/INDEX.md` | **Карта всего ТЭO** (baseline vs птица) |
+| `docs/1.ТЭО_МOЯ МEЧTA.docx` | Исходный ТЭO (66 МБ, **не индексируется** Graphify — лимит 50 МБ) |
 | `docs/teo/` | Нарезка docx по заголовкам (140 файлов) |
 | `docs/graphify-corpus/` | **Корпус для Graphify** — 6 сводных markdown-файлов |
 | `graphify-out/` | Граф: `graph.json`, `GRAPH_REPORT.md`, `graph.html`, `QUERY_WALKTHROUGH.md` |

@@ -1,0 +1,18 @@
+# Phase 4 — §4 export tail (rabbit → poultry T10)
+# Body indices — после phase3; пересчитать при смене baseline.
+
+narrative_blocks:
+  - name: export_apk
+    body_start: 3620
+    body_end: 3655
+    source: docs/inventory/pticevodstvo/sources/narrative/export-poultry.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+caption_replacements:
+  - pattern: "Мировой экспорт мяса кролика"
+    replace: "Экспорт APK (Tab#5) — consolidated холдинга"
+  - pattern: "мяса кролика и зайца"
+    replace: "продукции APK (кожа, gelatin, икра)"
+  - pattern: "крольчатины"
+    replace: "мяса птицы (внутренний рынок блока I)"

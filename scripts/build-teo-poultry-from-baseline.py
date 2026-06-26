@@ -21,7 +21,7 @@ from docx.text.paragraph import Paragraph
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
-DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/poultry-baseline-replace.yaml"
+DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/pipeline/phase1-tables.yaml"
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 NS = {"w": W_NS}
 
@@ -310,6 +310,7 @@ def main() -> int:
     parser.add_argument("--extract-media", action="store_true", help="Also extract word/media/* files")
     parser.add_argument("--skip-phase2", action="store_true", help="Skip §7 narrative + Tab P-141")
     parser.add_argument("--skip-phase3", action="store_true", help="Skip §4 market + yield table")
+    parser.add_argument("--skip-phase4", action="store_true", help="Skip §4 export tail (T10)")
     parser.add_argument("--verify-only", action="store_true")
     args = parser.parse_args()
 
@@ -341,7 +342,7 @@ def main() -> int:
         p2 = importlib.util.module_from_spec(spec)
         assert spec and spec.loader
         spec.loader.exec_module(p2)
-        phase2_yaml = ROOT / "docs/inventory/pticevodstvo/poultry-phase2.yaml"
+        phase2_yaml = ROOT / "docs/inventory/pticevodstvo/pipeline/phase2-section7.yaml"
         p2.apply_phase2(out, phase2_yaml)
 
     if not args.skip_phase3:
@@ -352,8 +353,19 @@ def main() -> int:
         p3 = importlib.util.module_from_spec(spec)
         assert spec and spec.loader
         spec.loader.exec_module(p3)
-        phase3_yaml = ROOT / "docs/inventory/pticevodstvo/poultry-phase3.yaml"
+        phase3_yaml = ROOT / "docs/inventory/pticevodstvo/pipeline/phase3-market.yaml"
         p3.apply_phase3(out, phase3_yaml)
+
+    if not args.skip_phase4:
+        import importlib.util
+
+        p3_path = SCRIPTS / "apply-teo-poultry-phase3.py"
+        spec = importlib.util.spec_from_file_location("apply_teo_poultry_phase3_p4", p3_path)
+        p3b = importlib.util.module_from_spec(spec)
+        assert spec and spec.loader
+        spec.loader.exec_module(p3b)
+        phase4_yaml = ROOT / "docs/inventory/pticevodstvo/pipeline/phase4-export.yaml"
+        p3b.apply_phase3(out, phase4_yaml)
 
     return 0
 

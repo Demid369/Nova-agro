@@ -23,8 +23,8 @@ R_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 NS = {"w": W_NS, "a": A_NS, "r": R_NS}
 XML_SPACE = "{http://www.w3.org/XML/1998/namespace}space"
 
-DEFAULT_PHASE2 = ROOT / "docs/inventory/pticevodstvo/poultry-phase2.yaml"
-DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/poultry-baseline-replace.yaml"
+DEFAULT_PHASE2 = ROOT / "docs/inventory/pticevodstvo/pipeline/phase2-section7.yaml"
+DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/pipeline/phase1-tables.yaml"
 
 
 def load_yaml(path: Path) -> dict[str, Any]:

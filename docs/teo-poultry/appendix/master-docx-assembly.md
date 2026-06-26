@@ -191,4 +191,4 @@ python3 scripts/generate-pticevodstvo-docx.py
 # → docs/inventory/pticevodstvo/docx/00-master-teo-pticevodstvo-draft.docx
 ```
 
-Манифест: [`docs/inventory/pticevodstvo/00-master-assembly.yaml`](../../inventory/pticevodstvo/00-master-assembly.yaml)
+Манифест: [`docs/inventory/pticevodstvo/pipeline/assembly-standalone.yaml`](../../inventory/pticevodstvo/pipeline/assembly-standalone.yaml)

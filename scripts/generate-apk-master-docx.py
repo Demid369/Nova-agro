@@ -38,8 +38,8 @@ from pticevodstvo_inventory import (  # noqa: E402
     write_docx_audit,
 )
 
-APK_ASSEMBLY_PATH = ROOT / "docs/inventory/pticevodstvo/00-apk-master-assembly.yaml"
-PATCH_RULES_PATH = ROOT / "docs/inventory/pticevodstvo/corpus-patch-rules.yaml"
+APK_ASSEMBLY_PATH = ROOT / "docs/inventory/pticevodstvo/pipeline/assembly-apk-full.yaml"
+PATCH_RULES_PATH = ROOT / "docs/inventory/pticevodstvo/pipeline/corpus-patch-rules.yaml"
 MANIFEST_PATH = ROOT / "docs/teo-tables/manifest.json"
 CORPUS_MAX_CHARS = 500_000
 APPENDIX_TABLE_LIMIT = 0  # 0 = all reference_trade

@@ -8,8 +8,8 @@
 
 | Компонент | Файл | Статус |
 |-----------|------|--------|
-| APK assembly manifest | `00-apk-master-assembly.yaml` | ✅ |
-| Patch rules (кролик → skip) | `corpus-patch-rules.yaml` | ✅ |
+| APK assembly manifest | `pipeline/assembly-apk-full.yaml` | ✅ |
+| Patch rules (кролик → skip) | `pipeline/corpus-patch-rules.yaml` | ✅ |
 | Generator | `scripts/generate-apk-master-docx.py` | ✅ |
 | Media plan | `reports/media-extraction-plan.md` | ✅ |
 | Media extract script | `scripts/extract-docx-media.py` | ✅ scaffold |

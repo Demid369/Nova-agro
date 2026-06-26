@@ -14,8 +14,10 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 INVENTORY_DIR = ROOT / "docs" / "inventory" / "pticevodstvo"
+PIPELINE_DIR = INVENTORY_DIR / "pipeline"
 REGISTRY_PATH = INVENTORY_DIR / "registry.yaml"
-ASSEMBLY_PATH = INVENTORY_DIR / "00-master-assembly.yaml"
+ASSEMBLY_PATH = PIPELINE_DIR / "assembly-standalone.yaml"
+PHASE1_PATH = PIPELINE_DIR / "phase1-tables.yaml"
 DOCX_DIR = INVENTORY_DIR / "docx"
 REPORTS_DIR = INVENTORY_DIR / "reports"
 AUDIT_JSON_PATH = REPORTS_DIR / "docx-audit.json"

@@ -1,83 +1,62 @@
-# Инвентарь птицеводства (draft)
+# Инвентарь птицевodство — hub
 
-**Статус:** **baseline TEO → птица ~694 стр.** (images AS-IS) + investor-ready. RAG — по approval.
+> **Карта всего ТЭO:** [`docs/teo/INDEX.md`](../../teo/INDEX.md)  
+> **Pipeline yaml:** [`pipeline/`](pipeline/) · **Manifest:** [`pipeline/manifest.yaml`](pipeline/manifest.yaml)
 
-## Baseline TEO → птица (основной артефакт)
+## Главная команда (baseline → птица ~694 стр.)
 
 ```bash
 python3 scripts/build-teo-poultry-from-baseline.py
+# --skip-phase2 | --skip-phase3 | --skip-phase4
 # --extract-media → media/* (346 files, gitignored)
 ```
 
-| DOCX | ~стр. | Описание |
-|------|-------|----------|
-| **`1.ТЭО_МОЯ_МЕЧТА_ПТИЦА.docx`** | **~694** | Оригинал layout + 346 images + poultry tables/KPI |
-| `00-master-teo-pticevodstvo-draft.docx` | ~60–80 | md standalone |
-| `00-apk-master-teo-full-draft.docx` | ~220–250 | md corpus (без images) |
+| Фаза | Config | Что меняет |
+|------|--------|------------|
+| 1 | [`pipeline/phase1-tables.yaml`](pipeline/phase1-tables.yaml) | Critical tables + regex |
+| 2 | [`pipeline/phase2-section7.yaml`](pipeline/phase2-section7.yaml) | §7 + Tab P-141 |
+| 3 | [`pipeline/phase3-market.yaml`](pipeline/phase3-market.yaml) | §4 market, genetics, yield |
+| 4 | [`pipeline/phase4-export.yaml`](pipeline/phase4-export.yaml) | §4 export (T10) |
 
-Отчёт: [`reports/baseline-poultry-run-jun2026.md`](reports/baseline-poultry-run-jun2026.md)  
-Карта картинок: [`media/image-map.json`](media/image-map.json)  
-Правила замены: [`poultry-baseline-replace.yaml`](poultry-baseline-replace.yaml)  
-Phase 2 (§7 + Tab P-141): [`reports/baseline-poultry-phase2-jun2026.md`](reports/baseline-poultry-phase2-jun2026.md)  
-Image slots: [`media/block1-image-slots.yaml`](media/block1-image-slots.yaml)
+## Выходные DOCX
+
+См. [`outputs/README.md`](outputs/README.md) → каталог [`docx/`](docx/)
+
+| DOCX | ~стр. | Команда |
+|------|-------|---------|
+| **`1.ТЭO_МOЯ_МEЧTA_ПTIЦA.docx`** | **~694** | `build-teo-poultry-from-baseline.py` |
+| `00-master-teo-pticevodstvo-draft.docx` | ~60–80 | `generate-pticevodstvo-docx.py` |
+| `00-apk-master-teo-full-draft.docx` | ~220–250 | `generate-apk-master-docx.py` |
+
+## Контент vs pipeline
+
+| Слой | Где | Роль |
+|------|-----|------|
+| **Канон текста** | [`docs/teo-poultry/`](../../teo-poultry/) | T01–T12, appendix, KPI |
+| **Narrative-slice для Word** | [`sources/narrative/`](sources/narrative/) | Короткие вставки по body-range |
+| **Critical tables** | [`docs/teo-tables/critical/`](../../teo-tables/critical/) | Tab 1,3,4,7,… P-variants |
+| **Media** | [`media/`](media/) | image-map, slots замены |
 
 ## Investor-ready
 
 | Артефакт | Путь |
 |----------|------|
 | One-pager | [`docs/teo-poultry/appendix/investor-one-pager.md`](../../teo-poultry/appendix/investor-one-pager.md) |
-| Executive summary | front matter § «Executive summary» |
 | Stress-pack | [`docs/teo-poultry/appendix/stress-pack.md`](../../teo-poultry/appendix/stress-pack.md) |
 
-## Final run (рекомендуется перед review)
+## Прочие команды
 
 ```bash
-python3 scripts/final-run-pticevodstvo.py
+python3 scripts/final-run-pticevodstvo.py          # registry validate
+python3 scripts/generate-pticevodstvo-docx.py      # standalone master
+python3 scripts/generate-apk-master-docx.py        # APK corpus merge
+python3 scripts/replace-docx-media.py --help       # binary image swap
 ```
 
-Отчёт: [`reports/final-run-jun2026.md`](reports/final-run-jun2026.md)  
-Corpus merge: [`CORPUS-MERGE-NEXT.md`](CORPUS-MERGE-NEXT.md)
+## Отчёты
 
-## APK full master (corpus + appendix A)
+[`reports/`](reports/) — baseline-poultry-run, phase2, phase3, final-run, apk-corpus
 
-```bash
-python3 scripts/generate-apk-master-docx.py
-# быстрый тест: --appendix-limit 10
-```
+## KPI
 
-Выход: `docx/00-apk-master-teo-full-draft.docx`
-
-## Команды
-
-```bash
-# Валидация registry + assembly (без DOCX)
-python3 scripts/generate-pticevodstvo-docx.py --skip-docx
-
-# Темы T01–T12 + index + master draft
-python3 scripts/generate-pticevodstvo-docx.py
-
-# Только master
-python3 scripts/generate-pticevodstvo-docx.py --master-only
-```
-
-## Выходные DOCX
-
-| Файл | Содержание |
-|------|------------|
-| `00-index-pticevodstvo.docx` | KPI + оглавление тем |
-| `t01-…` … `t12-…` | Темы из `docs/teo-poultry/T*.md` |
-| **`1.ТЭО_МОЯ_МЕЧТА_ПТИЦА.docx`** | **Baseline → птица, ~694 стр., 346 images** |
-| **`00-master-teo-pticevodstvo-draft.docx`** | Master draft по `00-master-assembly.yaml` |
-| **`00-apk-master-teo-full-draft.docx`** | APK full: standalone + corpus + appendix A |
-
-План сборки: [`docs/teo-poultry/appendix/master-docx-assembly.md`](../../teo-poultry/appendix/master-docx-assembly.md)
-
-## Куда добавлять данные
-
-| Тип | Путь |
-|-----|------|
-| Темы | `docs/teo-poultry/T01-…` … `T12-…` |
-| Сырые файлы | `docs/teo-poultry/_incoming/` |
-| Приложения | `docs/teo-poultry/appendix/` |
-| KPI | `docs/scenarios/poultry-teo.yaml` |
-| Critical tab | `docs/teo-tables/critical/T*-pticevodstvo*.md`, T241-P |
+[`docs/scenarios/poultry-teo.yaml`](../../scenarios/poultry-teo.yaml) + [`registry.yaml`](registry.yaml)

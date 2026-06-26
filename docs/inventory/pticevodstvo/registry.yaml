@@ -10,7 +10,7 @@ meta:
   baseline_poultry: docs/scenarios/poultry-teo.yaml
   content_dir: docs/teo-poultry
   generated_docx_dir: docs/inventory/pticevodstvo/docx
-  master_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
+  master_assembly: docs/inventory/pticevodstvo/pipeline/assembly-standalone.yaml
   front_matter: docs/teo-poultry/appendix/00-front-matter-nova-agro.md
   review_pass: docs/teo-poultry/appendix/review-pass-notes.md
   section_02_zakazchik: docs/teo-poultry/appendix/zakazchik-proekta.md
