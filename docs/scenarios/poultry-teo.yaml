@@ -135,11 +135,13 @@ blocks:
       quail: Фараон
     graph_nodes: [Птицеводство, Комбикормовый завод, Убойный цех, Инкубаторий]
     risks:
-      - Конкуренция с федеральными бройлерными холдингами
-      - Слабее связь с моделью нулевой себестоимости vs КРС/кролики
-      - Биобезопасность; эпизоотические риски
-      - Локация Запорожская область vs baseline Херсонская — согласовать
-      - Земельный участок под площадку не выделен
+      appendix: docs/teo-poultry/appendix/06-vyvody-i-riski.md
+      items:
+        - Конкуренция с федеральными бройлерными холдингами
+        - Слабее связь с моделью нулевой себестоимости vs КРС/кролики
+        - Биобезопасность; эпизоотические риски
+        - Локация Запорожская область vs baseline Херсонская — согласовать
+        - Земельный участок под площадку не выделен
 
   теплицы:
     active: true
@@ -170,6 +172,7 @@ content_sources:
     - docs/teo-poultry/appendix/financing-structure.md
     - docs/teo-poultry/appendix/npv-irr-derived.md
     - docs/teo-poultry/appendix/tables-poultry-index.md
+    - docs/teo-poultry/appendix/06-vyvody-i-riski.md
 
 critical_tables:
   index: docs/teo-poultry/appendix/tables-poultry-index.md

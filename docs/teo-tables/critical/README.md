@@ -32,7 +32,7 @@
 | T004-P | [T004-revenue-matrix-pticevodstvo.md](T004-revenue-matrix-pticevodstvo.md) | draft |
 | T007-P | [T007-npv-pticevodstvo.md](T007-npv-pticevodstvo.md) | draft |
 | T021-P | [T021-pticevodstvo-capex.md](T021-pticevodstvo-capex.md) | draft |
-| T022-P | [T022-investment-schedule-pticevodstvo.md](T022-investment-schedule-pticevodstvo.md) | draft (фазировка TBD) |
+| T022-P | [T022-investment-schedule-pticevodstvo.md](T022-investment-schedule-pticevodstvo.md) | draft (фазировка 2026–2029) |
 | T141-P | [T141-feed-recipes-poultry.md](T141-feed-recipes-poultry.md) | draft |
 | T236-P | [T236-staff-pticevodstvo.md](T236-staff-pticevodstvo.md) | draft |
 

@@ -72,6 +72,7 @@ canonical_facts:
   apk_export_mln_rub: 10208
   poultry_products_export_mln_rub: 0
   vendors_appendix: docs/teo-poultry/appendix/vendors-equipment.md
+  risks_appendix: docs/teo-poultry/appendix/06-vyvody-i-riski.md
   apk_100_canonical: scenario_C
   apk_100_total_mln: 100000
   apk_100_blocks_mln:

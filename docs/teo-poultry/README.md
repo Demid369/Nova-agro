@@ -40,10 +40,10 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | 3 | **RAG / graph / audit** | corpus, 50 queries, docx-audit | **draft**, не в индексе |
 | 4 | **Вендоры + пропускная способность** | Meneghin, SINT 2400 г/ч | **Facco + SINT poultry 6000 + FRAGOLA/PRIMERANO/ASTORIOS** |
 | 5 | **Рецептуры кормов** (Tab. P-141) | `teo/125-…` (фактически КРС+рыба; **без SKU**) | **draft** [`appendix/feed-recipes-table.md`](appendix/feed-recipes-table.md) + [`T141-feed-recipes-poultry`](../teo-tables/critical/T141-feed-recipes-poultry.md) |
-| 6 | **График CAPEX по годам** | T022 investment schedule | **T022-P**: структура % готова; **фазировка по годам TBD** |
+| 6 | **График CAPEX по годам** | T022 investment schedule | **T022-P**: структура % + **фазировка 2026–2029** (модель под ramp) |
 | 7 | **Экспорт** | Tab#5 baseline на блок 1 | `export-apk-baseline-tab5.md` |
 | 8 | **Земля: кадастр, схема, разрешения** | T003 land budget | `production_site: null` |
-| 9 | **Выводы + реестр рисков** | `graphify-corpus/06-vyvody-i-riski.md` | риски в yaml, **нет отдельной темы** |
+| 9 | **Выводы + реестр рисков** | `graphify-corpus/06-vyvody-i-riski.md` | **draft** [`appendix/06-vyvody-i-riski.md`](appendix/06-vyvody-i-riski.md) — §12.3, 15 рисков R-P01…R-P15 |
 | 10 | **Меморандум / front matter** | `00-меморандум-о-конфиденциальности.md` | нет |
 | 11 | **Качество переработки / выход** | corpus T05 | T05 — 16 строк |
 | 12 | **NPV-методология vs tab#7** | 10 лет, единый горизонт | 16 лет DCF — **политика не зафиксирована** |
@@ -69,3 +69,4 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | KPI | `docs/scenarios/poultry-teo.yaml` |
 | Большие таблицы | `appendix/` |
 | Critical-таблицы (T001-P…) | [`appendix/tables-poultry-index.md`](appendix/tables-poultry-index.md) → `docs/teo-tables/critical/` |
+| §12.3 риски | [`appendix/06-vyvody-i-riski.md`](appendix/06-vyvody-i-riski.md) |
