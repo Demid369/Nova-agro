@@ -4,9 +4,11 @@
 
 | ID | Файл | Статус | Источник |
 |----|------|--------|----------|
-| T001-P | [`T001-master-summary-pticevodstvo.md`](../teo-tables/critical/T001-master-summary-pticevodstvo.md) | draft | Сводка, T02, xlsx |
+| **T001-merged** | [`T001-master-summary-phases-poultry.md`](../teo-tables/critical/T001-master-summary-phases-poultry.md) | **draft (APK)** | I-фаза птица + II–III baseline |
+| T001-P | [`T001-master-summary-pticevodstvo.md`](../teo-tables/critical/T001-master-summary-pticevodstvo.md) | draft (блок) | Сводка блока |
 | T003-P | [`T003-land-budget-pticevodstvo.md`](../teo-tables/critical/T003-land-budget-pticevodstvo.md) | draft (без кадастра) | `land-budget.yaml` |
-| T004-P | [`T004-revenue-matrix-pticevodstvo.md`](../teo-tables/critical/T004-revenue-matrix-pticevodstvo.md) | draft | finmodel «Выручка» |
+| **T004-merged** | [`T004-revenue-matrix-patched.md`](../teo-tables/critical/T004-revenue-matrix-patched.md) | **draft (APK)** | Tab#4 patch; **ВСЕГО 72 158 537** |
+| T004-P | [`T004-revenue-matrix-pticevodstvo.md`](../teo-tables/critical/T004-revenue-matrix-pticevodstvo.md) | draft (блок) | finmodel «Выручка» |
 | T007-P | [`T007-npv-pticevodstvo.md`](../teo-tables/critical/T007-npv-pticevodstvo.md) | draft | finmodel «NPV-IRR» |
 | T021-P | [`T021-pticevodstvo-capex.md`](../teo-tables/critical/T021-pticevodstvo-capex.md) | draft | finmodel «CAPEX», APK-100 |
 | T022-P | [`T022-investment-schedule-pticevodstvo.md`](../teo-tables/critical/T022-investment-schedule-pticevodstvo.md) | draft (фазировка **2026–2029**) | finmodel «CAPEX», ramp-up |

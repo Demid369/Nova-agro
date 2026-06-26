@@ -55,8 +55,10 @@ canonical_facts:
   critical_tables_index: docs/teo-poultry/appendix/tables-poultry-index.md
   critical_tables:
     T001-P: docs/teo-tables/critical/T001-master-summary-pticevodstvo.md
+    T001-merged: docs/teo-tables/critical/T001-master-summary-phases-poultry.md
     T003-P: docs/teo-tables/critical/T003-land-budget-pticevodstvo.md
     T004-P: docs/teo-tables/critical/T004-revenue-matrix-pticevodstvo.md
+    T004-merged: docs/teo-tables/critical/T004-revenue-matrix-patched.md
     T007-P: docs/teo-tables/critical/T007-npv-pticevodstvo.md
     T021-P: docs/teo-tables/critical/T021-pticevodstvo-capex.md
     T022-P: docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md

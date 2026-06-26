@@ -27,9 +27,11 @@
 
 | ID | Файл | Статус |
 |----|------|--------|
-| T001-P | [T001-master-summary-pticevodstvo.md](T001-master-summary-pticevodstvo.md) | draft |
+| **T001-merged** | [T001-master-summary-phases-poultry.md](T001-master-summary-phases-poultry.md) | draft APK (I-фаза + II–III) |
+| T001-P | [T001-master-summary-pticevodstvo.md](T001-master-summary-pticevodstvo.md) | draft блок |
 | T003-P | [T003-land-budget-pticevodstvo.md](T003-land-budget-pticevodstvo.md) | draft (кадастр TBD) |
-| T004-P | [T004-revenue-matrix-pticevodstvo.md](T004-revenue-matrix-pticevodstvo.md) | draft |
+| **T004-merged** | [T004-revenue-matrix-patched.md](T004-revenue-matrix-patched.md) | draft APK (ВСЕГО 72 158 537) |
+| T004-P | [T004-revenue-matrix-pticevodstvo.md](T004-revenue-matrix-pticevodstvo.md) | draft блок |
 | T007-P | [T007-npv-pticevodstvo.md](T007-npv-pticevodstvo.md) | draft |
 | T021-P | [T021-pticevodstvo-capex.md](T021-pticevodstvo-capex.md) | draft |
 | T022-P | [T022-investment-schedule-pticevodstvo.md](T022-investment-schedule-pticevodstvo.md) | draft (фазировка 2026–2029) |

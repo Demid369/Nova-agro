@@ -50,6 +50,23 @@ project:
   apk_100bln_integration: docs/teo-poultry/appendix/apk-100bln-integration.md
   note: "Отдельный блок 12 млрд ₽; APK птицы 250 000 га; не путать с baseline холдинга 100 000 га (Херсон)"
 
+  dcf_policy:
+    canonical_horizon_years: 16
+    period: "2026-2041"
+    discount_rate_pct: 10
+    source: "finmodel-pticekompleks-12-mlrd.xlsx — лист NPV-IRR"
+    document: docs/teo-poultry/appendix/dcf-policy.md
+    npv_mln_at_10pct: 2253
+    irr_pct: 12.8
+    pi: 1.19
+    baseline_comparison:
+      horizon_years: 10
+      reference: "docs/1.ТЭО_МОЯ МЕЧТА.docx tab#7; graphify-corpus/05-finansy-i-byudzhet.md §11"
+      npv_mln_at_10pct: -1728
+      irr_pct: 6.7
+      note: "10-летний горизонт — stress / сопоставимость с tab#7, не канон блока птицы"
+    rationale: "Ramp до 2030; extended DCF согласован с PB 65 мес. и finmodel"
+
 blocks:
   кролиководство:
     label: Кролиководство
@@ -73,10 +90,10 @@ blocks:
     ebitda_finmodel_original_mln_rub: 1441
     payback_years_simple: 5.4
     npv_thousand_rub: 2253000
-    npv_note: "DCF @10%, горизонт 16 лет (2026–2041); лист NPV-IRR xlsx"
+    npv_note: "DCF @10%, канон 16 лет (2026–2041) — см. project.dcf_policy"
     irr_pct: 12.8
     pi: 1.19
-    irr_note: "Лист NPV-IRR xlsx; 10-летний горизонт даёт IRR ~6,7%"
+    irr_note: "Канон 16y; 10-летний горизонт (tab#7 baseline) → IRR ~6,7%, NPV −1 728"
     payback_months: 65
     heads_simultaneous: 2147400
     poultry_houses: 118
@@ -171,14 +188,17 @@ content_sources:
     - docs/teo-poultry/appendix/apk-100bln-integration.md
     - docs/teo-poultry/appendix/financing-structure.md
     - docs/teo-poultry/appendix/npv-irr-derived.md
+    - docs/teo-poultry/appendix/dcf-policy.md
     - docs/teo-poultry/appendix/tables-poultry-index.md
     - docs/teo-poultry/appendix/06-vyvody-i-riski.md
 
 critical_tables:
   index: docs/teo-poultry/appendix/tables-poultry-index.md
   T001-P: docs/teo-tables/critical/T001-master-summary-pticevodstvo.md
+  T001-merged: docs/teo-tables/critical/T001-master-summary-phases-poultry.md
   T003-P: docs/teo-tables/critical/T003-land-budget-pticevodstvo.md
   T004-P: docs/teo-tables/critical/T004-revenue-matrix-pticevodstvo.md
+  T004-merged: docs/teo-tables/critical/T004-revenue-matrix-patched.md
   T007-P: docs/teo-tables/critical/T007-npv-pticevodstvo.md
   T021-P: docs/teo-tables/critical/T021-pticevodstvo-capex.md
   T022-P: docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md

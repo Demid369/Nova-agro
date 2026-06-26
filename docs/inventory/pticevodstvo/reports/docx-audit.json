@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-26T06:49:13.388068+00:00",
-  "registry_hash": "ebac5c430df5",
+  "generated_at": "2026-06-26T07:19:22.587309+00:00",
+  "registry_hash": "32721b470069",
   "summary": {
     "themes": 12,
-    "critical_tables": 8,
+    "critical_tables": 10,
     "assembly_sections": 16
   },
   "themes": {
@@ -90,8 +90,8 @@
         },
         {
           "kind": "critical",
-          "path": "docs/teo-tables/critical/T001-master-summary-pticevodstvo.md",
-          "label": "T001-P"
+          "path": "docs/teo-tables/critical/T001-master-summary-phases-poultry.md",
+          "label": "T001-merged"
         }
       ],
       "source_count": 2
@@ -309,14 +309,19 @@
           "label": "T01 — Финансы блока"
         },
         {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/dcf-policy.md",
+          "label": "docs/teo-poultry/appendix/dcf-policy.md"
+        },
+        {
           "kind": "critical",
           "path": "docs/teo-tables/critical/T007-npv-pticevodstvo.md",
           "label": "T007-P"
         },
         {
           "kind": "critical",
-          "path": "docs/teo-tables/critical/T004-revenue-matrix-pticevodstvo.md",
-          "label": "T004-P"
+          "path": "docs/teo-tables/critical/T004-revenue-matrix-patched.md",
+          "label": "T004-merged"
         },
         {
           "kind": "file",
@@ -324,7 +329,7 @@
           "label": "docs/teo-poultry/appendix/npv-irr-derived.md"
         }
       ],
-      "source_count": 4
+      "source_count": 5
     },
     {
       "id": "s11_apk_other",

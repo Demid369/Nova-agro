@@ -33,7 +33,7 @@ sections:
     action: replace
     sources:
       - theme: T02
-      - critical: T001-P
+      - critical: T001-merged
 
   - id: s04_market
     title: "4. Рынок, SWOT, цены"
@@ -121,8 +121,9 @@ sections:
     action: replace
     sources:
       - theme: T01
+      - file: docs/teo-poultry/appendix/dcf-policy.md
       - critical: T007-P
-      - critical: T004-P
+      - critical: T004-merged
       - file: docs/teo-poultry/appendix/npv-irr-derived.md
 
   - id: s11_apk_other
