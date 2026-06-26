@@ -1,0 +1,39 @@
+# Block 1 + §7 image slots — binary AS-IS until replaced
+# Swap: python3 scripts/replace-docx-media.py --slot image7.png --file path/to/new.png
+
+meta:
+  docx: docs/inventory/pticevodstvo/docx/1.ТЭО_МOЯ_МЕЧТА_ПТИЦА.docx
+  note: "Переименованный файл кладите в media/replacements/ с тем же именем или укажите --file"
+
+slots:
+  - id: T18-replicators
+    table: 18
+    cell: 0
+    media: [image7.png, image8.jpeg]
+    caption: "Инкубация / суточный молодняк ROSS 308 (placeholder — заменить фото)"
+    was: "Живые кролики репродукторы F1"
+
+  - id: T18-product
+    table: 18
+    cell: 1
+    media: [image9.png]
+    caption: "Мясо птицы и яйцо — фасовка (placeholder — заменить фото)"
+    was: "Мясо кролика в упаковке"
+
+  - id: S7-slaughter-line
+    body_index: 9889
+    media: [image311.jpeg]
+    caption_near: "Убойно-перерабатывающий комплекс SINT 6 000 гол/ч (placeholder)"
+    was: "Технология переработки мяса кролика"
+
+  - id: S7-cutting-scheme
+    body_index: 9928
+    media: [image312.jpeg]
+    caption_near: "Схема разделки птицы (placeholder)"
+    was: "Схема разделки кролика"
+
+  - id: S7-equipment
+    body_index: 9935
+    media: [image313.jpeg]
+    caption_near: "Линия переработки птицы Facco / SINT (placeholder)"
+    was: "Оборудование переработки кролика"

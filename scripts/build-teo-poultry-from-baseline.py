@@ -20,6 +20,7 @@ from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 
 ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS = ROOT / "scripts"
 DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/poultry-baseline-replace.yaml"
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 NS = {"w": W_NS}
@@ -307,6 +308,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Build poultry TEO from baseline DOCX")
     parser.add_argument("--rules", default=str(DEFAULT_RULES))
     parser.add_argument("--extract-media", action="store_true", help="Also extract word/media/* files")
+    parser.add_argument("--skip-phase2", action="store_true", help="Skip §7 narrative + Tab P-141")
     parser.add_argument("--verify-only", action="store_true")
     args = parser.parse_args()
 
@@ -329,6 +331,18 @@ def main() -> int:
 
     if not verify_images_preserved(baseline, out):
         return 1
+
+    if not args.skip_phase2:
+        import importlib.util
+
+        p2_path = SCRIPTS / "apply-teo-poultry-phase2.py"
+        spec = importlib.util.spec_from_file_location("apply_teo_poultry_phase2", p2_path)
+        p2 = importlib.util.module_from_spec(spec)
+        assert spec and spec.loader
+        spec.loader.exec_module(p2)
+        phase2_yaml = ROOT / "docs/inventory/pticevodstvo/poultry-phase2.yaml"
+        p2.apply_phase2(out, phase2_yaml)
+
     return 0
 
 

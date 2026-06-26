@@ -1,0 +1,33 @@
+# Phase 2 — narrative §7, Tab P-141, image captions (images binary unchanged)
+
+narrative:
+  source: docs/teo-poultry/appendix/01-tehnologicheskiy-cikl.md
+  body_start: 9873
+  body_end: 9952
+  preserve_image_paragraphs: true
+
+tab141:
+  title_body_search: "Табл. 141. Рецепты комбикормов для кроликов"
+  title_replace: "Tab. P-141. Рецепты комбикормов — птицеводство (баланс finmodel)"
+  md_source: docs/teo-tables/critical/T141-feed-recipes-poultry.md
+  keep_krs_fish_paragraphs: true
+
+image_caption_replacements:
+  - pattern: "Живые кролики репродукторы F1"
+    replace: "Инкубация / суточный молодняк ROSS 308 (фото — заменить)"
+  - pattern: "Мясо кролика в упаковке"
+    replace: "Мясо птицы и яйцо — фасовка (фото — заменить)"
+  - pattern: "Технология переработки мяса кролика"
+    replace: "Убой и переработка птицы — SINT 6 000 гол/ч"
+  - pattern: "Схема разделки кролика"
+    replace: "Схема разделки птицы (бройлер / индейка)"
+  - pattern: "Особенности технологического оборудования для переработки кролика"
+    replace: "Оборудование линии переработки птицы (Facco / SINT)"
+  - pattern: "Выход мяса с кролика"
+    replace: "Выход мяса с птицы (средний, по видам)"
+  - pattern: "Кролики: особенности содержания и разведения"
+    replace: "Птицеводческий комплекс «Нова-Агро» — технологический цикл"
+
+review_footnote_update: >
+  Блок I-фазы: птицеводство 12 млрд ₽. Текст §7 и Tab P-141 — poultry canon.
+  Файлы image7–9, image311–313 — placeholders (кролик); заменить: replace-docx-media.py
