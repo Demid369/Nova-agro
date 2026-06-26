@@ -12,7 +12,7 @@
 | Секций assembly | **18** |
 | Theme DOCX | **12 + index + master = 14** |
 | Critical tables в registry | **11** |
-| Master объём | **~7 900 слов**, **892** para, **149** tables |
+| Master объём | **~17 500 слов**, **892** para, **149** tables |
 
 ## KPI в master (paragraphs + table cells)
 
