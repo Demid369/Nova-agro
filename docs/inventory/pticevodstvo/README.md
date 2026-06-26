@@ -17,7 +17,9 @@ python3 scripts/build-teo-poultry-from-baseline.py
 
 Отчёт: [`reports/baseline-poultry-run-jun2026.md`](reports/baseline-poultry-run-jun2026.md)  
 Карта картинок: [`media/image-map.json`](media/image-map.json)  
-Правила замены: [`poultry-baseline-replace.yaml`](poultry-baseline-replace.yaml)
+Правила замены: [`poultry-baseline-replace.yaml`](poultry-baseline-replace.yaml)  
+Phase 2 (§7 + Tab P-141): [`reports/baseline-poultry-phase2-jun2026.md`](reports/baseline-poultry-phase2-jun2026.md)  
+Image slots: [`media/block1-image-slots.yaml`](media/block1-image-slots.yaml)
 
 ## Investor-ready
 
