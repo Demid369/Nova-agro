@@ -1,0 +1,165 @@
+# Реестр птицеводства — draft (второе ТЭО)
+# status: draft — не применять к RAG/graph до утверждения
+
+meta:
+  project: МОЯ МЕЧТА
+  block_id: птицеводство
+  block_label: Птицеводство
+  status: draft
+  replaces_block: кролиководство
+  baseline_poultry: docs/scenarios/poultry-teo.yaml
+  content_dir: docs/teo-poultry
+  generated_docx_dir: docs/inventory/pticevodstvo/docx
+  master_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
+  front_matter: docs/teo-poultry/appendix/00-front-matter-nova-agro.md
+  review_pass: docs/teo-poultry/appendix/review-pass-notes.md
+  section_02_zakazchik: docs/teo-poultry/appendix/zakazchik-proekta.md
+  section_03_strategiya: docs/teo-poultry/appendix/strategiya-proekta.md
+
+canonical_facts:
+  capex_bln_rub: 12
+  meat_t_per_year: 18169
+  eggs_chicken_million_per_year: 153.6
+  revenue_mln_rub_per_year: 5559
+  opex_mln_rub_per_year: 3343
+  opex_finmodel_original_mln_rub: 3593
+  ebitda_mln_rub_per_year: 2216
+  ebitda_finmodel_original_mln_rub: 1441
+  fertilizer_t_per_year: 43800
+  fertilizer_revenue_mln_rub_per_year: 525.6
+  compost_capacity_t_per_hour: 5.0
+  compost_capex_mln_rub: 36
+  organic_input: помёт птицы
+  solar_mwh: 10
+  solar_capex_mln_rub: 1180.8
+  solar_supplier: ASTORIOS HOLDING INC
+  compost_supplier: PRIMERANO INNOVATION SRLS
+  equipment_vendor: "Officine Facco & C. S.p.a."
+  slaughter_vendor: SINT Tecnologie S.r.l.
+  slaughter_heads_per_hour: 6000
+  feed_vendor: F.lli FRAGOLA S.p.a.
+  genetics_program: "ROSS 308 / Hisex-Lohmann / BUT Big 6 / Cherry Valley / Линдовская / Фараон"
+  genetics_supply: "авторизованные репродукторы РФ + VetIS"
+  energy_canon: docs/teo-poultry/energy-budget.yaml
+  purchased_electricity_opex_mln_rub: null
+  payback_years: 5.4
+  npv_mln_rub_at_10pct: 2253
+  irr_pct: 12.8
+  pi: 1.19
+  financing_fnb_mln_rub: 600
+  financing_ral_mln_rub: 2340
+  financing_banks_mln_rub: 9060
+  heads_simultaneous: 2147400
+  poultry_houses: 118
+  staff_fte: 476
+  feed_t_per_year: 66712
+  feed_recipes: docs/teo-poultry/appendix/feed-recipes-table.md
+  feed_recipes_critical: docs/teo-tables/critical/T141-feed-recipes-poultry.md
+  feed_sku_count: 15
+  critical_tables_index: docs/teo-poultry/appendix/tables-poultry-index.md
+  critical_tables:
+    T001-P: docs/teo-tables/critical/T001-master-summary-pticevodstvo.md
+    T001-merged: docs/teo-tables/critical/T001-master-summary-phases-poultry.md
+    T003-P: docs/teo-tables/critical/T003-land-budget-pticevodstvo.md
+    T004-P: docs/teo-tables/critical/T004-revenue-matrix-pticevodstvo.md
+    T004-merged: docs/teo-tables/critical/T004-revenue-matrix-patched.md
+    T007-P: docs/teo-tables/critical/T007-npv-pticevodstvo.md
+    T021-P: docs/teo-tables/critical/T021-pticevodstvo-capex.md
+    T022-P: docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md
+    T141-P: docs/teo-tables/critical/T141-feed-recipes-poultry.md
+    T236-P: docs/teo-tables/critical/T236-staff-pticevodstvo.md
+    T241-P: docs/teo-tables/critical/T241-taxes-payroll-poultry.md
+  location: Запорожская область
+  legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
+  production_site: null
+  apk_total_ha: 250_000
+  construction_ha: 20_000
+  land_ha: 400
+  land_slot_note: "Слот блока; участок не выделен — docs/teo-poultry/land-budget.yaml"
+  export_bln_rub: 10.2
+  apk_export_mln_rub: 10208
+  poultry_products_export_mln_rub: 0
+  vendors_appendix: docs/teo-poultry/appendix/vendors-equipment.md
+  risks_appendix: docs/teo-poultry/appendix/06-vyvody-i-riski.md
+  apk_100_canonical: scenario_C
+  apk_100_total_mln: 100000
+  apk_100_blocks_mln:
+    poultry: 12000
+    greenhouses: 34128.3
+    livestock: 27162.6
+    fish: 8903.0
+    oil: 17806.1
+  note: "KPI из xlsx (Экономика, NPV-IRR, Финансирование); sync с этalon кроликов jun 2026"
+
+themes:
+  T01:
+    id: T01
+    name: Финансы блока
+    file: docs/teo-poultry/T01-finance.md
+    action_on_replace: new
+  T02:
+    id: T02
+    name: Масштаб и фаза
+    file: docs/teo-poultry/T02-scale-phase.md
+    action_on_replace: new
+  T03:
+    id: T03
+    name: Генетика и технология
+    file: docs/teo-poultry/T03-genetics-tech.md
+    action_on_replace: new
+  T04:
+    id: T04
+    name: Оборудование
+    file: docs/teo-poultry/T04-equipment.md
+    action_on_replace: adapt
+  T05:
+    id: T05
+    name: Убой и переработка
+    file: docs/teo-poultry/T05-slaughter-processing.md
+    action_on_replace: adapt
+  T06:
+    id: T06
+    name: Кормление
+    file: docs/teo-poultry/T06-feed.md
+    action_on_replace: adapt
+    sources:
+      - docs/teo-poultry/appendix/feed-recipes-table.md
+      - docs/teo-tables/critical/T141-feed-recipes-poultry.md
+  T07:
+    id: T07
+    name: Побочная продукция
+    file: docs/teo-poultry/T07-byproducts.md
+    action_on_replace: adapt
+  T08:
+    id: T08
+    name: Энергия
+    file: docs/teo-poultry/T08-energy.md
+    action_on_replace: adapt
+  T09:
+    id: T09
+    name: Рынок и SWOT
+    file: docs/teo-poultry/T09-market-swot.md
+    action_on_replace: new
+  T10:
+    id: T10
+    name: Экспорт
+    file: docs/teo-poultry/T10-export.md
+    action_on_replace: new
+  T11:
+    id: T11
+    name: Narrative
+    file: docs/teo-poultry/T11-narrative-mission.md
+    action_on_replace: new
+  T12:
+    id: T12
+    name: Мировой рынок птицы
+    file: docs/teo-poultry/T12-world-market.md
+    action_on_replace: new
+
+incoming:
+  dir: docs/teo-poultry/_incoming
+  appendix: docs/teo-poultry/appendix
+
+replaces_rabbit_inventory:
+  reference: docs/inventory/krolikovodstvo/registry.yaml
+  checklist: docs/inventory/krolikovodstvo/docx/00-replace-checklist.docx

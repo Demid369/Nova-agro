@@ -1,0 +1,416 @@
+{
+  "generated_at": "2026-06-26T11:33:29.058485+00:00",
+  "registry_hash": "ebe4c81ce1b5",
+  "summary": {
+    "themes": 12,
+    "critical_tables": 11,
+    "assembly_sections": 18
+  },
+  "themes": {
+    "T01": [
+      "docs/teo-poultry/T01-finance.md"
+    ],
+    "T02": [
+      "docs/teo-poultry/T02-scale-phase.md"
+    ],
+    "T03": [
+      "docs/teo-poultry/T03-genetics-tech.md"
+    ],
+    "T04": [
+      "docs/teo-poultry/T04-equipment.md"
+    ],
+    "T05": [
+      "docs/teo-poultry/T05-slaughter-processing.md"
+    ],
+    "T06": [
+      "docs/teo-poultry/T06-feed.md",
+      "docs/teo-poultry/appendix/feed-recipes-table.md",
+      "docs/teo-tables/critical/T141-feed-recipes-poultry.md"
+    ],
+    "T07": [
+      "docs/teo-poultry/T07-byproducts.md"
+    ],
+    "T08": [
+      "docs/teo-poultry/T08-energy.md"
+    ],
+    "T09": [
+      "docs/teo-poultry/T09-market-swot.md"
+    ],
+    "T10": [
+      "docs/teo-poultry/T10-export.md"
+    ],
+    "T11": [
+      "docs/teo-poultry/T11-narrative-mission.md"
+    ],
+    "T12": [
+      "docs/teo-poultry/T12-world-market.md"
+    ]
+  },
+  "assembly_sections": [
+    {
+      "id": "front",
+      "title": "Меморандум и титул",
+      "action": "adapt",
+      "sources": [
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/00-front-matter-nova-agro.md",
+          "label": "docs/teo-poultry/appendix/00-front-matter-nova-agro.md"
+        }
+      ],
+      "source_count": 1
+    },
+    {
+      "id": "s01",
+      "title": "1. Цель проекта (резюме)",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md",
+          "label": "docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md"
+        }
+      ],
+      "source_count": 1
+    },
+    {
+      "id": "s02_customer",
+      "title": "2. Заказчик проекта",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/zakazchik-proekta.md",
+          "label": "docs/teo-poultry/appendix/zakazchik-proekta.md"
+        }
+      ],
+      "source_count": 1
+    },
+    {
+      "id": "s03_strategy",
+      "title": "3. Стратегия проекта",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/strategiya-proekta.md",
+          "label": "docs/teo-poultry/appendix/strategiya-proekta.md"
+        }
+      ],
+      "source_count": 1
+    },
+    {
+      "id": "s02_potential",
+      "title": "2.3. Потенциал и масштаб I-фазы",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T02-scale-phase.md",
+          "label": "T02 — Масштаб и фаза"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T001-master-summary-phases-poultry.md",
+          "label": "T001-merged"
+        }
+      ],
+      "source_count": 2
+    },
+    {
+      "id": "s04_market",
+      "title": "4. Рынок, SWOT, цены",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T09-market-swot.md",
+          "label": "T09 — Рынок и SWOT"
+        },
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T12-world-market.md",
+          "label": "T12 — Мировой рынок птицы"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/sensitivity-and-scenarios.md",
+          "label": "docs/teo-poultry/appendix/sensitivity-and-scenarios.md"
+        }
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "s04_export",
+      "title": "4.1.5 / 10. Экспорт",
+      "action": "adapt",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T10-export.md",
+          "label": "T10 — Экспорт"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/export-apk-baseline-tab5.md",
+          "label": "docs/teo-poultry/appendix/export-apk-baseline-tab5.md"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T005-export-revenue-matrix.md",
+          "label": "T005-export-revenue-matrix"
+        }
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "s05_materials",
+      "title": "5. Материалы и корма",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T06-feed.md",
+          "label": "T06 — Кормление"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T141-feed-recipes-poultry.md",
+          "label": "T141-P"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/feed-recipes-table.md",
+          "label": "docs/teo-poultry/appendix/feed-recipes-table.md"
+        }
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "s05_energy",
+      "title": "5.3. Энергоресурсы",
+      "action": "adapt",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T08-energy.md",
+          "label": "T08 — Энергия"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/energy-budget.yaml",
+          "label": "docs/teo-poultry/energy-budget.yaml"
+        }
+      ],
+      "source_count": 2
+    },
+    {
+      "id": "s06_location",
+      "title": "6. Месторасположение",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T003-land-budget-pticevodstvo.md",
+          "label": "T003-P"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/land-budget.yaml",
+          "label": "docs/teo-poultry/land-budget.yaml"
+        }
+      ],
+      "source_count": 2
+    },
+    {
+      "id": "s07_capacity",
+      "title": "7.1. Производственная мощность",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T02-scale-phase.md",
+          "label": "T02 — Масштаб и фаза"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md",
+          "label": "T022-P"
+        }
+      ],
+      "source_count": 2
+    },
+    {
+      "id": "s07_technology",
+      "title": "7.2. Технология и оборудование",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T03-genetics-tech.md",
+          "label": "T03 — Генетика и технология"
+        },
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T04-equipment.md",
+          "label": "T04 — Оборудование"
+        },
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T05-slaughter-processing.md",
+          "label": "T05 — Убой и переработка"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/01-tehnologicheskiy-cikl.md",
+          "label": "docs/teo-poultry/appendix/01-tehnologicheskiy-cikl.md"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/vendors-equipment.md",
+          "label": "docs/teo-poultry/appendix/vendors-equipment.md"
+        }
+      ],
+      "source_count": 5
+    },
+    {
+      "id": "s08_org",
+      "title": "8–9. Оргструктура, штат, OPEX",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/02-zatraty-orgstruktura-shtat.md",
+          "label": "docs/teo-poultry/appendix/02-zatraty-orgstruktura-shtat.md"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T236-staff-pticevodstvo.md",
+          "label": "T236-P"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T241-taxes-payroll-poultry.md",
+          "label": "T241-P"
+        }
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "s10_schedule",
+      "title": "10. График и бюджет CAPEX",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md",
+          "label": "T022-P"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T021-pticevodstvo-capex.md",
+          "label": "T021-P"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/financing-structure.md",
+          "label": "docs/teo-poultry/appendix/financing-structure.md"
+        }
+      ],
+      "source_count": 3
+    },
+    {
+      "id": "s11_poultry",
+      "title": "11. Финансы — блок птицы",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T01-finance.md",
+          "label": "T01 — Финансы блока"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/dcf-policy.md",
+          "label": "docs/teo-poultry/appendix/dcf-policy.md"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T007-npv-pticevodstvo.md",
+          "label": "T007-P"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T004-revenue-matrix-patched.md",
+          "label": "T004-merged"
+        },
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/npv-irr-derived.md",
+          "label": "docs/teo-poultry/appendix/npv-irr-derived.md"
+        }
+      ],
+      "source_count": 5
+    },
+    {
+      "id": "s11_apk_other",
+      "title": "11. NPV прочих блоков APK (as-is)",
+      "action": "baseline_as_is",
+      "sources": [
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T008-npv-teplitsy.md",
+          "label": "T008-npv-teplitsy"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T009-npv-zhivotnovodstvo.md",
+          "label": "T009-npv-zhivotnovodstvo"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T010-npv-rybovodstvo.md",
+          "label": "T010-npv-rybovodstvo"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T011-npv-maslozhir.md",
+          "label": "T011-npv-maslozhir"
+        },
+        {
+          "kind": "critical",
+          "path": "docs/teo-tables/critical/T014-capex-by-phase.md",
+          "label": "T014-capex-by-phase"
+        }
+      ],
+      "source_count": 5
+    },
+    {
+      "id": "s12",
+      "title": "12. Выводы и риски",
+      "action": "replace",
+      "sources": [
+        {
+          "kind": "file",
+          "path": "docs/teo-poultry/appendix/06-vyvody-i-riski.md",
+          "label": "docs/teo-poultry/appendix/06-vyvody-i-riski.md"
+        }
+      ],
+      "source_count": 1
+    },
+    {
+      "id": "s07_byproducts",
+      "title": "7. Побочная продукция",
+      "action": "adapt",
+      "sources": [
+        {
+          "kind": "theme",
+          "path": "docs/teo-poultry/T07-byproducts.md",
+          "label": "T07 — Побочная продукция"
+        }
+      ],
+      "source_count": 1
+    }
+  ],
+  "note": "Run generate-pticevodstvo-docx.py to materialize DOCX"
+}

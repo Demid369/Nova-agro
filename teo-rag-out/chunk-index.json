@@ -16,7 +16,15 @@
     "word_count": 30
   },
   {
-    "chunk_id": "docs/graphify-corpus/00-summary.md::производственные_блоки::260::0",
+    "chunk_id": "docs/graphify-corpus/00-summary.md::земельный_баланс_apk_100_000_га::260::0",
+    "source": "docs/graphify-corpus/00-summary.md",
+    "tier": "summary",
+    "block": "ядро",
+    "section": "Земельный баланс APK 100 000 га",
+    "word_count": 80
+  },
+  {
+    "chunk_id": "docs/graphify-corpus/00-summary.md::производственные_блоки::726::0",
     "source": "docs/graphify-corpus/00-summary.md",
     "tier": "summary",
     "block": "производство",
@@ -24,7 +32,7 @@
     "word_count": 65
   },
   {
-    "chunk_id": "docs/graphify-corpus/00-summary.md::ключевая_модель::647::0",
+    "chunk_id": "docs/graphify-corpus/00-summary.md::ключевая_модель::1113::0",
     "source": "docs/graphify-corpus/00-summary.md",
     "tier": "summary",
     "block": "ядро",
@@ -32,7 +40,7 @@
     "word_count": 15
   },
   {
-    "chunk_id": "docs/graphify-corpus/00-summary.md::фазы_и_capex_млрд_руб::758::0",
+    "chunk_id": "docs/graphify-corpus/00-summary.md::фазы_и_capex_млрд_руб::1224::0",
     "source": "docs/graphify-corpus/00-summary.md",
     "tier": "summary",
     "block": "ядро",
@@ -40,7 +48,7 @@
     "word_count": 30
   },
   {
-    "chunk_id": "docs/graphify-corpus/00-summary.md::финансовые_kpi_npv_тыс_руб_irr_при_10::914::0",
+    "chunk_id": "docs/graphify-corpus/00-summary.md::финансовые_kpi_npv_тыс_руб_irr_при_10::1380::0",
     "source": "docs/graphify-corpus/00-summary.md",
     "tier": "summary",
     "block": "финансы",
@@ -48,7 +56,7 @@
     "word_count": 65
   },
   {
-    "chunk_id": "docs/graphify-corpus/00-summary.md::поставщики::1213::0",
+    "chunk_id": "docs/graphify-corpus/00-summary.md::поставщики::1679::0",
     "source": "docs/graphify-corpus/00-summary.md",
     "tier": "summary",
     "block": "ядро",
@@ -56,7 +64,7 @@
     "word_count": 8
   },
   {
-    "chunk_id": "docs/graphify-corpus/00-summary.md::экспорт::1293::0",
+    "chunk_id": "docs/graphify-corpus/00-summary.md::экспорт::1759::0",
     "source": "docs/graphify-corpus/00-summary.md",
     "tier": "summary",
     "block": "рынок",
@@ -64,12 +72,12 @@
     "word_count": 12
   },
   {
-    "chunk_id": "docs/graphify-corpus/00-summary.md::связи_между_сущностями::1379::0",
+    "chunk_id": "docs/graphify-corpus/00-summary.md::связи_между_сущностями::1845::0",
     "source": "docs/graphify-corpus/00-summary.md",
     "tier": "summary",
     "block": "ядро",
     "section": "Связи между сущностями",
-    "word_count": 29
+    "word_count": 38
   },
   {
     "chunk_id": "docs/graphify-corpus/01-vvedenie-i-resume.md::меморандум_о_конфиденциальности::24::0",
@@ -3752,6 +3760,190 @@
     "word_count": 530
   },
   {
+    "chunk_id": "docs/graphify-corpus/07-docx-tables-critical.md::критичные_таблицы_тэо_восстановлены_из_docx::0::0",
+    "source": "docs/graphify-corpus/07-docx-tables-critical.md",
+    "tier": "summary",
+    "block": "финансы",
+    "section": "Критичные таблицы ТЭО (восстановлены из docx)",
+    "word_count": 28
+  },
+  {
+    "chunk_id": "docs/graphify-corpus/07-docx-tables-critical.md::земельный_баланс_таблица_3::334::0",
+    "source": "docs/graphify-corpus/07-docx-tables-critical.md",
+    "tier": "summary",
+    "block": "финансы",
+    "section": "Земельный баланс (таблица #3)",
+    "word_count": 91
+  },
+  {
+    "chunk_id": "docs/graphify-corpus/07-docx-tables-critical.md::индекс_критичных_таблиц::884::0",
+    "source": "docs/graphify-corpus/07-docx-tables-critical.md",
+    "tier": "summary",
+    "block": "финансы",
+    "section": "Индекс критичных таблиц",
+    "word_count": 213
+  },
+  {
+    "chunk_id": "docs/graphify-corpus/07-docx-tables-critical.md::связи::3511::0",
+    "source": "docs/graphify-corpus/07-docx-tables-critical.md",
+    "tier": "summary",
+    "block": "финансы",
+    "section": "Связи",
+    "word_count": 15
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T001-master-summary-phases.md::сводка_проекта_фазы_capex_мощности::0::0",
+    "source": "docs/teo-tables/critical/T001-master-summary-phases.md",
+    "tier": "tables",
+    "block": "производство",
+    "section": "Сводка проекта: фазы, CAPEX, мощности",
+    "word_count": 662
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T003-land-budget.md::земельный_баланс_100_000_га::0::0",
+    "source": "docs/teo-tables/critical/T003-land-budget.md",
+    "tier": "tables",
+    "block": "ядро",
+    "section": "Земельный баланс 100 000 га",
+    "word_count": 450
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T004-revenue-matrix.md::выручка_по_комплексам_местный_рынок::0::0",
+    "source": "docs/teo-tables/critical/T004-revenue-matrix.md",
+    "tier": "tables",
+    "block": "рынок",
+    "section": "Выручка по комплексам (местный рынок)",
+    "word_count": 545
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T005-export-revenue-matrix.md::выручка_экспорт_и_местный_рынок::0::0",
+    "source": "docs/teo-tables/critical/T005-export-revenue-matrix.md",
+    "tier": "tables",
+    "block": "рынок",
+    "section": "Выручка: экспорт и местный рынок",
+    "word_count": 613
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T007-npv-krolikovodstvo.md::npv_irr_кролиководство::0::0",
+    "source": "docs/teo-tables/critical/T007-npv-krolikovodstvo.md",
+    "tier": "tables",
+    "block": "кролиководство",
+    "section": "NPV/IRR кролиководство",
+    "word_count": 73
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T008-npv-teplitsy.md::npv_irr_теплицы::0::0",
+    "source": "docs/teo-tables/critical/T008-npv-teplitsy.md",
+    "tier": "tables",
+    "block": "теплицы",
+    "section": "NPV/IRR теплицы",
+    "word_count": 73
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T009-npv-zhivotnovodstvo.md::npv_irr_животноводство::0::0",
+    "source": "docs/teo-tables/critical/T009-npv-zhivotnovodstvo.md",
+    "tier": "tables",
+    "block": "животноводство",
+    "section": "NPV/IRR животноводство",
+    "word_count": 73
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T010-npv-rybovodstvo.md::npv_irr_рыбоводство::0::0",
+    "source": "docs/teo-tables/critical/T010-npv-rybovodstvo.md",
+    "tier": "tables",
+    "block": "рыбоводство",
+    "section": "NPV/IRR рыбоводство",
+    "word_count": 73
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T011-npv-maslozhir.md::npv_irr_масложировой::0::0",
+    "source": "docs/teo-tables/critical/T011-npv-maslozhir.md",
+    "tier": "tables",
+    "block": "масложировой",
+    "section": "NPV/IRR масложировой",
+    "word_count": 73
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T014-capex-by-phase.md::capex_по_фазам::0::0",
+    "source": "docs/teo-tables/critical/T014-capex-by-phase.md",
+    "tier": "tables",
+    "block": "финансы",
+    "section": "CAPEX по фазам",
+    "word_count": 112
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T021-krolik-farm-capex.md::кролиководческая_ферма_структура_затрат::0::0",
+    "source": "docs/teo-tables/critical/T021-krolik-farm-capex.md",
+    "tier": "tables",
+    "block": "кролиководство",
+    "section": "Кролиководческая ферма: структура затрат",
+    "word_count": 92
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T022-investment-schedule.md::график_внесения_инвестиций::0::0",
+    "source": "docs/teo-tables/critical/T022-investment-schedule.md",
+    "tier": "tables",
+    "block": "производство",
+    "section": "График внесения инвестиций",
+    "word_count": 305
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T236-staff-krolik.md::штатное_расписание_кролиководство::0::0",
+    "source": "docs/teo-tables/critical/T236-staff-krolik.md",
+    "tier": "tables",
+    "block": "кролиководство",
+    "section": "Штатное расписание: кролиководство",
+    "word_count": 846
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T237-staff-teplitsy.md::штатное_расписание_теплицы::0::0",
+    "source": "docs/teo-tables/critical/T237-staff-teplitsy.md",
+    "tier": "tables",
+    "block": "теплицы",
+    "section": "Штатное расписание: теплицы",
+    "word_count": 393
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T238-staff-zhivotnovodstvo.md::штатное_расписание_животноводство::0::0",
+    "source": "docs/teo-tables/critical/T238-staff-zhivotnovodstvo.md",
+    "tier": "tables",
+    "block": "животноводство",
+    "section": "Штатное расписание: животноводство",
+    "word_count": 1124
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T239-staff-rybovodstvo.md::штатное_расписание_рыбоводство::0::0",
+    "source": "docs/teo-tables/critical/T239-staff-rybovodstvo.md",
+    "tier": "tables",
+    "block": "рыбоводство",
+    "section": "Штатное расписание: рыбоводство",
+    "word_count": 540
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T240-staff-maslozhir.md::штатное_расписание_масложировой::0::0",
+    "source": "docs/teo-tables/critical/T240-staff-maslozhir.md",
+    "tier": "tables",
+    "block": "масложировой",
+    "section": "Штатное расписание: масложировой",
+    "word_count": 879
+  },
+  {
+    "chunk_id": "docs/teo-tables/critical/T241-taxes-payroll.md::налоги_и_страховые_взносы_по_блокам::0::0",
+    "source": "docs/teo-tables/critical/T241-taxes-payroll.md",
+    "tier": "tables",
+    "block": "финансы",
+    "section": "Налоги и страховые взносы по блокам",
+    "word_count": 364
+  },
+  {
+    "chunk_id": "docs/teo-tables/land-budget.yaml::land_budget::0::0",
+    "source": "docs/teo-tables/land-budget.yaml",
+    "tier": "tables",
+    "block": "ядро",
+    "section": "Земельный баланс",
+    "word_count": 42
+  },
+  {
     "chunk_id": "docs/teo/00-меморандум-о-конфиденциальности.md::меморандум_о_конфиденциальности::0::0",
     "source": "docs/teo/00-меморандум-о-конфиденциальности.md",
     "tier": "detail",
@@ -5128,6 +5320,22 @@
     "word_count": 148
   },
   {
+    "chunk_id": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md::табл_141_рецепты_комбикормов_для_кроликов::0::0",
+    "source": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md",
+    "tier": "detail",
+    "block": "кролиководство",
+    "section": "Табл. 141. Рецепты комбикормов для кроликов",
+    "word_count": 62
+  },
+  {
+    "chunk_id": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md::основные_методы_получения_удобрений_из_навоза::426::0",
+    "source": "docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md",
+    "tier": "detail",
+    "block": "кролиководство",
+    "section": "Основные методы получения удобрений из навоза",
+    "word_count": 1297
+  },
+  {
     "chunk_id": "docs/teo/126-огурцы-в-теплице-технология-выращивания.md::огурцы_в_теплице_технология_выращивания::0::0",
     "source": "docs/teo/126-огурцы-в-теплице-технология-выращивания.md",
     "tier": "detail",
@@ -5598,6 +5806,14 @@
     "block": "риски",
     "section": "12.3. Риски и аспекты неопределенности",
     "word_count": 530
+  },
+  {
+    "chunk_id": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md::бельгия_табл_42_весь_мир_мясо_и_пищевые_мясные_с::0::0",
+    "source": "docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md",
+    "tier": "detail",
+    "block": "прочее",
+    "section": "Бельгия | Табл. 42| Весь мир | Мясо и пищевые мясные субпродукты | Стоимость (долл. США) и Изменение стоимости, г/г (%) | 2019 - 2023",
+    "word_count": 1096
   },
   {
     "chunk_id": "docs/teo/28-производство-мяса-в-мире-по-странам-и-на-душу-населения.md::производство_мяса_в_мире_по_странам_и_на_душу_на::0::0",

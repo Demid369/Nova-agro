@@ -2,7 +2,11 @@
   "project": {
     "investment_bln_rub": 100.0,
     "revenue_bln_rub_year": 71.4,
-    "payback_years": 8
+    "payback_years": 8,
+    "land_total_apk_ha": 100000,
+    "land_construction_ha": 20000,
+    "land_other_ha": 19490,
+    "land_arable_ha": 80000
   },
   "blocks": {
     "земля": {
@@ -32,21 +36,18 @@
       "npv_thousand_rub": 2779519.0,
       "irr_pct": 15.19,
       "payback_months": 84,
-      "capex_bln_rub": 12.0,
-      "output": "7 000 т мяса/год (Meneghin Srl)",
-      "source": "docs/graphify-corpus/00-summary.md",
-      "section": "Финансовые KPI"
+      "notes": "Земля: 50 га",
+      "source": "docs/teo-tables/critical/T007-npv-krolikovodstvo.md",
+      "section": "NPV из docx"
     },
     "теплицы": {
       "block_id": "теплицы",
-      "label": "Теплицы 100 га",
+      "label": "Теплицы",
       "npv_thousand_rub": 33861691.0,
       "irr_pct": 28.99,
       "payback_months": 49,
-      "capex_bln_rub": 34.5,
-      "output": "18 400 т овощей, 376 млн цветов",
-      "source": "docs/graphify-corpus/00-summary.md",
-      "section": "Финансовые KPI"
+      "source": "docs/teo-tables/critical/T008-npv-teplitsy.md",
+      "section": "NPV из docx"
     },
     "животноводство": {
       "block_id": "животноводство",
@@ -54,10 +55,9 @@
       "npv_thousand_rub": 28915288.0,
       "irr_pct": 23.25,
       "payback_months": 61,
-      "capex_bln_rub": 40.0,
-      "output": "КРС 30 000, МРС 60 000, молоко 50 000 т",
-      "source": "docs/graphify-corpus/00-summary.md",
-      "section": "Финансовые KPI"
+      "notes": "Земля: 300 га",
+      "source": "docs/teo-tables/critical/T009-npv-zhivotnovodstvo.md",
+      "section": "NPV из docx"
     },
     "рыбоводство": {
       "block_id": "рыбоводство",
@@ -65,21 +65,19 @@
       "npv_thousand_rub": 3863808.0,
       "irr_pct": 17.19,
       "payback_months": 85,
-      "capex_bln_rub": 8.0,
-      "output": "70 000 белуг, 20 т икры/год",
-      "source": "docs/graphify-corpus/00-summary.md",
-      "section": "Финансовые KPI"
+      "notes": "Земля: 30 га",
+      "source": "docs/teo-tables/critical/T010-npv-rybovodstvo.md",
+      "section": "NPV из docx"
     },
     "масложировой": {
       "block_id": "масложировой",
-      "label": "Масложировой комбинат",
+      "label": "Масложировой",
       "npv_thousand_rub": 26826029.0,
       "irr_pct": 90.24,
       "payback_months": 15,
-      "capex_bln_rub": 5.5,
-      "output": "50 000 т масла, 33 000 т маргарина",
-      "source": "docs/graphify-corpus/00-summary.md",
-      "section": "Финансовые KPI"
+      "notes": "Земля: 30 га",
+      "source": "docs/teo-tables/critical/T011-npv-maslozhir.md",
+      "section": "NPV из docx"
     },
     "переработка": {
       "block_id": "переработка",
@@ -87,9 +85,77 @@
       "output": "кожа, халяльный желатин, кровяная мука",
       "source": "docs/graphify-corpus/00-summary.md",
       "section": "Производственные блоки"
+    },
+    "назначение": {
+      "block_id": "назначение",
+      "label": "Назначение",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "прочее": {
+      "block_id": "прочее",
+      "label": "------------",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "строительство_объектов": {
+      "block_id": "строительство_объектов",
+      "label": "Строительство объектов",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "тепличный_комплекс": {
+      "block_id": "тепличный_комплекс",
+      "label": "Тепличный комплекс",
+      "notes": "Земля: 100 га",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "другие": {
+      "block_id": "другие",
+      "label": "**Другие**",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "посевная_площадь": {
+      "block_id": "посевная_площадь",
+      "label": "Посевная площадь",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "энергия": {
+      "block_id": "энергия",
+      "label": "Подсолнечник",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "соя": {
+      "block_id": "соя",
+      "label": "Соя",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "прочие_культуры": {
+      "block_id": "прочие_культуры",
+      "label": "Прочие культуры",
+      "source": "docs/graphify-corpus/00-summary.md",
+      "section": "CAPEX"
+    },
+    "прочие_строительство": {
+      "block_id": "прочие_строительство",
+      "label": "Прочие Строительство",
+      "notes": "Земля: 19490 га",
+      "source": "docs/teo-tables/land-budget.yaml",
+      "section": "Земельный баланс"
     }
   },
   "built_from": [
-    "docs/graphify-corpus/00-summary.md"
+    "docs/graphify-corpus/00-summary.md",
+    "docs/teo-tables/critical/T007-npv-krolikovodstvo.md",
+    "docs/teo-tables/critical/T008-npv-teplitsy.md",
+    "docs/teo-tables/critical/T009-npv-zhivotnovodstvo.md",
+    "docs/teo-tables/critical/T010-npv-rybovodstvo.md",
+    "docs/teo-tables/critical/T011-npv-maslozhir.md",
+    "docs/teo-tables/land-budget.yaml"
   ]
 }

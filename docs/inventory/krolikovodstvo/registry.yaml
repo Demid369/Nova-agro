@@ -1,0 +1,429 @@
+# Реестр кролиководства baseline — источник для замены в новом ТЭО
+# action_on_replace: replace | adapt | archive | rebuild_index | keep_reference
+
+meta:
+  project: МОЯ МЕЧТА
+  block_id: кролиководство
+  block_label: Кролиководство
+  status: active_baseline
+  poultry: parked_later
+  generated_docx_dir: docs/inventory/krolikovodstvo/docx
+
+canonical_facts:
+  output_t_per_year: 7000
+  heads_million: 6
+  workshops_total: 81
+  workshops_rabbit: 69
+  capex_bln_rub: 12
+  npv_thousand_rub: 2779519
+  irr_pct: 15.19
+  payback_months: 84
+  price_rub_per_kg: 560
+  manure_t_per_year: 43800
+  slaughter_heads_per_hour: 2400
+  solar_mwh: 10
+  equipment: Meneghin Srl
+  slaughter_vendor: SINT Technologies
+  feed_vendor: F.lli FRAGOLA S.p.a.
+  genetics: ANCI
+  byproducts: [мех, шкурка, навоз]
+
+themes:
+  T01:
+    id: T01
+    name: Финансы блока
+    docx: T01-finance.docx
+    description: NPV, IRR, payback, CAPEX, цена реализации
+    action_on_replace: replace
+    sources:
+      - file: docs/graphify-corpus/00-summary.md
+        sections: [Производственные блоки, Фазы и CAPEX, Финансовые KPI]
+        role: project
+      - file: docs/1.2-слайд Фин модель.xlsx
+        note: "Приложение 3Б — структура инвестиций 100 млрд ₽ по блокам и источникам (ФНБ, ФРП, банки)"
+        role: finmodel
+      - file: docs/scenarios/baseline.yaml
+        path: blocks.кролиководство
+        role: structured
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: ["560 рубл", NPV, "7 000", "12 млрд"]
+        role: project
+      - file: teo-rag-out/kpi.json
+        path: blocks.кролиководство
+        role: index
+
+  T02:
+    id: T02
+    name: Масштаб и фаза проекта
+    docx: T02-scale-phase.docx
+    description: 6 млн голов, 7 000 т, 81 цех, I-фаза кролиководческой фермы
+    action_on_replace: replace
+    sources:
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        sections: ["2.3. Потенциал", I-ФАЗА, "81 цех", "69 цех"]
+        role: project
+      - file: docs/graphify-corpus/00-summary.md
+        sections: [Производственные блоки]
+        role: project
+      - file: docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md
+        role: source_teo
+      - file: docs/scenarios/baseline.yaml
+        path: blocks.кролиководство.output
+        role: structured
+
+  T03:
+    id: T03
+    name: Генетика и зоотехния
+    docx: T03-genetics-zootech.docx
+    description: ANCI, итальянская белая/пятнистая, F1, опоросы, откорм
+    action_on_replace: replace
+    sources:
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: [ANCI, итальянск, F1, пород, крольчих, опорос, "Самка кролика", "4–6 раз"]
+        role: project
+      - file: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+        sections: ["Кролики: особенности содержания", "Размножение", "Кормление"]
+        role: project
+        note: дубль teo/124 — сверять построчно
+
+  T04:
+    id: T04
+    name: Оборудование и инфраструктура фермы
+    docx: T04-equipment.docx
+    description: Meneghin Srl, клеточное содержание, 69 цехов интенсивного выращивания
+    action_on_replace: replace
+    sources:
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: [Meneghin, 69 цех, автоматиз]
+        role: project
+      - file: docs/graphify-corpus/00-summary.md
+        sections: [Поставщики]
+        role: project
+      - file: docs/scenarios/baseline.yaml
+        path: blocks.кролиководство.equipment
+        role: structured
+      - file: graphify-out/graph.json
+        nodes: [Meneghin Srl, Кролиководство]
+        role: index
+        action_on_replace: rebuild_index
+
+  T05:
+    id: T05
+    name: Убой и переработка мяса
+    docx: T05-slaughter-processing.docx
+    description: SINT Technologies 2400 г/ч, разделка, охлаждение, упаковка
+    action_on_replace: adapt
+    sources:
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: [SINT, "2400", бойн, убой, разделк]
+        role: project
+      - file: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+        sections:
+          - Технология переработки мяса кролика
+          - Охлаждение и хранение
+          - Первичная обработка
+          - Схема разделки
+          - технологического оборудования для переработки
+          - Выход мяса с кролика
+          - Оценка доброкачественности мяса
+        role: project
+        note: «Выход мяса» — пустой заголовок; текст под «Оценка доброкачественности»
+      - file: docs/scenarios/baseline.yaml
+        path: blocks.кролиководство.slaughter
+        role: structured
+
+  T06:
+    id: T06
+    name: Кормление и комбикорм
+    docx: T06-feed.docx
+    description: FRAGOLA, рецепты, табл. 141
+    action_on_replace: adapt
+    sources:
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: [FRAGOLA, кормовая база для кролик, комбикорм]
+        role: project
+      - file: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+        sections: ["Табл. 141", "комбикорм.*кролик"]
+        keywords: [полнорационные корма.*кролик, витамин.*кролик]
+        role: project
+      - file: docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md
+        role: source_teo
+      - file: docs/scenarios/baseline.yaml
+        path: blocks.кролиководство.feed
+        role: structured
+
+  T07:
+    id: T07
+    name: Побочная продукция и безотходность
+    docx: T07-byproducts.docx
+    description: навоз 43 800 т, мех, шкурка, компост, удобрение
+    action_on_replace: adapt
+    sources:
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: [навоз, "43 800", компост, шкурк, "мех крол"]
+        role: project
+      - file: docs/graphify-corpus/04-rynok-i-analitika.md
+        keywords: [навоз крол, удобрение из навоза, шкур]
+        role: project
+      - file: docs/scenarios/baseline.yaml
+        path: blocks.кролиководство.byproducts
+        role: structured
+      - file: docs/teo/134-корма-для-выращивания-рыбы-в-узв.md
+        role: source_teo
+        note: экология — отходы кроликов, навоз
+      - file: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+        keywords: [кроличий навоз, навоз кроликов]
+        role: project
+
+  T08:
+    id: T08
+    name: Энергия на ферме
+    docx: T08-energy.docx
+    description: солнечные панели 10 МВт·ч на кролиководческих фермах
+    action_on_replace: adapt
+    sources:
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: [солнечн, 10 МВт, кролиководческ]
+        role: project
+
+  T09:
+    id: T09
+    name: Рынок, SWOT, цены РФ
+    docx: T09-market-swot.docx
+    description: ниша крольчатины, SWOT, оптовые цены, популярность на внутреннем рынке
+    action_on_replace: replace
+    sources:
+      - file: docs/graphify-corpus/04-rynok-i-analitika.md
+        keywords: [SWOT, оптовые цены, популярность, кролиководческ, BusinesStat, Филе кролика, "1 070"]
+        role: project
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: [спрос на мясо кролика, диетич, детск, BusinesStat, "8,7%", шкурок кролик, "мех кролика"]
+        role: project
+      - file: docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md
+        role: source_teo
+        note: дубль цен из 04-rynok — сверять
+      - file: docs/teo/05-4-рынок-и-концепция-маркетинга.md
+        role: source_teo
+
+  T10:
+    id: T10
+    name: Экспорт проекта
+    docx: T10-export.docx
+    description: перспективные рынки экспорта мяса кролика (ЕС, Китай, арабские страны)
+    action_on_replace: replace
+    sources:
+      - file: docs/graphify-corpus/04-rynok-i-analitika.md
+        keywords: [экспорт.*крол, импортер.*крол, перспективные рынки]
+        role: project
+      - file: docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md
+        role: source_teo
+        note: HS-статистика — импортёры крольчатины
+
+  T11:
+    id: T11
+    name: Narrative и миссия проекта
+    docx: T11-narrative-mission.docx
+    description: формулировки целей, резюме, продовольственная безопасность
+    action_on_replace: replace
+    sources:
+      - file: docs/graphify-corpus/01-vvedenie-i-resume.md
+        keywords: [разведени.*кролик, специализ.*кролик, кролиководств]
+        role: project
+      - file: docs/teo/00-меморандум-о-конфиденциальности.md
+        role: source_teo
+        note: проверить дубли с 01-vvedenie
+
+  T12:
+    id: T12
+    name: Мировой рынок крольчатины
+    docx: T12-world-market-reference.docx
+    description: FAOSTAT, табл. 23/39, потребление по странам, прогнозы — заменим на птицу позже
+    action_on_replace: replace
+    sources:
+      - file: docs/graphify-corpus/04-rynok-i-analitika.md
+        sections: ["Мировой рынок крольчатины", "Табл. 23", "Табл. 39", FAOSTAT]
+        keywords: [кулинар, фенката, диетическ]
+        role: project_market
+      - file: docs/teo/08-мировой-рынок-крольчатины.md
+        role: source_teo
+      - file: docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md
+        role: source_teo
+
+  T13:
+    id: T13
+    name: Карта дублей teo → corpus
+    docx: T13-duplicates.docx
+    description: Служебный документ — дубли teo/corpus перед заменой блока
+    action_on_replace: keep_reference
+    sources: []
+
+# Карта дублей teo → corpus (для T13-duplicates.docx)
+duplicates_map:
+  - teo: docs/teo/124-кролики-особенности-содержания-и-разведения.md
+    corpus: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    corpus_anchor: "1411–1517"
+    status: duplicate
+    in_docx: false
+    note: canonical = corpus; не включать teo/124 в DOCX
+  - teo: docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md
+    corpus: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    corpus_anchor: "1519+"
+    status: duplicate
+    in_docx: true
+    note: в T06 через corpus + teo/125 как source_teo
+  - teo: docs/teo/08-мировой-рынок-крольчатины.md
+    corpus: docs/graphify-corpus/04-rynok-i-analitika.md
+    corpus_anchor: "481+"
+    status: duplicate
+    in_docx: true
+    note: T12 — оба источника
+  - teo: docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md
+    corpus: docs/graphify-corpus/04-rynok-i-analitika.md
+    corpus_anchor: "1819–1834"
+    status: duplicate
+    in_docx: true
+    note: T09 — цены крольчатины
+  - teo: docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md
+    corpus: docs/graphify-corpus/01-vvedenie-i-resume.md
+    corpus_anchor: "711+"
+    status: partial
+    in_docx: true
+    note: T02 — I-фаза, частичное пересечение
+  - teo: docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md
+    corpus: docs/graphify-corpus/01-vvedenie-i-resume.md
+    corpus_anchor: "1621"
+    status: partial
+    in_docx: true
+    note: T12 — FAO-абзац + полный teo/109
+  - teo: docs/teo/00-меморандум-о-конфиденциальности.md
+    corpus: docs/graphify-corpus/01-vvedenie-i-resume.md
+    status: duplicate
+    in_docx: true
+    note: T11 — narrative
+  - teo: docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md
+    corpus: docs/graphify-corpus/01-vvedenie-i-resume.md
+    status: duplicate
+    in_docx: false
+    note: дубль narrative — только corpus в DOCX
+  - teo: docs/teo/134-корма-для-выращивания-рыбы-в-узв.md
+    corpus: null
+    status: unique
+    in_docx: true
+    note: T07 — экология кроликов (3 строки), не дубль
+  - teo: docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md
+    corpus: docs/graphify-corpus/04-rynok-i-analitika.md
+    status: partial
+    in_docx: true
+    note: T10 — HS-импортёры кролика
+  - teo: docs/teo/07-виды-и-особенности-кожи-крс.md
+    corpus: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    status: partial
+    in_docx: false
+    note: 4 строки про корм кроликов — дубль T06
+  - teo: docs/teo/108-экспорт-товаров-группы-1517-маргарин-пригодные-для-употребле.md
+    corpus: null
+    status: episodic
+    in_docx: false
+    note: не проектный блок кроликов — не добавлять
+  - teo: docs/teo/05-4-рынок-и-концепция-маркетинга.md
+    corpus: docs/graphify-corpus/04-rynok-i-analitika.md
+    status: partial
+    in_docx: true
+    note: T09
+
+# Все файлы с упоминанием кроликов (полный список для замены/архива)
+all_source_files:
+  project_corpus:
+    - docs/graphify-corpus/00-summary.md
+    - docs/graphify-corpus/01-vvedenie-i-resume.md
+    - docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    - docs/graphify-corpus/04-rynok-i-analitika.md
+  source_teo_primary:
+    - docs/teo/124-кролики-особенности-содержания-и-разведения.md
+    - docs/teo/125-табл-141-рецепты-комбикормов-для-кроликов.md
+    - docs/teo/08-мировой-рынок-крольчатины.md
+    - docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md
+    - docs/teo/109-по-прогнозам-международной-организации-по-продовольствию-при.md
+  source_teo_secondary:
+    - docs/teo/00-меморандум-о-конфиденциальности.md
+    - docs/teo/05-4-рынок-и-концепция-маркетинга.md
+    - docs/teo/02-оон-в-мире-голодают-три-четверти-миллиарда-человек.md
+    - docs/teo/122-сельхозпроизводство-в-2024-году-снизилось-на-32.md
+    - docs/teo/108-экспорт-товаров-группы-1517-маргарин-пригодные-для-употребле.md
+    - docs/teo/134-корма-для-выращивания-рыбы-в-узв.md
+    - docs/teo/27-бельгия-табл-42-весь-мир-мясо-и-пищевые-мясные-субпродукты-с.md
+    - docs/teo/07-виды-и-особенности-кожи-крс.md
+  structured:
+    - docs/scenarios/baseline.yaml
+  system_rebuild_after_replace:
+    - teo-rag-out/kpi.json
+    - teo-rag-out/chunk-index.json
+    - teo-rag-out/bm25-index.json
+    - graphify-out/graph.json
+    - tests/teo-queries.yaml
+    - tests/teo-memory-seed.yaml
+    - scripts/teo_rag/kpi.py
+    - scripts/teo_rag/chunks.py
+
+rag_validation_queries:
+  - id: inv_q01
+    query: "NPV кролиководство"
+    expect: ["2779519", "2 779"]
+    expected_mode: vector
+    tags: [rabbit, inventory, npv]
+    sync_teo_queries: false
+  - id: inv_q02
+    query: "CAPEX кролиководства"
+    expect: ["12"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, capex]
+    sync_teo_queries: false
+  - id: inv_q03
+    query: "сколько тонн крольчатины"
+    expect: ["7000", "7 000"]
+    expected_mode: vector
+    tags: [rabbit, inventory, facts]
+    sync_teo_queries: false
+  - id: inv_q04
+    query: "Meneghin Srl"
+    expect: ["Meneghin"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, equipment]
+    sync_teo_queries: true
+  - id: inv_q05
+    query: "мировой рынок крольчатины"
+    expect: ["крол", "FAOSTAT"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, market]
+    sync_teo_queries: true
+  - id: inv_q06
+    query: "FRAGOLA корм кролик"
+    expect: ["FRAGOLA"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, feed]
+    sync_teo_queries: true
+  - id: inv_q07
+    query: "Оценка доброкачественности мяса кролика"
+    expect: ["доброкачествен"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, processing]
+    sync_teo_queries: true
+  - id: inv_q08
+    query: "BusinesStat цены крольчатины"
+    expect: ["BusinesStat", "крол"]
+    mode: hybrid
+    expected_mode: hybrid
+    tags: [rabbit, inventory, market]
+    sync_teo_queries: true
+  - id: inv_q09
+    query: "навоз кроликов 43800"
+    expect: ["43 800", "навоз"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, byproducts]
+    sync_teo_queries: true
+  - id: inv_q10
+    query: "генетика ANCI кролики"
+    expect: ["ANCI"]
+    expected_mode: hybrid
+    tags: [rabbit, inventory, genetics]
+    sync_teo_queries: true

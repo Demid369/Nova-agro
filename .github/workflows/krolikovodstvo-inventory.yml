@@ -1,0 +1,61 @@
+name: Krolikovodstvo inventory
+
+on:
+  pull_request:
+    paths:
+      - "docs/inventory/**"
+      - "docs/graphify-corpus/**"
+      - "docs/teo/**"
+      - "docs/teo-tables/**"
+      - "docs/scenarios/**"
+      - "scripts/krolikovodstvo_inventory.py"
+      - "scripts/generate-krolikovodstvo-docx.py"
+      - "scripts/validate-krolikovodstvo-rag.py"
+      - "scripts/sync-krolikovodstvo-queries.py"
+      - "scripts/teo_rag/**"
+      - "tests/teo-queries.yaml"
+      - "teo-rag-out/**"
+      - ".github/workflows/krolikovodstvo-inventory.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/inventory/**"
+      - "scripts/**"
+      - "tests/teo-queries.yaml"
+
+jobs:
+  inventory-and-rag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml python-docx rank_bm25 chromadb sentence-transformers
+
+      - name: Sync inventory queries (check)
+        run: python3 scripts/sync-krolikovodstvo-queries.py --check
+
+      - name: Validate TEO docx tables
+        run: python3 scripts/validate-teo-docx-tables.py
+
+      - name: Validate registry + docx-audit.json
+        run: python3 scripts/generate-krolikovodstvo-docx.py --skip-docx
+
+      - name: Build RAG index if Chroma missing
+        run: |
+          if [ ! -d teo-rag-out/chroma ] || [ -z "$(ls -A teo-rag-out/chroma 2>/dev/null)" ]; then
+            python3 scripts/build-teo-vector-index.py
+          fi
+
+      - name: RAG validation (strict, no live queries in CI)
+        run: python3 scripts/validate-krolikovodstvo-rag.py --strict --no-queries
+
+      - name: TEO system tests
+        run: python3 scripts/test-teo-system.py

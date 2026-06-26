@@ -13,3 +13,6 @@ notebooklm-export/
 graphify-out/memory/
 __pycache__/
 *.pyc
+
+# Generated poultry inventory DOCX (regenerate via scripts/generate-pticevodstvo-docx.py)
+docs/inventory/pticevodstvo/docx/*.docx

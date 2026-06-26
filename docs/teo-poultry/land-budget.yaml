@@ -1,0 +1,36 @@
+# Canonical land budget — птицеводство (Nova-Agro / второе ТЭО)
+# Утверждено: слот блока 400 га; участок под строительство ещё не выделен
+
+source: docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
+source_scenario: docs/scenarios/poultry-teo.yaml
+region: Запорожская область
+legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
+production_site: null
+cadastre: null
+placement_scheme: null
+permits: null
+
+# Базовая площадь APK — Запорожская область, 250 000 га.
+# Слот блока птицеводства 400 га; кадастр / схема / разрешения — позже.
+total_apk_ha: 250_000
+construction_ha: 20_000
+block_slot_ha: 400
+
+# Распределение слота 400 га (из сводного расчёта; застройка не масштабируется с верхней границей участка)
+blocks_ha:
+  застройка_птичники_упк_склады_абк: 90   # верхняя оценка диапазона 60–90 га
+  санитарно_защитная_зона: 120            # оценка; уточняется при проектировании
+  поля_под_помет_комpost: 100             # оценка
+  резерв_расширение: 90                   # остаток до 400
+
+byproducts_canon:
+  organic_input: помёт птицы
+  fertilizer_t_per_year: 43800
+  compost_capacity_t_per_hour: 5.0
+  solar_mwh: 10
+  aligned_with: docs/teo-poultry/energy-budget.yaml
+
+note: >
+  Review-pass R-01…R-04: слот 400 га; кадастр/схема/разрешения TBD (production_site null).
+  Запорожье (блок 1) vs Херсон (baseline блоки 2–5) — отдельные контуры до master merge.
+  CAPEX 12 000 и 118 птичников не зависят от кадастра. См. appendix/review-pass-notes.md.

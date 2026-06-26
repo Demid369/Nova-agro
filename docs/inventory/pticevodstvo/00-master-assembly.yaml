@@ -1,0 +1,175 @@
+# Манифест сборки master DOCX — птица вместо кроликов (draft)
+# Генерация: python3 scripts/generate-pticevodstvo-docx.py --master
+
+meta:
+  title: "ТЭО «МОЯ МЕЧТА» — птицеводство (master draft)"
+  subtitle: "I-фаза: замена кролиководства на комплекс «Нова-Агро» 12 млрд ₽"
+  output_docx: 00-master-teo-pticevodstvo-draft.docx
+  status: draft
+  baseline_docx: docs/1.ТЭО_МОЯ МЕЧТА.docx
+  plan: docs/teo-poultry/appendix/master-docx-assembly.md
+
+sections:
+  - id: front
+    title: "Меморандум и титул"
+    section_ref: "—"
+    action: adapt
+    note: "Front matter «Нова-Агро» — меморандум, титул, §1 resume, KPI, TOC"
+    sources:
+      - file: docs/teo-poultry/appendix/00-front-matter-nova-agro.md
+        role: primary
+
+  - id: s01
+    title: "1. Цель проекта (резюме)"
+    section_ref: "§1"
+    action: replace
+    note: "Краткое резюме — в front; здесь детальный сводный расчёт (без T11 — dedupe)"
+    sources:
+      - file: docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
+
+  - id: s02_customer
+    title: "2. Заказчик проекта"
+    section_ref: "§2"
+    action: replace
+    note: "§2.1–2.2; §2.3 — s02_potential"
+    sources:
+      - file: docs/teo-poultry/appendix/zakazchik-proekta.md
+
+  - id: s03_strategy
+    title: "3. Стратегия проекта"
+    section_ref: "§3"
+    action: replace
+    sources:
+      - file: docs/teo-poultry/appendix/strategiya-proekta.md
+
+  - id: s02_potential
+    title: "2.3. Потенциал и масштаб I-фазы"
+    section_ref: "§2.3"
+    action: replace
+    sources:
+      - theme: T02
+      - critical: T001-merged
+
+  - id: s04_market
+    title: "4. Рынок, SWOT, цены"
+    section_ref: "§4"
+    action: replace
+    sources:
+      - theme: T09
+      - theme: T12
+      - file: docs/teo-poultry/appendix/sensitivity-and-scenarios.md
+
+  - id: s04_export
+    title: "4.1.5 / 10. Экспорт"
+    section_ref: "§4 / §10"
+    action: adapt
+    sources:
+      - theme: T10
+      - file: docs/teo-poultry/appendix/export-apk-baseline-tab5.md
+      - critical: T005-export-revenue-matrix
+
+  - id: s05_materials
+    title: "5. Материалы и корма"
+    section_ref: "§5"
+    action: replace
+    sources:
+      - theme: T06
+      - critical: T141-P
+      - file: docs/teo-poultry/appendix/feed-recipes-table.md
+
+  - id: s05_energy
+    title: "5.3. Энергоресурсы"
+    section_ref: "§5.3"
+    action: adapt
+    sources:
+      - theme: T08
+      - file: docs/teo-poultry/energy-budget.yaml
+
+  - id: s06_location
+    title: "6. Месторасположение"
+    section_ref: "§6"
+    action: replace
+    sources:
+      - critical: T003-P
+      - file: docs/teo-poultry/land-budget.yaml
+
+  - id: s07_capacity
+    title: "7.1. Производственная мощность"
+    section_ref: "§7.1"
+    action: replace
+    sources:
+      - theme: T02
+      - critical: T022-P
+
+  - id: s07_technology
+    title: "7.2. Технология и оборудование"
+    section_ref: "§7.2"
+    action: replace
+    sources:
+      - theme: T03
+      - theme: T04
+      - theme: T05
+      - file: docs/teo-poultry/appendix/01-tehnologicheskiy-cikl.md
+      - file: docs/teo-poultry/appendix/vendors-equipment.md
+
+  - id: s08_org
+    title: "8–9. Оргструктура, штат, OPEX"
+    section_ref: "§8–§9"
+    action: replace
+    sources:
+      - file: docs/teo-poultry/appendix/02-zatraty-orgstruktura-shtat.md
+      - critical: T236-P
+      - critical: T241-P
+
+  - id: s10_schedule
+    title: "10. График и бюджет CAPEX"
+    section_ref: "§10"
+    action: replace
+    sources:
+      - critical: T022-P
+      - critical: T021-P
+      - file: docs/teo-poultry/appendix/financing-structure.md
+
+  - id: s11_poultry
+    title: "11. Финансы — блок птицы"
+    section_ref: "§11"
+    action: replace
+    sources:
+      - theme: T01
+      - file: docs/teo-poultry/appendix/dcf-policy.md
+      - critical: T007-P
+      - critical: T004-merged
+      - file: docs/teo-poultry/appendix/npv-irr-derived.md
+
+  - id: s11_apk_other
+    title: "11. NPV прочих блоков APK (as-is)"
+    section_ref: "§11"
+    action: baseline_as_is
+    note: "Сценарий C: CAPEX блоков 2–5 из T021-P"
+    sources:
+      - critical: T008-npv-teplitsy
+      - critical: T009-npv-zhivotnovodstvo
+      - critical: T010-npv-rybovodstvo
+      - critical: T011-npv-maslozhir
+      - critical: T014-capex-by-phase
+
+  - id: s12
+    title: "12. Выводы и риски"
+    section_ref: "§12"
+    action: replace
+    sources:
+      - file: docs/teo-poultry/appendix/06-vyvody-i-riski.md
+
+  - id: s07_byproducts
+    title: "7. Побочная продукция"
+    section_ref: "§7"
+    action: adapt
+    sources:
+      - theme: T07
+
+baseline_as_is_corpus:
+  note: "Не включается в master draft автоматически — только critical tables и ссылки"
+  files:
+    - docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    - docs/graphify-corpus/04-rynok-i-analitika.md
+    - docs/graphify-corpus/05-finansy-i-byudzhet.md

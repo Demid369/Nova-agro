@@ -1,0 +1,195 @@
+{
+  "base": {
+    "name": "База (II кв. 2026)",
+    "revenue_mln": 5559.16,
+    "opex_mln": 3342.93,
+    "ebitda_mln": 2216.23,
+    "margin_pct": 39.9,
+    "payback_yr": 5.41,
+    "npv_16y_mln": 2253.2,
+    "irr_16y_pct": 12.82,
+    "note": ""
+  },
+  "sensitivity": [
+    {
+      "name": "База (II кв. 2026)",
+      "revenue_mln": 5559.16,
+      "opex_mln": 3342.93,
+      "ebitda_mln": 2216.23,
+      "margin_pct": 39.9,
+      "payback_yr": 5.41,
+      "npv_16y_mln": 2253.2,
+      "irr_16y_pct": 12.82,
+      "note": ""
+    },
+    {
+      "name": "Яйцо −15%",
+      "revenue_mln": 5397.88,
+      "opex_mln": 3342.93,
+      "ebitda_mln": 2054.95,
+      "margin_pct": 38.1,
+      "payback_yr": 5.84,
+      "npv_16y_mln": 1250.6,
+      "irr_16y_pct": 11.6,
+      "note": "153,6 млн шт × 5,95 ₽"
+    },
+    {
+      "name": "Яйцо −30%",
+      "revenue_mln": 5236.6,
+      "opex_mln": 3342.93,
+      "ebitda_mln": 1893.67,
+      "margin_pct": 36.2,
+      "payback_yr": 6.34,
+      "npv_16y_mln": 248.0,
+      "irr_16y_pct": 10.32,
+      "note": "профицит рынка"
+    },
+    {
+      "name": "Корм +15%",
+      "revenue_mln": 5559.16,
+      "opex_mln": 3623.12,
+      "ebitda_mln": 1936.04,
+      "margin_pct": 34.8,
+      "payback_yr": 6.2,
+      "npv_16y_mln": 511.4,
+      "irr_16y_pct": 10.66,
+      "note": "28 000 → 32 200 ₽/т"
+    },
+    {
+      "name": "Корм +20%",
+      "revenue_mln": 5559.16,
+      "opex_mln": 3716.52,
+      "ebitda_mln": 1842.64,
+      "margin_pct": 33.1,
+      "payback_yr": 6.51,
+      "npv_16y_mln": -69.2,
+      "irr_16y_pct": 9.91,
+      "note": "стресс сырья"
+    },
+    {
+      "name": "Бройлер −10%",
+      "revenue_mln": 5210.17,
+      "opex_mln": 3342.93,
+      "ebitda_mln": 1867.24,
+      "margin_pct": 35.8,
+      "payback_yr": 6.43,
+      "npv_16y_mln": 83.7,
+      "irr_16y_pct": 10.11,
+      "note": "205 → 184,5 ₽/кг"
+    },
+    {
+      "name": "Ramp 85% (как 2029)",
+      "revenue_mln": 4725.29,
+      "opex_mln": 2941.78,
+      "ebitda_mln": 1783.51,
+      "margin_pct": 37.7,
+      "payback_yr": 6.73,
+      "npv_16y_mln": -436.8,
+      "irr_16y_pct": 9.42,
+      "note": "выручка ×0,85; OPEX ×0,88 (часть постоянных)"
+    },
+    {
+      "name": "Комбинированный стресс",
+      "revenue_mln": 5173.88,
+      "opex_mln": 3623.12,
+      "ebitda_mln": 1550.76,
+      "margin_pct": 30.0,
+      "payback_yr": 7.74,
+      "npv_16y_mln": -1883.7,
+      "irr_16y_pct": 7.41,
+      "note": "яйцо −20%, бройлер −5%, корм +15%"
+    },
+    {
+      "name": "Оптимист (+5% цены мясо+яйцо)",
+      "revenue_mln": 5808.53,
+      "opex_mln": 3342.93,
+      "ebitda_mln": 2465.6,
+      "margin_pct": 42.4,
+      "payback_yr": 4.87,
+      "npv_16y_mln": 3803.4,
+      "irr_16y_pct": 14.63,
+      "note": ""
+    }
+  ],
+  "export": [
+    {
+      "scenario": "Птица: весь сбыт РФ (finmodel)",
+      "export_mln_rub": 0,
+      "revenue_mln": 5559.2,
+      "ebitda_mln": 2216.2,
+      "npv_16y_mln": 2253.2,
+      "irr_pct": 12.82,
+      "note": "мясо, яйцо, удобрение — 0% export"
+    },
+    {
+      "scenario": "APK Tab#5: Натуральная кожа (КРС+МРС)",
+      "export_mln_rub": 1478.5,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "consolidated APK; не в NPV finmodel 12 млрд"
+    },
+    {
+      "scenario": "APK Tab#5: Желатин халяльный",
+      "export_mln_rub": 3840.0,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "consolidated APK; не в NPV finmodel 12 млрд"
+    },
+    {
+      "scenario": "APK Tab#5: Шерсть овец",
+      "export_mln_rub": 90.0,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "consolidated APK; не в NPV finmodel 12 млрд"
+    },
+    {
+      "scenario": "APK Tab#5: Чёрная икра белуги",
+      "export_mln_rub": 4800.0,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "consolidated APK; не в NPV finmodel 12 млрд"
+    },
+    {
+      "scenario": "ИТОГО APK экспорт (блок 1)",
+      "export_mln_rub": 10208.5,
+      "revenue_mln": null,
+      "ebitda_mln": null,
+      "npv_16y_mln": null,
+      "irr_pct": null,
+      "note": "10 208 млн ≈ 10,2 млрд; export-apk-baseline-tab5.md"
+    }
+  ],
+  "apk_100": [
+    {
+      "name": "A: замена 1:1 (+958,5)",
+      "total_mln": 100958.5,
+      "delta": 958.5
+    },
+    {
+      "name": "B: птица = 11 041,5 (как кролики)",
+      "total_mln": 100000.0,
+      "delta": 0,
+      "poultry_capex": 11041.5
+    },
+    {
+      "name": "C: птица 12 000, остальные −958,5 пропорц.",
+      "total_mln": 100000.0,
+      "delta": 0.0,
+      "blocks_mln": {
+        "Птица / кролики (блок 1)": 12000,
+        "Теплицы": 34128.3,
+        "Животноводство": 27162.6,
+        "Рыба": 8903.0,
+        "Масложир": 17806.1
+      }
+    }
+  ]
+}

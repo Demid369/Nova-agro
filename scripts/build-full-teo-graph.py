@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "graphify-out"
 CORPUS_DIRS = [ROOT / "docs" / "graphify-corpus", ROOT / "docs" / "teo"]
+TEO_TABLES_CRITICAL = ROOT / "docs" / "teo-tables" / "critical"
 
 REL_DOC = "references"
 REL_HIER = "conceptually_related_to"
@@ -521,6 +522,11 @@ def main() -> int:
     all_edges.extend(cross)
     add_project_backbone(all_nodes, all_edges, str(CORPUS_DIRS[0] / "00-summary.md"))
 
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from teo_tables_graph import add_docx_tables_to_graph  # noqa: E402
+
+    add_docx_tables_to_graph(all_nodes, all_edges)
+
     # dedupe edges
     seen_e = set()
     deduped_edges = []
@@ -581,6 +587,16 @@ def main() -> int:
     to_json(G, communities, str(OUT / "graph.json"), community_labels=labels, force=True)
     to_html(G, communities, str(OUT / "graph.html"), community_labels=labels, node_limit=5000)
     (OUT / ".graphify_python").write_text(sys.executable, encoding="utf-8")
+
+    manifest_files = {str(p): {"md5": "extracted"} for p in files}
+    for p in sorted(TEO_TABLES_CRITICAL.glob("*.md")):
+        if p.name.lower() != "readme.md":
+            manifest_files[str(p)] = {"md5": "docx-table"}
+    manifest_files[str(ROOT / "docs" / "teo-tables" / "land-budget.yaml")] = {"md5": "docx-table"}
+    (OUT / "manifest.json").write_text(
+        json.dumps({"version": 1, "root": str(ROOT), "files": manifest_files}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
     print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges, {len(communities)} communities")
     return 0
