@@ -35,7 +35,7 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 
 | # | Пробел | У кроликов | У птицы сейчас |
 |---|--------|------------|----------------|
-| 1 | **Master DOCX + 241 таблица** | `1.ТЭО_МОЯ МЕЧТА.docx` → `teo-tables/` | finmodel xlsx + 3 incoming docx; **critical T001-P…T236-P** (8 шт.); **нет единого master DOCX** |
+| 1 | **Master DOCX + 241 таблица** | `1.ТЭО_МОЯ МЕЧТА.docx` → `teo-tables/` | finmodel + critical T001-P…; **план сборки:** [`appendix/master-docx-assembly.md`](appendix/master-docx-assembly.md) |
 | 2 | **Пакет T01–T12 DOCX** | `generate-krolikovodstvo-docx.py` | только **md** |
 | 3 | **RAG / graph / audit** | corpus, 50 queries, docx-audit | **draft**, не в индексе |
 | 4 | **Вендоры + пропускная способность** | Meneghin, SINT 2400 г/ч | **Facco + SINT poultry 6000 + FRAGOLA/PRIMERANO/ASTORIOS** |
