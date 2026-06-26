@@ -31,6 +31,6 @@ byproducts_canon:
   aligned_with: docs/teo-poultry/energy-budget.yaml
 
 note: >
-  Базовая площадь APK 250 000 га (Запорожская область). Слот блока 400 га; участок не выделен —
-  кадастр, схема размещения и разрешительная база будут позже. CAPEX и 118 птичников не зависят
-  от выбора 150 vs 400 га внутри слота. Встройка 12 млрд в контур 100 млрд: apk-100bln-integration.md.
+  Review-pass R-01…R-04: слот 400 га; кадастр/схема/разрешения TBD (production_site null).
+  Запорожье (блок 1) vs Херсон (baseline блоки 2–5) — отдельные контуры до master merge.
+  CAPEX 12 000 и 118 птичников не зависят от кадастра. См. appendix/review-pass-notes.md.
