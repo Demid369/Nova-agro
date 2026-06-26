@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-26T07:19:22.587309+00:00",
-  "registry_hash": "32721b470069",
+  "generated_at": "2026-06-26T07:32:23.426325+00:00",
+  "registry_hash": "e095c3416b56",
   "summary": {
     "themes": 12,
     "critical_tables": 10,
@@ -54,8 +54,8 @@
       "sources": [
         {
           "kind": "file",
-          "path": "docs/teo/00-меморандум-о-конфиденциальности.md",
-          "label": "docs/teo/00-меморандум-о-конфиденциальности.md"
+          "path": "docs/teo-poultry/appendix/00-front-matter-nova-agro.md",
+          "label": "docs/teo-poultry/appendix/00-front-matter-nova-agro.md"
         }
       ],
       "source_count": 1
@@ -66,17 +66,12 @@
       "action": "replace",
       "sources": [
         {
-          "kind": "theme",
-          "path": "docs/teo-poultry/T11-narrative-mission.md",
-          "label": "T11 — Narrative"
-        },
-        {
           "kind": "file",
           "path": "docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md",
           "label": "docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md"
         }
       ],
-      "source_count": 2
+      "source_count": 1
     },
     {
       "id": "s02_potential",

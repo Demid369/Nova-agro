@@ -14,17 +14,17 @@ sections:
     title: "Меморандум и титул"
     section_ref: "—"
     action: adapt
-    note: "Baseline меморандум; бренд/регион блока 1 — Нова-Агро, Запорожье"
+    note: "Front matter «Нова-Агро» — меморандум, титул, §1 resume, KPI, TOC"
     sources:
-      - file: docs/teo/00-меморандум-о-конфиденциальности.md
-        role: baseline_as_is
+      - file: docs/teo-poultry/appendix/00-front-matter-nova-agro.md
+        role: primary
 
   - id: s01
     title: "1. Цель проекта (резюме)"
     section_ref: "§1"
     action: replace
+    note: "Краткое резюме — в front; здесь детальный сводный расчёт (без T11 — dedupe)"
     sources:
-      - theme: T11
       - file: docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
 
   - id: s02_potential

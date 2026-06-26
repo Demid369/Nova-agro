@@ -11,6 +11,7 @@ meta:
   content_dir: docs/teo-poultry
   generated_docx_dir: docs/inventory/pticevodstvo/docx
   master_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
+  front_matter: docs/teo-poultry/appendix/00-front-matter-nova-agro.md
 
 canonical_facts:
   capex_bln_rub: 12

@@ -21,8 +21,8 @@
 
 | § | Раздел оригинала | AS-IS (без правок) | ЗАМЕНА (птица) | Статус птицы |
 |---|------------------|--------------------|----------------|--------------|
-| — | Меморандум, титул | `graphify-corpus/01-vvedenie` (начало) | **Новый** front matter «Нова-Агро» | ❌ нет |
-| 1 | Цель, резюме | APK narrative (общее) | `T11-narrative-mission.md`, `appendix/03-svodnyy-raschet` | ✅ draft |
+| — | Меморандум, титул | `graphify-corpus/01-vvedenie` (начало) | [`00-front-matter-nova-agro.md`](00-front-matter-nova-agro.md) | ✅ draft |
+| 1 | Цель, резюме | APK narrative (общее) | front matter §1 + `appendix/03-svodnyy-raschet` (T11 dedupe) | ✅ draft |
 | 2 | Заказчик | baseline «МОЯ МЕЧТА» / Херсон | **ООО «Нова-Агро»**, Мелитополь — только блок 1 | ⚠️ частично |
 | 2.3 | Потенциал | I-фаза **кролики** в `01-vvedenie` | `T02-scale-phase.md`, `T001-P` | ✅ |
 | 3 | Стратегия | общие формулировки APK | адаптировать §3 под птицу | ⚠️ |

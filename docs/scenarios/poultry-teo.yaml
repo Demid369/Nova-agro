@@ -48,6 +48,8 @@ project:
   land_ha: 400
   land_ha_planning_note: "APK 250 000 га Запорожская обл.; слот 400 га; кадастр/схема/разрешения — позже"
   apk_100bln_integration: docs/teo-poultry/appendix/apk-100bln-integration.md
+  front_matter: docs/teo-poultry/appendix/00-front-matter-nova-agro.md
+  master_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
   note: "Отдельный блок 12 млрд ₽; APK птицы 250 000 га; не путать с baseline холдинга 100 000 га (Херсон)"
 
   dcf_policy:
@@ -176,6 +178,7 @@ content_sources:
     - docs/teo-poultry/_incoming/03-svodnyy-raschet-kompleksa.docx
     - docs/teo-poultry/_incoming/finmodel-pticekompleks-12-mlrd.xlsx
   appendix:
+    - docs/teo-poultry/appendix/00-front-matter-nova-agro.md
     - docs/teo-poultry/appendix/01-tehnologicheskiy-cikl.md
     - docs/teo-poultry/appendix/02-zatraty-orgstruktura-shtat.md
     - docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md

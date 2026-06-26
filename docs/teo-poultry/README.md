@@ -44,9 +44,9 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | 7 | **Экспорт** | Tab#5 baseline на блок 1 | `export-apk-baseline-tab5.md` |
 | 8 | **Земля: кадастр, схема, разрешения** | T003 land budget | `production_site: null` |
 | 9 | **Выводы + реестр рисков** | `graphify-corpus/06-vyvody-i-riski.md` | **draft** [`appendix/06-vyvody-i-riski.md`](appendix/06-vyvody-i-riski.md) — §12.3, 15 рисков R-P01…R-P15 |
-| 10 | **Меморандум / front matter** | `00-меморандум-о-конфиденциальности.md` | нет |
+| 10 | **Меморандум / front matter** | `00-меморандум-о-конфиденциальности.md` | **draft** [`appendix/00-front-matter-nova-agro.md`](appendix/00-front-matter-nova-agro.md) |
 | 11 | **Качество переработки / выход** | corpus T05 | T05 — 16 строк |
-| 12 | **NPV-методология vs tab#7** | 10 лет, единый горизонт | 16 лет DCF — **политика не зафиксирована** |
+| 12 | **NPV-методология vs tab#7** | 10 лет, единый горизонт | **16 лет** — [`appendix/dcf-policy.md`](appendix/dcf-policy.md) |
 
 **Уже не хуже / лучше кроликов:** finmodel (NPV/IRR, чувствительность), штат 476 FTE, energy canon, APK-100, multi-product.
 
