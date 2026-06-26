@@ -14,5 +14,8 @@ graphify-out/memory/
 __pycache__/
 *.pyc
 
-# Generated poultry inventory DOCX (regenerate via scripts/generate-pticevodstvo-docx.py)
+# Generated poultry inventory DOCX (regenerate via scripts)
 docs/inventory/pticevodstvo/docx/*.docx
+# Extracted baseline media (~64 MB) — regenerate via build-teo-poultry-from-baseline.py --extract-media
+docs/inventory/pticevodstvo/media/*
+!docs/inventory/pticevodstvo/media/image-map.json

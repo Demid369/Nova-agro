@@ -1,0 +1,67 @@
+# Замены в baseline DOCX → ТЭО птица (images AS-IS)
+# Индексы таблиц — 1-based (как manifest / Word #)
+
+meta:
+  baseline: docs/1.ТЭО_МОЯ МЕЧТА.docx
+  output: docs/inventory/pticevodstvo/docx/1.ТЭО_МОЯ_МЕЧТА_ПТИЦА.docx
+  media_map: docs/inventory/pticevodstvo/media/image-map.json
+  report: docs/inventory/pticevodstvo/reports/baseline-poultry-run-jun2026.md
+
+# Critical tables — полная замена содержимого (лишние строки очищаются)
+table_replacements:
+  1: docs/teo-tables/critical/T001-master-summary-phases-poultry.md
+  3: docs/teo-tables/critical/T003-land-budget-pticevodstvo.md
+  4: docs/teo-tables/critical/T004-revenue-matrix-patched.md
+  7: docs/teo-tables/critical/T007-npv-pticevodstvo.md
+  14: docs/teo-tables/critical/T014-capex-by-phase.md  # patch via T021-P row only — see patch_cells
+  21: docs/teo-tables/critical/T021-pticevodstvo-capex.md
+  22: docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md
+  236: docs/teo-tables/critical/T236-staff-pticevodstvo.md
+  241: docs/teo-tables/critical/T241-taxes-payroll-poultry.md
+
+# Таблицы блока 1 без poultry-md — очистить (кролик narrative tables)
+clear_tables: []
+
+# Параграфы с w:drawing — не трогать (картинки + подписи — замените позже)
+preserve_paragraphs_with_images: true
+
+# Текстовые замены (regex) — только параграфы БЕЗ drawing
+text_replacements:
+  - pattern: "Кролиководческая ферма"
+    replace: "Птицеводческий комплекс «Нова-Агро»"
+  - pattern: "кролиководческой фермы"
+    replace: "птицеводческого комплекса"
+  - pattern: "кролиководческих ферм"
+    replace: "птичников"
+  - pattern: "Кролиководство \\(6 млн\\.? голов\\)"
+    replace: "Птицеводство (118 птичников / 2,15 млн голов одновременно)"
+  - pattern: "7 000 тн мяса"
+    replace: "18 170 тн мяса птицы"
+  - pattern: "7\\s*000\\s*т"
+    replace: "18 170 т"
+  - pattern: "Meneghin"
+    replace: "Facco"
+  - pattern: "ANCI"
+    replace: "ROSS 308 / Hisex"
+  - pattern: "SINT\\s*2\\s*400|SINT 2 400|2 400 гол/ч"
+    replace: "SINT 6 000"
+  - pattern: "2400 гол/ч"
+    replace: "6000 гол/ч"
+  - pattern: "300 единиц"
+    replace: "476 единиц"
+  - pattern: "300 FTE"
+    replace: "476 FTE"
+  - pattern: "итальянск(ой|ая|ие) технолог(ии|ия) по разведению кроликов"
+    replace: "технологии птицеводства полного цикла (Facco, SINT)"
+  - pattern: "Кролиководство"
+    replace: "Птицеводство"
+  - pattern: "кролиководство"
+    replace: "птицеводство"
+
+# Footnote в начало (после меморандума) — paragraph index ~5
+insert_review_footnote_after_para: 8
+review_footnote: >
+  Блок I-фазы заменён на птицеводство «Нова-Агро» 12 млрд ₽ (сценарий APK C).
+  Изображения кролиководства сохранены на местах — подлежат замене.
+  KPI: CAPEX 12 000; выручка 5 559; NPV +2 253 @10% 16 лет; IRR 12,8%; 476 FTE.
+  Review-pass R-01…R-05: docs/teo-poultry/appendix/review-pass-notes.md

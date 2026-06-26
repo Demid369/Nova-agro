@@ -1,6 +1,23 @@
 # Инвентарь птицеводства (draft)
 
-**Статус:** standalone **PASS** + **investor-ready** (jun 2026). Corpus merge pipeline — **started**. RAG/graph — по approval.
+**Статус:** **baseline TEO → птица ~694 стр.** (images AS-IS) + investor-ready. RAG — по approval.
+
+## Baseline TEO → птица (основной артефакт)
+
+```bash
+python3 scripts/build-teo-poultry-from-baseline.py
+# --extract-media → media/* (346 files, gitignored)
+```
+
+| DOCX | ~стр. | Описание |
+|------|-------|----------|
+| **`1.ТЭО_МОЯ_МЕЧТА_ПТИЦА.docx`** | **~694** | Оригинал layout + 346 images + poultry tables/KPI |
+| `00-master-teo-pticevodstvo-draft.docx` | ~60–80 | md standalone |
+| `00-apk-master-teo-full-draft.docx` | ~220–250 | md corpus (без images) |
+
+Отчёт: [`reports/baseline-poultry-run-jun2026.md`](reports/baseline-poultry-run-jun2026.md)  
+Карта картинок: [`media/image-map.json`](media/image-map.json)  
+Правила замены: [`poultry-baseline-replace.yaml`](poultry-baseline-replace.yaml)
 
 ## Investor-ready
 
@@ -47,6 +64,7 @@ python3 scripts/generate-pticevodstvo-docx.py --master-only
 |------|------------|
 | `00-index-pticevodstvo.docx` | KPI + оглавление тем |
 | `t01-…` … `t12-…` | Темы из `docs/teo-poultry/T*.md` |
+| **`1.ТЭО_МОЯ_МЕЧТА_ПТИЦА.docx`** | **Baseline → птица, ~694 стр., 346 images** |
 | **`00-master-teo-pticevodstvo-draft.docx`** | Master draft по `00-master-assembly.yaml` |
 | **`00-apk-master-teo-full-draft.docx`** | APK full: standalone + corpus + appendix A |
 
