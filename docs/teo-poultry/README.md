@@ -1,5 +1,8 @@
 # ТЭО «МОЯ МЕЧТА» — блок птицеводства (draft)
 
+
+> **Карта:** [`docs/teo/INDEX.md`](../teo/INDEX.md) · **Pipeline:** [`inventory/pticevodstvo/pipeline/`](../inventory/pticevodstvo/pipeline/)
+
 **Статус:** черновик с **реальными материалами Нова-Агро** (июнь 2026).  
 **Baseline (кролики)** не тронут.
 
