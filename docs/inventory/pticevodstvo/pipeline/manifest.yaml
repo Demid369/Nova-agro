@@ -33,6 +33,40 @@ phases:
     skip_flag: --skip-phase4
     description: §4 export + RF rabbit market tail → poultry T10
 
+  - id: phase5
+    config: docs/inventory/pticevodstvo/pipeline/phase5-front.yaml
+    script: scripts/apply-teo-poultry-phase3.py
+    skip_flag: --skip-phase5
+    description: §1–§3 front matter + APK concept
+
+  - id: phase6
+    config: docs/inventory/pticevodstvo/pipeline/phase6-rf-market.yaml
+    script: scripts/apply-teo-poultry-phase3.py
+    skip_flag: --skip-phase6
+    description: §4 SWOT, RF poultry market, pricing T09
+
+  - id: phase7
+    config: docs/inventory/pticevodstvo/pipeline/phase7-conclusions.yaml
+    script: scripts/apply-teo-poultry-phase3.py
+    skip_flag: --skip-phase7
+    description: §8–§12 narrative + §7.2.2 env
+
+  - id: phase8
+    config: docs/inventory/pticevodstvo/pipeline/phase8-cleanup.yaml
+    script: scripts/apply-teo-poultry-phase3.py
+    skip_flag: --skip-phase8
+    description: Global regex cleanup (residual кролик)
+
+  - id: phase9
+    config: docs/inventory/pticevodstvo/pipeline/phase9-media.yaml
+    script: scripts/apply-teo-poultry-phase3.py
+    skip_flag: --skip-phase9
+    description: Media caption pass (binaries AS-IS)
+
+  - id: phase10
+    script: scripts/verify-baseline-poultry-docx.py
+    description: QA verify drawings + KPI + krolik count
+
 outputs:
   primary_docx: docs/inventory/pticevodstvo/docx/1.ТЭO_МOЯ_МEЧTA_ПTIЦA.docx
   media_map: docs/inventory/pticevodstvo/media/image-map.json

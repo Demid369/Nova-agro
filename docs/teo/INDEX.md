@@ -71,7 +71,15 @@ docs/
 | 1 | `phase1-tables.yaml` | Critical tables + regex block 1 |
 | 2 | `phase2-section7.yaml` | §7 технологический цикл + Tab P-141 |
 | 3 | `phase3-market.yaml` | §4 market, genetics, Tab 140/23/39-P |
-| 4 | `phase4-export.yaml` | §4 export rabbit tail, §4.2 RF market |
+| 4 | `phase4-export.yaml` | §4 export tail → T10 |
+| 5 | `phase5-front.yaml` | §1–§3 front + APK concept |
+| 6 | `phase6-rf-market.yaml` | §4 SWOT, RF market, pricing |
+| 7 | `phase7-conclusions.yaml` | §8–§12 + §7.2.2 env |
+| 8 | `phase8-cleanup.yaml` | Global regex cleanup |
+| 9 | `phase9-media.yaml` | Media captions (PNG TBD) |
+| 10 | `verify-baseline-poultry-docx.py` | QA: 394 drawings, KPI, krolik ≤80 |
+
+Отчёт: [`reports/baseline-poultry-final-jun2026.md`](../inventory/pticevodstvo/reports/baseline-poultry-final-jun2026.md)
 
 ---
 

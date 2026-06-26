@@ -1,0 +1,31 @@
+# Phase 9 — binary images (placeholder captions; PNG assets TBD in _incoming/)
+# Запуск replace-docx-media.py после появления assets.
+
+caption_replacements:
+  - pattern: "кролиководств"
+    replace: "птицеводств"
+  - pattern: "разведению кроликов"
+    replace: "выращиванию птицы (Facco)"
+  - pattern: "линии по переработке кролика"
+    replace: "Линии переработки птицы — SINT 6 000 гол/ч"
+  - pattern: "ферма кроликов"
+    replace: "птичник «Нова-Агро»"
+  - pattern: "клеточное кролиководство"
+    replace: "бройлерное птицеводство (Facco)"
+
+media_slots:
+  - media: image7.jpeg
+    note: "Block I hero — poultry render TBD (_incoming/)"
+  - media: image8.jpeg
+    note: "Facco house — TBD"
+  - media: image9.jpeg
+    note: "SINT line — TBD"
+  - media: image311.jpeg
+    note: "Genetics ROSS 308 — TBD"
+  - media: image312.jpeg
+    note: "Incubator — TBD"
+  - media: image313.jpeg
+    note: "Processing — TBD"
+
+review_footnote_update: >
+  Phase 9: image binaries AS-IS (394 drawings). Run replace-docx-media.py when PNG ready.

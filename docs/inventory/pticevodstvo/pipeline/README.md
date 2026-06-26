@@ -11,8 +11,14 @@
 | 2 | [`phase2-section7.yaml`](phase2-section7.yaml) | `apply-teo-poultry-phase2.py` | §7 narrative (`appendix/01-tehnologicheskiy-cikl.md`) + Tab P-141 |
 | 3 | [`phase3-market.yaml`](phase3-market.yaml) | `apply-teo-poultry-phase3.py` | Block1 marketing, T03 genetics, §4 product/world, Tab 140/23/39-P |
 | 4 | [`phase4-export.yaml`](phase4-export.yaml) | `apply-teo-poultry-phase4.py` | §4 export RF tail (кролик → птица T10) |
+| 5 | [`phase5-front.yaml`](phase5-front.yaml) | `apply-teo-poultry-phase3.py` | §1–§3 front + APK concept |
+| 6 | [`phase6-rf-market.yaml`](phase6-rf-market.yaml) | `apply-teo-poultry-phase3.py` | §4 SWOT, RF market, pricing |
+| 7 | [`phase7-conclusions.yaml`](phase7-conclusions.yaml) | `apply-teo-poultry-phase3.py` | §8–§12 + §7.2.2 env |
+| 8 | [`phase8-cleanup.yaml`](phase8-cleanup.yaml) | `apply-teo-poultry-phase3.py` | Global regex cleanup |
+| 9 | [`phase9-media.yaml`](phase9-media.yaml) | `apply-teo-poultry-phase3.py` | Media captions (PNG TBD) |
+| 10 | — | `verify-baseline-poultry-docx.py` | QA: drawings, KPI, krolik ≤80 |
 
-Флаги: `--skip-phase2`, `--skip-phase3`, `--skip-phase4`
+Флаги: `--skip-phase2` … `--skip-phase9`
 
 ## Corpus merge (отдельный трек)
 

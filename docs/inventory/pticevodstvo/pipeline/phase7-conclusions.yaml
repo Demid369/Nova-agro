@@ -1,0 +1,60 @@
+# Phase 7 — §8–§12 narrative (оргструктура, штат, выводы)
+# Body indices — после phase6.
+
+narrative_blocks:
+  - name: section8_org
+    body_start: 11203
+    body_end: 11243
+    source: docs/inventory/pticevodstvo/sources/narrative/sec8-slice.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: section9_staff
+    body_start: 11244
+    body_end: 11277
+    source: docs/inventory/pticevodstvo/sources/narrative/sec9-slice.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: section10_schedule
+    body_start: 11278
+    body_end: 11284
+    source: docs/inventory/pticevodstvo/sources/narrative/sec10-slice.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: section11_finance
+    body_start: 11285
+    body_end: 11294
+    source: docs/inventory/pticevodstvo/sources/narrative/sec11-slice.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: section12_conclusions
+    body_start: 11295
+    body_end: 11380
+    source: docs/inventory/pticevodstvo/sources/narrative/sec12-slice.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: section7_env_poultry
+    body_start: 11181
+    body_end: 11184
+    source: docs/inventory/pticevodstvo/sources/narrative/env722-poultry.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+caption_replacements:
+  - pattern: "5000 новых рабочих мест"
+    replace: "476 рабочих мест (T236-P, блок I)"
+  - pattern: "4870 - персонал"
+    replace: "346 — производственный персонал"
+  - pattern: "130-АУП"
+    replace: "130 — АУП"
+  - pattern: "горизонт расчета.*10 лет"
+    replace: "горизонт расчёта блока I — 16 лет (канon R-03)"
+  - pattern: "кроликовод"
+    replace: "птицевод"
+
+review_footnote_update: >
+  Phase 7: §8–§12 + §7.2.2 env → poultry narrative. Tab#147 staff → T236-P.
