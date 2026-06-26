@@ -309,6 +309,7 @@ def main() -> int:
     parser.add_argument("--rules", default=str(DEFAULT_RULES))
     parser.add_argument("--extract-media", action="store_true", help="Also extract word/media/* files")
     parser.add_argument("--skip-phase2", action="store_true", help="Skip §7 narrative + Tab P-141")
+    parser.add_argument("--skip-phase3", action="store_true", help="Skip §4 market + yield table")
     parser.add_argument("--verify-only", action="store_true")
     args = parser.parse_args()
 
@@ -342,6 +343,17 @@ def main() -> int:
         spec.loader.exec_module(p2)
         phase2_yaml = ROOT / "docs/inventory/pticevodstvo/poultry-phase2.yaml"
         p2.apply_phase2(out, phase2_yaml)
+
+    if not args.skip_phase3:
+        import importlib.util
+
+        p3_path = SCRIPTS / "apply-teo-poultry-phase3.py"
+        spec = importlib.util.spec_from_file_location("apply_teo_poultry_phase3", p3_path)
+        p3 = importlib.util.module_from_spec(spec)
+        assert spec and spec.loader
+        spec.loader.exec_module(p3)
+        phase3_yaml = ROOT / "docs/inventory/pticevodstvo/poultry-phase3.yaml"
+        p3.apply_phase3(out, phase3_yaml)
 
     return 0
 

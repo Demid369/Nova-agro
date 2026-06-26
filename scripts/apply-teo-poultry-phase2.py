@@ -99,8 +99,9 @@ def para_text(p: ET.Element) -> str:
 
 
 def set_paragraph_text(p: ET.Element, text: str) -> None:
-    for r in list(p.findall("w:r", NS)):
-        p.remove(r)
+    for child in list(p):
+        if not child.tag.endswith("pPr"):
+            p.remove(child)
     if not text:
         return
     r = ET.SubElement(p, f"{{{W_NS}}}r")
@@ -151,7 +152,9 @@ def apply_phase2(docx_path: Path, phase2_path: Path) -> None:
     with zipfile.ZipFile(docx_path, "r") as zin:
         buf = BytesIO(zin.read("word/document.xml"))
         doc = ET.parse(buf).getroot()
-        children = find_body_children(doc)
+        body = doc.find("w:body", NS)
+        assert body is not None
+        children = list(body)
 
         # §7 narrative
         text_slots = []
@@ -165,6 +168,9 @@ def apply_phase2(docx_path: Path, phase2_path: Path) -> None:
                 continue
             if para_text(el).strip():
                 text_slots.append(i)
+
+        for idx in text_slots:
+            set_paragraph_text(children[idx], "")
 
         for idx, chunk in zip(text_slots, chunks):
             set_paragraph_text(children[idx], chunk)
@@ -202,7 +208,7 @@ def apply_phase2(docx_path: Path, phase2_path: Path) -> None:
                         md = ROOT / tab["md_source"]
                         tables = parse_md_tables(md)
                         if tables:
-                            children[j] = build_table_xml(tables[0], children[j])
+                            body[j] = build_table_xml(tables[0], children[j])
                         break
                 break
 

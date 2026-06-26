@@ -1,0 +1,70 @@
+# Phase 3 — §4 market, genetics block, yield table Tab.140-P
+# Индексы body — после phase1 (footnote +1) и phase2; при смене baseline — пересчитать scan.
+
+narrative_blocks:
+  - name: block1_marketing
+    body_start: 485
+    body_end: 530
+    source: docs/inventory/pticevodstvo/phase3/block1-marketing.md
+    preserve_image_paragraphs: true
+
+  - name: breeds_genetics
+    body_start: 955
+    body_end: 1030
+    source: docs/teo-poultry/T03-genetics-tech.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: product_4111
+    body_start: 2139
+    body_end: 2146
+    source: docs/inventory/pticevodstvo/phase3/product-poultry.md
+    preserve_image_paragraphs: true
+
+  - name: world_market
+    body_start: 3567
+    body_end: 3604
+    source: docs/inventory/pticevodstvo/phase3/world-market-poultry.md
+    preserve_image_paragraphs: true
+
+table_replacements:
+  - name: tab140_yield
+    after_section7_reapply: true
+    body_table_index: 9939
+    title_body_index: 9938
+    title_replace: "Tab. 140-P. Убойный выход и структура продукции — птица"
+    md_source: docs/teo-tables/critical/T005-poultry-yield-matrix.md
+
+  - name: tab23_world
+    search_paragraph: "Tab. 23-P"
+    search_alternatives:
+      - "Табл. 23 – Динамика производства крольчатины"
+    title_replace: "Tab. 23-P – Мировое производство мяса птицы (FAO 2023)"
+    md_source: docs/teo-tables/critical/T023-poultry-world-production.md
+
+  - name: tab39_regions
+    search_paragraph: "Tab. 39-P"
+    search_alternatives:
+      - "Табл. 39. Производство мяса кролика"
+    title_replace: "Tab. 39-P. Производство мяса птицы по регионам (FAO 2023)"
+    md_source: docs/teo-tables/critical/T039-poultry-world-regions.md
+    max_lookahead: 15
+
+reapply_phase2_narrative:
+  config: docs/inventory/pticevodstvo/poultry-phase2.yaml
+
+# Доп. подписи / заголовки (параграфы без drawing)
+caption_replacements:
+  - pattern: "Мясо кролика и его перспективы"
+    replace: "Мясо птицы и яйцо — перспективы проекта «Нова-Агро»"
+  - pattern: "Мировой рынок крольчатины"
+    replace: "Мировой рынок мяса птицы (FAO 2023)"
+  - pattern: "^ОВ$"
+    replace: ""
+  - pattern: "линии по переработке кролика"
+    replace: "Линии переработки птицы — SINT 6 000 гол/ч (модульная установка)"
+  - pattern: "Производство мясо кролика в регионах мира"
+    replace: "Производство мяса птицы в регионах мира (FAO 2023)"
+
+review_footnote_update: >
+  Phase 3: §4 market (T09/T12), genetics T03, Tab.140-P yield. Images AS-IS — replace-docx-media.py
