@@ -1,21 +1,15 @@
 # Инвентарь птицеводства (draft)
 
-**Статус:** черновик второго ТЭО. **Не active baseline.**
+**Статус:** standalone master draft **PASS** (final run jun 2026). **Не active baseline** (RAG/graph — по approval).
 
-## Назначение
+## Final run (рекомендуется перед review)
 
-Аналог `docs/inventory/krolikovodstvo/`, но источник = **`docs/teo-poultry/`** + critical **T001-P…T236-P**.
-
-## Структура
-
+```bash
+python3 scripts/final-run-pticevodstvo.py
 ```
-docs/inventory/pticevodstvo/
-  README.md
-  registry.yaml                 ← KPI, темы T01–T12, critical tables
-  00-master-assembly.yaml       ← манифест master DOCX (§1–§12)
-  docx/                         ← генерируется
-  reports/docx-audit.json
-```
+
+Отчёт: [`reports/final-run-jun2026.md`](reports/final-run-jun2026.md)  
+Следующая фаза (опционально): [`CORPUS-MERGE-NEXT.md`](CORPUS-MERGE-NEXT.md)
 
 ## Команды
 
@@ -48,4 +42,4 @@ python3 scripts/generate-pticevodstvo-docx.py --master-only
 | Сырые файлы | `docs/teo-poultry/_incoming/` |
 | Приложения | `docs/teo-poultry/appendix/` |
 | KPI | `docs/scenarios/poultry-teo.yaml` |
-| Critical tab | `docs/teo-tables/critical/T*-pticevodstvo*.md` |
+| Critical tab | `docs/teo-tables/critical/T*-pticevodstvo*.md`, T241-P |
