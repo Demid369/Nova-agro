@@ -14,5 +14,8 @@
 | T022-P | [`T022-investment-schedule-pticevodstvo.md`](../teo-tables/critical/T022-investment-schedule-pticevodstvo.md) | draft (фазировка **2026–2029**) | finmodel «CAPEX», ramp-up |
 | T141-P | [`T141-feed-recipes-poultry.md`](../teo-tables/critical/T141-feed-recipes-poultry.md) | draft | `feed-recipes-table.md` |
 | T236-P | [`T236-staff-pticevodstvo.md`](../teo-tables/critical/T236-staff-pticevodstvo.md) | draft | `appendix/02-zatraty…` |
+| **T241-P** | [`T241-taxes-payroll-poultry.md`](../teo-tables/critical/T241-taxes-payroll-poultry.md) | **draft** | rename «Кролиководство» → «Птицеводство»; ФОТ T236-P |
 
-**As-is из baseline (не кролик):** T005 export (APK), T008–T011 NPV, T237–T240 штат, T241 налоги, Tab.141 КРС/рыба.
+**As-is из baseline (блоки 2–5):** T005 export (APK), T008–T011 NPV, T237–T240 штат, baseline T241 (блоки 2–5), Tab.141 КРС/рыба.
+
+**Реестр tab «кролик» в title:** [`rabbit-tab-replacement-map.md`](rabbit-tab-replacement-map.md)

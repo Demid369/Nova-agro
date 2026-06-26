@@ -199,6 +199,7 @@ content_sources:
     - docs/teo-poultry/appendix/npv-irr-derived.md
     - docs/teo-poultry/appendix/dcf-policy.md
     - docs/teo-poultry/appendix/tables-poultry-index.md
+    - docs/teo-poultry/appendix/rabbit-tab-replacement-map.md
     - docs/teo-poultry/appendix/06-vyvody-i-riski.md
 
 critical_tables:
@@ -213,6 +214,7 @@ critical_tables:
   T022-P: docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md
   T141-P: docs/teo-tables/critical/T141-feed-recipes-poultry.md
   T236-P: docs/teo-tables/critical/T236-staff-pticevodstvo.md
+  T241-P: docs/teo-tables/critical/T241-taxes-payroll-poultry.md
 
 references:
   - docs/scenarios/poultry-variant.md

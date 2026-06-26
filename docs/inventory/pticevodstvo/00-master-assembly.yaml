@@ -119,7 +119,7 @@ sections:
     sources:
       - file: docs/teo-poultry/appendix/02-zatraty-orgstruktura-shtat.md
       - critical: T236-P
-      - critical: T241-taxes-payroll
+      - critical: T241-P
 
   - id: s10_schedule
     title: "10. График и бюджет CAPEX"

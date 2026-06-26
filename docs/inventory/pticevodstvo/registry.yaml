@@ -68,6 +68,7 @@ canonical_facts:
     T022-P: docs/teo-tables/critical/T022-investment-schedule-pticevodstvo.md
     T141-P: docs/teo-tables/critical/T141-feed-recipes-poultry.md
     T236-P: docs/teo-tables/critical/T236-staff-pticevodstvo.md
+    T241-P: docs/teo-tables/critical/T241-taxes-payroll-poultry.md
   location: Запорожская область
   legal_address: "Запорожская область, г. Мелитополь, просп. Богдана Хмельницкого, д. 24А"
   production_site: null

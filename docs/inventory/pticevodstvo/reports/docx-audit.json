@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-26T10:56:10.880811+00:00",
-  "registry_hash": "12b0280a62c9",
+  "generated_at": "2026-06-26T11:05:23.389691+00:00",
+  "registry_hash": "ebe4c81ce1b5",
   "summary": {
     "themes": 12,
-    "critical_tables": 10,
+    "critical_tables": 11,
     "assembly_sections": 18
   },
   "themes": {
@@ -290,8 +290,8 @@
         },
         {
           "kind": "critical",
-          "path": "docs/teo-tables/critical/T241-taxes-payroll.md",
-          "label": "T241-taxes-payroll"
+          "path": "docs/teo-tables/critical/T241-taxes-payroll-poultry.md",
+          "label": "T241-P"
         }
       ],
       "source_count": 3

@@ -83,4 +83,4 @@
 ## Следующий шаг
 
 ~~§2 Заказчик + §3 Стратегия~~ — ✅ `zakazchik-proekta.md`, `strategiya-proekta.md`  
-**Далее:** T241 rename + мелкие tab с «кролик».
+**Далее:** standalone milestone закрыт для блока 1; опционально — corpus merge (полный APK master).
