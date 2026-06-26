@@ -31,7 +31,8 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 **Сценарий C:** птица **12 000**, блоки 2–5 **−958,5** пропорционально → **ровно 100 000**.  
 Детали: `appendix/apk-100bln-integration.md`, `docs/scenarios/poultry-teo.yaml` → `project.apk_100bln`.
 
-> **Review-pass R-01…R-04:** см. [`appendix/review-pass-notes.md`](appendix/review-pass-notes.md) (июнь 2026).
+> **Review-pass R-01…R-04:** см. [`appendix/review-pass-notes.md`](appendix/review-pass-notes.md)  
+> **Final run (jun 2026):** [`inventory/pticevodstvo/reports/final-run-jun2026.md`](../inventory/pticevodstvo/reports/final-run-jun2026.md) — **PASS**
 
 ## До уровня ТЭО кроликов — что ещё нужно
 
