@@ -182,4 +182,13 @@
 | Приложение А (241 tab) | **~95%** | AS-IS; 12 tab с кроликом — точечная замена |
 | **Итого master DOCX** | **~65%** | content есть; **склейки нет** |
 
-Следующий шаг: **`generate-pticevodstvo-docx.py`** + **`00-master-assembly.yaml`** (manifest секций) → draft DOCX, затем ручная склейка с baseline docx или pandoc pipeline.
+Следующий шаг: **`generate-pticevodstvo-docx.py`** + **`00-master-assembly.yaml`** → draft DOCX, затем ручная склейка с baseline docx или pandoc pipeline.
+
+**Реализовано (jun 2026):**
+
+```bash
+python3 scripts/generate-pticevodstvo-docx.py
+# → docs/inventory/pticevodstvo/docx/00-master-teo-pticevodstvo-draft.docx
+```
+
+Манифест: [`docs/inventory/pticevodstvo/00-master-assembly.yaml`](../../inventory/pticevodstvo/00-master-assembly.yaml)

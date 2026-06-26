@@ -10,6 +10,7 @@ meta:
   baseline_poultry: docs/scenarios/poultry-teo.yaml
   content_dir: docs/teo-poultry
   generated_docx_dir: docs/inventory/pticevodstvo/docx
+  master_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
 
 canonical_facts:
   capex_bln_rub: 12
