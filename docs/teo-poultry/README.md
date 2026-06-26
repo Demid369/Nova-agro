@@ -50,7 +50,8 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 | 10 | **Выводы + реестр рисков** | `graphify-corpus/06-vyvody-i-riski.md` | **draft** [`appendix/06-vyvody-i-riski.md`](appendix/06-vyvody-i-riski.md) — R-P01…R-P15 |
 | 11 | **Качество переработки / выход** | corpus T05 | T05 — 16 строк |
 | 12 | **NPV-методология vs tab#7** | 10 лет | **16 лет** — [`appendix/dcf-policy.md`](appendix/dcf-policy.md) (R-03) |
-| 13 | **§2/§3 narrative** | corpus §2–3 | ❌ следующий шаг |
+| 13 | **§2/§3 narrative** | corpus §2–3 | ✅ [`zakazchik-proekta.md`](appendix/zakazchik-proekta.md), [`strategiya-proekta.md`](appendix/strategiya-proekta.md) |
+| 14 | **T241 rename** | T241 taxes | ❌ следующий шаг |
 
 **Уже не хуже / лучше кроликов:** finmodel (NPV/IRR, чувствительность), штат 476 FTE, energy canon, APK-100, multi-product.
 

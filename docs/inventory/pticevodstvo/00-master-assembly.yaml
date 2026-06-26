@@ -27,6 +27,21 @@ sections:
     sources:
       - file: docs/teo-poultry/appendix/03-svodnyy-raschet-kompleksa.md
 
+  - id: s02_customer
+    title: "2. Заказчик проекта"
+    section_ref: "§2"
+    action: replace
+    note: "§2.1–2.2; §2.3 — s02_potential"
+    sources:
+      - file: docs/teo-poultry/appendix/zakazchik-proekta.md
+
+  - id: s03_strategy
+    title: "3. Стратегия проекта"
+    section_ref: "§3"
+    action: replace
+    sources:
+      - file: docs/teo-poultry/appendix/strategiya-proekta.md
+
   - id: s02_potential
     title: "2.3. Потенциал и масштаб I-фазы"
     section_ref: "§2.3"

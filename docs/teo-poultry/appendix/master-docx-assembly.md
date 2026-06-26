@@ -23,9 +23,9 @@
 |---|------------------|--------------------|----------------|--------------|
 | — | Меморандум, титул | `graphify-corpus/01-vvedenie` (начало) | [`00-front-matter-nova-agro.md`](00-front-matter-nova-agro.md) | ✅ draft |
 | 1 | Цель, резюме | APK narrative (общее) | front matter §1 + `appendix/03-svodnyy-raschet` (T11 dedupe) | ✅ draft |
-| 2 | Заказчик | baseline «МОЯ МЕЧТА» / Херсон | **ООО «Нова-Агро»**, Мелитополь — только блок 1 | ⚠️ частично |
+| 2 | Заказчик | baseline «МОЯ МЕЧТА» / Херсон | [`zakazchik-proekta.md`](zakazchik-proekta.md) | ✅ draft |
 | 2.3 | Потенциал | I-фаза **кролики** в `01-vvedenie` | `T02-scale-phase.md`, `T001-P` | ✅ |
-| 3 | Стратегия | общие формулировки APK | адаптировать §3 под птицу | ⚠️ |
+| 3 | Стратегия | общие формулировки APK | [`strategiya-proekta.md`](strategiya-proekta.md) | ✅ draft |
 | 4 | Рынок, маркетинг | **APK-wide** в `04-rynok` (КРС, рыба, масло…) | `T09-market-swot.md` — **блок птицы** | ✅ draft |
 | 4 | *кролик* | абзацы крольчатины в `04-rynok`, teo/08 | `T12-world-market.md` (FAO птица) | ✅ |
 | 5 | Материалы, энергия | зерно APK, биогаз 20 МВт | `T06-feed`, `T08-energy`, `energy-budget.yaml` | ✅ |

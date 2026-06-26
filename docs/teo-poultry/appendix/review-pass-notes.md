@@ -75,10 +75,12 @@
 
 - [`00-front-matter-nova-agro.md`](00-front-matter-nova-agro.md) — footnotes R-01…R-03
 - [`T003-land-budget-pticevodstvo.md`](../../teo-tables/critical/T003-land-budget-pticevodstvo.md)
+- [`zakazchik-proekta.md`](zakazchik-proekta.md), [`strategiya-proekta.md`](strategiya-proekta.md)
 - [`T10-export.md`](../T10-export.md), [`export-apk-baseline-tab5.md`](export-apk-baseline-tab5.md)
 - [`T01-finance.md`](../T01-finance.md), [`T007-npv-pticevodstvo.md`](../../teo-tables/critical/T007-npv-pticevodstvo.md)
 - [`06-vyvody-i-riski.md`](06-vyvody-i-riski.md) — риски R-P10…R-P13 ссылаются сюда
 
-## Следующий шаг (не review-pass)
+## Следующий шаг
 
-§2 Заказчик + §3 Стратегия — отдельные md + секции в `00-master-assembly.yaml`.
+~~§2 Заказчик + §3 Стратегия~~ — ✅ `zakazchik-proekta.md`, `strategiya-proekta.md`  
+**Далее:** T241 rename + мелкие tab с «кролик».

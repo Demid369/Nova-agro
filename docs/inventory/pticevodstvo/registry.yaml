@@ -13,6 +13,8 @@ meta:
   master_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
   front_matter: docs/teo-poultry/appendix/00-front-matter-nova-agro.md
   review_pass: docs/teo-poultry/appendix/review-pass-notes.md
+  section_02_zakazchik: docs/teo-poultry/appendix/zakazchik-proekta.md
+  section_03_strategiya: docs/teo-poultry/appendix/strategiya-proekta.md
 
 canonical_facts:
   capex_bln_rub: 12
