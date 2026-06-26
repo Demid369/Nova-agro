@@ -1,0 +1,67 @@
+# APK master assembly — standalone + corpus + приложение «А»
+# Генерация: python3 scripts/generate-apk-master-docx.py
+
+meta:
+  title: "ТЭО «МОЯ МЕЧТА» — APK master (птица + baseline blocks 2–5)"
+  subtitle: "Сценарий C 100 млрд ₽ — I-фаза птица 12 млрд, corpus as-is с patch"
+  output_docx: 00-apk-master-teo-full-draft.docx
+  status: draft
+  baseline_docx: docs/1.ТЭО_МОЯ МЕЧТА.docx
+  standalone_assembly: docs/inventory/pticevodstvo/00-master-assembly.yaml
+  patch_rules: docs/inventory/pticevodstvo/corpus-patch-rules.yaml
+
+# Сначала — полный standalone (18 секций), затем corpus-дополнения и приложение
+
+corpus_sections:
+  - id: corpus_summary
+    title: "Corpus — сводка APK (blocks 2–5 KPI)"
+    section_ref: "corpus §00"
+    action: adapt
+    sources:
+      - file: docs/graphify-corpus/00-summary.md
+
+  - id: corpus_market_apk
+    title: "Corpus — рынок APK-wide (без крольчатины)"
+    section_ref: "corpus §4"
+    action: adapt
+    note: "Patch: skip «Мировой рынок крольчатины»; блок 1 — T09/T12 выше"
+    sources:
+      - file: docs/graphify-corpus/04-rynok-i-analitika.md
+    patch:
+      exclude_headings:
+        - "Мировой рынок крольчатины"
+
+  - id: corpus_production_apk
+    title: "Corpus — производство blocks 2–5 (без кроликов)"
+    section_ref: "corpus §3"
+    action: adapt
+    sources:
+      - file: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+    patch:
+      exclude_headings:
+        - "Кролики: особенности содержания и разведения"
+        - "Табл. 141. Рецепты комбикормов для кроликов"
+
+  - id: corpus_finance_text
+    title: "Corpus — финансы (текст §10–11 baseline)"
+    section_ref: "corpus §5"
+    action: baseline_as_is
+    sources:
+      - file: docs/graphify-corpus/05-finansy-i-byudzhet.md
+
+  - id: corpus_risks_framework
+    title: "Corpus — framework рисков baseline"
+    section_ref: "corpus §6"
+    action: baseline_as_is
+    note: "§12 блока птицы — appendix/06-vyvody-i-riski (выше)"
+    sources:
+      - file: docs/graphify-corpus/06-vyvody-i-riski.md
+
+appendix_sections:
+  - id: appendix_a_trade
+    title: "Приложение «А» — trade tables (HS statistics)"
+    section_ref: "§13"
+    action: baseline_as_is
+    note: "103 reference_trade из manifest.json"
+    source_manifest: docs/teo-tables/manifest.json
+    category: reference_trade

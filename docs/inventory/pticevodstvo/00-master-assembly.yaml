@@ -16,6 +16,8 @@ sections:
     action: adapt
     note: "Front matter «Нова-Агро» — меморандум, титул, §1 resume, KPI, TOC"
     sources:
+      - file: docs/teo-poultry/appendix/investor-one-pager.md
+        role: executive
       - file: docs/teo-poultry/appendix/00-front-matter-nova-agro.md
         role: primary
 
@@ -58,6 +60,7 @@ sections:
       - theme: T09
       - theme: T12
       - file: docs/teo-poultry/appendix/sensitivity-and-scenarios.md
+      - file: docs/teo-poultry/appendix/stress-pack.md
 
   - id: s04_export
     title: "4.1.5 / 10. Экспорт"

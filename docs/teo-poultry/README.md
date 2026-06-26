@@ -38,14 +38,14 @@ Baseline «МОЯ МЕЧТА» — **100 000 га APK, Херсонская об
 
 | # | Пробел | У кроликов | У птицы сейчас |
 |---|--------|------------|----------------|
-| 1 | **Master DOCX + 241 таблица** | `1.ТЭО_МОЯ МЕЧТА.docx` → `teo-tables/` | **master draft:** `inventory/pticevodstvo/docx/00-master-teo-pticevodstvo-draft.docx` |
+| 1 | **Master DOCX + 241 таблица** | `1.ТЭО_МОЯ МЕЧТА.docx` → `teo-tables/` | **standalone PASS** + **APK pipeline** (`generate-apk-master-docx.py`) |
 | 2 | **Пакет T01–T12 DOCX** | `generate-krolikovodstvo-docx.py` | **`generate-pticevodstvo-docx.py`** → 12 тем + index |
 | 3 | **RAG / graph / audit** | corpus, 50 queries, docx-audit | **draft**, не в индексе |
 | 4 | **Вендоры + пропускная способность** | Meneghin, SINT 2400 г/ч | **Facco + SINT poultry 6000 + FRAGOLA/PRIMERANO/ASTORIOS** |
 | 5 | **Рецептуры кормов** (Tab. P-141) | `teo/125-…` (фактически КРС+рыба; **без SKU**) | **draft** [`appendix/feed-recipes-table.md`](appendix/feed-recipes-table.md) + [`T141-feed-recipes-poultry`](../teo-tables/critical/T141-feed-recipes-poultry.md) |
 | 6 | **График CAPEX по годам** | T022 investment schedule | **T022-P**: структура % + **фазировка 2026–2029** (модель под ramp) |
 | 7 | **Экспорт** | Tab#5 baseline на блок 1 | `export-apk-baseline-tab5.md` |
-| 8 | Меморандум / front matter | `00-меморандум-о-конфиденциальности.md` | **draft** [`appendix/00-front-matter-nova-agro.md`](appendix/00-front-matter-nova-agro.md) |
+| 8 | Меморандум / front matter | `00-меморандум-о-конфиденциальности.md` | ✅ exec summary + [`investor-one-pager.md`](appendix/investor-one-pager.md) |
 | 8b | **Review-pass канon** | — | ✅ [`appendix/review-pass-notes.md`](appendix/review-pass-notes.md) R-01…R-05 |
 | 9 | **Земля: кадастр** | T003 land budget | TBD (R-04); не фабриковать |
 | 10 | **Выводы + реестр рисков** | `graphify-corpus/06-vyvody-i-riski.md` | **draft** [`appendix/06-vyvody-i-riski.md`](appendix/06-vyvody-i-riski.md) — R-P01…R-P15 |

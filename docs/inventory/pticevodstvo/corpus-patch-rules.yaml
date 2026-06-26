@@ -1,0 +1,30 @@
+# Corpus patch rules — фильтрация baseline при merge APK
+# Применение: scripts/generate-apk-master-docx.py
+
+corpus_footnote: >
+  Corpus baseline (APK blocks 2–5 as-is). Блок 1 I-фазы — птицеводство «Нова-Агро»
+  (review-pass R-01…R-05). Секции кролиководства вырезаны patch-rules.
+
+land_footnote: >
+  Блок 1 (птица): 250 000 га, Запорожская обл., слот 400 га (T003-P).
+  Ниже — baseline APK 100 000 га, Херсон для блоков 2–5.
+
+exclude_by_file:
+  docs/graphify-corpus/04-rynok-i-analitika.md:
+    - "Мировой рынок крольчатины"
+  docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md:
+    - "Кролики: особенности содержания и разведения"
+    - "Табл. 141. Рецепты комбикормов для кроликов"
+
+line_skip_patterns:
+  - "^Крольчатина имеет"
+  - "^Мясо кроликов отличается"
+  - "Meneghin"
+  - "ANCI"
+  - "SINT 2\\s*400"
+  - "2400 гол/ч"
+
+media:
+  baseline_docx: docs/1.ТЭО_МОЯ МЕЧТА.docx
+  plan: docs/inventory/pticevodstvo/reports/media-extraction-plan.md
+  estimated_images: 346

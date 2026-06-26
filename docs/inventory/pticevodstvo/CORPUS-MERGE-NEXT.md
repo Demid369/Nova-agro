@@ -1,36 +1,61 @@
-# Corpus merge — следующая фаза (не начата)
+# Corpus merge — следующая фаза
 
-> **Решение jun 2026:** standalone блок 1 (**12 млрд**) закрыт final run **PASS**.  
-> Полный clone `1.ТЭО_МОЯ МЕЧТА.docx` — **отдельная задача**, не блокирует review standalone.
+> **Статус jun 2026:** **STARTED** — pipeline scaffold готов  
+> Standalone блок 1 (**12 млрд**) — **PASS** + merged PR #13  
+> Investor-ready — one-pager, exec summary, stress-pack
 
-## Зачем отдельно
+## Что сделано
+
+| Компонент | Файл | Статус |
+|-----------|------|--------|
+| APK assembly manifest | `00-apk-master-assembly.yaml` | ✅ |
+| Patch rules (кролик → skip) | `corpus-patch-rules.yaml` | ✅ |
+| Generator | `scripts/generate-apk-master-docx.py` | ✅ |
+| Media plan | `reports/media-extraction-plan.md` | ✅ |
+| Media extract script | `scripts/extract-docx-media.py` | ✅ scaffold |
+
+## Команды
+
+```bash
+# Standalone (investor review блока 1)
+python3 scripts/final-run-pticevodstvo.py
+
+# Full APK master (text + tables; без embedded images)
+python3 scripts/generate-apk-master-docx.py
+
+# Быстрый прогон (10 trade tables)
+python3 scripts/generate-apk-master-docx.py --appendix-limit 10
+
+# Media (когда baseline docx локально)
+python3 scripts/extract-docx-media.py \
+  --input "docs/1.ТЭО_МОЯ МЕЧТА.docx" \
+  --output docs/inventory/pticevodstvo/media/
+```
+
+## Выход
+
+| DOCX | Содержание | ~объём |
+|------|------------|--------|
+| `00-master-teo-pticevodstvo-draft.docx` | Standalone 18 секций | ~60–80 стр. |
+| `00-apk-master-teo-full-draft.docx` | Standalone + corpus + appendix A | ~300–500+ стр. |
+
+## Остаётся
+
+1. **Re-embed 346 images** — нужен baseline DOCX локально
+2. **Poultry images** — Facco/SINT схемы вместо кролика
+3. **Единый land footnote** R-01 на уровне финального DOCX (авто-insert в pipeline v2)
+4. **RAG index** — по approval
+
+## Зачем отдельно от standalone
 
 | | Standalone (готово) | Full APK master |
 |--|---------------------|-----------------|
-| Объём | ~60–80 стр. | ~500–700+ стр. |
+| Объём | ~60–80 стр. | ~500–700+ стр. с media |
 | Scope | Блок 1 замена | + corpus §4, блоки 2–5, приложение «А» |
-| Риск | низкий | высокий (Запорожье/Херсон, media, 241 tab) |
-| ROI сейчас | **investor review блока** | позже, при merge 100 млрд |
-
-## Что потребуется
-
-1. **Pipeline:** baseline docx + patch sections из `00-master-assembly.yaml` (не только md→docx)
-2. **Corpus as-is:** `graphify-corpus/04-rynok` (~111k слов), `03-proizvodstvo` (блоки 2–5)
-3. **Приложение «А»:** 103 `reference_trade` из `docs/teo/`
-4. **Media:** 346 embedded images из baseline docx
-5. **Единый land/legal footnote** R-01 на уровне master
-
-## Команда старта (когда решите)
-
-```bash
-# Сейчас — только standalone
-python3 scripts/final-run-pticevodstvo.py
-
-# Будущее — отдельная ветка cursor/apk-corpus-merge-7293
-```
+| ROI | **investor review блока** | банк / грант / единый APK |
 
 ## Источники
 
 - [`reports/final-run-jun2026.md`](reports/final-run-jun2026.md)
 - [`../../teo-poultry/appendix/master-docx-assembly.md`](../../teo-poultry/appendix/master-docx-assembly.md)
-- PR #13
+- PR #13 (merged)
