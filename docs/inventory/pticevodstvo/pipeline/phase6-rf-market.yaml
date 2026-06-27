@@ -1,0 +1,52 @@
+# Phase 6 — §4 SWOT, RF market, pricing (кролик → птица T09)
+# Body indices — после phase5.
+
+narrative_blocks:
+  - name: swot_block
+    body_start: 8287
+    body_end: 8346
+    source: docs/inventory/pticevodstvo/sources/narrative/swot-poultry-slice.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: rf_market_russia
+    body_start: 8373
+    body_end: 8456
+    source: docs/inventory/pticevodstvo/sources/narrative/rf-market-poultry.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: pricing_rf
+    body_start: 9290
+    body_end: 9329
+    source: docs/inventory/pticevodstvo/sources/narrative/pricing-poultry.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+  - name: sec12_duplicate_early
+    body_start: 8348
+    body_end: 8359
+    source: docs/inventory/pticevodstvo/sources/narrative/sec12-duplicate-slice.md
+    preserve_image_paragraphs: true
+    clear_slots_first: true
+
+caption_replacements:
+  - pattern: "S\\.W\\.O\\.T\\. Анализ проекта"
+    replace: "SWOT — блок I «Нова-Агро» (птица, T09)"
+  - pattern: "кролиководческого"
+    replace: "птицеводческого"
+  - pattern: "мяса кролика"
+    replace: "мяса птицы"
+  - pattern: "крольчат"
+    replace: "мяса птицы"
+  - pattern: "Мясо кролика$"
+    replace: "Бройлер (ROSS 308)"
+  - pattern: "кроличий навоз"
+    replace: "compost из помёта птицы"
+  - pattern: "навоза кролика"
+    replace: "compost птицы"
+  - pattern: "кролиководства в РФ"
+    replace: "птицеводства в РФ (finmodel блока I)"
+
+review_footnote_update: >
+  Phase 6: §4 SWOT + RF market + pricing → T09. Tab#5 export AS-IS.
