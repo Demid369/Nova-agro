@@ -36,9 +36,9 @@ PNG assets для `image7–9`, `311–313` **не в `_incoming/`** — бин�
 python3 scripts/replace-docx-media.py --docx docs/inventory/pticevodstvo/docx/1.ТЭO_МOЯ_МEЧTA_ПTIЦA.docx --dir docs/teo-poultry/_incoming/
 ```
 
-## Остаточный «кролик» (68)
+## Остаточный «кролик»
 
-Footnote phase1, review-pass, приложение «А» (HS/trade), legacy image captions — **by design**.
+**0** — phase8 `global_run_replacements` (правка `w:t`, бинарники `w:drawing` не трогаются).
 
 ## Output
 

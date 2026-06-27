@@ -195,7 +195,9 @@ def apply_phase3(docx_path: Path, phase3_path: Path) -> None:
                 )
             table_stats.append(f"{tab.get('name', '?')}: {'OK' if ok else 'MISS'}")
 
-        captions = apply_captions(children, cfg.get("caption_replacements") or [], p2)
+        caption_rules = cfg.get("caption_replacements") or []
+        captions = apply_captions(children, caption_rules, p2)
+        run_changes = 0
 
         # Re-apply §7 narrative last — phase2 captions can collide with §7 slots
         reapply = cfg.get("reapply_phase2_narrative")
@@ -235,6 +237,9 @@ def apply_phase3(docx_path: Path, phase3_path: Path) -> None:
                 )
             table_stats.append(f"{tab.get('name', '?')}: {'OK' if ok else 'MISS'}")
 
+        if cfg.get("global_run_replacements") and caption_rules:
+            run_changes = p2.apply_text_rules_to_runs(doc, caption_rules)
+
         out_xml = ET.tostring(doc, encoding="utf-8", xml_declaration=True)
         out_buf = BytesIO()
         with zipfile.ZipFile(out_buf, "w", zipfile.ZIP_DEFLATED) as zout:
@@ -249,6 +254,8 @@ def apply_phase3(docx_path: Path, phase3_path: Path) -> None:
     for line in table_stats:
         print(f"  table {line}")
     print(f"  caption rules changed: {captions}")
+    if run_changes:
+        print(f"  global run text nodes changed: {run_changes}")
 
 
 def main() -> int:
