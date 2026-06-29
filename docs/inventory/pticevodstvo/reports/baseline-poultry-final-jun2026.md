@@ -8,7 +8,7 @@
 | Проверка | Статус |
 |----------|--------|
 | Drawings | **394 / 394** |
-| Residual «кролик/кроль/кролич» | **68** (target ≤80, приложение «А» AS-IS) |
+| Residual «кролик/кроль/кролич» | **0** (global run cleanup; images AS-IS) |
 | CAPEX 12 000 | OK |
 | Revenue 5 559 | OK |
 | NPV +2 253 @10% | OK |
