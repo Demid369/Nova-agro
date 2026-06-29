@@ -118,6 +118,20 @@ def apply_text_rules(text: str, rules: list[dict[str, str]]) -> str:
     return out
 
 
+def apply_text_rules_to_runs(root: ET.Element, rules: list[dict[str, str]]) -> int:
+    """Replace text in w:t nodes only — preserves drawings and paragraph structure."""
+    changed = 0
+    for t in root.findall(".//w:t", NS):
+        old = t.text or ""
+        if not old:
+            continue
+        new = apply_text_rules(old, rules)
+        if new != old:
+            t.text = new
+            changed += 1
+    return changed
+
+
 def build_table_xml(rows: list[list[str]], template_tbl: ET.Element) -> ET.Element:
     tbl = deepcopy(template_tbl)
     # remove existing rows

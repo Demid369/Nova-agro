@@ -62,6 +62,6 @@ text_replacements:
 insert_review_footnote_after_para: 8
 review_footnote: >
   Блок I-фазы заменён на птицеводство «Нова-Агро» 12 млрд ₽ (сценарий APK C).
-  Изображения кролиководства сохранены на местах — подлежат замене.
+  Изображения baseline сохранены на местах — бинарники не менялись.
   KPI: CAPEX 12 000; выручка 5 559; NPV +2 253 @10% 16 лет; IRR 12,8%; 476 FTE.
   Review-pass R-01…R-05: docs/teo-poultry/appendix/review-pass-notes.md

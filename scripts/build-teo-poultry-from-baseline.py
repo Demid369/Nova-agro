@@ -311,6 +311,11 @@ def main() -> int:
     parser.add_argument("--skip-phase2", action="store_true", help="Skip §7 narrative + Tab P-141")
     parser.add_argument("--skip-phase3", action="store_true", help="Skip §4 market + yield table")
     parser.add_argument("--skip-phase4", action="store_true", help="Skip §4 export tail (T10)")
+    parser.add_argument("--skip-phase5", action="store_true", help="Skip §1–§3 front matter")
+    parser.add_argument("--skip-phase6", action="store_true", help="Skip §4 SWOT + RF market + pricing")
+    parser.add_argument("--skip-phase7", action="store_true", help="Skip §8–§12 narrative")
+    parser.add_argument("--skip-phase8", action="store_true", help="Skip global regex cleanup")
+    parser.add_argument("--skip-phase9", action="store_true", help="Skip media caption pass")
     parser.add_argument("--verify-only", action="store_true")
     args = parser.parse_args()
 
@@ -366,6 +371,25 @@ def main() -> int:
         spec.loader.exec_module(p3b)
         phase4_yaml = ROOT / "docs/inventory/pticevodstvo/pipeline/phase4-export.yaml"
         p3b.apply_phase3(out, phase4_yaml)
+
+    phase_extra = [
+        ("skip_phase5", "phase5-front.yaml"),
+        ("skip_phase6", "phase6-rf-market.yaml"),
+        ("skip_phase7", "phase7-conclusions.yaml"),
+        ("skip_phase8", "phase8-cleanup.yaml"),
+        ("skip_phase9", "phase9-media.yaml"),
+    ]
+    for skip_flag, yaml_name in phase_extra:
+        if getattr(args, skip_flag, False):
+            continue
+        import importlib.util
+
+        p3_path = SCRIPTS / "apply-teo-poultry-phase3.py"
+        spec = importlib.util.spec_from_file_location(f"apply_teo_poultry_{yaml_name}", p3_path)
+        px = importlib.util.module_from_spec(spec)
+        assert spec and spec.loader
+        spec.loader.exec_module(px)
+        px.apply_phase3(out, ROOT / f"docs/inventory/pticevodstvo/pipeline/{yaml_name}")
 
     return 0
 
