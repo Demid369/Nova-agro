@@ -1,6 +1,6 @@
 # NPV/IRR птицеводство
 
-> **Источник:** `docs/teo-poultry/_incoming/finmodel-pticekompleks-12-mlrd.xlsx` — лист «NPV-IRR»  
+> **Источник:** `docs/projects/02-teo-ptica/content/_incoming/finmodel-pticekompleks-12-mlrd.xlsx` — лист «NPV-IRR»  
 > **Аналог baseline:** [`T007-npv-krolikovodstvo.md`](T007-npv-krolikovodstvo.md) (tab#7 docx)  
 > **Статус:** draft — **канon DCF 16 лет** (review-pass R-03). Сравнение 10 лет — stress vs tab#7. [`dcf-policy.md`](../../teo-poultry/appendix/dcf-policy.md), [`review-pass-notes.md`](../../teo-poultry/appendix/review-pass-notes.md)
 

@@ -3,9 +3,9 @@ name: Krolikovodstvo inventory
 on:
   pull_request:
     paths:
-      - "docs/inventory/**"
-      - "docs/graphify-corpus/**"
-      - "docs/teo/**"
+      - "docs/projects/**"
+      - "docs/projects/01-teo-kroliki/corpus/graphify-corpus/**"
+      - "docs/projects/01-teo-kroliki/corpus/teo/**"
       - "docs/teo-tables/**"
       - "docs/scenarios/**"
       - "scripts/krolikovodstvo_inventory.py"
@@ -19,7 +19,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "docs/inventory/**"
+      - "docs/projects/**"
       - "scripts/**"
       - "tests/teo-queries.yaml"
 

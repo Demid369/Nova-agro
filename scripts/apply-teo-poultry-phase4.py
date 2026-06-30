@@ -11,8 +11,8 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_PHASE4 = ROOT / "docs/inventory/pticevodstvo/pipeline/phase4-export.yaml"
-DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/pipeline/phase1-tables.yaml"
+DEFAULT_PHASE4 = ROOT / "docs/projects/02-teo-ptica/pipeline/phase4-export.yaml"
+DEFAULT_RULES = ROOT / "docs/projects/02-teo-ptica/pipeline/phase1-tables.yaml"
 
 
 def main() -> int:

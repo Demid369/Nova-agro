@@ -39,4 +39,4 @@
 | T236-P | [T236-staff-pticevodstvo.md](T236-staff-pticevodstvo.md) | draft |
 | T241-P | [T241-taxes-payroll-poultry.md](T241-taxes-payroll-poultry.md) | draft (rename блок 1) |
 
-Индекс: [`docs/teo-poultry/appendix/tables-poultry-index.md`](../../teo-poultry/appendix/tables-poultry-index.md)
+Индекс: [`docs/projects/02-teo-ptica/content/appendix/tables-poultry-index.md`](../../teo-poultry/appendix/tables-poultry-index.md)

@@ -151,7 +151,7 @@ def main() -> int:
         labels,
         gods,
         surprises,
-        {"warning": "Стартовый граф из сводки ТЭО. Для полного графа: /graphify docs/graphify-corpus"},
+        {"warning": "Стартовый граф из сводки ТЭО. Для полного графа: /graphify docs/projects/01-teo-kroliki/corpus/graphify-corpus"},
         {"input": 0, "output": 0},
         str(ROOT),
         suggested_questions=questions,

@@ -5,7 +5,7 @@ on:
     paths:
       - "docs/1.ТЭО_МОЯ МЕЧТА.docx"
       - "docs/teo-tables/**"
-      - "docs/graphify-corpus/**"
+      - "docs/projects/01-teo-kroliki/corpus/graphify-corpus/**"
       - "scripts/extract-teo-docx-tables.py"
       - "scripts/validate-teo-docx-tables.py"
       - "scripts/teo_tables_graph.py"

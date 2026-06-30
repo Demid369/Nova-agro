@@ -8,7 +8,7 @@ from pathlib import Path
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment
 
-XLSX = Path(__file__).resolve().parents[1] / "docs/teo-poultry/_incoming/finmodel-pticekompleks-12-mlrd.xlsx"
+XLSX = Path(__file__).resolve().parents[1] / "docs/projects/02-teo-ptica/content/_incoming/finmodel-pticekompleks-12-mlrd.xlsx"
 
 HEADER_FONT = Font(bold=True)
 HEADER_FILL = PatternFill("solid", fgColor="D9E1F2")
@@ -203,7 +203,7 @@ def add_financing_sheet(wb: openpyxl.Workbook) -> None:
     ws = wb.create_sheet("Финансирование")
     ws["A1"] = "СТРУКТУРА ФИНАНСИРОВАНИЯ — ПТИЦЕКОМПЛЕКС 12 000 млн ₽"
     ws["A1"].font = Font(bold=True, size=12)
-    ws["A2"] = "Шаблон: docs/1.2-слайд Фин модель.xlsx · встройка в 100 млрд: лист «APK-100»"
+    ws["A2"] = "Шаблон: docs/projects/01-teo-kroliki/finmodel/1.2-слайд Фин модель.xlsx · встройка в 100 млрд: лист «APK-100»"
     ws["A3"] = "Сумма инвестиций"
     ws["B3"] = 12000
     ws["C3"] = "млн ₽"

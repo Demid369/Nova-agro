@@ -52,9 +52,9 @@ NotebookLM notebook «МОЯ МЕЧТА — baseline»
 
 | Файл | Зачем |
 |------|-------|
-| `docs/graphify-corpus/00-summary.md` | KPI, блоки, модель |
-| `docs/graphify-corpus/01-vvedenie-i-resume.md` | описание проекта |
-| `docs/graphify-corpus/06-vyvody-i-riski.md` | риски |
+| `docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md` | KPI, блоки, модель |
+| `docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md` | описание проекта |
+| `docs/projects/01-teo-kroliki/corpus/graphify-corpus/06-vyvody-i-riski.md` | риски |
 | `docs/TEO_ПРОСТЫМИ_СЛОВАМИ.md` | как устроена система |
 
 Или один bundle:

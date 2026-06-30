@@ -18,7 +18,7 @@ python scripts/teo-query.py "NPV теплиц" --mode auto
 | BM25 + rerank | `teo-rag-out/bm25-index.json` | лексический merge + cross-encoder |
 | Scenarios | `docs/scenarios/*.yaml` | what-if сравнение вариантов |
 | Memory | `teo-rag-out/memory.jsonl` | проверенные Q&A |
-| Corpus | `docs/graphify-corpus/`, `docs/teo/` | источник чанков |
+| Corpus | `docs/projects/01-teo-kroliki/corpus/graphify-corpus/`, `docs/projects/01-teo-kroliki/corpus/teo/` | источник чанков |
 
 Подробнее: `docs/TEO_RAG_ARCH.md`
 
@@ -45,7 +45,7 @@ python scripts/teo-query.py "..." --validate  # проверка чисел бе
 
 ## Индексация
 
-- **Включено:** все `docs/graphify-corpus/*.md` + `docs/teo/*.md` кроме trade-stat
+- **Включено:** все `docs/projects/01-teo-kroliki/corpus/graphify-corpus/*.md` + `docs/projects/01-teo-kroliki/corpus/teo/*.md` кроме trade-stat
 - **Exclude:** `*-табл-*`, `в-*-гг-*`, экспорт товаров группы
 - **04-rynok:** нарезка по заголовкам, max 4000 символов, overlap 300
 - **Embeddings:** `intfloat/multilingual-e5-small` (prefix `query:` / `passage:`)

@@ -1,6 +1,6 @@
 # T141-P. Рецепты и баланс комбикормов — птицеводство
 
-> **Источник:** `docs/teo-poultry/appendix/feed-recipes-table.md` (Tab. P-141)  
+> **Источник:** `docs/projects/02-teo-ptica/content/appendix/feed-recipes-table.md` (Tab. P-141)  
 > **Статус:** draft — согласование с технологом ККЗ  
 > **Baseline кролики:** Tab. 141 = КРС + рыба (%); **разбивки по SKU/фазам у кроликов нет**
 
