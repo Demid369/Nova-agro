@@ -1,4 +1,4 @@
-"""Shared helpers for rabbit-farming inventory (docs/inventory/krolikovodstvo)."""
+"""Shared helpers for rabbit-farming inventory (docs/projects/01-teo-kroliki/inventory)."""
 
 from __future__ import annotations
 
@@ -375,15 +375,15 @@ def gather_theme_content(theme: dict[str, Any]) -> list[ThemeChunk]:
 def canonical_fact_refs(registry: dict[str, Any]) -> list[dict[str, str]]:
     """Map canonical KPI to file:line in corpus (for index DOCX)."""
     anchors = [
-        ("output_t_per_year", r"7\s*000", "docs/graphify-corpus/00-summary.md"),
-        ("capex_bln_rub", r"\|\s*Кролиководство\s*\|\s*12", "docs/graphify-corpus/00-summary.md"),
-        ("npv_thousand_rub", r"2\s*779\s*519", "docs/graphify-corpus/00-summary.md"),
-        ("irr_pct", r"15,19", "docs/graphify-corpus/00-summary.md"),
-        ("payback_months", r"\|\s*Кролиководство\s*\|[^|]+\|[^|]+\|\s*84", "docs/graphify-corpus/00-summary.md"),
-        ("equipment", r"Meneghin", "docs/graphify-corpus/01-vvedenie-i-resume.md"),
-        ("slaughter_heads_per_hour", r"2400 голов", "docs/graphify-corpus/01-vvedenie-i-resume.md"),
-        ("manure_t_per_year", r"43\s*800", "docs/graphify-corpus/01-vvedenie-i-resume.md"),
-        ("genetics", r"ANCI", "docs/graphify-corpus/01-vvedenie-i-resume.md"),
+        ("output_t_per_year", r"7\s*000", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md"),
+        ("capex_bln_rub", r"\|\s*Кролиководство\s*\|\s*12", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md"),
+        ("npv_thousand_rub", r"2\s*779\s*519", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md"),
+        ("irr_pct", r"15,19", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md"),
+        ("payback_months", r"\|\s*Кролиководство\s*\|[^|]+\|[^|]+\|\s*84", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md"),
+        ("equipment", r"Meneghin", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md"),
+        ("slaughter_heads_per_hour", r"2400 голов", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md"),
+        ("manure_t_per_year", r"43\s*800", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md"),
+        ("genetics", r"ANCI", "docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md"),
     ]
     rows: list[dict[str, str]] = []
     facts = registry.get("canonical_facts", {})

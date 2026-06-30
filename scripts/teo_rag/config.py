@@ -5,13 +5,15 @@ from __future__ import annotations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-CORPUS_SUMMARY = ROOT / "docs" / "graphify-corpus"
-CORPUS_DETAIL = ROOT / "docs" / "teo"
+CORPUS_SUMMARY = ROOT / "docs" / "projects" / "01-teo-kroliki" / "corpus" / "graphify-corpus"
+CORPUS_DETAIL = ROOT / "docs" / "projects" / "01-teo-kroliki" / "corpus" / "teo"
 TEO_TABLES = ROOT / "docs" / "teo-tables"
 TEO_TABLES_CRITICAL = TEO_TABLES / "critical"
 TEO_TABLES_MANIFEST = TEO_TABLES / "manifest.json"
 TEO_LAND_BUDGET = TEO_TABLES / "land-budget.yaml"
 SCENARIOS_DIR = ROOT / "docs" / "scenarios"
+PROJECT_BASELINE_SCENARIO = ROOT / "docs" / "projects" / "01-teo-kroliki" / "scenarios" / "baseline.yaml"
+PROJECT_POULTRY_SCENARIO = ROOT / "docs" / "projects" / "02-teo-ptica" / "scenarios" / "poultry-teo.yaml"
 OUT_DIR = ROOT / "teo-rag-out"
 CHROMA_DIR = OUT_DIR / "chroma"
 MANIFEST_PATH = OUT_DIR / "manifest.json"

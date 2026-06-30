@@ -23,8 +23,8 @@ R_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 NS = {"w": W_NS, "a": A_NS, "r": R_NS}
 XML_SPACE = "{http://www.w3.org/XML/1998/namespace}space"
 
-DEFAULT_PHASE2 = ROOT / "docs/inventory/pticevodstvo/pipeline/phase2-section7.yaml"
-DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/pipeline/phase1-tables.yaml"
+DEFAULT_PHASE2 = ROOT / "docs/projects/02-teo-ptica/pipeline/phase2-section7.yaml"
+DEFAULT_RULES = ROOT / "docs/projects/02-teo-ptica/pipeline/phase1-tables.yaml"
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -116,6 +116,20 @@ def apply_text_rules(text: str, rules: list[dict[str, str]]) -> str:
     for rule in rules:
         out = re.sub(rule["pattern"], rule["replace"], out, flags=re.IGNORECASE)
     return out
+
+
+def apply_text_rules_to_runs(root: ET.Element, rules: list[dict[str, str]]) -> int:
+    """Replace text in w:t nodes only — preserves drawings and paragraph structure."""
+    changed = 0
+    for t in root.findall(".//w:t", NS):
+        old = t.text or ""
+        if not old:
+            continue
+        new = apply_text_rules(old, rules)
+        if new != old:
+            t.text = new
+            changed += 1
+    return changed
 
 
 def build_table_xml(rows: list[list[str]], template_tbl: ET.Element) -> ET.Element:

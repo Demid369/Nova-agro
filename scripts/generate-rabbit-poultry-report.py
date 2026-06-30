@@ -89,7 +89,7 @@ def build() -> Path:
     add_para(doc, "В ТЭО проектный блок — кролиководство, не звероводство (зайцы).")
     add_bullet(doc, "Зайцы встречаются только в рыночной статистике FAOSTAT («мясо кролика и зайца») — классификация ВПС, не проектный актив.")
     add_bullet(doc, "Весь CAPEX, NPV, технология и оборудование завязаны на кроликов.")
-    add_para(doc, "Для замены на птицу речь идёт о блоке «Кролиководство» в docs/graphify-corpus/00-summary.md и 01-vvedenie-i-resume.md.")
+    add_para(doc, "Для замены на птицу речь идёт о блоке «Кролиководство» в docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md и 01-vvedenie-i-resume.md.")
 
     # 3
     add_heading(doc, "3. Связи кролиководства в графе", 1)
@@ -162,7 +162,7 @@ def build() -> Path:
             ["01-vvedenie-i-resume.md", "Фаза I, оборудование, бойня, генетика"],
             ["05-finansy-i-byudzhet.md", "NPV/IRR/payback нового блока"],
             ["04-rynok-i-analitika.md", "4.2 — цены, экспорт HS 0207"],
-            ["docs/teo/", "Новые разделы по видам птицы"],
+            ["docs/projects/01-teo-kroliki/corpus/teo/", "Новые разделы по видам птицы"],
         ],
     )
 

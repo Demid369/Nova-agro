@@ -1,1 +1,2 @@
 graphify-out/graph.json merge=graphify
+docs/projects/02-teo-ptica/*.tar.gz filter=lfs diff=lfs merge=lfs -text

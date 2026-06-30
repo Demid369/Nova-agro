@@ -21,7 +21,7 @@ from docx.text.paragraph import Paragraph
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
-DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/pipeline/phase1-tables.yaml"
+DEFAULT_RULES = ROOT / "docs/projects/02-teo-ptica/pipeline/phase1-tables.yaml"
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 NS = {"w": W_NS}
 
@@ -202,7 +202,7 @@ def build_poultry_teo(rules_path: Path, extract_media: bool = False) -> Path:
 
     shutil.copy2(baseline, output)
 
-    media_map_path = ROOT / meta.get("media_map", "docs/inventory/pticevodstvo/media/image-map.json")
+    media_map_path = ROOT / meta.get("media_map", "docs/projects/02-teo-ptica/pipeline/media/image-map.json")
     manifest = map_images(baseline, media_map_path)
     print(f"Image map: {len(manifest['placements'])} inline paragraphs, {manifest['media_file_count']} media files")
     print(f"  → {media_map_path}")
@@ -311,6 +311,11 @@ def main() -> int:
     parser.add_argument("--skip-phase2", action="store_true", help="Skip §7 narrative + Tab P-141")
     parser.add_argument("--skip-phase3", action="store_true", help="Skip §4 market + yield table")
     parser.add_argument("--skip-phase4", action="store_true", help="Skip §4 export tail (T10)")
+    parser.add_argument("--skip-phase5", action="store_true", help="Skip §1–§3 front matter")
+    parser.add_argument("--skip-phase6", action="store_true", help="Skip §4 SWOT + RF market + pricing")
+    parser.add_argument("--skip-phase7", action="store_true", help="Skip §8–§12 narrative")
+    parser.add_argument("--skip-phase8", action="store_true", help="Skip global regex cleanup")
+    parser.add_argument("--skip-phase9", action="store_true", help="Skip media caption pass")
     parser.add_argument("--verify-only", action="store_true")
     args = parser.parse_args()
 
@@ -342,7 +347,7 @@ def main() -> int:
         p2 = importlib.util.module_from_spec(spec)
         assert spec and spec.loader
         spec.loader.exec_module(p2)
-        phase2_yaml = ROOT / "docs/inventory/pticevodstvo/pipeline/phase2-section7.yaml"
+        phase2_yaml = ROOT / "docs/projects/02-teo-ptica/pipeline/phase2-section7.yaml"
         p2.apply_phase2(out, phase2_yaml)
 
     if not args.skip_phase3:
@@ -353,7 +358,7 @@ def main() -> int:
         p3 = importlib.util.module_from_spec(spec)
         assert spec and spec.loader
         spec.loader.exec_module(p3)
-        phase3_yaml = ROOT / "docs/inventory/pticevodstvo/pipeline/phase3-market.yaml"
+        phase3_yaml = ROOT / "docs/projects/02-teo-ptica/pipeline/phase3-market.yaml"
         p3.apply_phase3(out, phase3_yaml)
 
     if not args.skip_phase4:
@@ -364,8 +369,27 @@ def main() -> int:
         p3b = importlib.util.module_from_spec(spec)
         assert spec and spec.loader
         spec.loader.exec_module(p3b)
-        phase4_yaml = ROOT / "docs/inventory/pticevodstvo/pipeline/phase4-export.yaml"
+        phase4_yaml = ROOT / "docs/projects/02-teo-ptica/pipeline/phase4-export.yaml"
         p3b.apply_phase3(out, phase4_yaml)
+
+    phase_extra = [
+        ("skip_phase5", "phase5-front.yaml"),
+        ("skip_phase6", "phase6-rf-market.yaml"),
+        ("skip_phase7", "phase7-conclusions.yaml"),
+        ("skip_phase8", "phase8-cleanup.yaml"),
+        ("skip_phase9", "phase9-media.yaml"),
+    ]
+    for skip_flag, yaml_name in phase_extra:
+        if getattr(args, skip_flag, False):
+            continue
+        import importlib.util
+
+        p3_path = SCRIPTS / "apply-teo-poultry-phase3.py"
+        spec = importlib.util.spec_from_file_location(f"apply_teo_poultry_{yaml_name}", p3_path)
+        px = importlib.util.module_from_spec(spec)
+        assert spec and spec.loader
+        spec.loader.exec_module(px)
+        px.apply_phase3(out, ROOT / f"docs/projects/02-teo-ptica/pipeline/{yaml_name}")
 
     return 0
 

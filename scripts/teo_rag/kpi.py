@@ -319,6 +319,6 @@ def format_kpi_answer(query: str, store: KPIStore | None = None) -> tuple[str, l
                     f"| {b.label} | {b.npv_thousand_rub or '—'} | {b.irr_pct or '—'}% | "
                     f"{b.payback_months or '—'} | {b.capex_bln_rub or '—'} |"
                 )
-            citations.append({"type": "kpi_table", "source": "docs/graphify-corpus/00-summary.md"})
+            citations.append({"type": "kpi_table", "source": "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md"})
             return "\n".join(lines), citations
     return None

@@ -15,9 +15,9 @@ LATEST = OUT_BASE / "latest"
 
 # Baseline core sources (small enough for NotebookLM limits)
 BASELINE_SOURCES = [
-    ROOT / "docs/graphify-corpus/00-summary.md",
-    ROOT / "docs/graphify-corpus/01-vvedenie-i-resume.md",
-    ROOT / "docs/graphify-corpus/06-vyvody-i-riski.md",
+    ROOT / "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md",
+    ROOT / "docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md",
+    ROOT / "docs/projects/01-teo-kroliki/corpus/graphify-corpus/06-vyvody-i-riski.md",
     ROOT / "docs/TEO_ПРОСТЫМИ_СЛОВАМИ.md",
     ROOT / "docs/TEO_RAG.md",
 ]

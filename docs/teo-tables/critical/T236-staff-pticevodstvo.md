@@ -1,6 +1,6 @@
 # Штатное расписание: птицеводство
 
-> **Источник:** `docs/teo-poultry/appendix/02-zatraty-orgstruktura-shtat.md`  
+> **Источник:** `docs/projects/02-teo-ptica/content/appendix/02-zatraty-orgstruktura-shtat.md`  
 > **Аналог baseline:** [`T236-staff-krolik.md`](T236-staff-krolik.md) (300 FTE → **476 FTE**)  
 > **Полная детализация:** таблицы 3–10 в appendix/02
 

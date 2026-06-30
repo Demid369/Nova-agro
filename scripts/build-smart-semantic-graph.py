@@ -14,12 +14,12 @@ STRUCTURAL = OUT / "extraction-full.json"
 SEMANTIC = OUT / "extraction-semantic.json"
 MERGED = OUT / "extraction-merged.json"
 
-SRC_SUMMARY = "docs/graphify-corpus/00-summary.md"
-SRC_INTRO = "docs/graphify-corpus/01-vvedenie-i-resume.md"
-SRC_PROD = "docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md"
-SRC_MARKET = "docs/graphify-corpus/04-rynok-i-analitika.md"
-SRC_FIN = "docs/graphify-corpus/05-finansy-i-byudzhet.md"
-SRC_RISK = "docs/graphify-corpus/06-vyvody-i-riski.md"
+SRC_SUMMARY = "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md"
+SRC_INTRO = "docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md"
+SRC_PROD = "docs/projects/01-teo-kroliki/corpus/graphify-corpus/03-proizvodstvo-i-tehnologii.md"
+SRC_MARKET = "docs/projects/01-teo-kroliki/corpus/graphify-corpus/04-rynok-i-analitika.md"
+SRC_FIN = "docs/projects/01-teo-kroliki/corpus/graphify-corpus/05-finansy-i-byudzhet.md"
+SRC_RISK = "docs/projects/01-teo-kroliki/corpus/graphify-corpus/06-vyvody-i-riski.md"
 
 
 _SLUG_RE = re.compile(r"[^a-z0-9а-яё]+", re.I)
@@ -395,7 +395,7 @@ def load_chunk_files() -> tuple[list[dict], list[dict], list[dict]]:
     for p in sorted(OUT.glob(".graphify_chunk_*.json")):
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
-            default_src = "docs/graphify-corpus/00-summary.md"
+            default_src = "docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md"
             for n in d.get("nodes", []):
                 nodes.append(normalize_chunk_item(n, n.get("source_file") or default_src))
             edges.extend(normalize_chunk_edges(d.get("edges", []), default_src))

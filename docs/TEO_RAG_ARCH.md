@@ -11,7 +11,7 @@
 | Graph | Graphify | `graphify-out/graph.json` | path, explain, бизнес-цепочки |
 | Vector | Chroma + multilingual embeddings | `teo-rag-out/chroma/` | факты, цитаты, NPV, риски |
 | Memory | JSONL | `teo-rag-out/memory.jsonl` | validated Q&A |
-| Corpus | Markdown | `docs/graphify-corpus/`, `docs/teo/` | источник чанков |
+| Corpus | Markdown | `docs/projects/01-teo-kroliki/corpus/graphify-corpus/`, `docs/projects/01-teo-kroliki/corpus/teo/` | источник чанков |
 
 ## Роутер запросов
 
@@ -46,7 +46,7 @@
 
 ## Индексация
 
-- **Включено:** `docs/graphify-corpus/*.md`, `docs/teo/*.md` кроме exclude
+- **Включено:** `docs/projects/01-teo-kroliki/corpus/graphify-corpus/*.md`, `docs/projects/01-teo-kroliki/corpus/teo/*.md` кроме exclude
 - **Exclude:** `*-табл-*`, `в-*-гг-*`, trade-stat по имени файла
 - **04-rynok:** нарезка по `##` / `#` заголовкам, max ~4000 символов, overlap 300
 - **Metadata:** см. `schemas/chunk-metadata.json`

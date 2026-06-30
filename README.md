@@ -1,7 +1,7 @@
 # Graphify — граф знаний ТЭО «МОЯ МЕЧТА»
 
 > **Рабочий проект = baseline** — текущее ТЭО (кролиководство, теплицы, КРС/МРС, рыба, масложир).  
-> **Птица = блок I draft** — pipeline в `docs/inventory/pticevodstvo/pipeline/`. Карта: [`docs/teo/INDEX.md`](docs/teo/INDEX.md).
+> **Птица = блок I draft** — pipeline в `docs/projects/02-teo-ptica/pipeline/`. Карта: [`docs/projects/01-teo-kroliki/corpus/teo/INDEX.md`](docs/projects/01-teo-kroliki/corpus/teo/INDEX.md).
 
 Этот репозиторий настроен для [Graphify](https://github.com/safishamsi/graphify): документ `docs/1.ТЭО_МОЯ МЕЧТА.docx` преобразован в markdown-корпус и подключён к Cursor.
 
@@ -9,10 +9,10 @@
 
 | Путь | Назначение |
 |------|------------|
-| `docs/teo/INDEX.md` | **Карта всего ТЭO** (baseline vs птица) |
-| `docs/1.ТЭО_МOЯ МEЧTA.docx` | Исходный ТЭO (66 МБ, **не индексируется** Graphify — лимит 50 МБ) |
-| `docs/teo/` | Нарезка docx по заголовкам (140 файлов) |
-| `docs/graphify-corpus/` | **Корпус для Graphify** — 6 сводных markdown-файлов |
+| `docs/projects/01-teo-kroliki/corpus/teo/INDEX.md` | **Карта всего ТЭO** (baseline vs птица) |
+| `docs/projects/01-teo-kroliki/docx/1.ТЭO_МOЯ МEЧTA.docx` | Исходный ТЭO (66 МБ, **не индексируется** Graphify — лимит 50 МБ) |
+| `docs/projects/01-teo-kroliki/corpus/teo/` | Нарезка docx по заголовкам (140 файлов) |
+| `docs/projects/01-teo-kroliki/corpus/graphify-corpus/` | **Корпус для Graphify** — 6 сводных markdown-файлов |
 | `graphify-out/` | Граф: `graph.json`, `GRAPH_REPORT.md`, `graph.html`, `QUERY_WALKTHROUGH.md` |
 
 ## Быстрый старт в Cursor
@@ -27,13 +27,13 @@ graphify cursor install
 2. В чате Cursor:
 
 ```
-/graphify docs/graphify-corpus
+/graphify docs/projects/01-teo-kroliki/corpus/graphify-corpus
 ```
 
 Для обновления после правок:
 
 ```
-/graphify docs/graphify-corpus --update
+/graphify docs/projects/01-teo-kroliki/corpus/graphify-corpus --update
 ```
 
 ## Запросы к графу
@@ -77,7 +77,7 @@ uv tool run --from graphifyy==0.8.49 python scripts/build-smart-semantic-graph.p
 - доменную онтологию ТЭО (бизнес-модель, цепочки, риски)
 - LLM-чанки из `graphify-out/.graphify_chunk_*.json` (если есть)
 
-Для перегенерации LLM-чанков в Cursor: `/graphify docs/graphify-corpus --mode deep`
+Для перегенерации LLM-чанков в Cursor: `/graphify docs/projects/01-teo-kroliki/corpus/graphify-corpus --mode deep`
 
 Текущий граф (после fix norm_id + semantic merge): **~8 400** узлов, **~24 700** рёбер, **~595** сообществ. `graph.html` — агрегированный вид по сообществам (>5000 узлов).
 
@@ -91,7 +91,7 @@ uv tool run --from graphifyy==0.8.49 python scripts/build-teo-graph.py
 
 ```bash
 export GEMINI_API_KEY=...
-graphify extract docs/graphify-corpus --mode deep
+graphify extract docs/projects/01-teo-kroliki/corpus/graphify-corpus --mode deep
 ```
 
 ## Что уже настроено в репозитории
@@ -104,7 +104,7 @@ graphify extract docs/graphify-corpus --mode deep
 
 ## TEO RAG (гибрид Graph + Vector + Memory)
 
-Полнотекстовый поиск по всему корпусу (`docs/teo/` + `docs/graphify-corpus/`) поверх графа Graphify.
+Полнотекстовый поиск по всему корпусу (`docs/projects/01-teo-kroliki/corpus/teo/` + `docs/projects/01-teo-kroliki/corpus/graphify-corpus/`) поверх графа Graphify.
 
 ```bash
 pip install -r requirements-teo-rag.txt

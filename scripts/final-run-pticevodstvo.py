@@ -12,8 +12,8 @@ from pathlib import Path
 from docx import Document
 
 ROOT = Path(__file__).resolve().parents[1]
-MASTER = ROOT / "docs/inventory/pticevodstvo/docx/00-master-teo-pticevodstvo-draft.docx"
-REPORT = ROOT / "docs/inventory/pticevodstvo/reports/final-run-jun2026.md"
+MASTER = ROOT / "docs/projects/02-teo-ptica/pipeline/docx/00-master-teo-pticevodstvo-draft.docx"
+REPORT = ROOT / "docs/projects/02-teo-ptica/pipeline/reports/final-run-jun2026.md"
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from pticevodstvo_inventory import validate_registry, load_registry  # noqa: E402

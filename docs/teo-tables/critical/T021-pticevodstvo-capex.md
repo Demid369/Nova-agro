@@ -1,6 +1,6 @@
 # Птицеводческий комплекс: структура затрат (блок 1 APK)
 
-> **Источник:** finmodel «CAPEX», «APK-100»; `docs/scenarios/poultry-teo.yaml`  
+> **Источник:** finmodel «CAPEX», «APK-100»; `docs/projects/02-teo-ptica/scenarios/poultry-teo.yaml`  
 > **Аналог baseline:** [`T021-krolik-farm-capex.md`](T021-krolik-farm-capex.md)
 
 | | тыс. ₽ |
