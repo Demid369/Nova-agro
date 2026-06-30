@@ -55,7 +55,7 @@ python scripts/seed-teo-memory-baseline.py
 
 ## Волна 6 — второе ТЭО (птица, позже)
 
-1. Отдельный корпус `docs/teo-poultry/` или новый scenario-id
+1. Отдельный корпус `docs/projects/02-teo-ptica/content/` или новый scenario-id
 2. Свой vector index / KPI — **без** перезаписи baseline
 3. Сравнение baseline vs teo2 через `teo-scenario.py compare`
 

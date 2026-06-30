@@ -619,15 +619,15 @@
 
 ## Surprising Connections (you probably didn't know these)
 - `Тепличный комплекс` --semantically_similar_to--> `Тепличный комплекс`  [INFERRED] [semantically similar]
-  docs/graphify-corpus/00-summary.md → docs/graphify-corpus/04-rynok-i-analitika.md
+  docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md → docs/projects/01-teo-kroliki/corpus/graphify-corpus/04-rynok-i-analitika.md
 - `2.2. Положение на рынке, существующие деловые связи и деловая репутация.` --semantically_similar_to--> `2.2. Положение на рынке, существующие деловые связи и деловая репутация.`  [INFERRED] [semantically similar]
-  docs/graphify-corpus/01-vvedenie-i-resume.md → docs/teo/00-меморандум-о-конфиденциальности.md
+  docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md → docs/projects/01-teo-kroliki/corpus/teo/00-меморандум-о-конфиденциальности.md
 - `БИОГАЗОВЫЕ УСТАНОВКИ` --semantically_similar_to--> `БИОГАЗОВЫЕ УСТАНОВКИ`  [INFERRED] [semantically similar]
-  docs/graphify-corpus/01-vvedenie-i-resume.md → docs/teo/03-биогазовые-установки.md
+  docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md → docs/projects/01-teo-kroliki/corpus/teo/03-биогазовые-установки.md
 - `Воздействие технологии на окружающую среду` --semantically_similar_to--> `Воздействие технологии на окружающую среду`  [INFERRED] [semantically similar]
-  docs/graphify-corpus/01-vvedenie-i-resume.md → docs/teo/134-корма-для-выращивания-рыбы-в-узв.md
+  docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md → docs/projects/01-teo-kroliki/corpus/teo/134-корма-для-выращивания-рыбы-в-узв.md
 - `Белуга` --semantically_similar_to--> `Белуга`  [INFERRED] [semantically similar]
-  docs/graphify-corpus/01-vvedenie-i-resume.md → docs/graphify-corpus/04-rynok-i-analitika.md
+  docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md → docs/projects/01-teo-kroliki/corpus/graphify-corpus/04-rynok-i-analitika.md
 
 ## Import Cycles
 - None detected.

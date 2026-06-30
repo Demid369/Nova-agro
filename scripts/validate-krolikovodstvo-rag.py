@@ -54,7 +54,7 @@ def fact_present(text: str, *needles: str) -> bool:
 
 def check_canonical_facts(registry: dict) -> list[dict]:
     facts = registry["canonical_facts"]
-    summary_text = read_text("docs/graphify-corpus/00-summary.md")
+    summary_text = read_text("docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md")
     checks = [
         ("output_t_per_year", ["7 000", "7000"], "7 000 т/год"),
         ("capex_bln_rub", ["12"], "CAPEX 12 млрд"),
@@ -67,11 +67,11 @@ def check_canonical_facts(registry: dict) -> list[dict]:
         ("genetics", ["anci"], "ANCI"),
     ]
     layers = {
-        "source_teo": read_text("docs/teo/01-23-потенциал-существующий-и-прогнозируемый.md")
-        + read_text("docs/teo/124-кролики-особенности-содержания-и-разведения.md")
-        + read_text("docs/graphify-corpus/01-vvedenie-i-resume.md"),
-        "corpus": read_text("docs/graphify-corpus/00-summary.md")
-        + read_text("docs/graphify-corpus/01-vvedenie-i-resume.md"),
+        "source_teo": read_text("docs/projects/01-teo-kroliki/corpus/teo/01-23-потенциал-существующий-и-прогнозируемый.md")
+        + read_text("docs/projects/01-teo-kroliki/corpus/teo/124-кролики-особенности-содержания-и-разведения.md")
+        + read_text("docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md"),
+        "corpus": read_text("docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md")
+        + read_text("docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md"),
         "summary": summary_text,
         "kpi_json": read_text("teo-rag-out/kpi.json"),
     }
@@ -128,7 +128,7 @@ def rag_gaps() -> list[dict]:
         {
             "id": "teo-125-excluded",
             "severity": "fixed",
-            "detail": "docs/teo/125-табл-141 раньше отфильтровывался is_trade_stat_file(); "
+            "detail": "docs/projects/01-teo-kroliki/corpus/teo/125-табл-141 раньше отфильтровывался is_trade_stat_file(); "
             "исправлено whitelist по «кролик» в имени. После правки: python3 scripts/build-teo-vector-index.py",
             "mitigation": "Пересобрать индекс (747 chunks).",
         },
@@ -195,9 +195,9 @@ def teo_vs_corpus_gaps(registry: dict) -> list[dict]:
     gaps: list[dict] = []
     primary = registry.get("all_source_files", {}).get("source_teo_primary", [])
     corpus = (
-        read_text("docs/graphify-corpus/01-vvedenie-i-resume.md")
-        + read_text("docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md")
-        + read_text("docs/graphify-corpus/04-rynok-i-analitika.md")
+        read_text("docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md")
+        + read_text("docs/projects/01-teo-kroliki/corpus/graphify-corpus/03-proizvodstvo-i-tehnologii.md")
+        + read_text("docs/projects/01-teo-kroliki/corpus/graphify-corpus/04-rynok-i-analitika.md")
     )
     for rel in primary:
         src = read_text(rel)

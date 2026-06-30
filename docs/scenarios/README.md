@@ -1,34 +1,11 @@
-# Сценарии what-if
+# Сценарии KPI
 
-## Активный проект
+Сценарии перенесены в папки проектов:
 
-| ID | Статус | Описание |
-|----|--------|----------|
-| **baseline** | **active** | Текущее ТЭО «МОЯ МЕЧТА» — кролиководство, теплицы, КРС/МРС и т.д. |
+| Сценарий | Путь |
+|----------|------|
+| Baseline (кролики, APK) | [`projects/01-teo-kroliki/scenarios/baseline.yaml`](../projects/01-teo-kroliki/scenarios/baseline.yaml) |
+| Птица 12 млрд | [`projects/02-teo-ptica/scenarios/poultry-teo.yaml`](../projects/02-teo-ptica/scenarios/poultry-teo.yaml) |
+| What-if (parked) | [`projects/02-teo-ptica/scenarios/poultry-variant.yaml`](../projects/02-teo-ptica/scenarios/poultry-variant.yaml) |
 
-Корпус: `docs/graphify-corpus/00-summary.md`, граф `graphify-out/graph.json`, KPI `teo-rag-out/kpi.json`.
-
-## Parked (второе ТЭО — позже)
-
-| ID | Статус | Описание |
-|----|--------|----------|
-| poultry-variant | **parked** | Черновик what-if (эвристика KPI). **Не применять** к рабочему проекту. |
-| **poultry-teo** | **draft** | Второе ТЭО: текст в `docs/teo-poultry/`, KPI в `docs/scenarios/poultry-teo.yaml`. |
-
-Файлы `poultry-variant.*` — заготовка инфраструктуры what-if.  
-**Рабочий контент птицы:** `docs/teo-poultry/` + `docs/inventory/pticevodstvo/`.
-
-Когда будет готово второе ТЭО, оформится как отдельный корpus или `apply poultry-teo`.
-
-**Не запускать** без явной необходимости:
-
-```bash
-# НЕ для текущей работы
-python scripts/apply-teo-scenario.py apply poultry-variant
-```
-
-Вернуть baseline после экспериментов:
-
-```bash
-python scripts/apply-teo-scenario.py restore
-```
+Обзор всех проектов: [`projects/README.md`](../projects/README.md)

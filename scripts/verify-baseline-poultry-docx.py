@@ -15,7 +15,7 @@ from docx import Document
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-RULES = ROOT / "docs/inventory/pticevodstvo/pipeline/phase1-tables.yaml"
+RULES = ROOT / "docs/projects/02-teo-ptica/pipeline/phase1-tables.yaml"
 _meta = yaml.safe_load(RULES.read_text(encoding="utf-8"))["meta"]
 DEFAULT_BASELINE = ROOT / _meta["baseline"]
 DEFAULT_OUTPUT = ROOT / _meta["output"]

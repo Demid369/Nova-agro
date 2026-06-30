@@ -236,7 +236,7 @@ def build_master_docx(registry: dict, assembly: dict) -> Path:
     doc.add_heading("Статус сборки", level=1)
     doc.add_paragraph(
         "Draft: I-фаза заменена на птицеводство; блоки II–V и trade tables — as-is по плану "
-        "(см. docs/teo-poultry/appendix/master-docx-assembly.md)."
+        "(см. docs/projects/02-teo-ptica/content/appendix/master-docx-assembly.md)."
     )
     doc.add_paragraph(f"Baseline DOCX: {meta.get('baseline_docx', '—')}")
     doc.add_paragraph(f"Статус: {meta.get('status', 'draft')}")

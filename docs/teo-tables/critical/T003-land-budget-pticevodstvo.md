@@ -1,6 +1,6 @@
 # Земельный баланс — птицеводство (Nova-Agro)
 
-> **Источник:** `docs/teo-poultry/land-budget.yaml`, `appendix/03-svodnyy-raschet-kompleksa.md`  
+> **Источник:** `docs/projects/02-teo-ptica/content/land-budget.yaml`, `appendix/03-svodnyy-raschet-kompleksa.md`  
 > **Аналог baseline:** [`T003-land-budget.md`](T003-land-budget.md) (100 000 га APK Херсон → **отдельный контур R-01**)  
 > **Статус:** слот **400 га**; **кадастр / схема / разрешения — TBD** (R-04). Канon: [`review-pass-notes.md`](../../teo-poultry/appendix/review-pass-notes.md)
 

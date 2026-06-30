@@ -1,5 +1,5 @@
 # Проверенные ответы для seed memory (baseline ТЭО)
-# Источник: docs/graphify-corpus/00-summary.md — не LLM
+# Источник: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md — не LLM
 
 entries:
   - query: "NPV теплиц"
@@ -14,7 +14,7 @@ entries:
     citations:
       - type: kpi
         block: теплицы
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
         section: Финансовые KPI
 
   - query: "NPV кролиководство"
@@ -30,7 +30,7 @@ entries:
     citations:
       - type: kpi
         block: кролиководство
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
 
   - query: "сколько инвестиций в проект млрд рублей"
     answer: |
@@ -42,7 +42,7 @@ entries:
     citations:
       - type: kpi
         block: project
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
 
   - query: "выручка проекта млрд"
     answer: |
@@ -52,7 +52,7 @@ entries:
     citations:
       - type: kpi
         block: project
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
 
   - query: "обзор структура проекта МОЯ МЕЧТА"
     answer: |
@@ -63,7 +63,7 @@ entries:
     mode: summary
     citations:
       - type: kpi
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
         section: Производственные блоки
 
   - query: "NPV рыбоводство"
@@ -80,7 +80,7 @@ entries:
     citations:
       - type: kpi
         block: рыбоводство
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
 
   - query: "NPV масложировой комбинат"
     answer: |
@@ -96,7 +96,7 @@ entries:
     citations:
       - type: kpi
         block: масложировой
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
 
   - query: "экспорт 10,2 млрд"
     answer: |
@@ -105,7 +105,7 @@ entries:
     mode: kpi
     citations:
       - type: kpi
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
         section: Экспорт
 
   - query: "сколько тонн крольчатины в год"
@@ -115,7 +115,7 @@ entries:
     citations:
       - type: kpi
         block: кролиководство
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
 
   - query: "нулевая себестоимость 5,6 млрд"
     answer: |
@@ -126,7 +126,7 @@ entries:
     mode: vector
     citations:
       - type: kpi
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
         section: Ключевая модель
 
   - query: "чёрная икра белуга"
@@ -137,7 +137,7 @@ entries:
     citations:
       - type: kpi
         block: рыбоводство
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
 
   - query: "как бесплатный убой связан с желатином и кожей?"
     answer: |
@@ -149,7 +149,7 @@ entries:
     mode: graph
     citations:
       - type: graph_edge
-        source: docs/graphify-corpus/00-summary.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/00-summary.md
         section: Ключевая модель
 
   - query: "path убой желатин"
@@ -159,7 +159,7 @@ entries:
     mode: graph
     citations:
       - type: graph_path
-        source: docs/graphify-corpus/01-vvedenie-i-resume.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/01-vvedenie-i-resume.md
 
   - query: "комбикорм подсолнечник соя животноводство"
     answer: |
@@ -169,7 +169,7 @@ entries:
     mode: hybrid
     citations:
       - type: chunk
-        source: docs/graphify-corpus/03-proizvodstvo-i-tehnologii.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/03-proizvodstvo-i-tehnologii.md
 
   - query: "риски биологические ветеринарные меры снижения"
     answer: |
@@ -180,5 +180,5 @@ entries:
     mode: hybrid
     citations:
       - type: chunk
-        source: docs/graphify-corpus/06-vyvody-i-riski.md
+        source: docs/projects/01-teo-kroliki/corpus/graphify-corpus/06-vyvody-i-riski.md
         section: "12.3. Риски"

@@ -17,8 +17,8 @@ import yaml
 # Reuse phase2 helpers
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
-DEFAULT_PHASE3 = ROOT / "docs/inventory/pticevodstvo/pipeline/phase3-market.yaml"
-DEFAULT_RULES = ROOT / "docs/inventory/pticevodstvo/pipeline/phase1-tables.yaml"
+DEFAULT_PHASE3 = ROOT / "docs/projects/02-teo-ptica/pipeline/phase3-market.yaml"
+DEFAULT_RULES = ROOT / "docs/projects/02-teo-ptica/pipeline/phase1-tables.yaml"
 
 
 def _load_phase2():

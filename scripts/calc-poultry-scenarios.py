@@ -9,8 +9,8 @@ from pathlib import Path
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment
 
-XLSX = Path(__file__).resolve().parents[1] / "docs/teo-poultry/_incoming/finmodel-pticekompleks-12-mlrd.xlsx"
-OUT_JSON = Path(__file__).resolve().parents[1] / "docs/teo-poultry/appendix/calculated-scenarios.json"
+XLSX = Path(__file__).resolve().parents[1] / "docs/projects/02-teo-ptica/content/_incoming/finmodel-pticekompleks-12-mlrd.xlsx"
+OUT_JSON = Path(__file__).resolve().parents[1] / "docs/projects/02-teo-ptica/content/appendix/calculated-scenarios.json"
 
 HEADER_FONT = Font(bold=True)
 HEADER_FILL = PatternFill("solid", fgColor="D9E1F2")

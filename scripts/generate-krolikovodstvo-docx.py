@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate DOCX files per rabbit-farming theme from docs/inventory/krolikovodstvo/registry.yaml."""
+"""Generate DOCX files per rabbit-farming theme from docs/projects/01-teo-kroliki/inventory/registry.yaml."""
 
 from __future__ import annotations
 
@@ -250,7 +250,7 @@ def main() -> int:
     ]
     for tid in sorted(k for k in registry.get("themes", {}) if k.startswith("T")):
         paths.append(build_theme_docx(tid, registry["themes"][tid], registry))
-    print(f"Generated {len(paths)} DOCX in docs/inventory/krolikovodstvo/docx")
+    print(f"Generated {len(paths)} DOCX in docs/projects/01-teo-kroliki/inventory/docx")
     for p in paths:
         print(f"  {p}")
     return 0

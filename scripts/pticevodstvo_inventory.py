@@ -1,4 +1,4 @@
-"""Shared helpers for poultry inventory (docs/inventory/pticevodstvo)."""
+"""Shared helpers for poultry inventory (docs/projects/02-teo-ptica/pipeline)."""
 
 from __future__ import annotations
 
@@ -133,14 +133,14 @@ def gather_section_sources(section: dict[str, Any], registry: dict[str, Any]) ->
 def canonical_fact_refs(registry: dict[str, Any]) -> list[dict[str, str]]:
     facts = registry.get("canonical_facts", {})
     anchors: list[tuple[str, str, str]] = [
-        ("capex_bln_rub", "12 000", "docs/teo-poultry/T01-finance.md"),
-        ("revenue_mln_rub_per_year", "5 559", "docs/teo-poultry/T01-finance.md"),
-        ("ebitda_mln_rub_per_year", "2 216", "docs/teo-poultry/T01-finance.md"),
+        ("capex_bln_rub", "12 000", "docs/projects/02-teo-ptica/content/T01-finance.md"),
+        ("revenue_mln_rub_per_year", "5 559", "docs/projects/02-teo-ptica/content/T01-finance.md"),
+        ("ebitda_mln_rub_per_year", "2 216", "docs/projects/02-teo-ptica/content/T01-finance.md"),
         ("npv_mln_rub_at_10pct", "2 253", "docs/teo-tables/critical/T007-npv-pticevodstvo.md"),
         ("irr_pct", "12,8", "docs/teo-tables/critical/T007-npv-pticevodstvo.md"),
         ("staff_fte", "476", "docs/teo-tables/critical/T236-staff-pticevodstvo.md"),
-        ("poultry_houses", "118", "docs/teo-poultry/T04-equipment.md"),
-        ("slaughter_heads_per_hour", "6 000", "docs/teo-poultry/T05-slaughter-processing.md"),
+        ("poultry_houses", "118", "docs/projects/02-teo-ptica/content/T04-equipment.md"),
+        ("slaughter_heads_per_hour", "6 000", "docs/projects/02-teo-ptica/content/T05-slaughter-processing.md"),
     ]
     rows: list[dict[str, str]] = []
     for key, pattern, rel in anchors:
